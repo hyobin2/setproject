@@ -189,8 +189,10 @@
                                             <label for="iq_security" class="required">보안문자</label>
                                         </li>
                                         <li class="clear">
-                                            <p><img id="captchaImg" src="/captcha"><a href="#" onclick="captchaRefresh(); return false;">새로고침</a></p>
+                                            <p><img id="captchaImg" src="/captcha">
+                                            </p>
                                             <input id="captcha" name="captcha" type="text" value="" required />
+                                            <button type="button" onclick="captchaRefresh(); return false;" class="">새로고침</button>
                                         </li>
                                     </ul>
                                 </div>

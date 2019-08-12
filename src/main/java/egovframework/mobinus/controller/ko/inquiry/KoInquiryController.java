@@ -15,6 +15,7 @@
  */
 package egovframework.mobinus.controller.ko.inquiry;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -36,6 +37,7 @@ import egovframework.mobinus.service.file.FileService;
 import egovframework.mobinus.service.inquiry.InquiryService;
 import egovframework.mobinus.service.scrty.ScrtyService;
 import egovframework.rte.fdl.property.EgovPropertyService;
+import nl.captcha.Captcha;
 
 
 
@@ -94,13 +96,13 @@ public class KoInquiryController {
     public String proc(MyMap paramMap, HttpServletRequest request, HttpServletResponse response, Model model, SessionStatus status)
             throws Exception {
 
-
-		/*if (!captchaService.isCorrect(captcha)) {
+String chkCaptcha = (String) request.getSession().getAttribute(Captcha.NAME);
+		if (!chkCaptcha.equals(paramMap.getStr("captcha"))) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>alert('보안문자가 올바르지 않습니다.'); history.go(-1);</script>");
 			out.flush();
-		}else {*/
+		}else {
 
 	    	FileUploadUtil fileutil = new FileUploadUtil();
 
@@ -139,7 +141,7 @@ public class KoInquiryController {
 			model.addAttribute("resultMsg", resultMsg);
 
 	        status.setComplete();
-	    //}
+	    }
 		return "/common/resultMsg";
     }
 

@@ -5,7 +5,7 @@
 	<groupId>com.mobinus.web</groupId>
 	<artifactId>mobinus</artifactId>
 	<packaging>war</packaging>
-	<version>3.5.0</version>
+	<version>3.6.0</version>
 	<name>mobinus_Homepage</name>
 	<url>http://mobinus.com</url>
 
@@ -63,10 +63,15 @@
 			<version>${egovframework.rte.version}</version>
 		</dependency>
 		<dependency>
+		     <groupId>egovframework.rte</groupId>
+		     <artifactId>egovframework.rte.psl.dataaccess</artifactId>
+		     <version>3.6.0</version>
+		</dependency>
+		<!-- <dependency>
 			<groupId>egovframework.rte</groupId>
 			<artifactId>egovframework.rte.psl.dataaccess</artifactId>
 			<version>${egovframework.rte.version}</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>egovframework.rte</groupId>
 			<artifactId>egovframework.rte.fdl.idgnr</artifactId>
@@ -313,15 +318,14 @@
 		    <artifactId>sanselan</artifactId>
 		    <version>0.97-incubator</version>
 		</dependency>
-
-	 <!--  	<dependency>
+		<!-- https://mvnrepository.com/artifact/nl.captcha/simplecaptcha -->
+		<dependency>
 		    <groupId>nl.captcha</groupId>
 		    <artifactId>simplecaptcha</artifactId>
 		    <version>1.2.1</version>
 		    <scope>system</scope>
 		    <systemPath>${basedir}\src\main\webapp\WEB-INF\lib\simplecaptcha-1.2.1.jar</systemPath>
 		</dependency>
- -->
 	</dependencies>
 
     <build>
