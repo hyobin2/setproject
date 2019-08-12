@@ -1,0 +1,146 @@
+/*
+Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or http://ckeditor.com/license
+*/
+
+.ckeditorView
+{
+	/* Font */
+	font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
+	font-size: 12px;
+
+	/* Text color */
+	color: #333;
+
+	/* Remove the background color to make it transparent */
+	background-color: #fff;
+
+	/*margin: 20px;*/
+}
+
+.ckeditorView .cke_editable
+{
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+.ckeditorView blockquote
+{
+	font-style: italic;
+	font-family: Georgia, Times, "Times New Roman", serif;
+	padding: 2px 0;
+	border-style: solid;
+	border-color: #ccc;
+	border-width: 0;
+}
+
+.cke_contents_ltr blockquote
+{
+	padding-left: 20px;
+	padding-right: 8px;
+	border-left-width: 5px;
+}
+
+
+.ckeditorView .cke_contents_rtl blockquote
+{
+	padding-left: 8px;
+	padding-right: 20px;
+	border-right-width: 5px;
+}
+
+.ckeditorView a
+{
+	color: #0782C1;
+}
+
+.ckeditorView ol,.ckeditorView dl,
+{
+	/* IE7: reset rtl list margin. (#7334) */
+	*margin-right: 0px;
+	/* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
+	padding: 0 40px;
+}
+.ckeditorView ul{
+	/* IE7: reset rtl list margin. (#7334) */
+	*margin-right: 0px;
+	/* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
+	padding: 0 40px;
+	margin:5px 0px 5px 0px;
+}
+.ckeditorView ul li{	list-style: initial; }
+
+.ckeditorView h1,.ckeditorView h2,.ckeditorView h3,.ckeditorView h4,.ckeditorView h5,.ckeditorView h6
+{
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+.ckeditorView hr
+{
+	border: 0px;
+	border-top: 1px solid #ccc;
+}
+
+.ckeditorView img.right
+{
+	border: 1px solid #ccc;
+	float: right;
+	margin-left: 15px;
+	padding: 5px;
+}
+
+.ckeditorView img.left
+{
+	border: 1px solid #ccc;
+	float: left;
+	margin-right: 15px;
+	padding: 5px;
+}
+
+.ckeditorView pre
+{
+	white-space: pre-wrap; /* CSS 2.1 */
+	word-wrap: break-word; /* IE7 */
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
+
+.ckeditorView .marker
+{
+	background-color: Yellow;
+}
+
+.ckeditorView span[lang]
+{
+	font-style: italic;
+}
+
+.ckeditorView figure
+{
+	text-align: center;
+	border: solid 1px #ccc;
+	border-radius: 2px;
+	background: rgba(0,0,0,0.05);
+	padding: 10px;
+	margin: 10px 20px;
+	display: inline-block;
+}
+
+.ckeditorView figure > figcaption
+{
+	text-align: center;
+	display: block; /* For IE8 */
+}
+
+.ckeditorView a > img {
+	padding: 1px;
+	margin: 1px;
+	border: none;
+	outline: 1px solid #0782C1;
+}
+
+.ckeditorView p{
+    margin: 0 0 7px 0;
+    line-height: 26px;
+}

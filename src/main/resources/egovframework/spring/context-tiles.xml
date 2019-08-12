@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="adm" template="/WEB-INF/views/layout/adm/layout.jsp">
+		<put-attribute name="HEADER" value="/WEB-INF/views/layout/adm/header.jsp" />
+		<put-attribute name="FOOTER" value="/WEB-INF/views/layout/adm/footer.jsp" />
+	</definition>
+
+	<definition name="ko" template="/WEB-INF/views/layout/ko/layout.jsp">
+		<put-attribute name="HEADER" value="/WEB-INF/views/layout/ko/header.jsp" />
+		<put-attribute name="FOOTER" value="/WEB-INF/views/layout/ko/footer.jsp" />
+		<put-attribute name="SITEMAP" value="/WEB-INF/views/layout/ko/sitemap.jsp" />
+	</definition>
+
+	<definition name="en" template="/WEB-INF/views/layout/en/layout.jsp">
+		<put-attribute name="HEADER" value="/WEB-INF/views/layout/en/header.jsp" />
+		<put-attribute name="FOOTER" value="/WEB-INF/views/layout/en/footer.jsp" />
+		<put-attribute name="SITEMAP" value="/WEB-INF/views/layout/en/sitemap.jsp" />
+	</definition>
+
+	<definition name="empty" template="/WEB-INF/views/layout/empty/layout.jsp">
+    	<put-attribute name="CONTENT" value=""/>
+    </definition>
+
+	<definition name="/**/member/login" extends="empty">
+		<put-attribute name="CONTENT" value="/WEB-INF/views/{1}/member/login.jsp" />
+	</definition>
+
+	<definition name="/adm/**" extends="adm">
+		<put-attribute name="CONTENT" value="/WEB-INF/views/adm/{1}.jsp" />
+	</definition>
+	<definition name="/ko/**" extends="ko">
+		<put-attribute name="CONTENT" value="/WEB-INF/views/ko/{1}.jsp" />
+	</definition>
+	<definition name="/en/**" extends="en">
+		<put-attribute name="CONTENT" value="/WEB-INF/views/en/{1}.jsp" />
+	</definition>
+
+</tiles-definitions>

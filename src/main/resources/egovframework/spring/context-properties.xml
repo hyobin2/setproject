@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<!-- 프로퍼티 정보 설정 -->
+	<bean name="propertiesService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl" destroy-method="destroy">
+		<property name="properties">
+	        <map>
+	        	<entry key="pageUnit" value="10"/>
+	        	<entry key="mediaPageUnit" value="12"/>
+	        	<entry key="pageSize" value="10"/>
+	        	<entry key="frontPageSize" value="5"/>
+	        	<entry key="maxUploadSize" value="20971520"/>
+	        	<entry key="Globals.fileStorePath" value="/user/file/str/"/>
+	        	<entry key="Globals.addedOptions" value="false"/>
+	        </map>
+		</property>
+	</bean>
+
+	<bean id="passwordEncoder" class="egovframework.rte.fdl.cryptography.EgovPasswordEncoder">
+	  <property name="algorithm" value="SHA-256" /><!-- default : SHA-256 -->
+	  <property name="hashedPassword" value="LIf6lYEY3LOx8Bxa4gkLk6KhOcfXzCcxzS5jvFuMOmQ=" />
+	</bean>
+
+	<bean id="ARIACryptoService" class="egovframework.rte.fdl.cryptography.impl.EgovARIACryptoServiceImpl">
+	  <property name="passwordEncoder" ref="passwordEncoder" />
+	  <property name="blockSize" value="1025" /><!-- default : 1024 -->
+	</bean>
+
+	<bean id="digestService" class="egovframework.rte.fdl.cryptography.impl.EgovDigestServiceImpl">
+	  <property name="algorithm" value="SHA-256" /><!-- default : SHA-256 -->
+	  <property name="plainDigest" value="false" /><!-- default : false -->
+	</bean>
+
+	<bean id="generalCryptoService" class="egovframework.rte.fdl.cryptography.impl.EgovGeneralCryptoServiceImpl">
+	  <property name="passwordEncoder" ref="passwordEncoder" />
+	  <property name="algorithm" value="PBEWithSHA1AndDESede" /><!-- default : PBEWithSHA1AndDESede -->
+	  <property name="blockSize" value="1024" /><!-- default : 1024 -->
+	</bean>
+
+</beans>

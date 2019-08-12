@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.mobinus.service.code.impl.CodeMapper">
+
+	<sql id="where">
+		 <![CDATA[
+		 WHERE
+		 	USE_YN = 'Y'
+		 AND
+		 	UP_CODE = #{upCode}
+		 ]]>
+		<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( searchKeyword )'>
+			<choose>
+				<when test='searchCondition == "1"'>
+					<![CDATA[ AND CODE LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
+				</when>
+				<when test='searchCondition == "2"'>
+					<![CDATA[ AND NAME LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
+				</when>
+				<otherwise>
+					<![CDATA[ AND CONCAT(CODE, NAME) LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
+				</otherwise>
+			</choose>
+		</if>
+	</sql>
+
+	<select id="list" resultType="myCamelMap">
+		SELECT CONVERT(DD.NUM, CHAR) AS RNUM, DD.* FROM (
+            SELECT @ROWNUM := @ROWNUM + 1 AS NUM, D.* FROM (
+		        SELECT
+		        	C_IDX,
+					CODE,
+					UP_CODE,
+					NAME,
+					C_ORDER,
+					USE_YN,
+					REG_ID,
+					REG_NAME,
+					REG_DATE
+				FROM
+					TB_CODE C, (SELECT @ROWNUM := 0) R
+				<include refid="where" />
+			 ) D
+			 ORDER BY C_ORDER DESC
+         ) DD
+         ORDER BY NUM DESC
+	</select>
+
+	<select id="count" resultType="int">
+		SELECT COUNT(*) AS TOT_CNT
+		FROM TB_CODE
+		<include refid="where" />
+	</select>
+
+	<select id="select" resultType="myCamelMap">
+		<![CDATA[
+			SELECT
+				C_IDX,
+				CODE,
+				UP_CODE,
+				NAME,
+				C_ORDER,
+				USE_YN,
+				REG_ID,
+				REG_NAME,
+				REG_DATE
+			FROM
+				TB_CODE
+			WHERE
+				USE_YN = 'Y'
+			AND
+				C_IDX = #{cIdx}
+
+		]]>
+	</select>
+
+	<insert id="insert">
+		<![CDATA[
+			INSERT INTO TB_CODE
+				(
+				C_IDX,
+				CODE,
+				UP_CODE,
+				NAME,
+				C_ORDER,
+				USE_YN,
+				REG_ID,
+				REG_NAME,
+				REG_DATE,
+				REG_IP
+				)
+			VALUES
+				((SELECT COALESCE(MAX(CONVERT(C_IDX, UNSIGNED)), 0)+1 AS C_IDX FROM TB_CODE C),
+				#{code},
+				#{upCode},
+				#{name},
+				#{cOrder}
+				'Y',
+		        #{session.id},
+		        #{session.name},
+		        now(),
+				#{remoteAddr}
+				)
+		]]>
+		<selectKey keyProperty="cIdx" resultType="int">SELECT LAST_INSERT_ID()</selectKey>
+	</insert>
+
+    <update id="update">
+		<![CDATA[
+			UPDATE TB_CODE
+			SET
+				NAME = #{name},
+				MOD_ID = #{session.id},
+				MOD_NAME = #{session.name},
+				MOD_DATE = now(),
+				MOD_IP = #{remoteAddr}
+			WHERE
+				C_IDX = #{cIdx}
+		]]>
+	</update>
+
+	<delete id="delete">
+		<![CDATA[
+			UPDATE TB_CODE
+			SET
+				USE_YN = 'N',
+				MOD_ID = #{session.id},
+				MOD_NAME = #{session.name},
+				MOD_DATE = now(),
+				MOD_IP = #{remoteAddr}
+			WHERE
+				C_IDX = #{cIdx}
+		]]>
+	</delete>
+
+	<select id="selectNm" resultType="String">
+		<![CDATA[
+			SELECT
+				NAME
+			FROM
+				TB_CODE
+			WHERE
+				USE_YN = 'Y'
+				AND CODE = #{code}
+
+		]]>
+	</select>
+
+</mapper>

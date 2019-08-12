@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.mobinus.service.file.impl.FileMapper">
+
+	<select id="list" resultType="myCamelMap">
+		<![CDATA[
+		SELECT
+			F_IDX,
+			FILECLASS,
+			FILEPATH,
+			FILENAME,
+			ORG_FILENAME,
+			TYPE,
+			SIZE,
+			F_ORDER,
+			USE_YN,
+			REG_ID,
+			REG_NAME,
+			REG_DATE
+		FROM
+			TB_FILECLASS
+		WHERE
+			FILECLASS = #{fileclass}
+		AND
+			USE_YN = 'Y'
+		ORDER BY F_ORDER ASC
+		]]>
+	</select>
+
+	<select id="select" resultType="myCamelMap">
+		<![CDATA[
+		SELECT
+			F_IDX,
+			FILECLASS,
+			FILEPATH,
+			FILENAME,
+			ORG_FILENAME,
+			TYPE,
+			SIZE,
+			F_ORDER,
+			USE_YN,
+			REG_ID,
+			REG_NAME,
+			REG_DATE
+		FROM
+			TB_FILECLASS
+		WHERE
+			F_IDX = #{fIdx}
+		AND
+			USE_YN = 'Y'
+		]]>
+	</select>
+
+	<insert id="insert">
+		<![CDATA[
+		INSERT INTO TB_FILECLASS
+			(
+			F_IDX,
+			FILECLASS,
+			FILEPATH,
+			FILENAME,
+			ORG_FILENAME,
+			TYPE,
+			SIZE,
+			F_ORDER,
+			USE_YN,
+			REG_ID,
+			REG_NAME,
+			REG_DATE,
+			REG_IP
+			)
+		VALUES
+			(
+			(SELECT COALESCE(MAX(CONVERT(F_IDX, UNSIGNED)), 0)+1  AS F_IDX FROM TB_FILECLASS F),
+			#{fileclass},
+			#{filepath},
+			#{filename},
+			#{orgFilename},
+			#{type},
+			#{size},
+			#{fOrder},
+			'Y',
+			#{session.id},
+	        #{session.name},
+	        now(),
+			#{remoteAddr}
+			)
+		]]>
+		<selectKey keyProperty="fIdx" resultType="int">SELECT LAST_INSERT_ID()</selectKey>
+	</insert>
+
+	<delete id="delete">
+		<![CDATA[
+		UPDATE TB_FILECLASS
+		SET
+			USE_YN = 'N',
+			MOD_ID = #{modId},
+			MOD_NAME = #{modName},
+			MOD_DATE = now(),
+			MOD_IP = #{modIp}
+		WHERE
+			F_ORDER = #{fOrder}
+		AND
+			FILECLASS = #{fileclass}
+		]]>
+	</delete>
+
+	<select id="nextFileClass" resultType="String">
+		<![CDATA[
+			SELECT IFNULL(MAX(FILECLASS+0),0)+1 AS FILECLASS FROM TB_FILECLASS
+		]]>
+	</select>
+
+
+</mapper>
