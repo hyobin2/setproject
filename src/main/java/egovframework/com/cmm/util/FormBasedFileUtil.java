@@ -26,6 +26,7 @@ import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.util.Streams;
 import org.apache.log4j.Logger;
+import org.apache.sanselan.ImageReadException;
 import org.imgscalr.Scalr;
 
 import egovframework.com.cmm.util.myMap.MyMap;
@@ -436,10 +437,16 @@ public class FormBasedFileUtil {
 		}
 	}
 
-	public static void makeThumbnail(String fileName, String fileExt, MyMap paramMap) throws IOException {
+	public static void makeThumbnail(String fileName, String fileExt, MyMap paramMap) throws IOException, ImageReadException {
 
 	    // 원본 이미지 입니다.
-	    BufferedImage srcImg = ImageIO.read(new File(WebUtil.filePathBlackList(fileName)));
+	    BufferedImage srcImg = null;
+	    try {
+	    	srcImg = ImageIO.read(new File(WebUtil.filePathBlackList(fileName)));
+		} catch (Exception e) {
+			srcImg = CMYKConverter.readImage(new File(WebUtil.filePathBlackList(fileName)));
+		}
+
 
 	    // 썸네일 크기 입니다.
 	    int dw = paramMap.getInt("w");
