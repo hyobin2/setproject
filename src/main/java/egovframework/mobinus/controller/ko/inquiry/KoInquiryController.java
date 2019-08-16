@@ -32,7 +32,9 @@ import egovframework.com.cmm.util.FileUploadUtil;
 import egovframework.com.cmm.util.FormBasedFileUtil;
 import egovframework.com.cmm.util.FormBasedFileVo;
 import egovframework.com.cmm.util.GlobalsProperties;
+import egovframework.com.cmm.util.StringUtil;
 import egovframework.com.cmm.util.myMap.MyMap;
+import egovframework.com.cmm.util.sendmail.MailSender;
 import egovframework.mobinus.service.file.FileService;
 import egovframework.mobinus.service.inquiry.InquiryService;
 import egovframework.mobinus.service.scrty.ScrtyService;
@@ -132,6 +134,42 @@ String chkCaptcha = (String) request.getSession().getAttribute(Captcha.NAME);
 			paramMap.put("email", scrtyService.encrypt(paramMap.getStr("email")));
 
 	    	inquiryService.insert(paramMap.getMap());
+
+	    	StringBuffer mailContent = new StringBuffer();
+			mailContent.append("<!DOCTYPE html>\r\n" );
+			mailContent.append("<!-- saved from url=(0038)http://localhost/0publish/gu/mail.html -->\r\n");
+			mailContent.append("<html lang=\"ko\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+			mailContent.append("\r\n");
+			mailContent.append("    <meta name=\"viewport\" content=\"width=device-width, user-scalable=yes, initial-scale=1.0\">\r\n");
+			mailContent.append("    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n");
+			mailContent.append("    <meta name=\"format-detection\" content=\"telephone=no\">\r\n");
+			mailContent.append("    <!--[if IE]>\r\n");
+			mailContent.append("        <p class=\"browserupgrade\">You are using an <strong>outdated</strong> browser. Please <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve your experience and security.</p>\r\n");
+			mailContent.append("    <![endif]-->\r\n");
+			mailContent.append("    <title>(주)G.U.</title>\r\n");
+			mailContent.append("<style></style></head>\r\n");
+			mailContent.append("\r\n");
+			mailContent.append("<body style=\"background:#f4f4f4;\">\r\n");
+			mailContent.append("    <div class=\"mail_con\">\r\n");
+			mailContent.append("        <div class=\"wrapper\" style=\"width:700px; padding:50px 40px 100px; box-sizing:border-box; background:#fff; border:3px solid #004889\">\r\n");
+			mailContent.append("            <h2><span style=\"color:#004889; font-weight:bold;\">"+paramMap.getStr("title")+"</span></h2>\r\n");
+			mailContent.append("            <p style=\"margin-top:40px; font-size:17px; line-height:23px;\">\r\n");
+			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">이름 : </span>"+paramMap.getStr("name")+"<br>\r\n");
+			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">연락처 : </span>"+paramMap.getStr("tel")+"<br>\r\n");
+			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">이메일 : </span>"+paramMap.getStr("email")+"<br>\r\n");
+			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">소속기관 : </span>"+paramMap.getStr("company")+"<br>\r\n");
+			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">직급 : </span>"+paramMap.getStr("grade")+"<br>\r\n");
+			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">예산 : </span>"+paramMap.getStr("budget")+"<br>\r\n");
+			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">제목 : </span>"+paramMap.getStr("title")+"<br>\r\n");
+			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">내용 : </span>"+paramMap.getStr("content")+"<br>\r\n");
+			mailContent.append("			</p>\r\n");
+			mailContent.append("        </div>\r\n");
+			mailContent.append("    </div>\r\n");
+			mailContent.append("\r\n");
+			mailContent.append("\r\n");
+			mailContent.append("</body></html>");
+
+			boolean sendFlag =  MailSender.sendMail("", scrtyService.decrypt(StringUtil.isNullToString(paramMap.get("email"))), StringUtil.isNullToString(paramMap.get("title")), mailContent);
 
 	    	model.addAttribute("paramMap", paramMap.getMap());
 
