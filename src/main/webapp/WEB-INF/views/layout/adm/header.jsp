@@ -27,7 +27,7 @@
                 <li class="sub003"> <a href="#">레퍼런스</a>
                     <ul class="gnb_sub">
                         <li><a href="/adm/reference/futurefit/list.do">The Future Fit</a></li>
-                        <li><a href="/adm/reference/arvrev/list.do">AR·VR·EV</a></li>
+                        <li><a href="/adm/reference/arvrev/list.do">전시영상</a></li>
                     </ul>
                 </li> <li class="sub004"><a href="/adm/inquiry/list.do">고객문의</a></li>
             </ul>

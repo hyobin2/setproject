@@ -11,7 +11,7 @@
                     <ul class="breadcrumb clear">
                         <li>HOME</li>
                         <li>사업분야</li>
-                        <li>AR·VR·EV</li>
+                        <li>전시영상</li>
                     </ul>
                     <div class="sub_tit">
                         <h2>사업분야</h2>
@@ -25,7 +25,7 @@
                         <img src="/resources/ko/images/sub_pattern01.png" alt="">
                     </div>
                     <h3 class="fo_exo sub_con_tit">
-                        AR·VR·EV(Exhibition AV)
+                       	전시영상
                     </h3>
                     <p class="sub_con_txt">
                         ㈜모바인어스는 다채널 영상제어(멀티채널 디스플레이, Dome & Cave, 4D 입체영상, 디지털 사이니지, 리어 프로젝션)<br />

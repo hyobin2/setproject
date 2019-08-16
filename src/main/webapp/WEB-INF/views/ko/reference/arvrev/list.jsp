@@ -50,7 +50,7 @@ function fn_view(bIdx){
                     <ul class="breadcrumb clear">
                         <li>HOME</li>
                         <li>레퍼런스</li>
-                        <li>AR·VR·EV</li>
+                        <li>전시영상</li>
                     </ul>
                     <div class="sub_tit">
                         <h2>레퍼런스</h2>
@@ -61,7 +61,7 @@ function fn_view(bIdx){
             <div class="section reference_con">
                 <div class="wrapper">
                     <h3 class="fo_exo sub_con_tit">
-                        AR·VR·EV(Exhibition AV)
+						전시영상
                     </h3>
                     <div class="refer_list_area">
                         <form name="baseForm" id="baseForm" method="get" action="/ko/reference/arvrev/list.do" >

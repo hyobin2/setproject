@@ -34,7 +34,8 @@
                                     <div class="txt_box clear">
                                         <h2>㈜모바인어스</h2>
                                         <p>
-                                            모바인어스54 개발, 제조, 서비스, 소프트웨어를 통한 다채널 영상제어 기술까지 모든 공정을 직접 운용하고 있습니다.
+                                            모바인어스는 스포츠 헬스케어, IoT 디바이스, AR·VR 실감형 콘텐츠, 전시 영상 개발 전문 업체로써<br>
+                                            디자인에서부터 개발, 제조, 서비스, 소프트웨어를 통한 다채널 영상제어 기술까지 모든 공정을 직접 운용하고 있습니다.
                                         </p>
                                     </div>
                                     <div class="btn01 view_btn">
@@ -51,7 +52,7 @@
                                     <div class="txt_box clear">
                                         <h2>㈜모바인어스</h2>
                                         <p>
-                                            모바인어스는 스포츠 8어, IoT 디바이스, AR·VR 실감형 콘텐츠, 전시 영상 개발 전문 업체로써<br>
+                                            모바인어스는 스포츠 헬스케어, IoT 디바이스, AR·VR 실감형 콘텐츠, 전시 영상 개발 전문 업체로써<br>
                                             디자인에서부터 개발, 제조, 서비스, 소프트웨어를 통한 다채널 영상제어 기술까지 모든 공정을 직접 운용하고 있습니다.
                                         </p>
                                     </div>
@@ -184,11 +185,11 @@
                                         <div class="text_inner">
                                             <div class="tit">
                                                 <span class="ico"><img src="/resources/ko/images/business_ico2.png" alt=""></span>
-                                                AR·VR·EV
+                                               	전시영상
                                             </div>
                                             <div class="desc">
-                                                체감형 콘텐츠, 디지털사이니지,<br>
-                                                다채널 영상·음향, 전시 기획&설계
+					                                                다채널 영상·음향, 기획&설계&시공,<br>
+					                                                디지털사이니지, 체감형 콘텐츠
                                             </div>
                                             <div class="more fo_exo">
                                                 View More

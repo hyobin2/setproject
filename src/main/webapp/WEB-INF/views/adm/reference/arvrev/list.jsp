@@ -28,9 +28,9 @@ function fn_search_page(){
 </script>
 
     <div class="s_con_area">
-       	<h1>AR·VR·EV</h1>
+       	<h1>전시영상</h1>
        	<div class="location">
-       		<span>Home  &gt; 레퍼런스 &gt; <strong>AR·VR·EV</strong></span>
+       		<span>Home  &gt; 레퍼런스 &gt; <strong>전시영상</strong></span>
        	</div>
        	<form name="baseForm" id="baseForm" method="get" action="/adm/reference/arvrev/list.do" >
 		<input type="hidden" name="bIdx" id="bIdx" value=""/>

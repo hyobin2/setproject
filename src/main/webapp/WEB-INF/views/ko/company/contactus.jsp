@@ -47,8 +47,8 @@
                                     <li>
                                         <h4>주소</h4>
                                         <p>
-                                            서울 강남구 도곡로 123(역삼동 839-15), 대경빌딩 202호<br>
-                                            202, 123, Dogok-ro, Gangnam-gu, Seoul , Republic of Korea
+											서울 강남구 도곡로 123(역삼동 839-15) 대경빌딩 2층<br />
+											2nd Floor, 123, Dogok-ro, Gangnam-gu, Seoul , Republic of Korea
                                         </p>
                                     </li>
                                     <li>
@@ -98,7 +98,7 @@
                                     <li>
                                         <h4>주소</h4>
                                         <p>
-                                            전남 나주시 정보화길 26, 409호(빛가람동, 케이원지식산업센터)
+                                            전남 나주시 정보화길 26, 409호(빛가람동, 케이원지식산업센터) <br />
                                             409, 26, Jeongbohwa-gil, Naju-si, Jeollanam-do, Republic of Korea
                                         </p>
                                     </li>
@@ -196,12 +196,12 @@
 					center: new kakao.maps.LatLng(37.490459, 127.033809),
 					level: 3,
 					mapTypeId : kakao.maps.MapTypeId.ROADMAP
-				}; 
-			var map = new kakao.maps.Map(mapContainer, mapOption); 
+				};
+			var map = new kakao.maps.Map(mapContainer, mapOption);
 			var marker = new kakao.maps.Marker({
 				position: new kakao.maps.LatLng(37.490459, 127.033809),
-				map: map 
-			}); 
+				map: map
+			});
 
 			//전남
 			var mapContainer = document.getElementById('map02'),
@@ -209,12 +209,12 @@
 					center: new kakao.maps.LatLng(35.022795, 126.797278),
 					level: 3,
 					mapTypeId : kakao.maps.MapTypeId.ROADMAP
-				}; 
-			var map = new kakao.maps.Map(mapContainer, mapOption); 
+				};
+			var map = new kakao.maps.Map(mapContainer, mapOption);
 			var marker = new kakao.maps.Marker({
 				position: new kakao.maps.LatLng(35.022795, 126.797278),
-				map: map 
-			}); 
+				map: map
+			});
 
 			//연구소
 			var mapContainer = document.getElementById('map03'),
@@ -222,10 +222,10 @@
 					center: new kakao.maps.LatLng(37.490459, 127.033809),
 					level: 3,
 					mapTypeId : kakao.maps.MapTypeId.ROADMAP
-				}; 
-			var map = new kakao.maps.Map(mapContainer, mapOption); 
+				};
+			var map = new kakao.maps.Map(mapContainer, mapOption);
 			var marker = new kakao.maps.Marker({
 				position: new kakao.maps.LatLng(37.490459, 127.033809),
 				map: map
-			}); 
+			});
 		</script>

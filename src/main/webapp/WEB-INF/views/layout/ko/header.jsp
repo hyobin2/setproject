@@ -24,7 +24,7 @@
                     <a href="/ko/business/future.do"><span>사업분야</span></a>
                     <ul class="depth02">
                         <li><a href="/ko/business/future.do">The Future Fit</a></li>
-                        <li><a href="/ko/business/arvrev.do">AR·VR·EV</a></li>
+                        <li><a href="/ko/business/arvrev.do">전시영상</a></li>
                     </ul>
                 </li>
                 <li class="depth01">
@@ -35,7 +35,7 @@
                     <a href="/ko/reference/futurefit/list.do"><span>레퍼런스</span></a>
                     <ul class="depth02">
                         <li><a href="/ko/reference/futurefit/list.do">The Future Fit</a></li>
-                        <li><a href="/ko/reference/arvrev/list.do">AR·VR·EV</a></li>
+                        <li><a href="/ko/reference/arvrev/list.do">전시영상</a></li>
                     </ul>
                 </li>
                 <li class="depth01">
@@ -70,7 +70,7 @@
                 <h3>사업분야</h3>
                 <ul>
                     <li><a href="/ko/business/future.do">The Future Fit</a></li>
-                    <li><a href="/ko/business/arvrev.do">AR·VR·EV</a></li>
+                    <li><a href="/ko/business/arvrev.do">전시영상</a></li>
 
                 </ul>
             </div>
@@ -84,7 +84,7 @@
                 <h3>레퍼런스</h3>
                 <ul>
                     <li><a href="/ko/reference/futurefit/list.do">The Future Fit</a></li>
-                    <li><a href="/ko/reference/arvrev/list.do">AR·VR·EV</a></li>
+                    <li><a href="/ko/reference/arvrev/list.do">전시영상</a></li>
                 </ul>
             </div>
             <div class="menu">
