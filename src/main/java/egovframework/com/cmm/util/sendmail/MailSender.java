@@ -15,10 +15,14 @@ import egovframework.com.cmm.util.StringUtil;
 
 public class MailSender {
     private static String defaultMailFrom = GlobalsProperties.getProperty("mail.default.from"); //보내는 사람 메일 주소
+    private static String defaultMailTo = GlobalsProperties.getProperty("mail.default.from"); //받는 사람 메일 주소
 
     public static Boolean sendMail(String mailFrom, String mailTo, String title, StringBuffer contents) throws Exception {
         if(StringUtil.isEmpty(mailFrom)) {
         	mailFrom = defaultMailFrom;
+        }
+        if(StringUtil.isEmpty(mailTo)) {
+        	mailTo = defaultMailTo;
         }
     	Boolean result = true;
 
@@ -47,7 +51,6 @@ public class MailSender {
     	try {
     	        Message msg = new MimeMessage(sess);
 
-
     	        msg.setFrom(new InternetAddress(mailFrom));
     	        InternetAddress[] address = {new InternetAddress(mailTo)};
     	        msg.setRecipients(Message.RecipientType.TO, address);
@@ -57,7 +60,6 @@ public class MailSender {
 
     	        msg.setHeader("content-type", "text/html; charset=EUC-KR");
     	        msg.setContent( contents.toString(), "text/html;\n\tcharset=\"ks_c_5601-1987\"" );
-
 
     	        Transport.send(msg);
 

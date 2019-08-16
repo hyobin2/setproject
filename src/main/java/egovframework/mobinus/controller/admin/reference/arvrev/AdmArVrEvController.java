@@ -171,6 +171,17 @@ public class AdmArVrEvController {
     			fileMap.put("filepath", FILE_UPLOAD_PATH + FormBasedFileUtil.SEPERATOR+basedfilevo.getServerSubPath());
     			fileMap.put("size", basedfilevo.getSize());
     			fileMap.put("fOrder", basedfilevo.getfOrder());
+    			if("1".equals(basedfilevo.getfOrder())) {
+    				MyMap thumbMap = new MyMap();
+    				String fileName = basedfilevo.getServerFullPath()+FormBasedFileUtil.SEPERATOR+basedfilevo.getPhysicalName();
+    				thumbMap.put("w", "560");
+    				thumbMap.put("h", "356");
+    				FormBasedFileUtil.makeThumbnail(fileName, "png", thumbMap);
+    				thumbMap.put("w", "280");
+    				thumbMap.put("h", "178");
+    				String where = request.getSession().getServletContext().getRealPath("/");
+    				FormBasedFileUtil.makeThumbnail(fileName, "png", thumbMap);
+    			}
     			fileService.insert(fileMap.getMap());
     		}
     	}

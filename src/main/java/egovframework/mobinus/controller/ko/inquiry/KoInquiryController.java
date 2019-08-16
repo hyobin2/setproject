@@ -155,8 +155,8 @@ String chkCaptcha = (String) request.getSession().getAttribute(Captcha.NAME);
 			mailContent.append("            <h2><span style=\"color:#004889; font-weight:bold;\">"+paramMap.getStr("title")+"</span></h2>\r\n");
 			mailContent.append("            <p style=\"margin-top:40px; font-size:17px; line-height:23px;\">\r\n");
 			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">이름 : </span>"+paramMap.getStr("name")+"<br>\r\n");
-			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">연락처 : </span>"+paramMap.getStr("tel")+"<br>\r\n");
-			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">이메일 : </span>"+paramMap.getStr("email")+"<br>\r\n");
+			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">연락처 : </span>"+scrtyService.decrypt(paramMap.getStr("tel"))+"<br>\r\n");
+			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">이메일 : </span>"+scrtyService.decrypt(paramMap.getStr("email"))+"<br>\r\n");
 			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">소속기관 : </span>"+paramMap.getStr("company")+"<br>\r\n");
 			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">직급 : </span>"+paramMap.getStr("grade")+"<br>\r\n");
 			mailContent.append("                 <span style=\"color:#004889; font-weight:bold;\">예산 : </span>"+paramMap.getStr("budget")+"<br>\r\n");
@@ -169,7 +169,7 @@ String chkCaptcha = (String) request.getSession().getAttribute(Captcha.NAME);
 			mailContent.append("\r\n");
 			mailContent.append("</body></html>");
 
-			boolean sendFlag =  MailSender.sendMail("", scrtyService.decrypt(StringUtil.isNullToString(paramMap.get("email"))), StringUtil.isNullToString(paramMap.get("title")), mailContent);
+			boolean sendFlag =  MailSender.sendMail("", "", StringUtil.isNullToString(paramMap.get("title")), mailContent);
 
 	    	model.addAttribute("paramMap", paramMap.getMap());
 
