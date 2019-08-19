@@ -28,7 +28,7 @@ function goLogin(){
             	<h1><img src="/resources/admin/img/main/logo.png" alt="mobinus"></h1><div class="line_bg"></div>
             </div>
             <div class="m_con">
-            	<div class="copy"><strong>mobinus 관리자 로그인</strong></div>
+            	<div class="copy"><strong>mobinus 관리자 로그인.</strong></div>
             </div>
             <div class="b_content">
             	<div class="b_con">
