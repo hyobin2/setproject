@@ -74,6 +74,8 @@ local.properties
 ### Java-Web ###
 ## ignoring target file
 target/
+*/target/*
+*/target/**
 
 ### Maven ###
 pom.xml.tag
