@@ -26,14 +26,14 @@
                     </h3>
                     <div class="tab_btn_box">
                         <ul class="clear pc">
-                            <li class="tab_btn"><a href="seoul">서울사무소</a></li>
-                            <li class="tab_btn"><a href="jeonnam">전남사무소</a></li>
-                            <li class="tab_btn"><a href="lab">연구소/제조공장</a></li>
+                            <li class="tab_btn"><a href="seoul" onclick="resizeMap();">서울사무소</a></li>
+                            <li class="tab_btn"><a href="jeonnam" onclick="resizeMap();">전남사무소</a></li>
+                            <li class="tab_btn"><a href="lab" onclick="resizeMap();">연구소/제조공장</a></li>
                         </ul>
-                        <select class="mobile">
-                            <option class="tab_btn" value="seoul">서울사무소</option>
-                            <option class="tab_btn" value="jeonnam">전남사무소</option>
-                            <option class="tab_btn" value="lab">연구소/제조공장</option>
+                        <select class="mobile" onchange="resizeMap();">
+                            <option class="tab_btn" value="seoul" >서울사무소</option>
+                            <option class="tab_btn" value="jeonnam" >전남사무소</option>
+                            <option class="tab_btn" value="lab" >연구소/제조공장</option>
                         </select>
                     </div>
                     <div class="tab_panel">
@@ -191,41 +191,53 @@
 		<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2e283d6f385f2846062f23cc6debb1eb"></script>
 		<script>
 			//서울
-			var mapContainer = document.getElementById('map01'),
-				mapOption = {
-					center: new kakao.maps.LatLng(37.490459, 127.033809),
+			var mapContainer1 = document.getElementById('map01'),
+				mapOption1 = {
+					center: new kakao.maps.LatLng(37.490500, 127.033847),
 					level: 3,
 					mapTypeId : kakao.maps.MapTypeId.ROADMAP
 				};
-			var map = new kakao.maps.Map(mapContainer, mapOption);
-			var marker = new kakao.maps.Marker({
-				position: new kakao.maps.LatLng(37.490459, 127.033809),
-				map: map
+			var map1 = new kakao.maps.Map(mapContainer1, mapOption1);
+			var marker1 = new kakao.maps.Marker({
+				position: new kakao.maps.LatLng(37.490500, 127.033847),
+				map: map1
 			});
 
 			//전남
-			var mapContainer = document.getElementById('map02'),
-				mapOption = {
-					center: new kakao.maps.LatLng(35.022795, 126.797278),
+			var mapContainer2 = document.getElementById('map02'),
+				mapOption2 = {
+					center: new kakao.maps.LatLng(35.020972, 126.797436),
 					level: 3,
 					mapTypeId : kakao.maps.MapTypeId.ROADMAP
 				};
-			var map = new kakao.maps.Map(mapContainer, mapOption);
-			var marker = new kakao.maps.Marker({
-				position: new kakao.maps.LatLng(35.022795, 126.797278),
-				map: map
+			var map2 = new kakao.maps.Map(mapContainer2, mapOption2);
+			var marker2 = new kakao.maps.Marker({
+				position: new kakao.maps.LatLng(35.020972, 126.797436),
+				map: map2
 			});
 
 			//연구소
-			var mapContainer = document.getElementById('map03'),
-				mapOption = {
-					center: new kakao.maps.LatLng(37.490459, 127.033809),
+			var mapContainer3 = document.getElementById('map03'),
+				mapOption3 = {
+					center: new kakao.maps.LatLng(37.490500, 127.033847),
 					level: 3,
 					mapTypeId : kakao.maps.MapTypeId.ROADMAP
 				};
-			var map = new kakao.maps.Map(mapContainer, mapOption);
-			var marker = new kakao.maps.Marker({
-				position: new kakao.maps.LatLng(37.490459, 127.033809),
-				map: map
+			var map3 = new kakao.maps.Map(mapContainer3, mapOption3);
+			var marker3 = new kakao.maps.Marker({
+				position: new kakao.maps.LatLng(37.490500, 127.033847),
+				map: map3
 			});
+
+			resizeMap();
+			function resizeMap(){
+				setTimeout(function(){
+					map1.relayout();
+					map1.setCenter( new kakao.maps.LatLng(37.490500, 127.033847));
+					map2.relayout();
+					map2.setCenter( new kakao.maps.LatLng(35.020972, 126.797436));
+					map3.relayout();
+					map3.setCenter( new kakao.maps.LatLng(37.490500, 127.033847));
+				}, 500);
+			}
 		</script>
