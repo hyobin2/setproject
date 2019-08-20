@@ -1,10 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-        <div id="contents" class="business01_page">
-            <div class="section_top">
-                <div class="top_wave">
-                    <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 21 150 24" preserveAspectRatio="none">
-                        <defs><path id="top_wave" d="M-160 44c30 0 58-11 88-11s 58 11 88 11 58-11 88-11 58 11 88 11 v44h-352z" /></defs>
-                        <g class="parallax"><use xlink:href="#top_wave" x="10" y="0" fill="#fff"/></g>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<div id="contents" class="business01_page">
+	<div class="section_top">
+		<div class="top_wave">
+			<svg xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 21 150 24"
+				preserveAspectRatio="none">
+                        <defs>
+				<path id="top_wave"
+					d="M-160 44c30 0 58-11 88-11s 58 11 88 11 58-11 88-11 58 11 88 11 v44h-352z" /></defs>
+                        <g class="parallax">
+				<use xlink:href="#top_wave" x="10" y="0" fill="#fff" /></g>
                     </svg>
 		</div>
 		<div class="wrapper">
