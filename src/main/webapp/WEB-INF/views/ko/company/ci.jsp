@@ -22,7 +22,7 @@
             <div class="section ci_con01">
                 <div class="wrapper">
                     <h3 class="sub_con_tit">
-                        ㈜모바인어스
+                        CI소개
                     </h3>
                     <p class="img_box">
                         <img src="/resources/ko/images/ci_con01_img.jpg" alt="" class="pc">
