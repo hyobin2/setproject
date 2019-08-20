@@ -1,3 +1,24 @@
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.externalToolBuilders/
+*.launch
+.classpath
+.factorypath
+.buildpath
+.target
+.tern-project
+.springBeans
+.recommenders/
 
 # Created by https://www.gitignore.io/api/maven,eclipse,java-web
 # Edit at https://www.gitignore.io/?templates=maven,eclipse,java-web
