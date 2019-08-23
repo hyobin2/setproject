@@ -100,7 +100,7 @@
                                 <p>
                                     사용자 신체활동, 동작 인식 기술을<br>
                                     적용한 29종의 체력증진 콘텐츠가<br>
-                                    탑재 된 전용 셋
+                                    탑재 된 전용 셋탑
                                 </p>
                             </div>
                             <div class="pop_img">
@@ -114,12 +114,12 @@
                             </p>
                             <div class="text_box">
                                 <h5>Future Fit 엔진</h5>
-                                <p>
-                                    <span>자가 운동량 분석/ 신체 변화량</span>
-                                    <span>실시간 건강관리 데이터</span>
-                                    <span>사용자 통계</span>
-                                    <span>디바이스 & 콘텐츠 관리</span>
-                                </p>
+								 <p>
+									<span>자가 운동량 분석/ 신체 변화량</span><br/>
+									<span>실시간 건강관리 데이터</span><br/>
+									<span>사용자 통계</span><br/>
+									<span>디바이스 &amp; 콘텐츠 관리</span><br/>
+								</p>
                             </div>
                         </li>
                     </ul>

@@ -1967,7 +1967,7 @@ nav.mobile {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       text-align: center;
-      height: 260px; }
+      height: 230px; }
       .vrsports_page .vrsports_con02 .list li:first-child {
         margin-left: 0; }
       .vrsports_page .vrsports_con02 .list li h5 {
@@ -2025,9 +2025,9 @@ nav.mobile {
           color: #bbb;
           z-index: 10; }
         .vrsports_page .vrsports_con03 .vrsports_con03_slide .arrow_btn li .slick-prev {
-          left: 640px; }
+          left: 260px; }
         .vrsports_page .vrsports_con03 .vrsports_con03_slide .arrow_btn li .slick-next {
-          right: 640px; }
+          right: 260px; }
   .vrsports_page .vrsports_con03 .img_list {
     margin-top: 80px; }
     .vrsports_page .vrsports_con03 .img_list li {

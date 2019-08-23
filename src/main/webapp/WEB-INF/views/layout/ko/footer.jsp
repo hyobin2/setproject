@@ -16,7 +16,8 @@
                 <li>FAX : +82-2-785-7646</li>
             </ul>
             <p class="copy">
-                Copyright &copy; 2019 Mobinus, All Rights Reserved.
+                Copyright &copy; Mobinus CO.,LTD. All Rights Reserved.
+
             </p>
         </div>
         <div class="f_addr pc">
@@ -56,7 +57,8 @@
             </ul>
         </div>
         <p class="copy m">
-            Copyright &copy; 2019 Mobinus, All Rights Reserved.
+            Copyright &copy; Mobinus CO.,LTD. All Rights Reserved.
+
         </p>
     </div>
 </footer>

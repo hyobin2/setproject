@@ -29,7 +29,9 @@
                 </li>
                 <li class="depth01">
                     <a href="/ko/vrsports/vrsports.do"><span>가상현실스포츠실</span></a>
-                    <ul class="depth02"></ul>
+                    <ul class="depth02">
+                    	<li><a href="/ko/vrsports/vrsports.do">가상현실스포츠실</a>
+                    </ul>
                 </li>
                 <li class="depth01">
                     <a href="/ko/reference/futurefit/list.do"><span>레퍼런스</span></a>
@@ -40,7 +42,9 @@
                 </li>
                 <li class="depth01">
                     <a href="/ko/inquiry/write.do"><span>고객문의</span></a>
-                    <ul class="depth02"></ul>
+                    <ul class="depth02">
+                    	<li><a href="/ko/inquiry/write.do">비지니스상담</a>
+                    </ul>
                 </li>
             </ul>
             <div class="header_right">

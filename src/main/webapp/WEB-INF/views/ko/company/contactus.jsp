@@ -26,19 +26,19 @@
                     </h3>
                     <div class="tab_btn_box">
                         <ul class="clear pc">
-                            <li class="tab_btn"><a href="seoul" onclick="resizeMap();">서울사무소</a></li>
-                            <li class="tab_btn"><a href="jeonnam" onclick="resizeMap();">전남사무소</a></li>
+                            <li class="tab_btn"><a href="seoul" onclick="resizeMap();">서울</a></li>
+                            <li class="tab_btn"><a href="jeonnam" onclick="resizeMap();">전남</a></li>
                             <li class="tab_btn"><a href="lab" onclick="resizeMap();">연구소/제조공장</a></li>
                         </ul>
                         <select class="mobile" onchange="resizeMap();">
-                            <option class="tab_btn" value="seoul" >서울사무소</option>
-                            <option class="tab_btn" value="jeonnam" >전남사무소</option>
+                            <option class="tab_btn" value="seoul" >서울</option>
+                            <option class="tab_btn" value="jeonnam" >전남</option>
                             <option class="tab_btn" value="lab" >연구소/제조공장</option>
                         </select>
                     </div>
                     <div class="tab_panel">
                         <div id="seoul" class="tab_con">
-                            <h3>서울사무소</h3>
+                            <h3>서울</h3>
                             <div class="info_box clear">
                                 <div class="map_box">
                                     <div id="map01"></div>
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div id="jeonnam" class="tab_con">
-                            <h3>전남사무소</h3>
+                            <h3>전남</h3>
                             <div class="info_box clear">
                                 <div class="map_box">
                                     <div id="map02"></div>
@@ -143,8 +143,8 @@
                                     <li>
                                         <h4>주소</h4>
                                         <p>
-                                            서울 강남구 도곡로 123(역삼동 839-15), 대경빌딩 201호, B102호<br>
-                                            201, 123, Dogok-ro, Gangnam-gu, Seoul , Republic of Korea
+                                            서울 강남구 도곡로 123(역삼동 839-15), 대경빌딩 B102호<br>
+                                            B102, 123, Dogok-ro, Gangnam-gu, Seoul , Republic of Korea
                                         </p>
                                     </li>
                                     <li>

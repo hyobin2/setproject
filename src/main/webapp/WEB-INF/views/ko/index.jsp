@@ -16,8 +16,8 @@
                                     <div class="txt_box clear">
                                         <h2>㈜모바인어스</h2>
                                         <p>
-                                            모바인어스는 스포츠 헬스케어, IoT 디바이스, AR·VR 실감형 콘텐츠, 전시 영상 개발 전문 업체로써<br>
-                                            디자인에서부터 개발, 제조, 서비스, 소프트웨어를 통한 다채널 영상제어 기술까지 모든 공정을 직접 운용하고 있습니다.
+                                           ㈜모바인어스는 스포츠 헬스케어, IoT 디바이스, AR·VR 실감형 콘텐츠, 전시 영상 개발 전문 업체로써<br>
+                                           디자인에서부터 개발, 제조, 서비스, 소프트웨어를 통한 다채널 영상제어 기술까지 모든 공정을 직접 운용하고 있습니다.
                                         </p>
                                     </div>
                                     <div class="btn01 view_btn">
@@ -34,7 +34,7 @@
                                     <div class="txt_box clear">
                                         <h2>㈜모바인어스</h2>
                                         <p>
-                                            모바인어스는 스포츠 헬스케어, IoT 디바이스, AR·VR 실감형 콘텐츠, 전시 영상 개발 전문 업체로써<br>
+                                            ㈜모바인어스는 스포츠 헬스케어, IoT 디바이스, AR·VR 실감형 콘텐츠, 전시 영상 개발 전문 업체로써<br>
                                             디자인에서부터 개발, 제조, 서비스, 소프트웨어를 통한 다채널 영상제어 기술까지 모든 공정을 직접 운용하고 있습니다.
                                         </p>
                                     </div>
@@ -52,7 +52,7 @@
                                     <div class="txt_box clear">
                                         <h2>㈜모바인어스</h2>
                                         <p>
-                                            모바인어스는 스포츠 헬스케어, IoT 디바이스, AR·VR 실감형 콘텐츠, 전시 영상 개발 전문 업체로써<br>
+                                            ㈜모바인어스는 스포츠 헬스케어, IoT 디바이스, AR·VR 실감형 콘텐츠, 전시 영상 개발 전문 업체로써<br>
                                             디자인에서부터 개발, 제조, 서비스, 소프트웨어를 통한 다채널 영상제어 기술까지 모든 공정을 직접 운용하고 있습니다.
                                         </p>
                                     </div>
@@ -424,14 +424,9 @@
             </div>
             <div class="visual_popup">
                 <div class="pop_inner">
-                    <div class="pop_top">
-                        <h4>서울 신양초등학교 가상스포츠 교실 시공완료</h4>
-                        <button class="pop_close"><i class="xi-close"></i></button>
-                    </div>
                     <div class="pop_con">
                         <iframe src="https://www.youtube.com/embed/1at7kKzBYxI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
             <div class="pop_mask"></div>
-        </div>

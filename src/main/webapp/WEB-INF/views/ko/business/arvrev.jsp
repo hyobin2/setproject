@@ -37,6 +37,18 @@
             <div class="section business02_con02">
                 <div class="wrapper">
                     <div class="img_list clear">
+                       <div>
+                            <p class="img_box">
+                                <img src="/resources/ko/images/business02_con02_img02.jpg" alt="AV System, Exhibition 3D Modeling">
+                            </p>
+                            <div class="text">
+                                <h4>AV System, Exhibition 3D Modeling</h4>
+                                <p>
+                                    	물리적 환경 분석 데이터 기반의 모델링을<br>
+                                    	통한 전시 기획, 설계, AV 시스템 개발
+                                </p>
+                            </div>
+						</div>
                         <div>
                             <p class="img_box">
                                 <img src="/resources/ko/images/business02_con02_img01.jpg" alt="interactive VR•AR•MR">
@@ -45,40 +57,14 @@
                                 <h4>interactive VR•AR•MR</h4>
                                 <p>
                                     3D객체와 사용자 간의 다양한 인터랙션 UX가<br>
-                                    적용된 체감형 콘텐츠 개발
+                                  	적용된 체감형 콘텐츠 개발
                                 </p>
                             </div>
                         </div>
-                        <div>
-                            <p class="img_box">
-                                <img src="/resources/ko/images/business02_con02_img02.jpg" alt="AV System, Exhibition 3D Modeling">
-                            </p>
-                            <div class="text">
-                                <h4>AV System, Exhibition 3D Modeling</h4>
-                                <p>
-                                    물리적 환경 분석 데이터 기반의 모델링을<br>
-                                    통한 전시 기획, 설계, AV 시스템 개발
-                                </p>
-                            </div>
-                        </div>
+
                     </div>
                     <ul class="clear">
-                        <li>
-                            <p class="fo_exo"s>
-                                AR
-                            </p>
-                        </li>
-                        <li>
-                            <p class="fo_exo">
-                                VR
-                            </p>
-                        </li>
-                        <li>
-                            <p class="fo_exo">
-                                MR
-                            </p>
-                        </li>
-                        <li>
+                   		 <li>
                             <p class="fo_exo">
                                 AV<br />
                                 System
@@ -96,6 +82,22 @@
                                 Screen
                             </p>
                         </li>
+                     	 <li>
+                      		<p class="fo_exo"s>
+                                AR
+                            </p>
+                        </li>
+                        <li>
+                            <p class="fo_exo">
+                                VR
+                            </p>
+                        </li>
+                        <li>
+                            <p class="fo_exo">
+                                MR
+                            </p>
+                        </li>
+
                     </ul>
                 </div>
             </div>
