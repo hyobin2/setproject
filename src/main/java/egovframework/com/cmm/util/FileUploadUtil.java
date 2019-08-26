@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import egovframework.com.cmm.util.GlobalsProperties;
 import egovframework.com.cmm.util.myMap.MyMap;
-import egovframework.mobinus.service.file.FileService;
+import egovframework.kjobs.service.file.FileService;
 
 
 /**

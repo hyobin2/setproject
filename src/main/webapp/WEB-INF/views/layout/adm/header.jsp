@@ -22,14 +22,7 @@
         <div class="in">
             <h1><a href="/adm/popup/list.do"><img src="/resources/admin/img/sub/sub_logo.png" alt="로고" /></a></h1>
           <ul>
-                <li class="sub001"> <a href="/adm/now/list.do">Now</a></li>
-                <li class="sub002"> <a href="/adm/history/list.do">연혁</a></li>
-                <li class="sub003"> <a href="#">레퍼런스</a>
-                    <ul class="gnb_sub">
-                        <li><a href="/adm/reference/futurefit/list.do">The Future Fit</a></li>
-                        <li><a href="/adm/reference/arvrev/list.do">전시영상</a></li>
-                    </ul>
-                </li> <li class="sub004"><a href="/adm/inquiry/list.do">고객문의</a></li>
+                <li class="sub001"> <a href="/adm/now/list.do">게시판</a></li>
             </ul>
             <div class="admin_info">
                 <ul>

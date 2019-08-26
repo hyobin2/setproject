@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>mobinus</title>
+<title>kjobs</title>
 <link rel="stylesheet" href="/resources/admin/css/main.css" />
 <script type="text/javascript" src="/resources/admin/js/jquery-1.11.0.min.js"></script>
 </head>

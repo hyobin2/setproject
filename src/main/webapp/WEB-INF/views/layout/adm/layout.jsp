@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>mobinus 관리자</title>
+<title>kjobs 관리자</title>
 <script type="text/javascript" src="/resources/admin/js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="/resources/admin/js/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="/resources/admin/css/jquery-ui.min.css" />
