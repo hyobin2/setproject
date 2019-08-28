@@ -1,6 +1,7 @@
 package egovframework.kjobs.service.member.impl;
 
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -51,8 +52,33 @@ public class MemberServiceImpl extends EgovAbstractServiceImpl implements Member
 	 * @return 조회한 글
 	 * @exception Exception
 	 */
-    public Map<String, Object> select(String id) throws Exception {
-    	return memberMapper.select(id);
+    public Map<String, Object> select(Map<String, Object> map) throws Exception {
+    	return memberMapper.select(map);
     }
+
+	@Override
+	public void delete(Map<String, Object> map) throws Exception {
+		memberMapper.delete(map);
+
+	}
+
+
+	@Override
+	public void update(Map<String, Object> map) throws Exception {
+		memberMapper.update(map);
+
+	}
+
+
+	@Override
+	public int count(Map<String, Object> map) throws Exception {
+		return memberMapper.count(map);
+	}
+
+	@Override
+	public List<Map<String, Object>> list(Map<String, Object> map) throws Exception {
+		return memberMapper.list(map);
+	}
+
 
 }

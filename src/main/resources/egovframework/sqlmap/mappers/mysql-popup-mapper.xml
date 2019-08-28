@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.kjobs.service.popup.impl.PopupMapper">
+
+	<sql id="where">
+		 <![CDATA[
+		 WHERE
+		 	USE_YN = 'Y'
+		 AND
+		 	 P_CODE=#{pCode}
+		 ]]>
+
+		<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( menuId )'>
+			<if test='menuId == "index"'>
+				<![CDATA[ AND S_DATE <= NOW() AND E_DATE >= NOW() ]]>
+			</if>
+		</if>
+		<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( searchKeyword )'>
+			<choose>
+				<when test='searchCondition == "1"'>
+					<![CDATA[ AND TITLE LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
+				</when>
+				<when test='searchCondition == "2"'>
+					<![CDATA[ AND CONCAT(CONTENT, SPOT_CONTENT)  LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
+				</when>
+				<otherwise>
+					<![CDATA[ AND CONCAT(TITLE, CONTENT, SPOT_CONTENT) LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
+				</otherwise>
+			</choose>
+		</if>
+
+	</sql>
+
+	<select id="list" resultType="myCamelMap">
+		SELECT CONVERT(DD.NUM, CHAR) AS RNUM, DD.* FROM (
+            SELECT @ROWNUM := @ROWNUM + 1 AS NUM, D.* FROM (
+		        SELECT
+		        	P_IDX,
+		        	P_CODE,
+		        	(SELECT NAME FROM TB_CODE WHERE CODE = P.P_CODE) AS P_CODE_NM,
+		        	S_DATE,
+		        	E_DATE,
+		        	P_WIDTH,
+		        	P_HEIGHT,
+		        	P_LEFT,
+		        	P_TOP,
+		        	TITLE,
+					CONTENT,
+					SPOT_CONTENT,
+					USE_YN,
+					REG_ID,
+					REG_NAME,
+					REG_DATE
+				FROM
+					TB_POPUP P, (SELECT @ROWNUM := 0) R
+				<include refid="where" />
+			 ) D
+			 ORDER BY D.P_IDX ASC
+         ) DD
+         ORDER BY NUM DESC
+         limit #{firstIndex}, #{recordCountPerPage}
+	</select>
+
+	<select id="count" resultType="int">
+		SELECT COUNT(*) AS TOT_CNT
+		FROM TB_POPUP
+		<include refid="where" />
+	</select>
+
+	<select id="select" resultType="myCamelMap">
+		<![CDATA[
+			SELECT
+				P_IDX,
+				P_CODE,
+				(SELECT NAME FROM TB_CODE WHERE CODE = P.P_CODE) AS P_CODE_NM,
+				S_DATE,
+	        	E_DATE,
+	   	       	P_WIDTH,
+		       	P_HEIGHT,
+		       	P_LEFT,
+		       	P_TOP,
+	    		TITLE,
+				CONTENT,
+				SPOT_CONTENT,
+				USE_YN,
+				REG_ID,
+				REG_NAME,
+				REG_DATE,
+				FILECLASS
+			FROM
+				TB_POPUP P
+			WHERE
+				USE_YN = 'Y'
+				AND P_IDX = #{pIdx}
+
+		]]>
+	</select>
+
+	<insert id="insert">
+		<![CDATA[
+			INSERT INTO TB_POPUP
+				(
+				P_IDX,
+				P_CODE,
+				S_DATE,
+	        	E_DATE,
+	    ]]>
+	   			<if test='pCode == "POP01"'>
+	    <![CDATA[
+	        	P_WIDTH,
+	        	P_HEIGHT,
+	        	P_LEFT,
+	        	P_TOP,
+	   	]]>
+	        	</if>
+	    <![CDATA[
+				TITLE,
+				CONTENT,
+				SPOT_CONTENT,
+				USE_YN,
+				REG_ID,
+				REG_NAME,
+				REG_DATE,
+				REG_IP,
+				FILECLASS
+				)
+			VALUES
+				((SELECT COALESCE(MAX(CONVERT(P_IDX, UNSIGNED)), 0)+1 AS P_IDX FROM TB_POPUP P),
+				#{pCode},
+				#{sDate},
+				#{eDate},
+		]]>
+	   			<if test='pCode == "POP01"'>
+	    <![CDATA[
+	        	#{pWidth},
+				#{pHeight},
+				#{pLeft},
+				#{pTop},
+	   ]]>
+	        	</if>
+	    <![CDATA[
+
+				#{title},
+				#{content},
+				#{spotContent},
+				'Y',
+		        #{session.id},
+		        #{session.name},
+		        now(),
+				#{remoteAddr},
+				#{fileclass}
+				)
+		]]>
+		<selectKey keyProperty="pIdx" resultType="int">SELECT LAST_INSERT_ID()</selectKey>
+	</insert>
+
+    <update id="update">
+		<![CDATA[
+			UPDATE TB_POPUP
+			SET
+				P_CODE = #{pCode},
+				S_DATE = #{sDate},
+				E_DATE = #{eDate},
+		]]>
+				<if test='pCode == "POP01"'>
+		<![CDATA[
+				P_WIDTH = #{pWidth},
+				P_HEIGHT = #{pHeight},
+				P_LEFT = #{pLeft},
+				P_TOP = #{pTop},
+		]]>
+				</if>
+		<![CDATA[
+				TITLE = #{title},
+				CONTENT = #{content},
+				SPOT_CONTENT = #{spotContent},
+				MOD_ID = #{session.id},
+				MOD_NAME = #{session.name},
+				MOD_DATE = now(),
+				MOD_IP = #{remoteAddr},
+				FILECLASS=#{fileclass}
+			WHERE
+				P_IDX = #{pIdx}
+		]]>
+	</update>
+
+	<delete id="delete">
+		<![CDATA[
+			UPDATE TB_POPUP
+			SET
+				USE_YN = 'N',
+				MOD_ID = #{session.id},
+				MOD_NAME = #{session.name},
+				MOD_DATE = now(),
+				MOD_IP = #{remoteAddr}
+			WHERE
+				P_IDX = #{pIdx}
+		]]>
+	</delete>
+
+</mapper>

@@ -6,6 +6,8 @@
 		 <![CDATA[
 		 WHERE
 		 	USE_YN = 'Y'
+		 AND
+		 	CODE=#{code}
 		 ]]>
 		<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( searchKeyword )'>
 			<choose>
@@ -33,15 +35,13 @@
 					EMAIL,
 					COMPANY,
 					DEPART,
-					GRADE,
-					BUDGET,
 					TITLE,
 					CONTENT,
-					FILECLASS,
 					USE_YN,
 					REG_ID,
 					REG_NAME,
-					REG_DATE
+					REG_DATE,
+					REPLY_YN
 				FROM
 					TB_INQUIRY I, (SELECT @ROWNUM := 0) R
 				<include refid="where" />
@@ -67,15 +67,16 @@
 				EMAIL,
 				COMPANY,
 				DEPART,
-				GRADE,
-				BUDGET,
 				TITLE,
 				CONTENT,
-				FILECLASS,
 				USE_YN,
 				REG_ID,
 				REG_NAME,
-				REG_DATE
+				REG_DATE,
+				REPLY_YN,
+				ANSWER,
+				DIVISION,
+				ADDRESS
 			FROM
 				TB_INQUIRY
 			WHERE
@@ -95,16 +96,17 @@
 				EMAIL,
 				COMPANY,
 				DEPART,
-				GRADE,
-				BUDGET,
 				TITLE,
 				CONTENT,
-				FILECLASS,
 				USE_YN,
 				REG_ID,
 				REG_NAME,
 				REG_DATE,
-				REG_IP
+				REG_IP,
+				REPLY_YN,
+				DIVISION,
+				ADDRESS,
+				CODE
 				)
 			VALUES
 				((SELECT COALESCE(MAX(CONVERT(I_IDX, UNSIGNED)), 0)+1 AS I_IDX FROM TB_INQUIRY I),
@@ -113,16 +115,17 @@
 				#{email},
 				#{company},
 				#{depart},
-				#{grade},
-				#{budget},
 				#{title},
 				#{content},
-				#{fileclass},
 				'Y',
 		        #{session.id},
 		        #{session.name},
 		        now(),
-				#{remoteAddr}
+				#{remoteAddr},
+				#{replyYn},
+				#{division},
+				#{address},
+				#{code}
 				)
 		]]>
 		<selectKey keyProperty="eiIdx" resultType="int">SELECT LAST_INSERT_ID()</selectKey>
@@ -137,15 +140,16 @@
 				EMAIL = #{email},
 				COMPANY = #{company},
 				DEPART = #{depart},
-				GRADE = #{grade},
-				BUDGET = #{budget},
 				TITLE = #{title},
 				CONTENT = #{content},
-				FILECLASS = #{fileclass},
 				MOD_ID = #{session.id},
 				MOD_NAME = #{session.name},
 				MOD_DATE = now(),
-				MOD_IP = #{remoteAddr}
+				MOD_IP = #{remoteAddr},
+				ANSWER = #{answer},
+				REPLY_YN = #{replyYn},
+				DIVISION = #{division},
+				ADDRESS = #{address}
 			WHERE
 				I_IDX = #{iIdx}
 		]]>

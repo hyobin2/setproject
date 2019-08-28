@@ -14,14 +14,85 @@
 				USE_YN,
 				REG_ID,
 				REG_NAME,
-				REG_DATE
+				REG_DATE,
+				ADDRESS,
+				PHONE
 			FROM
 				TB_MEMBER
 			WHERE
 				USE_YN = 'Y'
-			AND
-				ID = #{id}
+		]]>
+			<choose>
+				<when test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( mIdx ) and session.auth == "1"'>
+					AND M_IDX = #{mIdx}
+				</when>
+				<otherwise>
+					AND ID = #{id}
+				</otherwise>
+			</choose>
+		<![CDATA[
+
 		]]>
 	</select>
+
+	 <update id="update">
+		<![CDATA[
+			UPDATE TB_MEMBER
+			SET
+				ADDRESS = #{address},
+				PHONE = #{phone},
+				MOD_ID = #{session.id},
+				MOD_NAME = #{session.name},
+				MOD_DATE = now(),
+				MOD_IP = #{remoteAddr}
+			WHERE
+				M_IDX = #{mIdx}
+		]]>
+	</update>
+
+	<select id="count" resultType="int">
+		SELECT COUNT(*) AS TOT_CNT
+		FROM TB_MEMBER
+		WHERE
+			AUTH='2'
+			AND	USE_YN='Y'
+
+	</select>
+
+	<select id="list" resultType="myCamelMap">
+		<![CDATA[
+			SELECT
+				M_IDX,
+				ID,
+				NAME,
+				USE_YN,
+				REG_DATE,
+				ADDRESS,
+				PHONE,
+				REG_DATE,
+				EMAIL
+
+			FROM
+				TB_MEMBER
+			WHERE
+				USE_YN = 'Y'
+				AND AUTH ='2'
+
+		]]>
+	</select>
+
+	<delete id="delete">
+		<![CDATA[
+			UPDATE TB_MEMBER
+			SET
+				USE_YN = 'N',
+				MOD_ID = #{session.id},
+				MOD_NAME = #{session.name},
+				MOD_DATE = now(),
+				MOD_IP = #{remoteAddr}
+			WHERE
+				M_IDX = #{mIdx}
+		]]>
+	</delete>
 
 </mapper>

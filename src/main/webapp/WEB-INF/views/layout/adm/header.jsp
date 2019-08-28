@@ -20,9 +20,32 @@
     <!--좌측메뉴 끝-->
     <div class="gnb">
         <div class="in">
-            <h1><a href="/adm/popup/list.do"><img src="/resources/admin/img/sub/sub_logo.png" alt="로고" /></a></h1>
+            <h1><a href="/adm/activity/list.do"><img src="/resources/admin/img/sub/sub_logo.png" alt="로고" /></a></h1>
           <ul>
-                <li class="sub001"> <a href="/adm/now/list.do">게시판</a></li>
+          		<li class="sub001"> <a href="/adm/member/list.do">회원관리</a>
+                <li class="sub002"> <a href="/adm/activity/list.do">게시판</a>
+               		<ul class="gnb_sub">
+               			<li ><a href="/adm/activity/list.do">케이잡스 활동</a></li>
+               			<li ><a href="/adm/notice/list.do">공지 및 안내</a></li>
+               			<li ><a href="/adm/customer/list.do">고객사례</a></li>
+               		</ul>
+               	</li>
+               	<li class="sub003"> <a href="#">채용관리</a>
+               	<ul class="gnb_sub"></ul>
+                </li>
+                <li class="sub004"> <a href="/adm/qna/list.do">문의관리</a>
+                	<ul class="gnb_sub">
+                		<li><a href="/adm/qna/list.do">고객문의(Q/A)</a>
+                		<li><a href="/adm/service/list.do">서비스 접수</a>
+                	</ul>
+                </li>
+                <li class="sub005"> <a href="/adm/popup/list.do?pCode=POP01">홈페이지관리</a>
+                	<ul class="gnb_sub">
+                		<li><a href="/adm/popup/list.do?pCode=POP01">팝업관리</a>
+                		<li><a href="/adm/banner/list.do?pCode=POP02">배너관리</a>
+
+                	</ul>
+                </li>
             </ul>
             <div class="admin_info">
                 <ul>

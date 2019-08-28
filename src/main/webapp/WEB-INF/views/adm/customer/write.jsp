@@ -8,18 +8,30 @@
 <script type="text/javascript">
 
 
-	function fn_write() {
+	function fn_write() {//완료
+
 
 		if ($('#title').val()  == '') {
 			alert("제목을 입력하세요.");
 			$('#title').focus();
 			return false;
 		}
-		if ($('#url').val()  == '') {
-			alert("URL을 입력하세요.");
-			$('#url').focus();
+		if($('#etc1').val()==''){
+			alert("관서를 입력하세요.")
+			$('#etc1').focus();
 			return false;
 		}
+		if($('#etc2').val()==''){
+			alert("공무원명을 입력하세요.")
+			$('#etc2').focus();
+			return false;
+		}
+		if (CKEDITOR.instances.content.getData() == "") {
+			alert("작성된 내용이 없습니다. 내용을 입력하십시오.");
+			$('#content').focus();
+			return false;
+		}
+
 		if($('#bIdx').val() > 0 ){
 			<c:forEach var="result" items="${info.fileList}" >
 				if($('#file${result.fOrder}').val()  != '' && $('#fOrder${result.fOrder}').is(":checked") != true){
@@ -27,26 +39,33 @@
 					return false;
 				}
 			</c:forEach>
+		}else{
+			if ($('#file1').val()  == '') {
+				alert("썸네일을 첨부하세요.");
+				$('#file1').focus();
+				return false;
+			}
 		}
 		if( !confirm("등록 하시겠습니까?") ){
 			return false;
 		}
-		$('#baseForm').attr('action', '/adm/now/proc.do');
+
+		$('#baseForm').attr('action', '/adm/customer/proc.do');
 		$('#baseForm').submit();
 
 	}
 
-	function fn_delete() {
+	function fn_delete() { // 삭제
 
 		if( !confirm("삭제 하시겠습니까?") ){
 			return false;
 		}
-		$('#baseForm').attr('action', '/adm/now/delete.do');
+		$('#baseForm').attr('action', '/adm/customer/delete.do');
 		$('#baseForm').submit();
 	}
 
-	function fn_list(){
-		$('#baseForm').attr('action', '/adm/now/list.do');
+	function fn_list(){ //목록
+		$('#baseForm').attr('action', '/adm/customer/list.do');
 		$('#baseForm').submit();
 	}
 
@@ -54,11 +73,11 @@
 
 
     <div class="s_con_area">
-       	<h1>Now</h1>
+       	<h1>Customer</h1>
        	<div class="location">
-       		<span>Home  &gt; <strong>Now</strong></span>
+       		<span>Home  &gt; <strong>Customer</strong></span>
        	</div>
-      	<form name="baseForm" id="baseForm" method="post" action="/adm/now/proc.do" enctype="multipart/form-data" >
+      	<form name="baseForm" id="baseForm" method="post" action="/adm/customer/proc.do" enctype="multipart/form-data" >
 		<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
 		<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 		<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
@@ -74,15 +93,17 @@
             	 <tbody>
                     <tr>
                         <th scope="row">제목</th>
-                        <td><input type="text" name="title" id="title" style="width:500px" value="${info.title }" maxlength="200" />&nbsp;&nbsp;</td>
+                        <td colspan="3"><input type="text" name="title" id="title" style="width:500px" value="${info.title }" maxlength="200" />&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
-                        <th scope="row">URL</th>
-                        <td><input type="text" name="url" id="url" style="width:500px" value="${info.url }" maxlength="200" />&nbsp;&nbsp;</td>
+                        <th scope="row">해당관서</th>
+                        <td><input type="text" name="etc1" id="etc1" style="width:200px" value="${info.etc1 }" maxlength="200" />&nbsp;&nbsp;</td>
+                        <th scope="row">해당공무원명</th>
+                        <td><input type="text" name="etc2" id="etc2" style="width:200px" value="${info.etc2 }" maxlength="200" />&nbsp;&nbsp;</td>
                     </tr>
-                    <%-- <tr>
+                    <tr>
                         <th scope="row">내용</th>
-                        <td>
+                        <td colspan="3">
                         	<textarea name="content" id="content" class="form-control">${info.content }</textarea>
                             <script type="text/javascript">
 								CKEDITOR.replace('content', {
@@ -91,7 +112,7 @@
 								});
 							</script>
 						</td>
-                    </tr> --%>
+                    </tr>
 
 					<c:forEach var="i" begin="0" end="0" varStatus="status">
 					    <tr>
@@ -113,8 +134,6 @@
 	                        	<c:if test="${fileFlag eq 'Y' }">
 	                        		<input type="file" id="file${status.index+1 }" name="file${status.index+1 }" />
 	                        	</c:if>
-
-
 							</td>
 	                    </tr>
 					</c:forEach>

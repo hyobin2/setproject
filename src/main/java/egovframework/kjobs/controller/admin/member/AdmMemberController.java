@@ -16,6 +16,7 @@
 package egovframework.kjobs.controller.admin.member;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -24,7 +25,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springmodules.validation.commons.DefaultBeanValidator;
 
 import egovframework.com.cmm.util.StringUtil;
@@ -33,6 +36,7 @@ import egovframework.com.cmm.util.myMap.MyMap;
 import egovframework.kjobs.service.member.MemberService;
 import egovframework.kjobs.service.scrty.ScrtyService;
 import egovframework.rte.fdl.property.EgovPropertyService;
+import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 /**
  * @Class Name : AdmMemberController.java
@@ -82,7 +86,7 @@ public class AdmMemberController {
 
 		Map<String, Object> loginMap = (HashMap<String, Object>) UserDetailsHelper.getAuthenticatedUser();
 		if (loginMap != null) {
-			return "redirect:/adm/now/list.do";
+			return "redirect:/adm/activity/list.do";
 		}
 
 		return PREFIX + "/login";
@@ -104,10 +108,9 @@ public class AdmMemberController {
 
 		String id = paramMap.getStr("id");
 		String pw = paramMap.getStr("pw");
-		System.out.println("pw="+scrtyService.encryptPassword(pw,id));
 		try {
 			if (!"".equals(id) && !"".equals(pw)) {
-				Map<String, Object> loginMap = memberService.select(id);
+				Map<String, Object> loginMap = memberService.select(paramMap.getMap());
 				if (loginMap != null) {
 					String resultPw = StringUtil.isNullToString(loginMap.get("pw"));
 					// 패스워드 검증
@@ -116,7 +119,7 @@ public class AdmMemberController {
 					if (checkPw) {
 						// 로그인 처리
 						request.getSession().setAttribute("loginMap", loginMap);
-						return "redirect:/adm/now/list.do";
+						return "redirect:/adm/activity/list.do";
 
 					} else { // 패스워드 불일치
 						resultMsg = "아이디 및 패스워드 정보가 일치하지 않습니다.";
@@ -155,5 +158,71 @@ public class AdmMemberController {
 		model.addAttribute("resultMsg", resultMsg);
 		return "/common/resultMsg";
 	}
+
+	@RequestMapping(value = "/list.do")
+	public String list(MyMap paramMap, ModelMap model) throws Exception {
+		/** pageing setting */
+		PaginationInfo paginationInfo = new PaginationInfo();
+		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
+		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
+		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
+
+		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
+
+		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
+		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
+
+		List<Map<String, Object>> list = memberService.list(paramMap.getMap());
+		int count = memberService.count(paramMap.getMap());
+		paginationInfo.setTotalRecordCount(count);
+
+		model.addAttribute("paramMap", paramMap.getMap());
+		model.addAttribute("list", list);
+		model.addAttribute("count", count);
+		model.addAttribute("paginationInfo", paginationInfo);
+		return PREFIX + "/list";
+	}
+
+	/*
+	   @RequestMapping("/view.do") public String view(MyMap paramMap, Model model)
+	   throws Exception {
+
+	   Map<String, Object> info = memberService.select(paramMap.getMap()); if (info
+	   != null) { info.put("fileList", fileService.list(info));
+	   model.addAttribute("info", info); }
+	   return PREFIX + "/view"; }
+	 */
+	@RequestMapping("/write.do") // 글쓰기 url
+	public String write(MyMap paramMap, Model model) throws Exception {
+
+		Map<String, Object> info = memberService.select(paramMap.getMap());
+
+		if (info != null) {// 해당 글이 등록되어있는지 확인
+			model.addAttribute("info", info); // model에 info로 저장
+		}
+		model.addAttribute("paramMap", paramMap.getMap()); // 목록으로 돌아가기를 눌럿을때 해당 페이지로 돌아와야하기때문에 paramMap으로 저장
+
+		return PREFIX + "/write";
+	}
+
+	@RequestMapping("/proc.do")
+	public String proc(MyMap paramMap, HttpServletRequest request, Model model, SessionStatus status) throws Exception {
+
+
+		model.addAttribute("paramMap", paramMap.getMap());
+		status.setComplete();
+		return "redirect:" + PREFIX + "/list.do";
+	}
+
+
+	@RequestMapping("/delete.do")
+	public String delete(MyMap paramMap, Model model, SessionStatus status) throws Exception {
+
+		memberService.delete(paramMap.getMap());
+
+		model.addAttribute("paramMap", paramMap.getMap());
+		return "redirect:" + PREFIX + "/list.do";
+	}
+
 
 }

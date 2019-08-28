@@ -19,7 +19,7 @@
 #header .search .in .search_form input[type="text"]{border:2px solid #0da192;height:33px;line-height:33px;width:240px;}
 #header .gnb{position:relative; height:59px; border-bottom:3px solid #023d79; margin-top:20px;}
 #header .gnb h1 {display:block; float:left;}
-#header .gnb .in > ul{*zoom:1;width: auto;float:left;margin-left: 200px;}
+#header .gnb .in > ul{*zoom:1;width: auto;float:left;margin-left: 120px;}
 #header .gnb .in > ul > li{float:left;text-align:left;position:relative; display:inline-block; padding:0 0 15px 0;}
 #header .gnb .in > ul > li.sub001  {width: 160px;}
 #header .gnb .in > ul > li.sub002  {width: 160px;}

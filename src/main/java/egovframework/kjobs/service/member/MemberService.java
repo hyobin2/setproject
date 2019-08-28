@@ -1,5 +1,6 @@
 package egovframework.kjobs.service.member;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,7 +29,37 @@ public interface MemberService {
 	 * @return 조회한 글
 	 * @exception Exception
 	 */
-	Map<String, Object> select(String id) throws Exception ;
+	Map<String, Object> select(Map<String, Object> map) throws Exception ;
+
+	/**
+	 * 회원을 탈퇴시킨다.
+	 *
+	 * @param map
+	 * @exception Exception
+	 */
+	void delete(Map<String, Object> map) throws Exception;
+
+
+
+	/**
+	 * 회원정보를 수정한다.
+	 *
+	 * @param map
+	 *
+	 * @exception Exception
+	 */
+	void update(Map<String, Object> map) throws Exception;
+
+	int count(Map<String, Object> map) throws Exception;
+	/**
+	 * 회원정보를 리스트를 뽑아온다.
+	 *
+	 * @param map
+	 * @return 회원리스트
+	 * @exception Exception
+	 */
+
+	List<Map<String, Object>> list(Map<String, Object> map) throws Exception;
 
 
 }

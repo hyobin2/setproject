@@ -49,7 +49,9 @@
 					USE_YN,
 					REG_ID,
 					REG_NAME,
-					REG_DATE
+					REG_DATE,
+					ETC1,
+					ETC2
 				FROM
 					TB_BOARD B, (SELECT @ROWNUM := 0) R
 				<include refid="where" />
@@ -86,7 +88,9 @@
 				USE_YN,
 				REG_ID,
 				REG_NAME,
-				REG_DATE
+				REG_DATE,
+				ETC1,
+				ETC2
 			FROM
 				TB_BOARD
 			WHERE
@@ -118,7 +122,9 @@
 				REG_ID,
 				REG_NAME,
 				REG_DATE,
-				REG_IP
+				REG_IP,
+				ETC1,
+				ETC2
 				)
 			VALUES
 				((SELECT COALESCE(MAX(CONVERT(B_IDX, UNSIGNED)), 0)+1 AS B_IDX FROM TB_BOARD B),
@@ -130,7 +136,6 @@
 				#{url},
 				0,
 		        #{secretYn},
-
 		]]>
 			<choose>
 				<when test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( grpIdx )'>
@@ -149,7 +154,9 @@
 		        #{session.id},
 		        #{session.name},
 		        now(),
-				#{remoteAddr}
+				#{remoteAddr},
+				#{etc1},
+				#{etc2}
 				)
 		]]>
 		<selectKey keyProperty="bIdx" resultType="int">SELECT LAST_INSERT_ID()</selectKey>
