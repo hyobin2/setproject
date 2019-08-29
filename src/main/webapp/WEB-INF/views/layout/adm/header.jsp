@@ -30,7 +30,7 @@
                			<li ><a href="/adm/customer/list.do">고객사례</a></li>
                		</ul>
                	</li>
-               	<li class="sub003"> <a href="#">채용관리</a>
+               	<li class="sub003"> <a href="/adm/hire/list.do">채용관리</a>
                	<ul class="gnb_sub"></ul>
                 </li>
                 <li class="sub004"> <a href="/adm/qna/list.do">문의관리</a>

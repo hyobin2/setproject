@@ -93,10 +93,17 @@ public class AdmBannerController {
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
-
 		List<Map<String, Object>> list = bannerService.list(paramMap.getMap());
 		int count = bannerService.count(paramMap.getMap());
 		paginationInfo.setTotalRecordCount(count);
+
+		if( list != null && list.size() > 0 ){
+			for( int i = 0; i < list.size(); i++ ){
+				Map<String, Object> tmpListMap = list.get(i);
+				List<Map<String, Object>> fileList = fileService.list(tmpListMap);
+				tmpListMap.put("fileList", fileList);
+			}
+		}
 
 		model.addAttribute("paramMap", paramMap.getMap());
 		model.addAttribute("list", list);
@@ -146,25 +153,25 @@ public class AdmBannerController {
     	FileUploadUtil fileutil = new FileUploadUtil();
 		List<FormBasedFileVo> fileList = fileutil.uploadFiles(request, FILE_UPLOAD_PATH,propertiesService.getLong("maxUploadSize"));
 		if (fileList.size() > 0) {
-			for (int i = 0; i < fileList.size(); i++) { // 파일 개수 ?? 한개만올라가는데 ??
+			for (int i = 0; i < fileList.size(); i++) {
 				FormBasedFileVo basedfilevo = fileList.get(i);
 				MyMap fileMap = new MyMap();
-				if (!"".equals(paramMap.getStr("fileclass"))) {//이거뭔지물어보자@
+				if (!"".equals(paramMap.getStr("fileclass"))) {
 					fileMap.put("fileclass", paramMap.getStr("fileclass"));
 				} else {
 					paramMap.put("fileclass", fileService.nextFileClass());
 					fileMap.put("fileclass", fileService.nextFileClass());
 				}
-				fileMap.put("type", basedfilevo.getContentType());//파일 종류 ex/ png,img,txt
-				fileMap.put("orgFilename", basedfilevo.getFileName());//파일 원본 이름
-				fileMap.put("filename", basedfilevo.getPhysicalName()); //업로드 된 파일이름
-				fileMap.put("filepath",FILE_UPLOAD_PATH + FormBasedFileUtil.SEPERATOR + basedfilevo.getServerSubPath()); //파일 저장위치 저장
-				fileMap.put("size", basedfilevo.getSize()); //파일 사이즈 저장
-				fileMap.put("fOrder", basedfilevo.getfOrder()); // 삭제할 파일 체크
-				fileService.insert(fileMap.getMap());//file insert 실행
+				fileMap.put("type", basedfilevo.getContentType());
+				fileMap.put("orgFilename", basedfilevo.getFileName());
+				fileMap.put("filename", basedfilevo.getPhysicalName());
+				fileMap.put("filepath",FILE_UPLOAD_PATH + FormBasedFileUtil.SEPERATOR + basedfilevo.getServerSubPath());
+				fileMap.put("size", basedfilevo.getSize());
+				fileMap.put("fOrder", basedfilevo.getfOrder());
+				fileService.insert(fileMap.getMap());
 			}
 		}
-
+		System.out.println("dsdsdsdsds"+paramMap.getMap().get("fileclass"));
     	if (paramMap.getInt("pIdx") > 0) {
     		// update
     		bannerService.update(paramMap.getMap());
@@ -174,7 +181,6 @@ public class AdmBannerController {
     	}
 
     	model.addAttribute("paramMap", paramMap.getMap());
-
         status.setComplete();
         return "redirect:"+PREFIX+"/list.do?pCode=POP02";
     }

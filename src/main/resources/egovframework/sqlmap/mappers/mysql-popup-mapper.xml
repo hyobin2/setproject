@@ -50,7 +50,8 @@
 					USE_YN,
 					REG_ID,
 					REG_NAME,
-					REG_DATE
+					REG_DATE,
+					FILECLASS
 				FROM
 					TB_POPUP P, (SELECT @ROWNUM := 0) R
 				<include refid="where" />

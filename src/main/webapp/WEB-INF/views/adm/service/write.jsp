@@ -9,11 +9,7 @@
 
 
 	function fn_write() {
-		/* if(!$('input:radio[name=type]').is(':checked')){
-			alert("질문유형: 선택하세요.");
-			$('#type01').focus();
-			return false;
-		} */
+
 		if ($('#title').val()  == '') {
 			alert("제목을 입력하세요.");
 			$('#title').focus();
@@ -95,7 +91,6 @@
 		$('#baseForm').attr('action', '/adm/service/list.do');
 		$('#baseForm').submit();
 	}
-console.log('${info}')
 
 
 </script>
@@ -158,10 +153,10 @@ console.log('${info}')
 	                        	<input type="text" name="email2" id="email2" value="${fn:split(info.email, '@')[1]}">
 	                        	<select name="selectEmail" id="selectEmail" style="width: 100px">
 	                        		<option value="1" selected="selected">직접입력</option>
-	                        		<option value="naver.com">naver.com</option>
-	                        		<option value="hanmail.net">hanmail.net</option>
-	                        		<option value="gmail.com">gmail.com</option>
-	                        		<option value="nate.com">nate.com</option>
+	                        		<option value="naver.com" ${fn:split(info.email,'@')[1] == 'naver.com'? 'selected="selected"':'' }>naver.com</option>
+	                        		<option value="hanmail.net" ${fn:split(info.email,'@')[1] == 'hanmail.net'? 'selected="selected"':'' }>hanmail.net</option>
+	                        		<option value="gmail.com" ${fn:split(info.email,'@')[1] == 'gmail.com'? 'selected="selected"':'' }>gmail.com</option>
+	                        		<option value="nate.com" ${fn:split(info.email,'@')[1] == 'nate.com'? 'selected="selected"':'' }>nate.com</option>
 	                        	</select>
 	                        </td>
 	                    </tr>

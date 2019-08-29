@@ -61,23 +61,26 @@
 
 	<select id="list" resultType="myCamelMap">
 		<![CDATA[
-			SELECT
-				M_IDX,
-				ID,
-				NAME,
-				USE_YN,
-				REG_DATE,
-				ADDRESS,
-				PHONE,
-				REG_DATE,
-				EMAIL
-
-			FROM
-				TB_MEMBER
-			WHERE
-				USE_YN = 'Y'
-				AND AUTH ='2'
-
+		SELECT CONVERT(DD.NUM, CHAR) AS RNUM, DD.* FROM (
+       		SELECT @ROWNUM := @ROWNUM + 1 AS NUM, D.* FROM (
+				SELECT
+					M_IDX,
+					ID,
+					NAME,
+					USE_YN,
+					REG_DATE,
+					ADDRESS,
+					PHONE,
+					EMAIL
+				FROM
+					TB_MEMBER M,(SELECT @ROWNUM := 0) R
+				WHERE
+					USE_YN = 'Y'
+					AND AUTH ='2'
+			) D
+         ) DD
+		ORDER BY NUM DESC
+         limit #{firstIndex}, #{recordCountPerPage}
 		]]>
 	</select>
 

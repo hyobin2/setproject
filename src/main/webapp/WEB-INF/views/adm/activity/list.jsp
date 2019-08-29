@@ -26,15 +26,12 @@
 </script>
 
 <div class="s_con_area">
-	<h1>Activity</h1>
+	<h1>케이잡스 활동</h1>
 	<div class="location">
-		<span>Home &gt;<strong>Activity</strong></span>
+		<span>Home &gt;<strong>케이잡스 활동</strong></span>
 	</div>
-	<form name="baseForm" id="baseForm" method="get"
-		action="/adm/activity/list.do">
-		<input type="hidden" name="bIdx" id="bIdx" value="" /> <input
-			type="hidden" name="pageIndex" id="pageIndex"
-			value="${paramMap.pageIndex }" />
+	<form name="baseForm" id="baseForm" method="get" action="/adm/activity/list.do">
+		<input type="hidden" name="bIdx" id="bIdx" value="" /> <input type="hidden" name="pageIndex" id="pageIndex" 	value="${paramMap.pageIndex }" />
 
 		<div class="table_area">
 			<div class="">
@@ -42,16 +39,12 @@
 					<!-- 검색박스 -->
 					<div class="search_area">
 						<select id="searchCondition" name="searchCondition">
-							<option value="0"
-								${paramMap.searchCondition == 0 ? 'selected="selected"':'' }>전체</option>
-							<option value="1"
-								${paramMap.searchCondition == 1 ? 'selected="selected"':'' }>제목</option>
-							<option value="2"
-								${paramMap.searchCondition == 2 ? 'selected="selected"':'' }>내용</option>
-						</select> <input type="text" id="searchKeyword" name="searchKeyword"
-							value="${paramMap.searchKeyword }" title="검색어를 입력하세요." /> <input
-							type="button" class="btn_search" title="검색"
-							onclick="fn_search_page(); return false;" />
+							<option value="0" ${paramMap.searchCondition == 0 ? 'selected="selected"':'' }>전체</option>
+							<option value="1" ${paramMap.searchCondition == 1 ? 'selected="selected"':'' }>제목</option>
+							<option value="2" ${paramMap.searchCondition == 2 ? 'selected="selected"':'' }>내용</option>
+						</select>
+						<input type="text" id="searchKeyword" name="searchKeyword" value="${paramMap.searchKeyword }" title="검색어를 입력하세요." />
+						<input type="button" class="btn_search" title="검색" onclick="fn_search_page(); return false;" />
 					</div>
 					<table summary="게시판" class="style5">
 						<caption class="hide">게시판</caption>
@@ -71,8 +64,7 @@
 							<c:forEach var="result" items="${list}" varStatus="status">
 								<tr>
 									<td>${result.rnum}</td>
-									<td class="t_left"><a href="#"
-										onclick="fn_write('${util:zeroConvert(result.bIdx)}'); return false;">${result.title }</a></td>
+									<td class="t_left"><a href="#" onclick="fn_write('${util:zeroConvert(result.bIdx)}'); return false;">${result.title }</a></td>
 									<td>${fn:substring(result.regDate, 0, 10) }</td>
 									<td>${result.regName }</td>
 								</tr>
@@ -87,15 +79,13 @@
 
 					<!-- 버튼 -->
 					<div class="btn_area">
-						<input type="button" value="등록" class="r_btn_green"
-							style="width: 70px;" onclick="fn_write(''); return false;" />
+						<input type="button" value="등록" class="r_btn_green" 	style="width: 70px;" onclick="fn_write(''); return false;" />
 					</div>
 					<!-- //버튼 -->
 
 					<!-- page -->
 					<div class="paging">
-						<ui:pagination paginationInfo="${paginationInfo}" type="image"
-							jsFunction="fn_link_page" />
+						<ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="fn_link_page" />
 					</div>
 					<!-- //page -->
 				</div>

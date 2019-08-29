@@ -64,9 +64,9 @@
 
 
     <div class="s_con_area">
-       	<h1>Notice</h1>
+       	<h1>공지 및 안내</h1>
        	<div class="location">
-       		<span>Home  &gt; <strong>Notice</strong></span>
+       		<span>Home  &gt; <strong>공지 및 안내</strong></span>
        	</div>
       	<form name="baseForm" id="baseForm" method="post" action="/adm/notice/proc.do" enctype="multipart/form-data" >
 		<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
@@ -85,6 +85,16 @@
                     <tr>
                         <th scope="row">제목</th>
                         <td><input type="text" name="title" id="title" style="width:500px" value="${info.title }" maxlength="200" />&nbsp;&nbsp;</td>
+                        <c:set var="date" value="${info}" />
+                        <c:choose>
+                        	<c:when test="${date.modDate != null }">
+							<td>작성일:${fn:substring(info.modDate,0,10) } </td>
+							</c:when>
+							<c:otherwise>
+							<td>작성일:${fn:substring(info.regDate,0,10) } </td>
+
+							</c:otherwise>
+						</c:choose>
                     </tr>
                     <tr>
                         <th scope="row">내용</th>

@@ -41,6 +41,20 @@
 			$('#eDate').focus();
 			return false;
 		}
+		if($('#pIdx').val() > 0 ){
+			<c:forEach var="result" items="${info.fileList}" >
+				if($('#file${result.fOrder}').val()  != '' && $('#fOrder${result.fOrder}').is(":checked") != true){
+					alert("기존파일${result.fOrder} 삭제 체크를 하셔야 합니다.");
+					return false;
+				}
+			</c:forEach>
+		}else{
+			if ($('#file1').val()  == '') {
+				alert("썸네일을 첨부하세요.");
+				$('#file1').focus();
+				return false;
+			}
+		}
 
 
 		if( !confirm("등록 하시겠습니까?") ){
@@ -65,20 +79,6 @@
 		$('#baseForm').attr('action', '/adm/banner/list.do');
 		$('#baseForm').submit();
 	}
-
-	function readURL(input) {
-    	if (input.files && input.files[0]) {
-        	var reader = new FileReader();
-        	reader.onload = function(e) {
-	            $('#foo').attr('src', e.target.result);
-        	}
-        	reader.readAsDataURL(input.files[0]);
-    	}
-	}
-	$("#file1").change(function() {
-	    readURL(this);
-	$('#foo').show();
-	});
 </script>
 
 
@@ -93,6 +93,7 @@
 		<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
 		<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
 		<input type="hidden" id="pCode" name="pCode" value="POP02">
+		<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
       	<div class="table_area">
             <div class="">
                 <table class="bbs_write" summary="글쓰기입니다. 각 항목으로는 작성자, 분류, 유형, 첨부, 제목, 내용이 있습니다.">
@@ -121,14 +122,11 @@
                         			<img id="foo" src="#" style="display: none;"/>
                         		</c:otherwise>
                         	</c:choose>
-
-
-
 						<td>
                     </tr>
-                    <c:forEach var="i" begin="0" end="0" varStatus="status">
+                  		<c:forEach var="i" begin="0" end="0" varStatus="status">
 					    <tr>
-	                        <th scope="row"><label for="">파일</label></th>
+	                        <th scope="row"><label for="">이미지${status.index+1 }</label></th>
 	                        <td>
 	                        	<c:set var="fileFlag" value="Y" />
 	                        	<c:forEach var="result" items="${info.fileList}" >
@@ -150,16 +148,6 @@
 	                    </tr>
 					</c:forEach>
 
-
-
-
-                    <tr class="pop02" style="display: none;">
-                        <th scope="row">내용</th>
-                        <td>
-                        	<input type="text" name="spotContent" id="spotContent" style="width:500px" value="${info.spotContent }" maxlength="50" />
-
-						</td>
-                    </tr>
                  </tbody>
             </table>
             	<div class="btn_area">
@@ -171,4 +159,18 @@
         </div>
         </form>
     </div>
-
+<script>
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+	    	var reader = new FileReader();
+    		reader.onload = function(e) {
+	            $('#foo').attr('src', e.target.result);
+    		}
+    		reader.readAsDataURL(input.files[0]);
+		}
+	}
+	$("#file1").change(function() {
+	    readURL(this);
+		$('#foo').show();
+	});
+</script>

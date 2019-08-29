@@ -26,9 +26,9 @@
 </script>
 
 <div class="s_con_area">
-	<h1>Customer</h1>
+	<h1>고객사례</h1>
 	<div class="location">
-		<span>Home &gt;<strong>Customer</strong></span>
+		<span>Home &gt;<strong>고객사례</strong></span>
 	</div>
 	<form name="baseForm" id="baseForm" method="get"
 		action="/adm/customer/list.do">

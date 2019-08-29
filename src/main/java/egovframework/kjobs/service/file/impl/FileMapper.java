@@ -88,6 +88,8 @@ public interface FileMapper{
 	 */
     String nextFileClass() throws Exception;
 
+	Object banner();
+
 
 
 

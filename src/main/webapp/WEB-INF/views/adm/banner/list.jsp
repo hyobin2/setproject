@@ -24,7 +24,6 @@ function fn_search_page(){
 	$('#baseForm').attr('action', '/adm/banner/list.do');
 	$('#baseForm').submit();
 }
-console.log(${list});
 </script>
 
     <div class="s_con_area">
@@ -68,10 +67,14 @@ console.log(${list});
 							<th>등록일자</th>
 						</tr>
 							<c:forEach var="result" items="${list}" varStatus="status">
-								<tr>
-									<td>${result.rnum}</td>
-									<td>${result.pCodeNm }</td>
-									<td><img src=<img id="foo" src="/file/viewImg.do?fIdx=${result.fileList[0].fIdx }" />></td>
+						<tr>
+							<td>${result.rnum}</td>
+							<td>${result.pCodeNm }</td>
+							<td>
+							<a href="#" onclick="fn_write('${util:zeroConvert(result.pIdx)}'); return false;">
+								<img src="/file/viewImg.do?fIdx=${result.fileList[0].fIdx}&thumbYn=Y&w=200&h=130" alt="${result.fileList[0].orgFilename}">
+								</a>
+							</td>
 			                        <td class="t_left"><a href="#" onclick="fn_write('${util:zeroConvert(result.pIdx)}'); return false;">${result.title }</a></td>
 			                        <td>${fn:substring(result.regDate, 0, 10) }</td>
 

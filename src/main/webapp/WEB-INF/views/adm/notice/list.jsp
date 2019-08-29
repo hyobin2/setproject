@@ -26,9 +26,9 @@
 </script>
 
 <div class="s_con_area">
-	<h1>Notice</h1>
+	<h1>공지 및 안내</h1>
 	<div class="location">
-		<span>Home &gt;<strong>Notice</strong></span>
+		<span>Home &gt;<strong>공지 및 안내</strong></span>
 	</div>
 	<form name="baseForm" id="baseForm" method="get"
 		action="/adm/notice/list.do">

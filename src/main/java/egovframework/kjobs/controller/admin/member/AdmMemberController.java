@@ -182,28 +182,18 @@ public class AdmMemberController {
 		model.addAttribute("paginationInfo", paginationInfo);
 		return PREFIX + "/list";
 	}
-
-	/*
-	   @RequestMapping("/view.do") public String view(MyMap paramMap, Model model)
-	   throws Exception {
-
-	   Map<String, Object> info = memberService.select(paramMap.getMap()); if (info
-	   != null) { info.put("fileList", fileService.list(info));
-	   model.addAttribute("info", info); }
-	   return PREFIX + "/view"; }
-	 */
 	@RequestMapping("/write.do") // 글쓰기 url
 	public String write(MyMap paramMap, Model model) throws Exception {
 
 		Map<String, Object> info = memberService.select(paramMap.getMap());
 
-		if (info != null) {// 해당 글이 등록되어있는지 확인
+
 			model.addAttribute("info", info); // model에 info로 저장
-		}
 		model.addAttribute("paramMap", paramMap.getMap()); // 목록으로 돌아가기를 눌럿을때 해당 페이지로 돌아와야하기때문에 paramMap으로 저장
 
 		return PREFIX + "/write";
 	}
+
 
 	@RequestMapping("/proc.do")
 	public String proc(MyMap paramMap, HttpServletRequest request, Model model, SessionStatus status) throws Exception {

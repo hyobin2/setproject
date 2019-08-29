@@ -110,6 +110,7 @@
 		<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
 		<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
 		<input type="hidden" id="pCode" name="pCode" value="POP01">
+		<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
       	<div class="table_area">
             <div class="">
                 <table class="bbs_write" summary="글쓰기입니다. 각 항목으로는 작성자, 분류, 유형, 첨부, 제목, 내용이 있습니다.">

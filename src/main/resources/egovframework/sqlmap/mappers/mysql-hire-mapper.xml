@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.kjobs.service.hire.impl.HireMapper">
+
+	<sql id="where">
+		 <![CDATA[
+		 WHERE
+		 	USE_YN = 'Y'
+		 ]]>
+		<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( searchKeyword )'>
+			<choose>
+				<when test='searchCondition == "1"'>
+					<![CDATA[ AND TITLE LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
+				</when>
+				<when test='searchCondition == "2"'>
+					<![CDATA[ AND CONTENT LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
+				</when>
+				<otherwise>
+					<![CDATA[ AND CONCAT(TITLE, CONTENT) LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
+				</otherwise>
+			</choose>
+		</if>
+
+	</sql>
+
+	<select id="list" resultType="myCamelMap">
+		SELECT CONVERT(DD.NUM, CHAR) AS RNUM, DD.* FROM (
+            SELECT @ROWNUM := @ROWNUM + 1 AS NUM, D.* FROM (
+		        SELECT
+		        	H_IDX,
+					TITLE,
+					CONTENT,
+					FILECLASS,
+					URL,
+					HIT,
+					COMPANY,
+					SALES,
+					DIVISION,
+					BUSINESS,
+					HOWEVER,
+					AREA,
+					ADDRESS,
+					DUTY,
+					PERSONNEL,
+					TASK,
+					APPLY,
+					EDUCATION,
+					CAREER,
+					EMPLOY,
+					WORK,
+					CERTIFICATE,
+					SALARY,
+					WORKPLACE,
+					PREFERENTIAL,
+					S_DATE,
+					E_DATE,
+					WURL,
+					SURL,
+					USE_YN,
+					REG_ID,
+					REG_NAME,
+					REG_DATE
+				FROM
+					TB_HIRE B, (SELECT @ROWNUM := 0) R
+				<include refid="where" />
+			 ) D
+         ) DD
+         ORDER BY NUM DESC
+         limit #{firstIndex}, #{recordCountPerPage}
+	</select>
+
+	<select id="count" resultType="int">
+		SELECT COUNT(*) AS TOT_CNT
+		FROM TB_HIRE
+		<include refid="where" />
+	</select>
+
+	<select id="select" resultType="myCamelMap">
+		<![CDATA[
+			SELECT
+					H_IDX,
+					TITLE,
+					CONTENT,
+					FILECLASS,
+					URL,
+					HIT,
+					COMPANY,
+					SALES,
+					DIVISION,
+					BUSINESS,
+					HOWEVER,
+					AREA,
+					ADDRESS,
+					DUTY,
+					PERSONNEL,
+					TASK,
+					APPLY,
+					EDUCATION,
+					CAREER,
+					EMPLOY,
+					WORK,
+					CERTIFICATE,
+					SALARY,
+					WORKPLACE,
+					PREFERENTIAL,
+					S_DATE,
+					E_DATE,
+					WURL,
+					SURL,
+					USE_YN,
+					REG_ID,
+					REG_NAME,
+					REG_DATE
+			FROM
+				TB_HIRE
+			WHERE
+				USE_YN = 'Y'
+				AND H_IDX = #{hIdx}
+
+		]]>
+	</select>
+
+	<insert id="insert">
+		<![CDATA[
+			INSERT INTO TB_HIRE
+				(
+					H_IDX,
+					TITLE,
+					URL,
+					COMPANY,
+					SALES,
+					DIVISION,
+					BUSINESS,
+					HOWEVER,
+					AREA,
+					ADDRESS,
+					FILECLASS,
+					DUTY,
+					PERSONNEL,
+					TASK,
+					APPLY,
+					EDUCATION,
+					CAREER,
+					EMPLOY,
+					WORK,
+					CERTIFICATE,
+					SALARY,
+					WORKPLACE,
+					PREFERENTIAL,
+					S_DATE,
+					E_DATE,
+					WURL,
+					SURL,
+					USE_YN,
+					CONTENT,
+					REG_NAME,
+					REG_DATE,
+					REG_ID
+				)
+			VALUES
+				((SELECT COALESCE(MAX(CONVERT(H_IDX, UNSIGNED)), 0)+1 AS H_IDX FROM TB_HIRE B),
+				#{title},
+				#{url},
+				#{company},
+				#{sales},
+				#{division},
+				#{business},
+				#{however},
+				#{area},
+				#{address},
+				#{fileclass},
+				#{duty},
+				#{personnel},
+				#{task},
+				#{apply},
+				#{education},
+				#{career},
+				#{employ},
+				#{work},
+				#{certificate},
+				#{salary},
+				#{workplace},
+				#{preferential},
+				#{sDate},
+				#{eDate},
+				#{wurl},
+				#{surl},
+				'Y',
+				#{content},
+				#{regName},
+				now(),
+				#{session.id}
+				)
+		]]>
+		<selectKey keyProperty="hIdx" resultType="int">SELECT LAST_INSERT_ID()</selectKey>
+	</insert>
+
+    <update id="update">
+		<![CDATA[
+			UPDATE TB_HIRE
+			SET
+					TITLE=#{title},
+					URL=#{url},
+					COMPANY=#{company},
+					SALES=#{sales},
+					DIVISION=#{division},
+					BUSINESS=#{business},
+					HOWEVER=#{however},
+					AREA=#{area},
+					ADDRESS=#{address},
+					FILECLASS=#{fileclass},
+					DUTY=#{duty},
+					PERSONNEL=#{personnel},
+					TASK=#{task},
+					APPLY=#{apply},
+					EDUCATION=#{education},
+					CAREER=#{career},
+					EMPLOY=#{employ},
+					WORK=#{work},
+					CERTIFICATE=#{certificate},
+					SALARY=#{salary},
+					WORKPLACE=#{workplace},
+					PREFERENTIAL=#{preferential},
+					S_DATE=#{sDate},
+					E_DATE=#{eDate},
+					CONTENT=#{content},
+					WURL=#{wurl},
+					SURL=#{surl}
+			WHERE
+				H_IDX = #{hIdx}
+		]]>
+	</update>
+
+	<update id="updateHit">
+		<![CDATA[
+			UPDATE TB_HIRE
+			SET
+				HIT = HIT + 1,
+				MOD_ID = #{session.id},
+				MOD_NAME = #{session.name},
+				MOD_DATE = now(),
+				MOD_IP = #{remoteAddr}
+			WHERE
+				H_IDX = #{hIdx}
+		]]>
+	</update>
+
+	<delete id="delete">
+		<![CDATA[
+			UPDATE TB_HIRE
+			SET
+				USE_YN = 'N',
+				MOD_ID = #{session.id},
+				MOD_NAME = #{session.name},
+				MOD_DATE = now(),
+				MOD_IP = #{remoteAddr}
+			WHERE
+				H_IDX = #{hIdx}
+		]]>
+	</delete>
+
+</mapper>

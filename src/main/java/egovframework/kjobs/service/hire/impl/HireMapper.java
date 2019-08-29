@@ -1,38 +1,26 @@
-/*
- * Copyright 2008-2009 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-package egovframework.kjobs.service.file;
+package egovframework.kjobs.service.hire.impl;
 
 import java.util.List;
 import java.util.Map;
 
+import egovframework.rte.psl.dataaccess.mapper.Mapper;
+
 /**
- * @Class Name : FileService.java
- * @Description : FileService Class
+ * @Class Name : HireMapper.java
+ * @Description : HireMapper Class
  * @Modification Information
- * @  수정일      수정자              수정내용
- * @ ---------   ---------   -------------------------------
- * @ 2013.04.18           최초생성
+ * @ @ 수정일 수정자 수정내용 @ --------- --------- ------------------------------- @
+ *   2015.01.11 최초생성
  *
  * @author 이현민
- * @since 2013.04.18
+ * @since 2015. 01.11
  * @version 1.0
  * @see
  *
  */
-public interface FileService {
+
+@Mapper("hireMapper")
+public interface HireMapper {
 
 	/**
 	 * 글을 등록한다.
@@ -44,10 +32,19 @@ public interface FileService {
 	int insert(Map<String, Object> map) throws Exception;
 
 	/**
+	 * 글을 등록한다.
+	 *
+	 * @param map - 등록할 정보가 담긴 map
+	 * @return 등록 결과
+	 * @exception Exception
+	 */
+	int reply(Map<String, Object> map) throws Exception;
+
+	/**
 	 * 글을 수정한다.
 	 *
 	 * @param map - 수정할 정보가 담긴 map
-	 * @return 등록결과
+	 * @return 등록 결과
 	 * @exception Exception
 	 */
 	int update(Map<String, Object> map) throws Exception;
@@ -56,7 +53,7 @@ public interface FileService {
 	 * 글을 삭제한다.
 	 *
 	 * @param map - 삭제할 정보가 담긴 map
-	 * @return 등록결과
+	 * @return 등록 결과
 	 * @exception Exception
 	 */
 	int delete(Map<String, Object> map) throws Exception;
@@ -80,10 +77,12 @@ public interface FileService {
 	List<Map<String, Object>> list(Map<String, Object> map) throws Exception;
 
 	/**
-	 * 파일클래스를 조회한다.
+	 * 글 총 갯수를 조회한다.
+	 *
+	 * @param map - 조회할 정보가 담긴 map
+	 * @return 글 총 갯수
 	 * @exception Exception
 	 */
-	String nextFileClass() throws Exception;
-
+	int count(Map<String, Object> map) throws Exception;
 
 }

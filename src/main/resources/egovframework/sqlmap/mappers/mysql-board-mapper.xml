@@ -89,6 +89,7 @@
 				REG_ID,
 				REG_NAME,
 				REG_DATE,
+				MOD_DATE,
 				ETC1,
 				ETC2
 			FROM

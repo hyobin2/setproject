@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package egovframework.kjobs.controller.admin.activity;
+package egovframework.kjobs.controller.admin.hire;
 
 import java.util.List;
 import java.util.Map;
@@ -33,14 +33,14 @@ import egovframework.com.cmm.util.FormBasedFileUtil;
 import egovframework.com.cmm.util.FormBasedFileVo;
 import egovframework.com.cmm.util.GlobalsProperties;
 import egovframework.com.cmm.util.myMap.MyMap;
-import egovframework.kjobs.service.board.BoardService;
+import egovframework.kjobs.service.hire.HireService;
 import egovframework.kjobs.service.file.FileService;
 import egovframework.rte.fdl.property.EgovPropertyService;
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 /**
- * @Class Name : BoardController.java
- * @Description : Board Controller Class
+ * @Class Name : HireController.java
+ * @Description : Hire Controller Class
  * @Modification Information @ 수정일 수정자 수정내용 @ --------- ---------
  *               ------------------------------- @ 2013.04.18 최초생성
  *
@@ -50,15 +50,14 @@ import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
  */
 
 @Controller
-@RequestMapping(value = AdmActivityController.PREFIX)
-public class AdmActivityController {
+@RequestMapping(value = AdmHireController.PREFIX)
+public class AdmHireController {
 
-	public static final String PREFIX = "/adm/activity";
-	public static final String B_CODE = GlobalsProperties.getProperty("Bbs.activity"); // DB에 테이블을 하나로써서 B_CODE로 구별하기 위해 필요// Bbs.sponson=B01 (설정을 따로함)
-	public static final String FILE_UPLOAD_PATH = GlobalsProperties.getFileProperty("activity.Path"); // DB에 테이블을 하나로써서upload경로를 따로지정//sponson.Path=/upload/editor/images(설정을따로함)
-	/** BoardService */
-	@Resource(name = "boardService") // BoardServiceImpl를 생성자 //Autowired와 비슷함 (autowired는 스프링에서만 사용  Resource는 자바에서 사용)
-	private BoardService boardService;
+	public static final String PREFIX = "/adm/hire";
+	public static final String FILE_UPLOAD_PATH = GlobalsProperties.getFileProperty("hire.Path"); // DB에 테이블을 하나로써서upload경로를 따로지정//sponson.Path=/upload/editor/images(설정을따로함)
+	/** HireService */
+	@Resource(name = "hireService") // HireServiceImpl를 생성자 //Autowired와 비슷함 (autowired는 스프링에서만 사용  Resource는 자바에서 사용)
+	private HireService hireService;
 
 	/** FileService */
 	@Resource(name = "fileService") // 인터페이스 FileService 를 부름
@@ -74,7 +73,6 @@ public class AdmActivityController {
 
 	@RequestMapping(value = "/list.do") // 게시판 게시물 보기url
 	public String list(MyMap paramMap, ModelMap model) throws Exception {
-		paramMap.put("bCode", B_CODE);// 테이블을 하나만 쓰기때문에 select 할떄 가져올 리스트를 구분하기 위함
 
 		/** pageing setting */
 		PaginationInfo paginationInfo = new PaginationInfo(); // 페이징 처리를 하기위한 생성자 생성
@@ -87,8 +85,8 @@ public class AdmActivityController {
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex()); // 해당 페이지 최대 글 수를 구하는 메소드//현재페이지 * 총 게시물수
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());// 한페이지의 출력할 게시물 수를 paramMap에 담음
 
-		List<Map<String, Object>> list = boardService.list(paramMap.getMap()); // boardService 인터페이스를 호출
-		int count = boardService.count(paramMap.getMap()); // 글의 총 갯수를 구하기위한 메소드
+		List<Map<String, Object>> list = hireService.list(paramMap.getMap()); // hireService 인터페이스를 호출
+		int count = hireService.count(paramMap.getMap()); // 글의 총 갯수를 구하기위한 메소드
 		paginationInfo.setTotalRecordCount(count); // 위의 메소도를 이용해 글의 총 개수를 구한뒤 값을 넣어줌
 
 
@@ -103,7 +101,7 @@ public class AdmActivityController {
 	   @RequestMapping("/view.do") public String view(MyMap paramMap, Model model)
 	   throws Exception {
 
-	   Map<String, Object> info = boardService.select(paramMap.getMap()); if (info
+	   Map<String, Object> info = hireService.select(paramMap.getMap()); if (info
 	   != null) { info.put("fileList", fileService.list(info));
 	   model.addAttribute("info", info); }
 	   return PREFIX + "/view"; }
@@ -111,7 +109,7 @@ public class AdmActivityController {
 	@RequestMapping("/write.do") // 글쓰기 url
 	public String write(MyMap paramMap, Model model) throws Exception {
 
-		Map<String, Object> info = boardService.select(paramMap.getMap());
+		Map<String, Object> info = hireService.select(paramMap.getMap());
 
 		if (info != null) {// 해당 글이 등록되어있는지 확인
 			info.put("fileList", fileService.list(info)); // 해당글이 등록되어있으면 fileList 들을 가져와 map에 put
@@ -125,46 +123,47 @@ public class AdmActivityController {
 	@RequestMapping("/proc.do")
 	public String proc(MyMap paramMap, HttpServletRequest request, Model model, SessionStatus status) throws Exception {
 
-		paramMap.put("bCode", B_CODE);
 		FileUploadUtil fileutil = new FileUploadUtil();
 
 		List<FormBasedFileVo> fileList = fileutil.uploadFiles(request, FILE_UPLOAD_PATH,propertiesService.getLong("maxUploadSize"));
 		if (fileList.size() > 0) {
-			for (int i = 0; i < fileList.size(); i++) {
+			for (int i = 0; i < fileList.size(); i++) { // 파일 개수 ?? 한개만올라가는데 ??
 				FormBasedFileVo basedfilevo = fileList.get(i);
 				MyMap fileMap = new MyMap();
-				if (!"".equals(paramMap.getStr("fileclass"))) {
+				if (!"".equals(paramMap.getStr("fileclass"))) {//이거뭔지물어보자@
 					fileMap.put("fileclass", paramMap.getStr("fileclass"));
 				} else {
 					paramMap.put("fileclass", fileService.nextFileClass());
 					fileMap.put("fileclass", fileService.nextFileClass());
 				}
-				fileMap.put("type", basedfilevo.getContentType());
-				fileMap.put("orgFilename", basedfilevo.getFileName());
-				fileMap.put("filename", basedfilevo.getPhysicalName());
-				fileMap.put("filepath",FILE_UPLOAD_PATH + FormBasedFileUtil.SEPERATOR + basedfilevo.getServerSubPath());
-				fileMap.put("size", basedfilevo.getSize());
-				fileMap.put("fOrder", basedfilevo.getfOrder());
-				fileService.insert(fileMap.getMap());
+				fileMap.put("type", basedfilevo.getContentType());//파일 종류 ex/ png,img,txt
+				fileMap.put("orgFilename", basedfilevo.getFileName());//파일 원본 이름
+				fileMap.put("filename", basedfilevo.getPhysicalName()); //업로드 된 파일이름
+				fileMap.put("filepath",FILE_UPLOAD_PATH + FormBasedFileUtil.SEPERATOR + basedfilevo.getServerSubPath()); //파일 저장위치 저장
+				fileMap.put("size", basedfilevo.getSize()); //파일 사이즈 저장
+				fileMap.put("fOrder", basedfilevo.getfOrder()); // 삭제할 파일 체크
+				fileService.insert(fileMap.getMap());//file insert 실행
 			}
 		}
-		System.out.println("dsdsdsdsds"+paramMap.getMap().get("fileclass"));
-		if (paramMap.getInt("bIdx") > 0) {
-			boardService.update(paramMap.getMap());
+
+		if (paramMap.getInt("hIdx") > 0) { //hIdx로 해당글이 존재 여부 확인
+			// update
+			hireService.update(paramMap.getMap());// 게시판 update 실행
 		} else {
-			boardService.insert(paramMap.getMap());
+			// insert
+			hireService.insert(paramMap.getMap());// 게시판 insert 실행
 		}
 
-		model.addAttribute("paramMap", paramMap.getMap());
-		status.setComplete();
-		return "redirect:" + PREFIX + "/list.do";
+		model.addAttribute("paramMap", paramMap.getMap());//map에 있는값들을 model에 저장
+		status.setComplete(); // 해당 컨드롤러에서의 SessionAttributes만 사라짐 //SessionStatus객체 사용후에는 꼭사용해야함 수동으로 제거하지않으면 값이계속 남아있음
+		return "redirect:" + PREFIX + "/list.do"; // 완료후 url list.do 호출 후 list.do 페이지로 이동
 	}
 
 
 	@RequestMapping("/delete.do")
 	public String delete(MyMap paramMap, Model model, SessionStatus status) throws Exception {
 
-		boardService.delete(paramMap.getMap());
+		hireService.delete(paramMap.getMap());
 
 		model.addAttribute("paramMap", paramMap.getMap());
 		return "redirect:" + PREFIX + "/list.do";
