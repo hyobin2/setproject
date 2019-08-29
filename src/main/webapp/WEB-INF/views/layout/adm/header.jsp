@@ -20,7 +20,7 @@
     <!--좌측메뉴 끝-->
     <div class="gnb">
         <div class="in">
-            <h1><a href="/adm/activity/list.do"><img src="/resources/admin/img/sub/sub_logo.png" alt="로고" /></a></h1>
+            <h1><a href="/adm/member/index.do"><img src="/resources/admin/img/sub/sub_logo.png" alt="로고" /></a></h1>
           <ul>
           		<li class="sub001"> <a href="/adm/member/list.do">회원관리</a>
                 <li class="sub002"> <a href="/adm/activity/list.do">게시판</a>

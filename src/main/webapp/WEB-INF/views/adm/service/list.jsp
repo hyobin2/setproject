@@ -35,7 +35,6 @@ function fn_search_page(){
        	<form name="baseForm" id="baseForm" method="get" action="/adm/service/list.do" >
 		<input type="hidden" name="iIdx" id="iIdx" value=""/>
 		<input type="hidden" name="pageIndex" id="pageIndex" value="${paramMap.pageIndex }"/>
-
        	<div class="table_area">
             <div class="">
                 <div class="board">

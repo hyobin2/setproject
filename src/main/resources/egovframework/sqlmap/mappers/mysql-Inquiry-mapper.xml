@@ -41,7 +41,8 @@
 					REG_ID,
 					REG_NAME,
 					REG_DATE,
-					REPLY_YN
+					REPLY_YN,
+					DIVISION
 				FROM
 					TB_INQUIRY I, (SELECT @ROWNUM := 0) R
 				<include refid="where" />

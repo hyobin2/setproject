@@ -31,11 +31,9 @@
 	<div class="location">
 		<span>Home &gt;<strong>회원관리</strong></span>
 	</div>
-	<form name="baseForm" id="baseForm" method="get"
-		action="/adm/member/list.do">
-		<input type="hidden" name="mIdx" id="mIdx" value="" /> <input
-			type="hidden" name="pageIndex" id="pageIndex"
-			value="${paramMap.pageIndex }" />
+	<form name="baseForm" id="baseForm" method="get" action="/adm/member/list.do">
+		<input type="hidden" name="mIdx" id="mIdx" value="" />
+		<input type="hidden" name="pageIndex" id="pageIndex" value="${paramMap.pageIndex }" />
 
 		<div class="table_area">
 			<div class="">
@@ -97,8 +95,7 @@
 
 					<!-- page -->
 					<div class="paging">
-						<ui:pagination paginationInfo="${paginationInfo}" type="image"
-							jsFunction="fn_link_page" />
+						<ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="fn_link_page" />
 					</div>
 					<!-- //page -->
 				</div>

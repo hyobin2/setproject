@@ -75,29 +75,28 @@ public class AdmHireController {
 	public String list(MyMap paramMap, ModelMap model) throws Exception {
 
 		/** pageing setting */
-		PaginationInfo paginationInfo = new PaginationInfo(); // 페이징 처리를 하기위한 생성자 생성
-		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1)); // 현재 페이지의 정보를 넘김 만약 null일경우 0을 반환
-		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));// 출력할 게시물 수를넘김
-		paginationInfo.setPageSize(propertiesService.getInt("pageSize")); // 페이즈의 사이즈를 넘김
+		PaginationInfo paginationInfo = new PaginationInfo();
+		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
+		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
+		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
+		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
 
-		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex()); // 시작 페이지를 구하는 메소드 //(현재 페이지 -1)*/총 페이지 사이즈 +1
+		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
+		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
 
-		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex()); // 해당 페이지 최대 글 수를 구하는 메소드//현재페이지 * 총 게시물수
-		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());// 한페이지의 출력할 게시물 수를 paramMap에 담음
-
-		List<Map<String, Object>> list = hireService.list(paramMap.getMap()); // hireService 인터페이스를 호출
-		int count = hireService.count(paramMap.getMap()); // 글의 총 갯수를 구하기위한 메소드
-		paginationInfo.setTotalRecordCount(count); // 위의 메소도를 이용해 글의 총 개수를 구한뒤 값을 넣어줌
+		List<Map<String, Object>> list = hireService.list(paramMap.getMap());
+		int count = hireService.count(paramMap.getMap());
+		paginationInfo.setTotalRecordCount(count);
 
 
-		model.addAttribute("paramMap", paramMap.getMap()); // 위의 정보드를 가지고감
-		model.addAttribute("list", list); // 위에서 구한 글의 정보들을 model에 담아넘김
-		model.addAttribute("count", count); // 글의 총개수를 mdel에 담아넘김
-		model.addAttribute("paginationInfo", paginationInfo);// 페이징 처리를위해 담아온 정보들을 model에 담아넘김
-		return PREFIX + "/list"; // adm/sponson/list.jsp 호출을 위한코드
+		model.addAttribute("paramMap", paramMap.getMap());
+		model.addAttribute("list", list);
+		model.addAttribute("count", count);
+		model.addAttribute("paginationInfo", paginationInfo);
+		return PREFIX + "/list";
 	}
 
-	/*
+
 	   @RequestMapping("/view.do") public String view(MyMap paramMap, Model model)
 	   throws Exception {
 
@@ -105,17 +104,17 @@ public class AdmHireController {
 	   != null) { info.put("fileList", fileService.list(info));
 	   model.addAttribute("info", info); }
 	   return PREFIX + "/view"; }
-	 */
+
 	@RequestMapping("/write.do") // 글쓰기 url
 	public String write(MyMap paramMap, Model model) throws Exception {
 
 		Map<String, Object> info = hireService.select(paramMap.getMap());
 
-		if (info != null) {// 해당 글이 등록되어있는지 확인
-			info.put("fileList", fileService.list(info)); // 해당글이 등록되어있으면 fileList 들을 가져와 map에 put
-			model.addAttribute("info", info); // model에 info로 저장
+		if (info != null) {
+			info.put("fileList", fileService.list(info));
+			model.addAttribute("info", info);
 		}
-		model.addAttribute("paramMap", paramMap.getMap()); // 목록으로 돌아가기를 눌럿을때 해당 페이지로 돌아와야하기때문에 paramMap으로 저장
+		model.addAttribute("paramMap", paramMap.getMap());
 
 		return PREFIX + "/write";
 	}
@@ -127,22 +126,22 @@ public class AdmHireController {
 
 		List<FormBasedFileVo> fileList = fileutil.uploadFiles(request, FILE_UPLOAD_PATH,propertiesService.getLong("maxUploadSize"));
 		if (fileList.size() > 0) {
-			for (int i = 0; i < fileList.size(); i++) { // 파일 개수 ?? 한개만올라가는데 ??
+			for (int i = 0; i < fileList.size(); i++) {
 				FormBasedFileVo basedfilevo = fileList.get(i);
 				MyMap fileMap = new MyMap();
-				if (!"".equals(paramMap.getStr("fileclass"))) {//이거뭔지물어보자@
+				if (!"".equals(paramMap.getStr("fileclass"))) {
 					fileMap.put("fileclass", paramMap.getStr("fileclass"));
 				} else {
 					paramMap.put("fileclass", fileService.nextFileClass());
 					fileMap.put("fileclass", fileService.nextFileClass());
 				}
-				fileMap.put("type", basedfilevo.getContentType());//파일 종류 ex/ png,img,txt
-				fileMap.put("orgFilename", basedfilevo.getFileName());//파일 원본 이름
-				fileMap.put("filename", basedfilevo.getPhysicalName()); //업로드 된 파일이름
+				fileMap.put("type", basedfilevo.getContentType());
+				fileMap.put("orgFilename", basedfilevo.getFileName());
+				fileMap.put("filename", basedfilevo.getPhysicalName());
 				fileMap.put("filepath",FILE_UPLOAD_PATH + FormBasedFileUtil.SEPERATOR + basedfilevo.getServerSubPath()); //파일 저장위치 저장
-				fileMap.put("size", basedfilevo.getSize()); //파일 사이즈 저장
-				fileMap.put("fOrder", basedfilevo.getfOrder()); // 삭제할 파일 체크
-				fileService.insert(fileMap.getMap());//file insert 실행
+				fileMap.put("size", basedfilevo.getSize());
+				fileMap.put("fOrder", basedfilevo.getfOrder());
+				fileService.insert(fileMap.getMap());
 			}
 		}
 
