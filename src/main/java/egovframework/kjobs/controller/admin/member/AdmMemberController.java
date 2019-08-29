@@ -93,7 +93,7 @@ public class AdmMemberController {
 
 		Map<String, Object> loginMap = (HashMap<String, Object>) UserDetailsHelper.getAuthenticatedUser();
 		if (loginMap != null) {
-			return "redirect:/adm/member/index.do";
+			return "redirect:/adm/member/list.do";
 		}
 
 		return PREFIX + "/login";
@@ -126,7 +126,7 @@ public class AdmMemberController {
 					if (checkPw) {
 						// 로그인 처리
 						request.getSession().setAttribute("loginMap", loginMap);
-						return "redirect:/adm/member/index.do";
+						return "redirect:/adm/member/list.do";
 
 					} else { // 패스워드 불일치
 						resultMsg = "아이디 및 패스워드 정보가 일치하지 않습니다.";
@@ -218,75 +218,6 @@ public class AdmMemberController {
 		model.addAttribute("paramMap", paramMap.getMap());
 		return "redirect:" + PREFIX + "/list.do";
 	}
-	@RequestMapping(value = "/index.do")
-	public String index(MyMap paramMap, ModelMap model) throws Exception {
-		PaginationInfo mPaginationInfo = new PaginationInfo();
-		mPaginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
-		mPaginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
-		mPaginationInfo.setPageSize(propertiesService.getInt("pageSize"));
-		paramMap.put("firstIndex", mPaginationInfo.getFirstRecordIndex());
-		paramMap.put("lastIndex", mPaginationInfo.getLastRecordIndex());
-		paramMap.put("recordCountPerPage", mPaginationInfo.getRecordCountPerPage());
-		List<Map<String, Object>> mList = memberService.list(paramMap.getMap());
-		int mCount = memberService.count(paramMap.getMap());
-		mPaginationInfo.setTotalRecordCount(mCount);
-		model.addAttribute("paramMap", paramMap.getMap());
-		model.addAttribute("mList", mList);
-		model.addAttribute("mCount", mCount);
-		model.addAttribute("mPaginationInfo", mPaginationInfo);
-		//qna@@@@@
-		PaginationInfo qPaginationInfo = new PaginationInfo();
-		qPaginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
-		qPaginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
-		qPaginationInfo.setPageSize(propertiesService.getInt("pageSize"));
-		paramMap.put("firstIndex", qPaginationInfo.getFirstRecordIndex());
-		paramMap.put("lastIndex", qPaginationInfo.getLastRecordIndex());
-		paramMap.put("recordCountPerPage", qPaginationInfo.getRecordCountPerPage());
-		paramMap.put("code", "Q");
-		List<Map<String, Object>> qList = inquiryService.list(paramMap.getMap());
-		int qCount = inquiryService.count(paramMap.getMap());
-		qPaginationInfo.setTotalRecordCount(qCount);
 
-		if( qList != null && qList.size() > 0 ){
-			for( int i = 0; i < qList.size(); i++ ){
-				Map<String, Object> tmpListMap = qList.get(i);
-				tmpListMap.put("tel", scrtyService.decrypt(StringUtil.isNullToString(tmpListMap.get("tel"))));
-				tmpListMap.put("email", scrtyService.decrypt(StringUtil.isNullToString(tmpListMap.get("email"))));
-			}
-		}
-
-		model.addAttribute("paramMap2", paramMap.getMap());
-		model.addAttribute("qList", qList);
-		model.addAttribute("qCount", qCount);
-		model.addAttribute("paginationInfo", qPaginationInfo);
-
-		//서비스접수@@@@@@@@@@@@@@@@@@@@@@@
-    	PaginationInfo sPaginationInfo = new PaginationInfo();
-		sPaginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
-		sPaginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
-		sPaginationInfo.setPageSize(propertiesService.getInt("pageSize"));
-		paramMap.put("firstIndex", sPaginationInfo.getFirstRecordIndex());
-		paramMap.put("lastIndex", sPaginationInfo.getLastRecordIndex());
-		paramMap.put("recordCountPerPage", sPaginationInfo.getRecordCountPerPage());
-		paramMap.put("code", "S");
-		List<Map<String, Object>> sList = inquiryService.list(paramMap.getMap());
-		int sCount = inquiryService.count(paramMap.getMap());
-		sPaginationInfo.setTotalRecordCount(sCount);
-
-		if( sList != null && sList.size() > 0 ){
-			for( int i = 0; i < sList.size(); i++ ){
-				Map<String, Object> tmpListMap = sList.get(i);
-				tmpListMap.put("tel", scrtyService.decrypt(StringUtil.isNullToString(tmpListMap.get("tel"))));
-				tmpListMap.put("email", scrtyService.decrypt(StringUtil.isNullToString(tmpListMap.get("email"))));
-			}
-		}
-		model.addAttribute("paramMap", paramMap.getMap());
-		model.addAttribute("sList", sList);
-		model.addAttribute("sCount", sCount);
-		model.addAttribute("sPaginationInfo", sPaginationInfo);
-		paramMap.clear();
-
-		return PREFIX+"/index";
-	}
 
 }
