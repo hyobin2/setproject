@@ -193,7 +193,7 @@ public class AdmBannerController {
     	bannerService.delete(paramMap.getMap());
 
     	model.addAttribute("paramMap", paramMap.getMap());
-        return "redirect:"+PREFIX+"/list.do";
+        return "redirect:"+PREFIX+"/list.do?pCode=POP02";
     }
 
 }
