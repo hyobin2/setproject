@@ -129,29 +129,29 @@
 	                   	<tr>
                         	<th scope="row">제목</th>
 	                        <td colspan="3">
-	                        	<input type="text" name="title" id="title" style="width:500px" value="${info.title }" maxlength="200" />&nbsp;&nbsp;
+	                        	<input type="text" name="title" id="title" style="width:500px" value="${info.title }" maxlength="200" readonly="readonly"/>&nbsp;&nbsp;
 	                        </td>
 	                   	</tr>
 	                   	<tr>
 	                        <th scope="row">이름/기업명</th>
 	                        <td colspan="3">
-	                        	<input type="text" name="company" id="company" style="width:500px" value="${info.company }" maxlength="20" />
+	                        	<input type="text" name="company" id="company" style="width:500px" value="${info.company }" maxlength="20" readonly="readonly"/>
 	                        </td>
 	                   	</tr>
 	                   	<tr>
 	                        <th scope="row">연락처(휴대폰)</th>
 	                        <td>
-	                        	<input type="number" name="tel1" id="tel1" style="width:100px" value="${fn:split(info.tel, '-')[0] }" /> -
-	                        	<input type="number" name="tel2" id="tel2" style="width:100px" value="${fn:split(info.tel, '-')[1] }" /> -
-	                        	<input type="number" name="tel3" id="tel3" style="width:100px" value="${fn:split(info.tel, '-')[2] }" />
+	                        	<input type="number" name="tel1" id="tel1" style="width:100px" value="${fn:split(info.tel, '-')[0] }" readonly="readonly"/> -
+	                        	<input type="number" name="tel2" id="tel2" style="width:100px" value="${fn:split(info.tel, '-')[1] }" readonly="readonly"/> -
+	                        	<input type="number" name="tel3" id="tel3" style="width:100px" value="${fn:split(info.tel, '-')[2] }" readonly="readonly"/>
 	                        </td>
 	                   	</tr>
 	                   	<tr>
 	                    	<th scope="row">이메일</th>
 	                        <td colspan="3">
-	                        	<input type="text" name="email1" id="email1" value="${fn:split(info.email, '@')[0] }" > @
-	                        	<input type="text" name="email2" id="email2" value="${fn:split(info.email, '@')[1]}">
-	                        	<select name="selectEmail" id="selectEmail" style="width: 100px">
+	                        	<input type="text" name="email1" id="email1" value="${fn:split(info.email, '@')[0] }" readonly="readonly"> @
+	                        	<input type="text" name="email2" id="email2" value="${fn:split(info.email, '@')[1]}" readonly="readonly">
+	                        	<select name="selectEmail" id="selectEmail" style="width: 100px" disabled="disabled">
 	                        		<option value="1" selected="selected">직접입력</option>
 	                        		<option value="naver.com" ${fn:split(info.email,'@')[1] == 'naver.com'? 'selected="selected"':'' }>naver.com</option>
 	                        		<option value="hanmail.net" ${fn:split(info.email,'@')[1] == 'hanmail.net'? 'selected="selected"':'' }>hanmail.net</option>
@@ -162,18 +162,18 @@
 	                    </tr>
 	                    <tr>
 	                        <th scope="row">주소</th>
-	                        <td><input type="text" id="sample6_postcode" placeholder="우편번호"style="width:150px;" value="${fn:split(info.address, ',')[0]}">
-							<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"style="width:50px;" value=""><br/>
-							<input type="text" id="sample6_address" placeholder="주소" style="width:150px;" value="${fn:split(info.address, ',')[1]}">
-							<input type="text" id="sample6_extraAddress" placeholder="참고항목" style="width:200px;" value="${fn:split(info.address, ',')[2]}"><br/>
-							<input type="text" id="sample6_detailAddress" placeholder="상세주소" style="width: 400px;" value="${fn:split(info.address, ',')[3]}" >
+	                        <td><input type="text" id="sample6_postcode" placeholder="우편번호"style="width:150px;" value="${fn:split(info.address, ',')[0]}" readonly="readonly">
+							<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"style="width:50px;" value="" disabled="disabled"><br/>
+							<input type="text" id="sample6_address" placeholder="주소" style="width:150px;" value="${fn:split(info.address, ',')[1]}" readonly="readonly">
+							<input type="text" id="sample6_extraAddress" placeholder="참고항목" style="width:200px;" value="${fn:split(info.address, ',')[2]}" readonly="readonly"><br/>
+							<input type="text" id="sample6_detailAddress" placeholder="상세주소" style="width: 400px;" value="${fn:split(info.address, ',')[3]}" readonly="readonly">
 							<input type="hidden" id="address" name="address">
 							</td>
 	                   	</tr>
 	                   	<tr>
 	                        <th scope="row">구분</th>
 	                        <td>
-	                        	<select name='division'>
+	                        	<select name='division' disabled="disabled">
 	                        		<option value="아이돌" ${info.division == '1'? 'selected="selected"':'' }>IDOL프로그램</option>
 	                        		<option value="채용" ${info.division == '2'? 'selected="selected"':'' } >채용지원서비스</option>
 	                        		<option value="기업" ${info.division == '3'? 'selected="selected"':'' } >기업교육컨설팅</option>

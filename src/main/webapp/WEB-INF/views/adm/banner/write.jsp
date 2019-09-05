@@ -126,7 +126,7 @@
                     </tr>
                   		<c:forEach var="i" begin="0" end="0" varStatus="status">
 					    <tr>
-	                        <th scope="row"><label for="">이미지${status.index+1 }</label></th>
+	                        <th scope="row"><label for="">파일</label></th>
 	                        <td>
 	                        	<c:set var="fileFlag" value="Y" />
 	                        	<c:forEach var="result" items="${info.fileList}" >

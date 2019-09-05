@@ -23,6 +23,7 @@
             <h1><a href="/adm/member/list.do"><img src="/resources/admin/img/sub/sub_logo.png" alt="로고" /></a></h1>
           <ul>
           		<li class="sub001"> <a href="/adm/member/list.do">회원관리</a>
+          		<ul class="gnb_sub"></ul>
                 <li class="sub002"> <a href="/adm/activity/list.do">게시판</a>
                		<ul class="gnb_sub">
                			<li ><a href="/adm/activity/list.do">케이잡스 활동</a></li>

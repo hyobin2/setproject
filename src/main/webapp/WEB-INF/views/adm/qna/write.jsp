@@ -115,22 +115,22 @@
 	                   	<tr>
                         	<th scope="row">제목</th>
 	                        <td colspan="3">
-	                        	<input type="text" name="title" id="title" style="width:500px" value="${info.title }" maxlength="200" />&nbsp;&nbsp;
+	                        	<input type="text" name="title" id="title" style="width:500px" value="${info.title }" maxlength="200" readonly="readonly" />&nbsp;&nbsp;
 	                        </td>
 	                   	</tr>
 	                   	<tr>
 	                        <th scope="row">성명</th>
 	                        <td>
-	                        	<input type="text" name="name" id="name" style="width:250px" value="${info.name }" maxlength="20" />
+	                        	<input type="text" name="name" id="name" style="width:250px" value="${info.name }" maxlength="20" readonly="readonly"/>
 	                        </td>
 	                   	</tr>
 	                   	<tr>
 	                    	<th scope="row">이메일</th>
 	                        <td colspan="3">
-	                        	<input type="text" name="email1" id="email1" value="${fn:split(info.email, '@')[0] }" > @
-	                        	<input type="text" name="email2" id="email2" value="${fn:split(info.email, '@')[1]}">
-	                        	<select name="selectEmail" id="selectEmail" style="width: 100px">
-	                        		<option value="1" selected="selected">직접입력</option>
+	                        	<input type="text" name="email1" id="email1" value="${fn:split(info.email, '@')[0] }" readonly="readonly"> @
+	                        	<input type="text" name="email2" id="email2" value="${fn:split(info.email, '@')[1]}" readonly="readonly">
+	                        	<select name="selectEmail" id="selectEmail" style="width: 100px" disabled="disabled">
+	                        		<option value="1" selected="selected" >직접입력</option>
 	                        		<option value="naver.com">naver.com</option>
 	                        		<option value="hanmail.net">hanmail.net</option>
 	                        		<option value="gmail.com">gmail.com</option>
@@ -143,7 +143,7 @@
 	                    <tr>
 	                        <th scope="row">문의내용</th>
 	                        <td colspan="3">
-	                        	<textarea name="content" id="content" class="form-control">${info.content }</textarea>
+	                        	<textarea name="content" id="content" class="form-control" readonly="readonly">${info.content }</textarea>
 	                            <script type="text/javascript">
 									CKEDITOR.replace('content', {
 										customConfig: '/resources/ckeditor/config.js',
