@@ -25,9 +25,35 @@
 			</div>
 			<!-- //sub_top -->
 
+			<div class="mobile_path">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li>
+						<a href="#">채용정보</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">채용정보</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+
 			<!-- contents-->
 			<div id="contents">
-				<form name="baseForm" id="baseForm" method="post" action="/front/sub/incruit/list.do" enctype="multipart/form-data" >
+				<form name="baseForm" id="baseForm" method="get" action="/front/sub/incruit/list.do" >
 				<input type="hidden" name="hIdx" id="hIdx" value="${util:zeroConvert(info.hIdx) }" />
 				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
@@ -57,7 +83,7 @@
 									<div class="img"><img src="/resources/front/img/img_incruit02.jpg" alt="목포해양대학교"/></div>
 									<div class="txt">
 										<strong>홈페이지</strong>
-										<span>http://www.jmnc.co.kr/</span>
+										<span>${info.url }</span>
 									</div>
 								</div>
 							</div>

@@ -61,5 +61,13 @@ public interface MemberService {
 
 	List<Map<String, Object>> list(Map<String, Object> map) throws Exception;
 
+	/**
+	 * 회원가입을 한다.
+	 *
+	 * @param map
+	 * @exception Exception
+	 */
+	void join(Map<String, Object> map);
+
 
 }

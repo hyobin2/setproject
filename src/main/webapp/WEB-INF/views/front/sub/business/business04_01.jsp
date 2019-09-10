@@ -27,6 +27,35 @@
 					</ul>
 				</div>
 
+				<div class="mobile_path">
+					<ul>
+						<li><a href="/">HOME</a></li>
+						<li>
+							<a href="#">사업분야</a>
+							<div class="path_list">
+								<ul>
+									<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+									<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+									<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+									<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+									<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#">교육 컨설팅 서비스</a>
+							<div class="path_list">
+								<ul>
+									<li><a href="/front/sub/business/business01_01.do">고용서비스</a></li>
+									<li><a href="/front/sub/business/business02_01.do">전직지원서비스</a></li>
+									<li><a href="/front/sub/business/business03_01.do">MICE</a></li>
+									<li><a href="/front/sub/business/business04_01.do">교육 컨설팅 서비스</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+
 				<div class="business_wrap">
 
 					<div class="business_top">

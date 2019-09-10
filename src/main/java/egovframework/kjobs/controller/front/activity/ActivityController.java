@@ -106,6 +106,10 @@ public class ActivityController {
 	   Map<String, Object> info = boardService.select(paramMap.getMap());
 	   if (info != null) {
 		   info.put("fileList", fileService.list(info));
+		   Map<String, Object> prev = boardService.prev(info);
+		   Map<String, Object> next = boardService.next(info);
+		   model.addAttribute("prev", prev);
+		   model.addAttribute("next", next);
 		   model.addAttribute("info", info);
 		   }
 	   return PREFIX + "/view";

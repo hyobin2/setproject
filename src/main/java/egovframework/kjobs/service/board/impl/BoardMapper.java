@@ -68,6 +68,24 @@ public interface BoardMapper {
 	Map<String, Object> select(Map<String, Object> map) throws Exception;
 
 	/**
+	 * 이전 글을 조회한다.
+	 *
+	 * @param map - 조회할 정보가 담긴 map
+	 * @return 조회한 글
+	 * @exception Exception
+	 */
+	Map<String, Object> prev(Map<String, Object> map) throws Exception;
+
+	/**
+	 * 다음 글을 조회한다.
+	 *
+	 * @param map - 조회할 정보가 담긴 map
+	 * @return 조회한 글
+	 * @exception Exception
+	 */
+	Map<String, Object> next(Map<String, Object> map) throws Exception;
+
+	/**
 	 * 글 목록을 조회한다.
 	 *
 	 * @param map - 조회할 정보가 담긴 map

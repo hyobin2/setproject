@@ -109,7 +109,6 @@ public class HireController {
 
 	   Map<String, Object> info = hireService.select(paramMap.getMap());
 	   if (info != null) {
-		   info.put("fileList", fileService.list(info));
 		   model.addAttribute("info", info);
 	   }
 	   return PREFIX + "/view";

@@ -43,4 +43,6 @@ public interface MemberMapper {
 
 	List<Map<String, Object>> list(Map<String, Object> map) throws Exception;
 
+	void join(Map<String, Object> map);
+
 }

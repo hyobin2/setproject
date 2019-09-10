@@ -79,7 +79,8 @@
 				REPLY_YN,
 				ANSWER,
 				DIVISION,
-				ADDRESS
+				ADDRESS,
+				CODE
 			FROM
 				TB_INQUIRY
 			WHERE
@@ -87,6 +88,36 @@
 				AND I_IDX = #{iIdx}
 
 		]]>
+	</select>
+
+	<select id="next" resultType="myCamelMap">
+		<![CDATA[
+		SELECT
+			I_IDX, TITLE
+		FROM
+			TB_INQUIRY
+		 ]]>
+		<include refid="where" />
+		<![CDATA[
+			AND I_IDX < #{iIdx}
+	        ORDER BY I_IDX DESC
+	        limit 1
+	    ]]>
+	</select>
+
+	<select id="prev" resultType="myCamelMap">
+		<![CDATA[
+		SELECT
+			I_IDX, TITLE
+		FROM
+			TB_INQUIRY
+		 ]]>
+		<include refid="where" />
+		<![CDATA[
+			AND I_IDX > #{iIdx}
+	        ORDER BY I_IDX ASC
+	        limit 1
+	    ]]>
 	</select>
 
 	<insert id="insert">
@@ -125,7 +156,7 @@
 		        #{session.name},
 		        now(),
 				#{remoteAddr},
-				#{replyYn},
+				'N',
 				#{division},
 				#{address},
 				#{code}

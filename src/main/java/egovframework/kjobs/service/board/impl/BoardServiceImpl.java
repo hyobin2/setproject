@@ -96,6 +96,28 @@ public class BoardServiceImpl extends EgovAbstractServiceImpl implements BoardSe
 	}
 
 	/**
+	 * 이전 글을 조회한다.
+	 *
+	 * @param map - 조회할 정보가 담긴 map
+	 * @return 조회한 글
+	 * @exception Exception
+	 */
+	public Map<String, Object> prev(Map<String, Object> map) throws Exception {
+		return boardMapper.prev(map);
+	}
+
+	/**
+	 * 다음 글을 조회한다.
+	 *
+	 * @param map - 조회할 정보가 담긴 map
+	 * @return 조회한 글
+	 * @exception Exception
+	 */
+	public Map<String, Object> next(Map<String, Object> map) throws Exception {
+		return boardMapper.next(map);
+	}
+
+	/**
 	 * 글 목록을 조회한다.
 	 *
 	 * @param search - 조회할 정보가 담긴 map

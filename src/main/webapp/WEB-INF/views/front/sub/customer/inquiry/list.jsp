@@ -32,9 +32,37 @@
 			</div>
 			<!-- //sub_top -->
 
+			<div class="mobile_path">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li>
+						<a href="#">고객지원</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">고객문의</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객문의</a></li>
+								<li><a href="/front/sub/customer/service/list.do">서비스 신청 및 접수</a></li>
+								<li><a href="/front/sub/customer/location/location.do">오시는길</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+
 			<!-- contents-->
 			<div id="contents">
-				<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/activity/view.do" enctype="multipart/form-data" >
+				<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/inquiry/view.do">
 				<input type="hidden" name="iIdx" id="iIdx" value="${util:zeroConvert(info.iIdx) }" />
 				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
@@ -58,7 +86,7 @@
 							<div class="search_form">
 									<label for="searchTxt" class="hide">검색어 입력</label>
 									<div><input type="text" name="" id="searchTxt" placeholder="검색어를 입력해주세요." /></div>
-									<button>검색</button>
+									<button onclick="fn_search()">검색</button>
 							</div>
 						</div>
 

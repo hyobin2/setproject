@@ -22,8 +22,8 @@
     	<put-attribute name="CONTENT" value=""/>
     </definition>
 
-	<definition name="/**/member/login" extends="empty">
-		<put-attribute name="CONTENT" value="/WEB-INF/views/{1}/member/login.jsp" />
+ 	<definition name="/adm/member/login" extends="empty">
+		<put-attribute name="CONTENT" value="/WEB-INF/views/adm/member/login.jsp" />
 	</definition>
 
 	<definition name="/adm/**" extends="adm">

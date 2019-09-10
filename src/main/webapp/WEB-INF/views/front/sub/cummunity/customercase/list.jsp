@@ -32,6 +32,33 @@
 			</div>
 			<!-- //sub_top -->
 
+			<div class="mobile_path">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li>
+						<a href="#">커뮤니티</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">고객사례</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/cummunity/activity/list.do">케이잡스 활동</a></li>
+								<li><a href="/front/sub/cummunity/notice/list.do">공지 및 안내사항</a></li>
+								<li><a href="/front/sub/cummunity/customercase/list.do">고객사례</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
 			<!-- contents-->
 			<div id="contents">
 				<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/customercase/view.do" enctype="multipart/form-data" >
@@ -51,8 +78,9 @@
 					<div class="board_wrap">
 
 						<div class="customercase_list">
+						<ul>
 							<c:forEach var="result" items="${list}" varStatus="status">
-								<ul>
+
 									<li>
 										<a href="#" onclick="fn_view('${util:zeroConvert(result.bIdx)}');">
 											<div class="txt">
@@ -68,9 +96,12 @@
 											</div>
 										</a>
 									</li>
-								</ul>
+
 							</c:forEach>
-							<a href="#" class="more_view">더보기 +</a>
+							</ul>
+							<div class="paging">
+							<ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="fn_link_page" />
+							</div>
 						</div>
 					</div>
 				</form>

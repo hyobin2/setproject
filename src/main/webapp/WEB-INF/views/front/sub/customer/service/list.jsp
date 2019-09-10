@@ -32,9 +32,37 @@
 			</div>
 			<!-- //sub_top -->
 
+			<div class="mobile_path">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li>
+						<a href="#">고객지원</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">서비스 신청 및 접수</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객문의</a></li>
+								<li><a href="/front/sub/customer/service/list.do">서비스 신청 및 접수</a></li>
+								<li><a href="/front/sub/customer/location/location.do">오시는길</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+
 			<!-- contents-->
 			<div id="contents">
-				<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/service/view.do" enctype="multipart/form-data" >
+				<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/service/view.do" >
 				<input type="hidden" name="iIdx" id="iIdx" value="${util:zeroConvert(info.iIdx) }" />
 				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
@@ -55,7 +83,7 @@
 								케이잡스가 제공하는 다양한 서비스들을 신청해 보세요. <br />
 								최고의 서비스로 고객만족을 이끌어 내겠습니다.
 							</p>
-							<a href="#" class="btn_service">서비스 신청하기</a>
+							<a href="/front/sub/customer/service/write.do" class="btn_service">서비스 신청하기</a>
 						</div>
 
 						<div class="board_search">

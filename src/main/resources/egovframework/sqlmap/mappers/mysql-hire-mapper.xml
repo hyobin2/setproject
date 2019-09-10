@@ -7,20 +7,26 @@
 		 WHERE
 		 	USE_YN = 'Y'
 		 ]]>
-		<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( searchKeyword )'>
-			<choose>
-				<when test='searchCondition == "1"'>
-					<![CDATA[ AND TITLE LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
-				</when>
-				<when test='searchCondition == "2"'>
-					<![CDATA[ AND CONTENT LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
-				</when>
-				<otherwise>
-					<![CDATA[ AND CONCAT(TITLE, CONTENT) LIKE CONCAT('%', #{searchKeyword}, '%') ]]>
-				</otherwise>
-			</choose>
-		</if>
-
+		 		<if test="area != null">
+					<if test='area != "지역"'>
+					<![CDATA[ AND AREA = #{area} ]]>
+					</if>
+				</if>
+				<if test="division != null">
+					<if test='division != "구분"'>
+						<![CDATA[ AND DIVISION = #{division} ]]>
+					</if>
+				</if>
+				<if test="salary != null">
+					<if test='salary != 0'>
+						<![CDATA[ AND SALARY = #{salary} ]]>
+					</if>
+				</if>
+				<if test="work != null">
+					<if test='work != "고용형태" '>
+						<![CDATA[ AND WORK = #{work} ]]>
+					</if>
+				</if>
 	</sql>
 
 	<select id="list" resultType="myCamelMap">

@@ -97,5 +97,39 @@
 				M_IDX = #{mIdx}
 		]]>
 	</delete>
-
+	<insert id="join">
+	<![CDATA[
+		INSERT INTO TB_MEMBER
+							(
+							M_IDX,
+							ID,
+							NAME,
+							PW,
+							EMAIL,
+							AUTH,
+							USE_YN,
+							REG_ID,
+							REG_NAME,
+							REG_DATE,
+							REG_IP,
+							PHONE,
+							ADDRESS
+							)
+							 VALUES
+							((SELECT COALESCE(MAX(CONVERT(M_IDX, UNSIGNED)),0)+1 AS M_IDX FROM TB_MEMBER M),
+							#{id},
+							#{name},
+							#{pw},
+							#{email},
+							'2',
+							'Y',
+							#{id},
+							#{name},
+							now(),
+							#{remoteAddr},
+							#{tel},
+							#{address}
+							)
+			]]>
+	</insert>
 </mapper>

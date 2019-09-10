@@ -91,9 +91,38 @@ if( !confirm("등록 하시겠습니까?") ){
 				</div>
 			</div>
 			<!-- //sub_top -->
+
+			<div class="mobile_path">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li>
+						<a href="#">고객지원</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">고객문의</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객문의</a></li>
+								<li><a href="/front/sub/customer/service/list.do">서비스 신청 및 접수</a></li>
+								<li><a href="/front/sub/customer/location/location.do">오시는길</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+
 			<!-- contents-->
 				<div id="contents">
-					<form name="baseForm" id="baseForm" method="post" action="/front/sub/customer/inquiry/view.do" enctype="multipart/form-data" >
+					<form name="baseForm" id="baseForm" method="post" action="/front/sub/customer/inquiry/view.do"  >
 						<div class="sub_tab_area three">
 							<ul>
 								<li><a href="../inquiry/list.do" class="on">고객문의</a></li>

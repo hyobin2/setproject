@@ -117,6 +117,10 @@ public class ServiceController {
     	if(info != null) {
         	info.put("tel", scrtyService.decrypt((String) info.get("tel")));
     		info.put("email", scrtyService.decrypt((String) info.get("email")));
+		    Map<String, Object> prev = inquiryService.prev(info);
+		    Map<String, Object> next = inquiryService.next(info);
+  		   	model.addAttribute("prev", prev);
+  		   	model.addAttribute("next", next);
             model.addAttribute("info", info);
     	}
 

@@ -9,6 +9,11 @@
 		$('#baseForm').attr('action', '/front/sub/customer/service/list.do');
 		$('#baseForm').submit();
 	}
+	function fn_view(iIdx){
+		$('#baseForm').attr('action','/front/sub/customer/service/view.do');
+		$('#iIdx').val(iIdx)
+		$('#baseForm').submit();
+	}
 </script>			<!-- sub_top -->
 			<div class="sub_top sub_top05">
 				<div class="inner">
@@ -24,6 +29,34 @@
 				</div>
 			</div>
 			<!-- //sub_top -->
+
+			<div class="mobile_path">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li>
+						<a href="#">고객지원</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">서비스 신청 및 접수</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객문의</a></li>
+								<li><a href="/front/sub/customer/service/list.do">서비스 신청 및 접수</a></li>
+								<li><a href="/front/sub/customer/location/location.do">오시는길</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
 
 			<!-- contents-->
 			<div id="contents">
@@ -69,12 +102,30 @@
 										<col/>
 									</colgroup>
 									<tr>
-										<th scope="row"><span>▲</span> 이전글</th>
-										<td><a href="#">온디자인의 게시판 예시입니다 이전글 제목을 입력해주세요</a></td>
+									<th scope="row"><span>▲</span> 이전글</th>
+										<td>
+											<c:choose>
+												<c:when test="${!empty prev  }">
+													<a href="#" onclick="fn_view('${prev.iIdx}');">${prev.title }</a>
+												</c:when>
+												<c:otherwise>
+													<a href="#;">이전글이 없습니다.</a>
+												</c:otherwise>
+											</c:choose>
+
+										</td>
 									</tr>
 									<tr>
 										<th scope="row"><span>▼</span> 다음글</th>
-										<td><a href="#">온디자인의 게시판 예시입니다 다음글의 제목을 입력해주시길 바랍니다.</a></td>
+										<td>
+										<c:choose>
+												<c:when test="${!empty next  }">
+													<a href="#" onclick="fn_view('${next.iIdx}');">${next.title }</a>
+												</c:when>
+												<c:otherwise>
+													<a href="#;">다음글이 없습니다.</a>
+												</c:otherwise>
+											</c:choose>
 									</tr>
 								</table>
 							</div>

@@ -19,6 +19,8 @@
 <body>
 	<div id="wrap">
 		<tiles:insertAttribute name="HEADER" />
-		<tiles:insertAttribute name="CONTENT" />
+		<div id="container">
+			<tiles:insertAttribute name="CONTENT" />
+		</div>
 		<tiles:insertAttribute name="FOOTER" />
 	</div>

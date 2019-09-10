@@ -79,7 +79,7 @@ public class CustomerController {
 		/** pageing setting */
 		PaginationInfo paginationInfo = new PaginationInfo();
 		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
-		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
+		paginationInfo.setRecordCountPerPage(9);
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
 
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
@@ -104,6 +104,10 @@ public class CustomerController {
 		Map<String, Object> info = boardService.select(paramMap.getMap());
 		if (info != null) {
 			info.put("fileList", fileService.list(info));
+		    Map<String, Object> prev = boardService.prev(info);
+		    Map<String, Object> next = boardService.next(info);
+		    model.addAttribute("prev", prev);
+		    model.addAttribute("next", next);
 			model.addAttribute("info", info);
 		}
 		return PREFIX + "/view";

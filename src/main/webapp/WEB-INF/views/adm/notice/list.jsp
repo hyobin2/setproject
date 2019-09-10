@@ -30,11 +30,9 @@
 	<div class="location">
 		<span>Home &gt;<strong>공지 및 안내</strong></span>
 	</div>
-	<form name="baseForm" id="baseForm" method="get"
-		action="/adm/notice/list.do">
-		<input type="hidden" name="bIdx" id="bIdx" value="" /> <input
-			type="hidden" name="pageIndex" id="pageIndex"
-			value="${paramMap.pageIndex }" />
+	<form name="baseForm" id="baseForm" method="get" action="/adm/notice/list.do">
+		<input type="hidden" name="bIdx" id="bIdx" value="${paramMap.bIdx }" />
+		<input type="hidden" name="pageIndex" id="pageIndex" value="${paramMap.pageIndex }" />
 
 		<div class="table_area">
 			<div class="">

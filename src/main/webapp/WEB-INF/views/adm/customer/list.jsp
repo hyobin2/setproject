@@ -30,8 +30,7 @@
 	<div class="location">
 		<span>Home &gt;<strong>고객사례</strong></span>
 	</div>
-	<form name="baseForm" id="baseForm" method="get"
-		action="/adm/customer/list.do">
+	<form name="baseForm" id="baseForm" method="get" action="/adm/customer/list.do">
 		<input type="hidden" name="bIdx" id="bIdx" value="" /> <input
 			type="hidden" name="pageIndex" id="pageIndex"
 			value="${paramMap.pageIndex }" />

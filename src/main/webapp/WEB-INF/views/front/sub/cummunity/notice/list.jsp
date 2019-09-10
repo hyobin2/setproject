@@ -9,7 +9,7 @@
 		$('#bIdx').val(bIdx);
 		$('#baseForm').attr('action', '/front/sub/cummunity/notice/view.do');
 		$('#baseForm').submit();
-		}
+	}
 	function fn_search(){
 		$('#searchKeyword').val($('#searchTxt').val());
 		$('#baseForm').attr('action', '/front/sub/cummunity/notice/list.do');
@@ -31,9 +31,37 @@
 			</div>
 			<!-- //sub_top -->
 
+			<div class="mobile_path">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li>
+						<a href="#">커뮤니티</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">공지 및 안내사항</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/cummunity/activity/list.do">케이잡스 활동</a></li>
+								<li><a href="/front/sub/cummunity/notice/list.do">공지 및 안내사항</a></li>
+								<li><a href="/front/sub/cummunity/customercase/list.do">고객사례</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+
 			<!-- contents-->
 			<div id="contents">
-				<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/notice/list.do" enctype="multipart/form-data" >
+				<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/notice/list.do"  >
 				<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
 				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
@@ -41,7 +69,7 @@
 				<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
 					<div class="sub_tab_area three">
 						<ul>
-							<li><a href="../notice/list.do">케이잡스 활동</a></li>
+							<li><a href="../activity/list.do">케이잡스 활동</a></li>
 							<li><a href="../notice/list.do" class="on">공지 및 안내사항</a></li>
 							<li><a href="../customercase/list.do">고객사례</a></li>
 						</ul>

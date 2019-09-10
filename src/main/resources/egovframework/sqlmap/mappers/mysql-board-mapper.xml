@@ -101,6 +101,36 @@
 		]]>
 	</select>
 
+	<select id="prev" resultType="myCamelMap">
+		<![CDATA[
+		SELECT
+			B_IDX, TITLE
+		FROM
+			TB_BOARD
+		 ]]>
+		<include refid="where" />
+		<![CDATA[
+			AND B_IDX < #{bIdx}
+	        ORDER BY GRP_IDX DESC, GRP_ORDER ASC
+	        limit 1
+	    ]]>
+	</select>
+
+	<select id="next" resultType="myCamelMap">
+		<![CDATA[
+		SELECT
+			B_IDX, TITLE
+		FROM
+			TB_BOARD
+		 ]]>
+		<include refid="where" />
+		<![CDATA[
+			AND B_IDX > #{bIdx}
+	        ORDER BY GRP_IDX ASC, GRP_ORDER DESC
+	        limit 1
+	    ]]>
+	</select>
+
 	<insert id="insert">
 		<![CDATA[
 			INSERT INTO TB_BOARD

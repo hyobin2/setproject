@@ -28,6 +28,36 @@
 					</ul>
 				</div>
 
+				<div class="mobile_path">
+					<ul>
+						<li><a href="/">HOME</a></li>
+						<li>
+							<a href="#">K·Jobs</a>
+							<div class="path_list">
+								<ul>
+									<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+									<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+									<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+									<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+									<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#">회사조직</a>
+							<div class="path_list">
+								<ul>
+									<li><a href="/front/sub/kjobs/greetings.do">인사말</a></li>
+									<li><a href="/front/sub/kjobs/ideology.do">경영이념</a></li>
+									<li><a href="/front/sub/kjobs/history.do">회사연혁</a></li>
+									<li><a href="/front/sub/kjobs/organization.do">회사조직</a></li>
+									<li><a href="/front/sub/kjobs/cooperate.do">협력기관</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+
 				<div class="organization_wrap">
 					<div class="img_area">
 						<img src="/resources/front/img/img_organization_pc.jpg" alt="" class="PC"/>

@@ -15,6 +15,34 @@
 			</div>
 			<!-- //sub_top -->
 
+			<div class="mobile_path">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li>
+						<a href="#">고객지원</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">오시는길</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객문의</a></li>
+								<li><a href="/front/sub/customer/service/list.do">서비스 신청 및 접수</a></li>
+								<li><a href="/front/sub/customer/location/location.do">오시는길</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+
 			<!-- contents-->
 			<div id="contents">
 

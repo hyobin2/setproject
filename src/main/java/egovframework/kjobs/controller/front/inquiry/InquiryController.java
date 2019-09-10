@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package egovframework.kjobs.controller.inquiry;
+package egovframework.kjobs.controller.front.inquiry;
 
 import java.util.List;
 import java.util.Map;
@@ -116,6 +116,10 @@ public class InquiryController {
     	if(info != null) {
         	info.put("tel", scrtyService.decrypt((String) info.get("tel")));
     		info.put("email", scrtyService.decrypt((String) info.get("email")));
+    		 Map<String, Object> prev = inquiryService.prev(info);
+ 		    Map<String, Object> next = inquiryService.next(info);
+   		   	model.addAttribute("prev", prev);
+   		   	model.addAttribute("next", next);
             model.addAttribute("info", info);
     	}
 

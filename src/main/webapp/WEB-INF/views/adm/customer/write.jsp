@@ -32,20 +32,6 @@
 			return false;
 		}
 
-		if($('#bIdx').val() > 0 ){
-			<c:forEach var="result" items="${info.fileList}" >
-				if($('#file${result.fOrder}').val()  != '' && $('#fOrder${result.fOrder}').is(":checked") != true){
-					alert("기존파일${result.fOrder} 삭제 체크를 하셔야 합니다.");
-					return false;
-				}
-			</c:forEach>
-		}else{
-			if ($('#file1').val()  == '') {
-				alert("썸네일을 첨부하세요.");
-				$('#file1').focus();
-				return false;
-			}
-		}
 		if( !confirm("등록 하시겠습니까?") ){
 			return false;
 		}

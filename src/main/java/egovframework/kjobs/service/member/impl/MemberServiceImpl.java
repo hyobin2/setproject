@@ -80,5 +80,11 @@ public class MemberServiceImpl extends EgovAbstractServiceImpl implements Member
 		return memberMapper.list(map);
 	}
 
+	@Override
+	public void join(Map<String, Object> map) {
+		memberMapper.join(map);
+
+	}
+
 
 }

@@ -12,8 +12,12 @@
 		$('#baseForm').submit();
 		}
 	function fn_search(){
-		$('#searchKeyword').val($('#searchTxt').val());
-		$('#baseForm').attr('action', '/front/sub/incruit/list.do');
+
+		$('#area').val($('#incruit_search1 option:selected').val());
+		$('#division').val($('#incruit_search2 option:selected').val());
+		$('#salary').val($('#incruit_search3 option:selected').val());
+		$('#work').val($('#incruit_search4 option:selected').val());
+		$('#baseForm').attr('action','/front/sub/incruit/list.do');
 		$('#baseForm').submit();
 	}
 </script>
@@ -32,19 +36,40 @@
 			</div>
 			<!-- //sub_top -->
 
+			<div class="mobile_path">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li>
+						<a href="#">채용정보</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
+								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+								<li><a href="/front/sub/customer/inquiry/list.do">고객지원</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">채용정보</a>
+						<div class="path_list">
+							<ul>
+								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+
 			<!-- contents-->
 			<div id="contents">
-				<form name="baseForm" id="baseForm" method="post" action="/front/sub/incruit/list.do" enctype="multipart/form-data" >
-				<input type="hidden" name="hIdx" id="hIdx" value="${util:zeroConvert(info.hIdx) }" />
-				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
-				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
-				<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
-				<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
-				<input type="hidden" name="workplace" id="workplace">
-
+				<form name="baseForm" id="baseForm" method="get" action="/front/sub/incruit/list.do" >
+				<input type="hidden" name="paramMap" id="paramMap" value="${paramMap }">
+				<input type="hidden" name="hIdx" id="hIdx">
 					<div class="sub_tab_area one">
 						<ul>
-							<li><a href="../incruit/paramMap.do" class="on">채용정보</a></li>
+							<li><a href="../incruit/list.do" class="on">채용정보</a></li>
 						</ul>
 					</div>
 
@@ -59,6 +84,7 @@
 								</p>
 								<div class="incruit_search">
 									<label for="incruit_search1" class="hide">지역선택</label>
+									<input type="hidden" name="area" id="area" value="${paramMap.area }">
 									<select name="" id="incruit_search1" style="width:14%">
 										<option value="지역" ${paramMap.area == '지역'? 'selected="selected"':'' }>지역</option>
 										<option value="서울" ${paramMap.area == '서울'? 'selected="selected"':'' }>서울</option>
@@ -79,6 +105,7 @@
 		                        		<option value="제주" ${paramMap.area == '제주'? 'selected="selected"':'' }>제주</option>
 									</select>
 									<label for="incruit_search2" class="hide">구분 선택</label>
+									<input type="hidden" name="division" id="division" value="${paramMap.division }">
 									<select name="" id="incruit_search2" style="width:24%">
 										<option value="구분" ${paramMap.division =='구분'? 'selected="selected"' :'' }>구분</option>
 										<option value="서비스" ${paramMap.division == '서비스'? 'selected="selected"':'' }>서비스업</option>
@@ -94,6 +121,7 @@
 		                        		<option value="제조" ${paramMap.division == '제조'? 'selected="selected"':'' }>제조/생산/화학업</option>
 									</select>
 									<label for="incruit_search3" class="hide">연봉 선택</label>
+									<input type="hidden" name="salary" id="salary" value="${paramMap.salary }">
 									<select name="" id="incruit_search3" style="width:24%">
 										<option value="0" ${paramMap.salary =='0'?'selected="selected"':'' }>연봉 </option>
 										<option value="2000" ${paramMap.salary == '2000'? 'selected="selected"':'' }>2000이하</option>
@@ -104,12 +132,14 @@
 	         							<option value="5000" ${paramMap.salary == '5000'? 'selected="selected"':'' }>5000이상</option>
 									</select>
 									<label for="incruit_search4" class="hide">형태 선택</label>
+									<input type="hidden" name="work" id="work" value="${paramMap.work }">
 									<select name="" id="incruit_search4" style="width:14%">
+										<option value="고용형태" ${paramMap.work == '고용형태'? 'selected="selected"':'' }>고용형태</option>
 										<option value="정규직" ${paramMap.work == '정규직'? 'selected="selected"':'' }>정규직</option>
 		            					<option value="계약직" ${paramMap.work == '계약직'? 'selected="selected"':'' }>계약직</option>
 		            					<option value="파견직" ${paramMap.work == '파견직'? 'selected="selected"':'' }>파견직</option>
 									</select>
-									<button style="width:14%">검색</button>
+									<button style="width:14%" onclick="fn_search();">검색</button>
 								</div>
 							</div>
 						</div>
@@ -165,6 +195,9 @@
 										</c:forEach>
 									</ul>
 									<a href="#" class="more_view">더보기 +</a>
+									<div class="paging">
+									<ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="fn_link_page" />
+									</div>
 								</div>
 							</div>
 						</div>
