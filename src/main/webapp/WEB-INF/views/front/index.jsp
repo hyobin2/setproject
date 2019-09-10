@@ -1,0 +1,225 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+			<div class="main_visual">
+				<div class="inner">
+					<ul>
+						<li><a href="#" style="background-image:url(/resources/front/img/img_main_visual01.jpg);">메인 비주얼 1</a></li>
+						<li><a href="#" style="background-image:url(/resources/front/img/img_main_visual02.jpg);">메인 비주얼 2</a></li>
+						<li><a href="#" style="background-image:url(/resources/front/img/img_main_visual03.jpg);">메인 비주얼 3</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="main_section01">
+				<div class="inner">
+					<div class="search">
+						<div class="txt">
+							<h2>채용정보 <br />검색하기</h2>
+							<p>K·Jobs의 맞춤형 <br />인재정보를 확인해 보세요.</p>
+						</div>
+						<div class="search_form">
+						<form action="">
+							<ul>
+								<li>
+									<label for="search_form1" class="hide">지역선택</label>
+									<select name="" id="search_form1" style="width:33%;">
+										<option value="">지역</option>
+									</select>
+									<label for="search_form2" class="hide">산업별 구분 선택</label>
+									<select name="" id="search_form2" style="width:63%;">
+										<option value="">산업별 구분</option>
+									</select>
+								</li>
+								<li>
+									<label for="search_form3" class="hide">연봉 선택</label>
+									<select name="" id="search_form3" style="width:63%;">
+										<option value="">연봉</option>
+									</select>
+									<label for="search_form4" class="hide">형태 선택</label>
+									<select name="" id="search_form4" style="width:33%;">
+										<option value="">형태</option>
+									</select>
+								</li>
+								<li class="long">
+									<button>검색하기</button>
+								</li>
+							</ul>
+						</form>
+						</div>
+					</div>
+					<div class="job_info">
+						<a href="#">
+							<p>K·Jobs의 <br />신선한 채용정보들을 <br />만나보세요.</p>
+							<span class="go">GO</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="main_section02">
+				<div class="inner">
+					<ul>
+						<li>
+							<div class="txt">
+								<span class="tit">전직지원서비스</span>
+								<p>퇴직을 앞두고 있는 고객들에게 자신감 고취 및 성공적인 제 2의 인생설계를 위한 다양한 맞춤형 컨설팅과 교육, 상담 등의 서비스를 제공하여 퇴직자가 원하는 경력목표를 가장 효과적으로 달성할 수 있도록 지원하는 맞춤형 종합지원 서비스 입니다.</p>
+							</div>
+							<div class="img">
+								<img src="/resources/front/img/img_main_service01.jpg" alt="전직지원서비스"/>
+							</div>
+						</li>
+						<li>
+							<div class="txt">
+								<span class="tit">취업성공 패키지</span>
+								<p>고용노동부 주관으로 취업에 어려움을 겪고 있는 구직자들에게 개인별 프로파일링을 토대로 최장 1년간 『상담 〮 진단 〮 경로 설정(1단계) → 직업능력 증진(2단계) → 집중 취업알선(3단계)』을 단계별 맞춤형으로 제공하는 종합 취업지원 서비스입니다.</p>
+							</div>
+							<div class="img">
+								<img src="/resources/front/img/img_main_service02.jpg" alt="취업성공 패키지"/>
+							</div>
+						</li>
+						<li>
+							<div class="txt">
+								<span class="tit">청년 내일 채움 공제</span>
+								<p>중소∙중견기업에 정규직으로 취업한 청년들의 장기근속을 위하여 『청년∙기업∙정부』가 공동으로 공제금을 적립하여 2년 또는 3년간 근속한 청년에게 성과보상금 형태로 만기공제금을 지급하는 서비스입니다.</p>
+							</div>
+							<div class="img">
+								<img src="/resources/front/img/img_main_service03.jpg" alt="청년 내일 채움 공제"/>
+							</div>
+						</li>
+						<li>
+							<div class="txt">
+								<span class="tit">전직지원서비스</span>
+								<p>퇴직을 앞두고 있는 고객들에게 자신감 고취 및 성공적인 제 2의 인생설계를 위한 다양한 맞춤형 컨설팅과 교육, 상담 등의 서비스를 제공하여 퇴직자가 원하는 경력목표를 가장 효과적으로 달성할 수 있도록 지원하는 맞춤형 종합지원 서비스 입니다.</p>
+							</div>
+							<div class="img">
+								<img src="/resources/front/img/img_main_service04.jpg" alt="전직지원서비스"/>
+							</div>
+						</li>
+					</ul>
+					<div class="bx-pager" id="num_pager">
+						<div class="bx-pager-item"><a href="#" data-slide-index="0">01</a></div>
+						<div class="bx-pager-item"><a href="#" data-slide-index="1">02</a></div>
+						<div class="bx-pager-item"><a href="#" data-slide-index="2">03</a></div>
+						<div class="bx-pager-item"><a href="#" data-slide-index="3">04</a></div>
+					</div>
+					<a href="#" class="btn_go">K·Jobs 전문 컨설턴트의 <br />자세한 상담을 받아보세요</a>
+				</div>
+
+			</div>
+			<div class="main_section03">
+				<div class="inner">
+					<div class="txt">
+						<h2>INSTAGRAM</h2>
+						<p>K·Jobs를 통해 <br />취업에 성공한 분들과 <br />상담사 분들의 생생한 <br />얘기를 들어보세요.</p>
+					</div>
+					<div class="list">
+						<ul>
+							<li><a href="#"><img src="/resources/front/img/img_main_insta01.jpg" alt="instagram"/></a></li>
+							<li><a href="#"><img src="/resources/front/img/img_main_insta02.jpg" alt="instagram"/></a></li>
+							<li><a href="#"><img src="/resources/front/img/img_main_insta03.jpg" alt="instagram"/></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="main_section04">
+				<div class="inner">
+					<h2>INTERVIEW</h2>
+					<div class="list">
+						<ul>
+							<li>
+								<a href="#" style="background-image:url(/resources/front/img/img_main_interview01.jpg)">
+									<div class="txt">
+										<p>K·Jobs를 통해 <br />원하는 회사에  입사했어요</p>
+										<span class="job">넥시큐어 시스템<br />한보름 사원</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#" style="background-image:url(/resources/front/img/img_main_interview01.jpg)">
+									<div class="txt">
+										<p>K·Jobs를 통해 <br />원하는 회사에  입사했어요</p>
+										<span class="job">넥시큐어 시스템<br />한보름 사원</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="main_section05">
+				<div class="inner">
+					<h2>CONTACT</h2>
+					<p class="txt">
+						K·Jobs는 전국에 여러분들을 위한, <br />
+						전문성과 친절함을 보유한 컨설턴트 분들이 대기하고 있습니다.
+					</p>
+					<div class="select_area">
+						<select name="" id="">
+							<option value="">서울</option>
+						</select>
+					</div>
+					<div class="tab_area three">
+						<ul>
+							<li><a href="#" class="on">본사</a></li>
+							<li><a href="#">관악지사</a></li>
+							<li><a href="#">구로지사</a></li>
+						</ul>
+					</div>
+					<!--
+					<div class="tab_area five">
+						<ul>
+							<li><a href="#" class="on">인천</a></li>
+							<li><a href="#">남양주</a></li>
+							<li><a href="#">신안산대</a></li>
+							<li><a href="#">부천</a></li>
+							<li><a href="#">부천대학교</a></li>
+						</ul>
+					</div>
+					<div class="tab_area one">
+						<ul>
+							<li><a href="#" class="on">유성</a></li>
+						</ul>
+					</div>
+					<div class="tab_area four">
+						<ul>
+							<li><a href="#" class="on">순천</a></li>
+							<li><a href="#">목포</a></li>
+							<li><a href="#">여수</a></li>
+							<li><a href="#">광양</a></li>
+						</ul>
+					</div>
+					<div class="tab_area one">
+						<ul>
+							<li><a href="#" class="on">울산</a></li>
+						</ul>
+					</div>
+					<div class="tab_area two">
+						<ul>
+							<li><a href="#" class="on">춘천</a></li>
+							<li><a href="#">강원관광대학교</a></li>
+						</ul>
+					</div>
+					-->
+					<div class="map_area">
+						<div class="map" id="map">
+							지도영역
+						</div>
+						<div class="map_info">
+							<ul>
+								<li>
+									<strong>주소</strong>
+									<span>서울특별시 용산구 한강대로 15길 9-5 3층</span>
+								</li>
+								<li>
+									<strong>문의</strong>
+									<span>02-6959-8983</span>
+								</li>
+								<li>
+									<strong>FAX</strong>
+									<span>02-6958-9297</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+<?php include "inc/footer.html" ?>

@@ -31,12 +31,12 @@ public class ImagePaginationRenderer extends AbstractPaginationRenderer implemen
 
 	public void initVariables(){
 
-		firstPageLabel    = "<span><a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \" class=\"page_first\" ><img src=\"/resources/ko/images/pg_start.png\" alt=\"처음 페이지\"></a></span>&#160;";
-        previousPageLabel = "<span><a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \" class=\"page_prev\"><img src=\"/resources/ko/images/pg_prev.png\" alt=\"이전 페이지\"></a></span>&#160;";
+		firstPageLabel    = "<span><a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \" class=\"page_first\" ><img src=\"/resources/front/img/btn_pagefirst.png\" alt=\"처음 페이지\"></a></span>&#160;";
+        previousPageLabel = "<span><a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \" class=\"page_prev\"><img src=\"/resources/front/img/btn_pageprev.png\" alt=\"이전 페이지\"></a></span>&#160;";
         currentPageLabel  = "<strong>{0}</strong>&#160;";
         otherPageLabel    = "<a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \">{2}</a>&#160;";
-        nextPageLabel     = "<span><a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \" class=\"page_next\" ><img src=\"/resources/ko/images/pg_next.png\" alt=\"다음 페이지\"></a></span>&#160;";
-        lastPageLabel     = "<span><a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \" class=\"page_last\" ><img src=\"/resources/ko/images/pg_end.png\" alt=\"마지막 페이지\"></a></span>&#160;";
+        nextPageLabel     = "<span><a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \" class=\"page_next\" ><img src=\"/resources/front/img/btn_pagenext.png\" alt=\"다음 페이지\"></a></span>&#160;";
+        lastPageLabel     = "<span><a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \" class=\"page_last\" ><img src=\"/resources/front/img/btn_pagelast.png\" alt=\"마지막 페이지\"></a></span>&#160;";
 	}
 
 

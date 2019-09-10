@@ -173,7 +173,7 @@
 	                   	<tr>
 	                        <th scope="row">구분</th>
 	                        <td>
-	                        	<select name='division' disabled="disabled">
+	                        	<select name='division'>
 	                        		<option value="아이돌" ${info.division == '1'? 'selected="selected"':'' }>IDOL프로그램</option>
 	                        		<option value="채용" ${info.division == '2'? 'selected="selected"':'' } >채용지원서비스</option>
 	                        		<option value="기업" ${info.division == '3'? 'selected="selected"':'' } >기업교육컨설팅</option>

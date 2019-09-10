@@ -321,7 +321,7 @@
                 							<option value="2000" ${info.salary == '2000'? 'selected="selected"':'' }>2000이하</option>
                 							<option value="2499" ${info.salary == '2499'? 'selected="selected"':'' }>2000~2500미만</option>
                 							<option value="2999" ${info.salary == '2999'? 'selected="selected"':'' } >2500~3000미만</option>
-                							<option value="3499" ${info.salary == '23499'? 'selected="selected"':'' }>3000~3500미만</option>
+                							<option value="3499" ${info.salary == '2349'? 'selected="selected"':'' }>3000~3500미만</option>
                 							<option value="4999" ${info.salary == '4999'? 'selected="selected"':'' }>3500~5000미만</option>
                 							<option value="5000" ${info.salary == '5000'? 'selected="selected"':'' }>5000이상</option>
 				                        </select></td>

@@ -6,17 +6,17 @@
 		<put-attribute name="FOOTER" value="/WEB-INF/views/layout/adm/footer.jsp" />
 	</definition>
 
-	<definition name="ko" template="/WEB-INF/views/layout/ko/layout.jsp">
-		<put-attribute name="HEADER" value="/WEB-INF/views/layout/ko/header.jsp" />
-		<put-attribute name="FOOTER" value="/WEB-INF/views/layout/ko/footer.jsp" />
-		<put-attribute name="SITEMAP" value="/WEB-INF/views/layout/ko/sitemap.jsp" />
+	<definition name="front" template="/WEB-INF/views/layout/front/layout.jsp">
+		<put-attribute name="HEADER" value="/WEB-INF/views/layout/front/header.jsp" />
+		<put-attribute name="FOOTER" value="/WEB-INF/views/layout/front/footer.jsp" />
+		<put-attribute name="SITEMAP" value="/WEB-INF/views/layout/front/sitemap.jsp" />
 	</definition>
 
-	<definition name="en" template="/WEB-INF/views/layout/en/layout.jsp">
+	<!-- <definition name="en" template="/WEB-INF/views/layout/en/layout.jsp">
 		<put-attribute name="HEADER" value="/WEB-INF/views/layout/en/header.jsp" />
 		<put-attribute name="FOOTER" value="/WEB-INF/views/layout/en/footer.jsp" />
 		<put-attribute name="SITEMAP" value="/WEB-INF/views/layout/en/sitemap.jsp" />
-	</definition>
+	</definition> -->
 
 	<definition name="empty" template="/WEB-INF/views/layout/empty/layout.jsp">
     	<put-attribute name="CONTENT" value=""/>
@@ -29,11 +29,11 @@
 	<definition name="/adm/**" extends="adm">
 		<put-attribute name="CONTENT" value="/WEB-INF/views/adm/{1}.jsp" />
 	</definition>
-	<definition name="/ko/**" extends="ko">
-		<put-attribute name="CONTENT" value="/WEB-INF/views/ko/{1}.jsp" />
+	<definition name="/front/**" extends="front">
+		<put-attribute name="CONTENT" value="/WEB-INF/views/front/{1}.jsp" />
 	</definition>
-	<definition name="/en/**" extends="en">
+	<!-- <definition name="/en/**" extends="en">
 		<put-attribute name="CONTENT" value="/WEB-INF/views/en/{1}.jsp" />
-	</definition>
+	</definition> -->
 
 </tiles-definitions>

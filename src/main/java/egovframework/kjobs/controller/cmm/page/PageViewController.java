@@ -59,5 +59,9 @@ public class PageViewController {
    	public String view(@PathVariable("path1") String path1, @PathVariable("path2") String path2 , @PathVariable("path3") String path3, @PathVariable("path4") String path4) {
    		return "/" + path1 + "/" + path2 + "/" + path3 + "/" + path4;
    	}
+	@RequestMapping("/{path1}/{path2}/{path3}/{path4}/{path5}.do")
+   	public String view(@PathVariable("path1") String path1, @PathVariable("path2") String path2 , @PathVariable("path3") String path3, @PathVariable("path4") String path4,@PathVariable("path5") String path5) {
+   		return "/" + path1 + "/" + path2 + "/" + path3 + "/" + path4+"/"+path5;
+   	}
 
 }

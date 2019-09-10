@@ -71,7 +71,7 @@
 							</c:forEach>
 							<c:if test="${fn:length(list) <= 0 }">
 								<tr>
-									<td colspan="5">게시물이 없습니다.</td>
+									<td colspan="4">게시물이 없습니다.</td>
 								</tr>
 							</c:if>
 						</tbody>
