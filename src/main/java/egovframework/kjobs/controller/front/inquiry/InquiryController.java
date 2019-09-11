@@ -15,11 +15,13 @@
  */
 package egovframework.kjobs.controller.front.inquiry;
 
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,14 +37,13 @@ import egovframework.kjobs.service.inquiry.InquiryService;
 import egovframework.kjobs.service.scrty.ScrtyService;
 import egovframework.rte.fdl.property.EgovPropertyService;
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import nl.captcha.Captcha;
 
 /**
  * @Class Name : QnaController.java
  * @Description : QnaController Class
- * @Modification Information
- * @  수정일      수정자              수정내용
- * @ ---------   ---------   -------------------------------
- * @ 2013.04.18           최초생성
+ * @Modification Information @ 수정일 수정자 수정내용 @ --------- ---------
+ * ------------------------------- @ 2013.04.18 최초생성
  *
  * @author 이현민
  * @since 2013.04.18
@@ -59,7 +60,6 @@ public class InquiryController {
 	@Resource(name = "inquiryService")
 	private InquiryService inquiryService;
 
-
 	/** EduApplyService */
 	@Resource(name = "scrtyService")
 	private ScrtyService scrtyService;
@@ -72,12 +72,10 @@ public class InquiryController {
 	@Resource(name = "beanValidator")
 	protected DefaultBeanValidator beanValidator;
 
-
-	@RequestMapping(value="/list.do")
-    public String list(MyMap paramMap, ModelMap model)
-            throws Exception {
-    	/** pageing setting */
-    	PaginationInfo paginationInfo = new PaginationInfo();
+	@RequestMapping(value = "/list.do")
+	public String list(MyMap paramMap, ModelMap model) throws Exception {
+		/** pageing setting */
+		PaginationInfo paginationInfo = new PaginationInfo();
 		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
 		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
@@ -89,8 +87,8 @@ public class InquiryController {
 		int count = inquiryService.count(paramMap.getMap());
 		paginationInfo.setTotalRecordCount(count);
 
-		if( list != null && list.size() > 0 ){
-			for( int i = 0; i < list.size(); i++ ){
+		if (list != null && list.size() > 0) {
+			for (int i = 0; i < list.size(); i++) {
 				Map<String, Object> tmpListMap = list.get(i);
 				tmpListMap.put("tel", scrtyService.decrypt(StringUtil.isNullToString(tmpListMap.get("tel"))));
 				tmpListMap.put("email", scrtyService.decrypt(StringUtil.isNullToString(tmpListMap.get("email"))));
@@ -102,73 +100,72 @@ public class InquiryController {
 		model.addAttribute("count", count);
 		model.addAttribute("paginationInfo", paginationInfo);
 
-        return PREFIX + "/list";
-    }
+		return PREFIX + "/list";
+	}
 
+	@RequestMapping("/view.do")
+	public String view(MyMap paramMap, Model model) throws Exception {
 
+		Map<String, Object> info = inquiryService.select(paramMap.getMap());
 
-    @RequestMapping("/view.do")
-    public String view(MyMap paramMap, Model model)
-            throws Exception {
-
-    	Map<String, Object> info = inquiryService.select(paramMap.getMap());
-
-    	if(info != null) {
-        	info.put("tel", scrtyService.decrypt((String) info.get("tel")));
-    		info.put("email", scrtyService.decrypt((String) info.get("email")));
-    		 Map<String, Object> prev = inquiryService.prev(info);
- 		    Map<String, Object> next = inquiryService.next(info);
-   		   	model.addAttribute("prev", prev);
-   		   	model.addAttribute("next", next);
-            model.addAttribute("info", info);
-    	}
-
-
-        return PREFIX + "/view";
-    }
-
-
-
-    @RequestMapping("/write.do")
-    public String write(MyMap paramMap, Model model)
-            throws Exception {
-    	paramMap.put("code", "Q");
-    	Map<String, Object> info = inquiryService.select(paramMap.getMap());
-
-    	if(info != null) {
-    		info.put("tel", scrtyService.decrypt((String) info.get("tel")));
+		if (info != null) {
+			info.put("tel", scrtyService.decrypt((String) info.get("tel")));
 			info.put("email", scrtyService.decrypt((String) info.get("email")));
-    		model.addAttribute("info", info);
-    	}
-    	model.addAttribute("paramMap", paramMap.getMap());
+			Map<String, Object> prev = inquiryService.prev(info);
+			Map<String, Object> next = inquiryService.next(info);
+			model.addAttribute("prev", prev);
+			model.addAttribute("next", next);
+			model.addAttribute("info", info);
+		}
 
-        return PREFIX + "/write";
-    }
+		return PREFIX + "/view";
+	}
 
+	@RequestMapping("/write.do")
+	public String write(MyMap paramMap, Model model) throws Exception {
+		paramMap.put("code", "Q");
+		Map<String, Object> info = inquiryService.select(paramMap.getMap());
 
-    @RequestMapping("/proc.do")
-    public String proc(MyMap paramMap, HttpServletRequest request, Model model, SessionStatus status)
-            throws Exception {
+		if (info != null) {
+			info.put("tel", scrtyService.decrypt((String) info.get("tel")));
+			info.put("email", scrtyService.decrypt((String) info.get("email")));
+			model.addAttribute("info", info);
+		}
+		model.addAttribute("paramMap", paramMap.getMap());
 
-    	FileUploadUtil fileutil = new FileUploadUtil();
-    	paramMap.put("code", "Q");
+		return PREFIX + "/write";
+	}
 
-    	paramMap.put("tel", scrtyService.encrypt(paramMap.getStr("tel")));
-		paramMap.put("email", scrtyService.encrypt(paramMap.getStr("email")));
+	@RequestMapping("/proc.do")
+	public String proc(MyMap paramMap, HttpServletRequest request, HttpServletResponse response, Model model, SessionStatus status) throws Exception {
+		String chkCaptcha = (String) request.getSession().getAttribute(Captcha.NAME);
+		if (!chkCaptcha.equals(paramMap.getStr("captcha"))) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('보안문자가 올바르지 않습니다.'); history.go(-1);</script>");
+			out.flush();
+			model.addAttribute("paramMap", paramMap);
+			return PREFIX + "/write";
+		} else {
+			FileUploadUtil fileutil = new FileUploadUtil();
+			paramMap.put("code", "Q");
 
-    	if (paramMap.getInt("iIdx") > 0) {
-    		// update
-    		inquiryService.update(paramMap.getMap());
-    	}else {
-    		//insert
-    		inquiryService.insert(paramMap.getMap());
-    	}
+			paramMap.put("tel", scrtyService.encrypt(paramMap.getStr("tel")));
+			paramMap.put("email", scrtyService.encrypt(paramMap.getStr("email")));
 
-    	model.addAttribute("paramMap", paramMap.getMap());
+			if (paramMap.getInt("iIdx") > 0) {
+				// update
+				inquiryService.update(paramMap.getMap());
+			} else {
+				// insert
+				inquiryService.insert(paramMap.getMap());
+			}
 
-        status.setComplete();
-        return "redirect:"+PREFIX+"/list.do?type="+paramMap.getStr("type");
-    }
+			model.addAttribute("paramMap", paramMap.getMap());
 
+			status.setComplete();
+			return "redirect:" + PREFIX + "/list.do?type=" + paramMap.getStr("type");
+		}
+	}
 
 }

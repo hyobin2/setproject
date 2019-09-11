@@ -87,8 +87,8 @@
 							<div class="attach_file">
 								<dl>
 									<dt>첨부파일</dt>
-									<dd><a href="${info.fileList[0].filepath }/${info.fileList[0].filename }" target="_blank">${info.fileList[0].filename }</a></dd>
-									<dd><a href="${info.fileList[0].filepath }/${info.fileList[0].filename }" target="_blank">${info.fileList[1].filename }</a></dd>
+									<dd><a href="${info.fileList[0].filepath }/${info.fileList[0].filename }" target="_blank">${info.fileList[0].orgFilename }</a></dd>
+									<dd><a href="${info.fileList[0].filepath }/${info.fileList[0].filename }" target="_blank">${info.fileList[1].orgFilename }</a></dd>
 								</dl>
 							</div>
 							<div class="cont">
@@ -134,8 +134,8 @@
 
 						<div class="btn_group">
 							<div class="right">
-								<a href="#" class="btn_style01">수정</a>
-								<a href="#" class="btn_style01">삭제</a>
+								<!-- <a href="#" class="btn_style01">수정</a>
+								<a href="#" class="btn_style01">삭제</a> -->
 								<a href="#" onclick="fn_list()" class="btn_style02">목록보기</a>
 							</div>
 						</div>

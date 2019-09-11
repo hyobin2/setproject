@@ -203,18 +203,24 @@ function fn_search(){
 						전문성과 친절함을 보유한 컨설턴트 분들이 대기하고 있습니다.
 					</p>
 					<div class="select_area">
-						<select name="" id="">
-							<option value="">서울</option>
+						<select name="select_area" id="select_area">
+							<option value="서울">서울</option>
+							<option value="경인">경인</option>
+							<option value="충청">충청</option>
+							<option value="전남">전남</option>
+							<option value="경남">경남</option>
+							<option value="강원">강원</option>
+
 						</select>
 					</div>
-					<div class="tab_area three">
+					<!-- <div class="tab_area three">
 						<ul>
 							<li><a href="#" class="on">본사</a></li>
 							<li><a href="#">관악지사</a></li>
 							<li><a href="#">구로지사</a></li>
 						</ul>
 					</div>
-					<!--
+
 					<div class="tab_area five">
 						<ul>
 							<li><a href="#" class="on">인천</a></li>
@@ -247,8 +253,8 @@ function fn_search(){
 							<li><a href="#" class="on">춘천</a></li>
 							<li><a href="#">강원관광대학교</a></li>
 						</ul>
-					</div>
-					-->
+					</div> -->
+
 					<div class="map_area">
 						<div class="map" id="map">
 							지도영역
@@ -272,3 +278,7 @@ function fn_search(){
 					</div>
 				</div>
 			</div>
+
+<script>
+	$('#select_area option:selected').val();
+</script>

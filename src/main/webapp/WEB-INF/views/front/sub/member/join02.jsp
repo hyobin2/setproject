@@ -69,7 +69,17 @@ if ($('#id').val()  == '') {
 		var address=$('#sample6_postcode').val()+','+$('#detailAddress').val()
 		$('#address').val(address);
 
-		$('.btn_next').addClass('on')
+		if ($('#captcha').val()  == '') {
+			alert("보안문자를 입력하세요.");
+			$('#captcha').focus();
+			return false;
+		}
+
+		if($('#idcheck').val()==''){
+			alert('아이디 중복확인을 해주세요.');
+			return false;
+
+		}
 
 		if( !confirm("회원가입을 하시겠습니까?") ){
 			return false;
@@ -87,10 +97,11 @@ if ($('#id').val()  == '') {
 	        type: "post",
 	        data: JSON.stringify(params),
 	        contentType: "application/json; charset=utf-8;",
-	        dataType: "json",
+	        dataType: "html",
 	        success: function(data){
-	        	if(data =='Y'){
+	        	if(data =='N'){
 	        		alert("사용가능한 아이디 입니다.");
+	        		$('#idcheck').val('e');
 				}else{
 					alert("사용할수 없는 아이디 입니다.");
 					$('#id').val('');
@@ -129,6 +140,7 @@ if ($('#id').val()  == '') {
 										<label for="">아이디</label>
 										<div class="input2"><input type="text" name="id" id="id"/></div>
 										<a href="#" class="btn" onclick="checkId()">중복확인</a>
+										<input type="hidden" id="idcheck" name="idcheck">
 									</li>
 									<li>
 										<label for="">비밀번호</label>
@@ -222,11 +234,11 @@ if ($('#id').val()  == '') {
 										<label for="">보안문자 입력</label>
 										<div class="capcha">
 											<ul>
-												<li><div class="img"><img src="/resources/front/img/img_capcha02.png" alt=""/></div></li>
-												<li><a href="#">소리듣기</a></li>
-												<li><a href="#">새로고침</a></li>
+												<li><div class="img"><img id="captchaImg" src="/captcha" /></div></li>
+												<!-- <li><a href="#">소리듣기</a></li> -->
+												<li><a onclick="captchaRefresh(); return false;">새로고침</a></li>
 											</ul>
-											<div class="input"><input type="text" name="" id="" placeholder="보안문자를 정확히 입력해 주세요."/></div>
+											<div class="input"><input type="text" name="captcha" id="captcha" placeholder="보안문자를 정확히 입력해 주세요."/></div>
 										</div>
 									</li>
 								</ul>
@@ -298,5 +310,6 @@ if ($('#id').val()  == '') {
 			}
 		});
 	});
+
 
 </script>

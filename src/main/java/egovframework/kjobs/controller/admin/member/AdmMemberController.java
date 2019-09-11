@@ -178,6 +178,10 @@ public class AdmMemberController {
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
 		List<Map<String, Object>> list = memberService.list(paramMap.getMap());
+		for(int i=0;i<list.size();i++) {
+			list.get(i).replace("email", scrtyService.decrypt((String)list.get(i).get("email")));
+			list.get(i).replace("phone", scrtyService.decrypt((String)list.get(i).get("phone")));
+			}
 		int count = memberService.count(paramMap.getMap());
 		paginationInfo.setTotalRecordCount(count);
 
@@ -191,10 +195,14 @@ public class AdmMemberController {
 	public String write(MyMap paramMap, Model model) throws Exception {
 
 		Map<String, Object> info = memberService.select(paramMap.getMap());
-
-
-		model.addAttribute("info", info); // model에 info로 저장
-		model.addAttribute("paramMap", paramMap.getMap()); // 목록으로 돌아가기를 눌럿을때 해당 페이지로 돌아와야하기때문에 paramMap으로 저장
+		String email = scrtyService.decrypt((String)info.get("email"));
+		String phone =scrtyService.decrypt((String)info.get("phone"));
+		info.remove("email");
+		info.remove("phone");
+		info.put("email", email);
+		info.put("phone", phone);
+		model.addAttribute("info", info);
+		model.addAttribute("paramMap", paramMap.getMap());
 
 		return PREFIX + "/write";
 	}

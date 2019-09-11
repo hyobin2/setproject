@@ -14,6 +14,7 @@
 	<script src="/resources/front/js/jquery.bxslider.js"></script>
 	<script src="/resources/front/js/script.js"></script>
 	<script src="/resources/front/js/respond.src.js"></script>
+	<script type="text/javascript" src="/resources/front/js/mCmmFunction.js"></script>
 	<title>kjobs</title>
 </head>
 <body>
@@ -24,3 +25,5 @@
 		</div>
 		<tiles:insertAttribute name="FOOTER" />
 	</div>
+
+<script>

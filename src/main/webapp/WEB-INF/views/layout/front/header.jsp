@@ -71,7 +71,7 @@
 									<ul>
 										<li><a href="/front/sub/cummunity/activity/list.do">케이잡스 활동</a></li>
 										<li><a href="/front/sub/cummunity/notice/list.do">공지 및 안내사항</a></li>
-										<li><a href="/front/sub/cummunity/customerCase/list.do">고객사례</a></li>
+										<li><a href="/front/sub/cummunity/customercase/list.do">고객사례</a></li>
 									</ul>
 								</div>
 							</li>
@@ -89,7 +89,7 @@
 									<ul>
 										<li><a href="/front/sub/customer/inquiry/list.do">고객문의(Q&amp;A)</a></li>
 										<li><a href="/front/sub/customer/service/list.do">서비스 신청 및 접수</a></li>
-										<li><a href="/front/sub/customer/location.do">오시는 길</a></li>
+										<li><a href="/front/sub/customer/location/location.do">오시는 길</a></li>
 									</ul>
 								</div>
 							</li>
@@ -166,7 +166,7 @@
 								<ul>
 									<li><a href="/front/sub/cummunity/activity/list.do">케이잡스 활동</a></li>
 									<li><a href="/front/sub/cummunity/notice/list.do">공지 및 안내사항</a></li>
-									<li><a href="/front/sub/cummunity/customerCase/list.do">고객사례</a></li>
+									<li><a href="/front/sub/cummunity/customercase/list.do">고객사례</a></li>
 								</ul>
 							</div>
 						</li>
@@ -184,7 +184,7 @@
 								<ul>
 									<li><a href="/front/sub/customer/inquiry/list.do">고객문의(Q&amp;A)</a></li>
 									<li><a href="/front/sub/customer/service/list.do">서비스 신청 및 접수</a></li>
-									<li><a href="/front/sub/customer/location.do">오시는 길</a></li>
+									<li><a href="/front/sub/customer/location/location.do">오시는 길</a></li>
 								</ul>
 							</div>
 						</li>
@@ -267,7 +267,7 @@
 									<ul>
 										<li><a href="/front/sub/cummunity/activity/list.do">케이잡스 활동</a></li>
 										<li><a href="/front/sub/cummunity/notice/list.do">공지 및 안내사항</a></li>
-										<li><a href="/front/sub/cummunity/customerCase/list.do">고객사례</a></li>
+										<li><a href="/front/sub/cummunity/customercase/list.do">고객사례</a></li>
 									</ul>
 								</div>
 							</li>
@@ -285,7 +285,7 @@
 									<ul>
 										<li><a href="/front/sub/customer/inquiry/list.do">고객문의(Q&amp;A)</a></li>
 										<li><a href="/front/sub/customer/service/list.do">서비스 신청 및 접수</a></li>
-										<li><a href="/front/sub/customer/location.do">오시는 길</a></li>
+										<li><a href="/front/sub/customer/location/location.do">오시는 길</a></li>
 									</ul>
 								</div>
 							</li>

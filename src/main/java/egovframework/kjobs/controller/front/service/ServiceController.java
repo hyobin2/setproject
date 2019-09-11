@@ -15,11 +15,13 @@
  */
 package egovframework.kjobs.controller.front.service;
 
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +37,7 @@ import egovframework.kjobs.service.inquiry.InquiryService;
 import egovframework.kjobs.service.scrty.ScrtyService;
 import egovframework.rte.fdl.property.EgovPropertyService;
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import nl.captcha.Captcha;
 
 /**
  * @Class Name : ServiceController.java
@@ -142,34 +145,42 @@ public class ServiceController {
     		model.addAttribute("info", info);
     	}
     	model.addAttribute("paramMap", paramMap.getMap());
-
         return PREFIX + "/write";
     }
 
 
     @RequestMapping("/proc.do")
-    public String proc(MyMap paramMap, HttpServletRequest request, Model model, SessionStatus status)
+    public String proc(MyMap paramMap, HttpServletRequest request, HttpServletResponse response, Model model, SessionStatus status)
             throws Exception {
+	    	String chkCaptcha = (String) request.getSession().getAttribute(Captcha.NAME);
+			if (!chkCaptcha.equals(paramMap.getStr("captcha"))) {
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter out = response.getWriter();
+				out.println("<script>alert('보안문자가 올바르지 않습니다.'); history.go(-1);</script>");
+				out.flush();
+				model.addAttribute("paramMap", paramMap);
+				return PREFIX + "/write";
+			} else {
+	    	FileUploadUtil fileutil = new FileUploadUtil();
 
-    	FileUploadUtil fileutil = new FileUploadUtil();
+	    	paramMap.put("code", "S");
+	    	paramMap.put("tel", scrtyService.encrypt(paramMap.getStr("tel")));
+			paramMap.put("email", scrtyService.encrypt(paramMap.getStr("email")));
 
-    	paramMap.put("code", "S");
-    	paramMap.put("tel", scrtyService.encrypt(paramMap.getStr("tel")));
-		paramMap.put("email", scrtyService.encrypt(paramMap.getStr("email")));
+	    	if (paramMap.getInt("iIdx") > 0) {
+	    		// update
+	    		inquiryService.update(paramMap.getMap());
+	    	}else {
+	    		//insert
+	    		inquiryService.insert(paramMap.getMap());
+	    	}
 
-    	if (paramMap.getInt("iIdx") > 0) {
-    		// update
-    		inquiryService.update(paramMap.getMap());
-    	}else {
-    		//insert
-    		inquiryService.insert(paramMap.getMap());
-    	}
+	    	model.addAttribute("paramMap", paramMap.getMap());
 
-    	model.addAttribute("paramMap", paramMap.getMap());
-
-        status.setComplete();
-        return "redirect:"+PREFIX+"/list.do?type="+paramMap.getStr("type");
-    }
+	        status.setComplete();
+	        return "redirect:"+PREFIX+"/list.do?type="+paramMap.getStr("type");
+	        }
+		}
 
 
     @RequestMapping("/delete.do")

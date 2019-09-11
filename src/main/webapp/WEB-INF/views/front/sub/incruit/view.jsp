@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="util" uri="util"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script type="text/javascript">
 	function fn_list(){
 		$('#baseForm').attr('action', '/front/sub/incruit/list.do');
@@ -189,8 +190,20 @@
 									</ul>
 								</div>
 								<div class="btn_incruit">
-									<a href="${info.wurl }"><img src="/resources/front/img/btn_incruit01.png" alt="워크넷 지원하기"/></a>
-									<a href="${info.surl }"><img src="/resources/front/img/btn_incruit02.png" alt="사람인 지원하기"/></a>
+									<jsp:useBean id="now" class="java.util.Date" />
+									<fmt:formatDate value="${now}" pattern="yyyyMMddhhmm" var="nowDate" />
+									<fmt:parseDate value="${info.eDate}" pattern="yyyy-MM-dd" var="endDate" />
+									<fmt:formatDate value="${endDate}" pattern="yyyyMMdd" var="eDate"/>
+									<c:choose>
+										<c:when test="${nowDate < eDate }">
+											<a href="${info.wurl }"><img src="/resources/front/img/btn_incruit01.png" alt="워크넷 지원하기"/></a>
+											<a href="${info.surl }"><img src="/resources/front/img/btn_incruit02.png" alt="사람인 지원하기"/></a>
+										</c:when>
+										<c:when test="${nowDate > eDate }">
+
+										</c:when>
+									 </c:choose>
+
 								</div>
 							</div>
 						</div>

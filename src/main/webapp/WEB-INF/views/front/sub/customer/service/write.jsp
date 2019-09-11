@@ -83,7 +83,11 @@ function fn_write() {
 			$('#content').focus();
 			return false;
 		}
-
+		if ($('#captcha').val()  == '') {
+			alert("보안문자를 입력하세요.");
+			$('#captcha').focus();
+			return false;
+		}
 		if( !confirm("등록 하시겠습니까?") ){
 			return false;
 		}
@@ -262,6 +266,16 @@ function fn_write() {
 												<option value="아이돌">IDOL프로그램</option>
 		                        				<option value="채용">채용지원서비스</option>
 		                        				<option value="기업">기업교육컨설팅</option>
+		                        				<option value="집단">집단 상담 프로그램</option>
+		                        				<option value="취업">취업 성공 패키치</option>
+		                        				<option value="인생">인생 이모작</option>
+		                        				<option value="청년">청년내일 채움공제</option>
+		                        				<option value="민간">민간전직서비스</option>
+		                        				<option value="공공">공공전직서비스</option>
+		                        				<option value="회의">회의/포럼세미나</option>
+		                        				<option value="박람회">박람회/워크샾/컨벤션</option>
+		                        				<option value="학교">학교교육 컨설팅</option>
+		                        				<option value="기업">기업교육 컨설팅</option>
 											</select>
 										</td>
 									</tr>
@@ -277,14 +291,14 @@ function fn_write() {
 										<th scope="row"><label for=""><span class="star">*</span>자동입력방지</label></th>
 										<td colspan="3">
 											<div class="capcha">
-												<div class="img"><img src="/resources/front/img/img_capcha.png" alt="캡챠이미지"/></div>
+												<div class="img"><img id="captchaImg" src="/captcha" alt="캡챠이미지"/></div>
 												<div class="txt">
 													<div class="form">
 														<ul>
-															<li><a href="#">숫자음성듣기</a></li>
-															<li><a href="#">새로고침</a></li>
+															<!-- <li><a href="#">숫자음성듣기</a></li> -->
+															<li><a href="#" onclick="captchaRefresh(); return false;" >새로고침</a></li>
 														</ul>
-														<div><input type="text" name="" id=""/></div>
+														<div><input type="text" name="captcha" id="captcha"/></div>
 													</div>
 													<p>자동등록방지 숫자를 순서대로 입력하세요.</p>
 												</div>

@@ -15,6 +15,7 @@
  */
 package egovframework.kjobs.controller.front.member;
 
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,6 +42,7 @@ import egovframework.kjobs.service.member.MemberService;
 import egovframework.kjobs.service.scrty.ScrtyService;
 import egovframework.rte.fdl.property.EgovPropertyService;
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import nl.captcha.Captcha;
 
 /**
  * @Class Name : AdmMemberController.java
@@ -174,24 +176,36 @@ public class MemberController {
 
 		return PREFIX + "/join02";
 	}
+	@RequestMapping(value = "/join03.do")
+	public String join03(MyMap paramMap, Model model, SessionStatus status) throws Exception {
+
+		return PREFIX + "/join03";
+	}
+
 
 	@RequestMapping(value = "/proc.do")
-	public String join(MyMap paramMap, Model model, SessionStatus status, RedirectAttributes redirectAttr) throws Exception {
-
-		paramMap.put("tel", scrtyService.encrypt(paramMap.getStr("tel")));
-		paramMap.put("email", scrtyService.encrypt(paramMap.getStr("email")));
-		paramMap.put("pw", scrtyService.encryptPassword(paramMap.getStr("pw"), paramMap.getStr("id")));
-		memberService.join(paramMap.getMap());
-
-		redirectAttr.addAttribute("paramMap", paramMap);
-
-		return "redirect:/front/sub/member/join03";
+	public String join(MyMap paramMap, Model model, SessionStatus status, RedirectAttributes redirectAttr, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String chkCaptcha = (String) request.getSession().getAttribute(Captcha.NAME);
+		if (!chkCaptcha.equals(paramMap.getStr("captcha"))) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('보안문자가 올바르지 않습니다.'); history.go(-1);</script>");
+			out.flush();
+			model.addAttribute("paramMap",paramMap);
+			return PREFIX + "/join02";
+		}else {
+			paramMap.put("tel", scrtyService.encrypt(paramMap.getStr("tel")));
+			paramMap.put("email", scrtyService.encrypt(paramMap.getStr("email")));
+			paramMap.put("pw", scrtyService.encryptPassword(paramMap.getStr("pw"), paramMap.getStr("id")));
+			memberService.join(paramMap.getMap());
+			return "redirect:/front/sub/member/join03.do";
+		}
 	}
 
 	@RequestMapping(value = "/checkMember.do")
 	@ResponseBody
-	public Object checkMember(MyMap paramMap, Model model, SessionStatus status) throws Exception {
-		Map<String, Object> loginMap = memberService.select(paramMap.getMap());
+	public Object checkMember(@RequestBody Map<String, Object> paramMap, Model model, SessionStatus status, HttpServletRequest request) throws Exception {
+		Map<String, Object> loginMap = memberService.select(paramMap);
 		if(loginMap!=null) {
 			return "Y";
 		}

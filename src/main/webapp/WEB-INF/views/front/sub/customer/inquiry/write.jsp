@@ -239,14 +239,14 @@ if( !confirm("등록 하시겠습니까?") ){
 											<th scope="row"><label for=""><span class="star">*</span>자동입력방지</label></th>
 											<td colspan="3">
 												<div class="capcha">
-													<div class="img"><img src="/resources/front/img/img_capcha.png" alt="캡챠이미지"/></div>
+													<div class="img"><img id="captchaImg" src="/captcha" alt="캡챠이미지"/></div>
 													<div class="txt">
 														<div class="form">
 															<ul>
-																<li><a href="#">숫자음성듣기</a></li>
-																<li><a href="#">새로고침</a></li>
+																<!-- <li><a href="#">숫자음성듣기</a></li> -->
+																<li><a onclick="captchaRefresh(); return false;">새로고침</a></li>
 															</ul>
-															<div><input type="text" name="" id=""/></div>
+															<div><input type="text" name="captcha" id="captcha"/></div>
 														</div>
 														<p>자동등록방지 숫자를 순서대로 입력하세요.</p>
 													</div>

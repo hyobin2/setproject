@@ -61,12 +61,6 @@
 			</div>
 			<!-- contents-->
 			<div id="contents">
-				<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/customercase/view.do" enctype="multipart/form-data" >
-				<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
-				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
-				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
-				<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
-				<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
 					<div class="sub_tab_area three">
 						<ul>
 							<li><a href="../activity/list.do">케이잡스 활동</a></li>
@@ -76,11 +70,15 @@
 					</div>
 
 					<div class="board_wrap">
-
-						<div class="customercase_list">
-						<ul>
-							<c:forEach var="result" items="${list}" varStatus="status">
-
+						<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/customercase/view.do" enctype="multipart/form-data" >
+						<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
+						<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
+						<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
+						<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
+						<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
+							<div class="customerCase_list">
+							<ul>
+								<c:forEach var="result" items="${list}" varStatus="status">
 									<li>
 										<a href="#" onclick="fn_view('${util:zeroConvert(result.bIdx)}');">
 											<div class="txt">
@@ -96,15 +94,14 @@
 											</div>
 										</a>
 									</li>
-
-							</c:forEach>
+								</c:forEach>
 							</ul>
 							<div class="paging">
 							<ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="fn_link_page" />
 							</div>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 			<!-- //contents-->
 
