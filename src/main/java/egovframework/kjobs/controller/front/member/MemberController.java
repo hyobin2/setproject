@@ -235,13 +235,15 @@ public class MemberController {
 		paramMap.put("tel", scrtyService.encrypt((String)paramMap.get("tel")));
 		Map<String,Object> info = memberService.select(paramMap);
 		if(info!=null) {
-			String phone=scrtyService.decrypt((String)info.get("phone"));
-			info.put("pw",scrtyService.encryptPassword((String)info.get("id")+(String)phone.substring(0,6),(String)info.get("id")));
+			String phone= scrtyService.decrypt((String)info.get("phone"));
+			String id = (String)info.get("id");
+			String pw = id+phone.replaceAll("-", "").substring(0,6);
+			info.put("pw",scrtyService.encryptPassword(pw, id));
 			memberService.update(info);
 			MyMap smsMap = new MyMap();
-			smsMap.put("receiver", paramMap.get("tel"));
+			smsMap.put("receiver", scrtyService.decrypt((String)paramMap.get("tel")));
 			smsMap.put("msgType", "SMS");
-			smsMap.put("msg", "회원님의 비밀번호는"+info.get("id")+phone.substring(0,6)+"입니다.");
+			smsMap.put("msg", "K·JOBS 입니다. \n" + id +" 회원님의 \n비밀번호는"+info.get("id")+phone.replaceAll("-", "").substring(0,6)+"입니다.\n");
 			SmsUtil.sendSms(smsMap);
 			return "Y";
 		}else {

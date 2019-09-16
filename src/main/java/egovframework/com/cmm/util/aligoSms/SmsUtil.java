@@ -56,7 +56,7 @@ public class SmsUtil {
 			sms.put("msg_type", smsMap.getStr("msgType")); // SMS(단문) , LMS(장문), MMS(그림문자)  = 필수항목
 
 			String msg = smsMap.getStr("msg");
-			sms.put("rec_1", smsMap.getStr("receiver")); // 수신번호_$i 번째  = 필수항목
+			sms.put("rec_1", smsMap.getStr("receiver").replaceAll("-", "")); // 수신번호_$i 번째  = 필수항목
 			sms.put("msg_1", msg); // 내용_$i번째  = 필수항목
 			/*
 			int cnt = smsMap.getInt("cnt");;
