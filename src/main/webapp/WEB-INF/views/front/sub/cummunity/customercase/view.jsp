@@ -85,11 +85,19 @@
 									</ul>
 							</div>
 							<div class="attach_file">
-								<dl>
-									<dt>첨부파일</dt>
-									<dd><a href="${info.fileList[0].filepath }/${info.fileList[0].filename }" target="_blank">${info.fileList[0].orgFilename }</a></dd>
-									<dd><a href="${info.fileList[0].filepath }/${info.fileList[0].filename }" target="_blank">${info.fileList[1].orgFilename }</a></dd>
-								</dl>
+								<c:if test="${info.fileclass != '' }">
+									<dl>
+										<dt>첨부파일</dt>
+										<dd><a href="${info.fileList[0].filepath }/${info.fileList[0].filename }" target="_blank">${info.fileList[0].orgFilename }</a></dd>
+									</dl>
+								</c:if>
+								<c:if test="${info.fileclass == '' }">
+									<dl>
+										<dt>첨부파일이 존재하지않습니다.</dt>
+										<dd></dd>
+										<dd></dd>
+									</dl>
+								</c:if>
 							</div>
 							<div class="cont">
 								${info.content }

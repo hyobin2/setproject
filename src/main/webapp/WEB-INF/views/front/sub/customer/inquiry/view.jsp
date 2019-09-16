@@ -83,10 +83,8 @@
 								<h3>${info.title }</h3>
 								<ul>
 									<li><strong>작성일</strong> ${fn:substring(info.regDate, 0, 10) }</li>
-									<li><strong>조회수</strong> ${info.hit}</li>
 								</ul>
 							</div>
-							<
 							<div class="cont">
 								${info.content }
 							</div>

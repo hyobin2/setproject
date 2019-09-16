@@ -59,6 +59,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/adm/**"/>
+            <mvc:mapping path="/front/sub/customer/**"/>
             <mvc:exclude-mapping path="/adm/member/login.do"/>
             <mvc:exclude-mapping path="/adm/member/loginProc.do"/>
             <mvc:exclude-mapping path="/adm/member/logout.do"/>

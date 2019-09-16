@@ -102,7 +102,7 @@
 
 					<c:forEach var="i" begin="0" end="0" varStatus="status">
 					    <tr>
-	                        <th scope="row"><label for="">썸네일${status.index+1 }</label></th>
+	                        <th scope="row"><label for="">파일${status.index+1 }</label></th>
 	                        <td>
 	                        	<c:set var="fileFlag" value="Y" />
 	                        	<c:forEach var="result" items="${info.fileList}" >

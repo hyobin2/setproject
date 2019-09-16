@@ -9,19 +9,19 @@
 
 function fn_write(iIdx) {
 	$('#iIdx').val(iIdx);
-	$('#baseForm').attr('action', '/adm/qna/write.do');
+	$('#baseForm').attr('action', '/adm/inquiry/write.do');
 	$('#baseForm').submit();
 }
 
 function fn_link_page(pageNo){
 	$('#pageIndex').val(pageNo);
-	$('#baseForm').attr('action', '/adm/qna/list.do');
+	$('#baseForm').attr('action', '/adm/inquiry/list.do');
 	$('#baseForm').submit();
 }
 
 function fn_search_page(){
 	$('#pageIndex').val(1);
-	$('#baseForm').attr('action', '/adm/qna/list.do');
+	$('#baseForm').attr('action', '/adm/inquiry/list.do');
 	$('#baseForm').submit();
 }
 
@@ -32,7 +32,7 @@ function fn_search_page(){
        	<div class="location">
        		<span>Home  &gt; <strong>고객문의(Q&#38;A)</strong></span>
        	</div>
-       	<form name="baseForm" id="baseForm" method="get" action="/adm/qna/list.do" >
+       	<form name="baseForm" id="baseForm" method="get" action="/adm/inquiry/list.do" >
 		<input type="hidden" name="iIdx" id="iIdx" value=""/>
 		<input type="hidden" name="pageIndex" id="pageIndex" value="${paramMap.pageIndex }"/>
 

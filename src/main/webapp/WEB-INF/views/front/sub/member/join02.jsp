@@ -1,10 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <script>
 function check_join(){
-if ($('#id').val()  == '') {
-			alert("아이디를 입력하세요.");
-			$('#id').focus();
-			return false;
+		if ($('#id').val()  == '') {
+					alert("아이디를 입력하세요.");
+					$('#id').focus();
+					return false;
+				}
+		var idReg = /^[a-z]+[a-z0-9]{5,19}$/g;
+		if(!idReg.test($('#id').val())) {
+		    alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
+		    return;
 		}
 		if ($('#pw').val() == ''){
 			alert('비밀번호를 입력해주세요.');
@@ -66,7 +71,7 @@ if ($('#id').val()  == '') {
 			alert('주소를 확인해주세요.')
 			return false;
 		}
-		var address=$('#sample6_postcode').val()+','+$('#detailAddress').val()
+		var address=$('#sample6_postcode').val()+','+$('#sample6_address').val()+","+$('#detailAddress').val()
 		$('#address').val(address);
 
 		if ($('#captcha').val()  == '') {
@@ -91,6 +96,11 @@ if ($('#id').val()  == '') {
 	}
 
 	function checkId(){
+		var idReg = /^[a-z]+[a-z0-9]{5,19}$/g;
+		if(!idReg.test($('#id').val())) {
+		    alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
+		    return false;
+		}
 		var params = {'id':$('#id').val()}
 		$.ajax({
 	        url: "/front/sub/member/checkMember.do",
@@ -138,7 +148,7 @@ if ($('#id').val()  == '') {
 								<ul>
 									<li>
 										<label for="">아이디</label>
-										<div class="input2"><input type="text" name="id" id="id"/></div>
+										<div class="input2"><input type="text" name="id" id="id" maxlength="20"/></div>
 										<a href="#" class="btn" onclick="checkId()">중복확인</a>
 										<input type="hidden" id="idcheck" name="idcheck">
 									</li>
@@ -311,5 +321,19 @@ if ($('#id').val()  == '') {
 		});
 	});
 
+    $("#total").click(function(){ //만약 전체 선택 체크박스가 체크된상태일경우
+		if($("#total").prop("checked")) { //해당화면에 전체 checkbox들을 체크해준다
+			$("input[type=checkbox]").prop("checked",true); // 전체선택 체크박스가 해제된 경우
+		} else { //해당화면에 모든 checkbox들의 체크를해제시킨다.
+			$("input[type=checkbox]").prop("checked",false);
+		}
+    })
+    $('#marketing01').click(function(){
+    	if($('#marketing01').prop('checked')){
+    		$('input:checkbox[id="total"]').prop("checked",true);
+    	} else {
+    		$('input:checkbox[id="total"]').prop("checked",false);
+    	}
+    })
 
 </script>

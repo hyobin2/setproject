@@ -10,7 +10,6 @@
 
 	function fn_write() {
 
-
 		if(!$('input:radio[name=replyYn]').is(':checked')){
 			alert("답변여부를 선택하세요.");
 			$('#replyYn01').focus();
@@ -32,7 +31,6 @@
 			$('#name').focus();
 			return false;
 		}
-
 
 		if ($('#email1').val() == '' || $('#email2').val() == '') {
 			alert("이메일을 입력해주세요.");
@@ -60,7 +58,7 @@
 			return false;
 		}
 
-		$('#baseForm').attr('action', '/adm/qna/proc.do');
+		$('#baseForm').attr('action', '/adm/inquiry/proc.do');
 		$('#baseForm').submit();
 
 	}
@@ -70,12 +68,12 @@
 		if( !confirm("삭제 하시겠습니까?") ){
 			return false;
 		}
-		$('#baseForm').attr('action', '/adm/qna/delete.do');
+		$('#baseForm').attr('action', '/adm/inquiry/delete.do');
 		$('#baseForm').submit();
 	}
 
 	function fn_list(){
-		$('#baseForm').attr('action', '/adm/qna/list.do');
+		$('#baseForm').attr('action', '/adm/inquiry/list.do');
 		$('#baseForm').submit();
 	}
 
@@ -87,7 +85,7 @@
        	<div class="location">
        		<span>Home  &gt; <strong>고객문의(Q&#38;A)</strong></span>
        	</div>
-      	<form name="baseForm" id="baseForm" method="post" action="/adm/qna/proc.do" enctype="multipart/form-data" >
+      	<form name="baseForm" id="baseForm" method="post" action="/adm/inquiry/proc.do" enctype="multipart/form-data" >
 		<input type="hidden" name="iIdx" id="iIdx" value="${util:zeroConvert(info.iIdx) }" />
 		<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 		<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
@@ -121,7 +119,7 @@
 	                   	<tr>
 	                        <th scope="row">성명</th>
 	                        <td>
-	                        	<input type="text" name="name" id="name" style="width:250px" value="${info.name }" maxlength="20" readonly="readonly"/>
+	                        	<input type="text" name="company" id="company" style="width:250px" value="${info.company }" maxlength="20" readonly="readonly"/>
 	                        </td>
 	                   	</tr>
 	                   	<tr>

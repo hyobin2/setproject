@@ -216,11 +216,7 @@
 		<![CDATA[
 			UPDATE TB_BOARD
 			SET
-				HIT = HIT + 1,
-				MOD_ID = #{session.id},
-				MOD_NAME = #{session.name},
-				MOD_DATE = now(),
-				MOD_IP = #{remoteAddr}
+				HIT = HIT + 1
 			WHERE
 				B_IDX = #{bIdx}
 		]]>

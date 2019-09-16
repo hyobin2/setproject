@@ -44,11 +44,9 @@ public class AuthenticInterceptor extends WebContentInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException {
 
 		String requestURI = request.getRequestURI(); //요청 URI
+		Map<String, Object> loginMap = (HashMap<String, Object>) UserDetailsHelper.getAuthenticatedUser();
 
 		if( requestURI.startsWith("/adm/") ){ //관리자 페이지
-
-			Map<String, Object> loginMap = (HashMap<String, Object>) UserDetailsHelper.getAuthenticatedUser();
-
 			if (loginMap != null) {
 				if("1".equals(StringUtil.isNullToString(loginMap.get("auth")))) {
 					return true;
@@ -61,9 +59,17 @@ public class AuthenticInterceptor extends WebContentInterceptor {
 				ModelAndView modelAndView = new ModelAndView("redirect:/");
 				throw new ModelAndViewDefiningException(modelAndView);
 			}
+		}else {
+			if (loginMap != null) {
+				return true;
+
+			} else {
+				ModelAndView modelAndView = new ModelAndView("redirect:/front/sub/member/login.do");
+				throw new ModelAndViewDefiningException(modelAndView);
+			}
 		}
 
-		return true;
+
 	}
 
 }

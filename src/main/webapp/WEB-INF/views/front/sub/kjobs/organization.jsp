@@ -61,6 +61,7 @@
 				<div class="organization_wrap">
 					<div class="img_area">
 						<img src="/resources/front/img/img_organization_pc.jpg" alt="" class="PC"/>
+						<img src="/resources/front/img/img_organization_m.jpg" alt="" class="mobile"/>
 					</div>
 				</div>
 

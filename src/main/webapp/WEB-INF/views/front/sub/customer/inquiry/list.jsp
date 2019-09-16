@@ -103,14 +103,14 @@
 									<th scope="col">NO</th>
 									<th scope="col">제목</th>
 									<th scope="col">작성일</th>
-									<th scope="col">조회수</th>
+									<th scope="col">작성자</th>
 								</tr>
 								<c:forEach var="result" items="${list}" varStatus="status">
 									<tr>
 										<td>${result.rnum}</td>
 										<td class="left"><a href="#" onclick="fn_view('${util:zeroConvert(result.iIdx)}');">${result.title }</a></td>
 										<td>${fn:substring(result.regDate, 0, 10) }</td>
-										<td>${result.hit }</td>
+										<td>${fn:substring(result.regName,0,1) }**</td>
 									</tr>
 								</c:forEach>
 								<c:if test="${fn:length(list) <= 0 }">

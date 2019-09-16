@@ -25,7 +25,7 @@ function goLogin(){
     	<div id="main_con">
 
         	<div class="m_header">
-            	<h1><img src="/resources/admin/img/main/logo.png" alt="kjobs"></h1><div class="line_bg"></div>
+            	<h1><img src="/resources/admin/img/img_logo.png" alt="kjobs"></h1><div class="line_bg"></div>
             </div>
             <div class="m_con">
             	<div class="copy"><strong>kjobs 관리자 로그인</strong></div>

@@ -8,6 +8,41 @@ function fn_search(){
 	$('#baseForm').attr('action','/front/sub/incruit/list.do');
 	$('#baseForm').submit();
 }
+
+/* Instagram post API */
+$(document).ready(function(){
+    var tocken = "16590107755.4b48e39.93bf0b5931ac4babb49bf132bc473376"; /* Access Tocken  */
+    var count = "10";
+    $.ajax({
+        type: "GET",
+        dataType: "jsonp",
+        cache: false,
+        url: "https://api.instagram.com/v1/users/self/media/recent/?access_token=" + tocken + "&count=" + count,
+        success: function(response) {
+            if ( response.data.length > 0 ) {
+                for(var i = 0; i < response.data.length; i++) {
+                    var insta = '';
+                    var highimage = response.data[i].images.low_resolution.url;
+
+                    insta += '<li>';
+                    insta += "  <a href='" + response.data[i].link + "' target='_blank' alt='instagram'>";
+                    insta += '      <img src="' + highimage + '">';
+                    insta += "  </a>";
+                    insta += "</li>";
+
+                    $("#insta_img").append(insta);
+				}
+			}
+		}
+    });
+    return false;
+});
+
+function changeArea(idx){
+	$(".tab_area").hide();
+	$("#area"+idx).show();
+}
+
 </script>
 
 
@@ -162,10 +197,7 @@ function fn_search(){
 						<p>K·Jobs를 통해 <br />취업에 성공한 분들과 <br />상담사 분들의 생생한 <br />얘기를 들어보세요.</p>
 					</div>
 					<div class="list">
-						<ul>
-							<li><a href="#"><img src="/resources/front/img/img_main_insta01.jpg" alt="instagram"/></a></li>
-							<li><a href="#"><img src="/resources/front/img/img_main_insta02.jpg" alt="instagram"/></a></li>
-							<li><a href="#"><img src="/resources/front/img/img_main_insta03.jpg" alt="instagram"/></a></li>
+						<ul id="insta_img">
 						</ul>
 					</div>
 				</div>
@@ -203,61 +235,60 @@ function fn_search(){
 						전문성과 친절함을 보유한 컨설턴트 분들이 대기하고 있습니다.
 					</p>
 					<div class="select_area">
-						<select name="select_area" id="select_area">
-							<option value="서울">서울</option>
-							<option value="경인">경인</option>
-							<option value="충청">충청</option>
-							<option value="전남">전남</option>
-							<option value="경남">경남</option>
-							<option value="강원">강원</option>
+						<select name="select_area" id="select_area" onchange="changeArea(this.value);">
+							<option value="1">서울</option>
+							<option value="2">경인</option>
+							<option value="3">충청</option>
+							<option value="4">전남</option>
+							<option value="5">경남</option>
+							<option value="6">강원</option>
 
 						</select>
 					</div>
-					<!-- <div class="tab_area three">
+					<div class="tab_area three" id="area1">
 						<ul>
-							<li><a href="#" class="on">본사</a></li>
-							<li><a href="#">관악지사</a></li>
-							<li><a href="#">구로지사</a></li>
+							<li><a href="#" class="on" id="seoul" onclick="moveToLocation('', '');">본사</a></li>
+							<li><a href="#" id="gwanak" onclick="moveToLocation('', '');">관악지사</a></li>
+							<li><a href="#" id="guro" onclick="moveToLocation('', '');">구로지사</a></li>
 						</ul>
 					</div>
 
-					<div class="tab_area five">
+					<div class="tab_area five" style="display: none;" id="area2">
 						<ul>
-							<li><a href="#" class="on">인천</a></li>
-							<li><a href="#">남양주</a></li>
-							<li><a href="#">신안산대</a></li>
-							<li><a href="#">부천</a></li>
-							<li><a href="#">부천대학교</a></li>
+							<li><a href="#" class="on" id="incheon" onclick="moveToLocation('', '');">인천</a></li>
+							<li><a href="#" id="namyangju" onclick="moveToLocation('', '');">남양주</a></li>
+							<li><a href="#" id="sinak" onclick="moveToLocation('', '');">신안산대</a></li>
+							<li><a href="#" id="bucheon" onclick="moveToLocation('', '');">부천</a></li>
+							<li><a href="#" id="bucheonUniversity" onclick="moveToLocation('', '');">부천대학교</a></li>
 						</ul>
 					</div>
-					<div class="tab_area one">
+					<div class="tab_area one" style="display: none;" id="area3">
 						<ul>
-							<li><a href="#" class="on">유성</a></li>
+							<li><a href="#" class="on" id="useong" onclick="moveToLocation('', '');">유성</a></li>
 						</ul>
 					</div>
-					<div class="tab_area four">
+					<div class="tab_area four" style="display: none;" id="area4" >
 						<ul>
-							<li><a href="#" class="on">순천</a></li>
-							<li><a href="#">목포</a></li>
-							<li><a href="#">여수</a></li>
-							<li><a href="#">광양</a></li>
+							<li><a href="#" class="on" id="suncheon" onclick="moveToLocation('', '');">순천</a></li>
+							<li><a href="#" id="mokpo" onclick="moveToLocation('', '');">목포</a></li>
+							<li><a href="#" id="yeosu" onclick="moveToLocation('', '');">여수</a></li>
+							<li><a href="#" id="gwangyang" onclick="moveToLocation('', '');">광양</a></li>
 						</ul>
 					</div>
-					<div class="tab_area one">
+					<div class="tab_area one" style="display: none;" id="area5">
 						<ul>
-							<li><a href="#" class="on">울산</a></li>
+							<li><a href="#" class="on" id="ulsan" onclick="moveToLocation('', '');">울산</a></li>
 						</ul>
 					</div>
-					<div class="tab_area two">
+					<div class="tab_area two" style="display: none;" id="area6">
 						<ul>
-							<li><a href="#" class="on">춘천</a></li>
-							<li><a href="#">강원관광대학교</a></li>
+							<li><a href="#" class="on" id="chunCheon" onclick="moveToLocation('', '');">춘천</a></li>
+							<li><a href="#" id="gangwon" onclick="moveToLocation('', '');">강원관광대학교</a></li>
 						</ul>
-					</div> -->
+					</div>
 
 					<div class="map_area">
 						<div class="map" id="map">
-							지도영역
 						</div>
 						<div class="map_info">
 							<ul>
@@ -279,6 +310,42 @@ function fn_search(){
 				</div>
 			</div>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkbkHsVbYxg4C1VtWEKs6297cvOeudTDg&callback=initMap" async defer></script>
 <script>
-	$('#select_area option:selected').val();
+
+var map;
+var image = '/resources/ko/images/sub/marker.png';
+function initMap() {
+	//
+	var location = {lat: 35.154582, lng: 128.988158}; //좌표
+
+	map = new google.maps.Map(document.getElementById('map'), {
+	    zoom: 15,
+    	center: location,
+	});
+	addMarker(location, map);
+
+}
+
+function addMarker(location, map) {
+  var marker = new google.maps.Marker({
+	  position: location,
+	  map: map,
+	  icon: image,
+  });
+}
+
+function moveToLocation(lat, lng){
+
+	var location = {lat: lat, lng: lng}; //좌표
+	addMarker(location, map);
+
+	var center = new google.maps.LatLng(lat, lng);
+	map.panTo(center);
+
+	$('a').removeClass();
+	$(this).addClass('on');
+
+}
 </script>
+

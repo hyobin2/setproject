@@ -74,7 +74,7 @@ public class AdmMemberController {
 	@Resource(name = "beanValidator")
 	protected DefaultBeanValidator beanValidator;
 
-	/** QnaService */
+	/** InquiryService */
 	@Resource(name = "inquiryService")
 	private InquiryService inquiryService;
 
@@ -115,6 +115,8 @@ public class AdmMemberController {
 
 		String id = paramMap.getStr("id");
 		String pw = paramMap.getStr("pw");
+
+		System.out.println("3333333333+"+scrtyService.encryptPassword(pw, id));
 		try {
 			if (!"".equals(id) && !"".equals(pw)) {
 				Map<String, Object> loginMap = memberService.select(paramMap.getMap());

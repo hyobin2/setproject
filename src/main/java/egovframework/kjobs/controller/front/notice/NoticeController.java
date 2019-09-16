@@ -104,6 +104,7 @@ public class NoticeController {
 
 	   Map<String, Object> info = boardService.select(paramMap.getMap());
 	   if (info != null) {
+		   boardService.updateHit(paramMap.getMap());
 		   info.put("fileList", fileService.list(info));
 		   Map<String, Object> prev = boardService.prev(info);
 		   Map<String, Object> next = boardService.next(info);

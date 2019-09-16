@@ -21,9 +21,11 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.json.Json;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.sanselan.util.ParamMap;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -36,6 +38,7 @@ import org.springmodules.validation.commons.DefaultBeanValidator;
 
 import egovframework.com.cmm.util.StringUtil;
 import egovframework.com.cmm.util.UserDetailsHelper;
+import egovframework.com.cmm.util.aligoSms.SmsUtil;
 import egovframework.com.cmm.util.myMap.MyMap;
 import egovframework.kjobs.service.inquiry.InquiryService;
 import egovframework.kjobs.service.member.MemberService;
@@ -70,6 +73,7 @@ public class MemberController {
 	/** scrtyService */
 	@Resource(name = "scrtyService")
 	private ScrtyService scrtyService;
+
 
 	/** EgovPropertyService */
 	@Resource(name = "propertiesService")
@@ -202,14 +206,50 @@ public class MemberController {
 		}
 	}
 
-	@RequestMapping(value = "/checkMember.do")
 	@ResponseBody
-	public Object checkMember(@RequestBody Map<String, Object> paramMap, Model model, SessionStatus status, HttpServletRequest request) throws Exception {
+	@RequestMapping(value = "/checkMember.do")
+	public Object checkMember(@RequestBody Map<String, Object> paramMap) throws Exception {
 		Map<String, Object> loginMap = memberService.select(paramMap);
 		if(loginMap!=null) {
 			return "Y";
 		}
 		return "N";
 	}
+
+	@ResponseBody
+	@RequestMapping(value = "/findIdProc.do")
+	public Object findIdProc(@RequestBody Map<String, Object> paramMap) throws Exception {
+		paramMap.put("tel", scrtyService.encrypt((String)paramMap.get("tel")));
+		Map<String,Object> info = memberService.select(paramMap);
+		if(info!=null) {
+			return info;
+		}else {
+			return "N";
+		}
+
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/findPwProc.do")
+	public Object findPwProc(@RequestBody Map<String, Object> paramMap) throws Exception {
+		paramMap.put("tel", scrtyService.encrypt((String)paramMap.get("tel")));
+		Map<String,Object> info = memberService.select(paramMap);
+		if(info!=null) {
+			String phone=scrtyService.decrypt((String)info.get("phone"));
+			info.put("pw",scrtyService.encryptPassword((String)info.get("id")+(String)phone.substring(0,6),(String)info.get("id")));
+			memberService.update(info);
+			MyMap smsMap = new MyMap();
+			smsMap.put("receiver", paramMap.get("tel"));
+			smsMap.put("msgType", "SMS");
+			smsMap.put("msg", "회원님의 비밀번호는"+info.get("id")+phone.substring(0,6)+"입니다.");
+			SmsUtil.sendSms(smsMap);
+			return "Y";
+		}else {
+			return "N";
+		}
+
+	}
+
+
 
 }

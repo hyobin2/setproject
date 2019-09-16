@@ -149,7 +149,7 @@
 			</c:forEach>
 		}else{
 			if ($('#file1').val()  == '') {
-				alert("썸네일을 첨부하세요.");
+				alert("로고를 등록해주세요.");
 				$('#file1').focus();
 				return false;
 			}

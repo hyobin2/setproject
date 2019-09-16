@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
@@ -165,8 +166,6 @@
 	                        <td><input type="text" id="sample6_postcode" placeholder="우편번호"style="width:150px;" value="${fn:split(info.address, ',')[0]}" readonly="readonly">
 							<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"style="width:50px;" value="" disabled="disabled"><br/>
 							<input type="text" id="sample6_address" placeholder="주소" style="width:150px;" value="${fn:split(info.address, ',')[1]}" readonly="readonly">
-							<input type="text" id="sample6_extraAddress" placeholder="참고항목" style="width:200px;" value="${fn:split(info.address, ',')[2]}" readonly="readonly"><br/>
-							<input type="text" id="sample6_detailAddress" placeholder="상세주소" style="width: 400px;" value="${fn:split(info.address, ',')[3]}" readonly="readonly">
 							<input type="hidden" id="address" name="address">
 							</td>
 	                   	</tr>

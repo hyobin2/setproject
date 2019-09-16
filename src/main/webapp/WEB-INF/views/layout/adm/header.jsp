@@ -20,7 +20,7 @@
     <!--좌측메뉴 끝-->
     <div class="gnb">
         <div class="in">
-            <h1><a href="/adm/member/list.do"><img src="/resources/admin/img/sub/sub_logo.png" alt="로고" /></a></h1>
+            <h1><a href="/adm/member/list.do"><img src="/resources/admin/img/img_logo.png" alt="로고" /></a></h1>
           <ul>
           		<li class="sub001"> <a href="/adm/member/list.do">회원관리</a>
           		<ul class="gnb_sub"></ul>
@@ -34,9 +34,9 @@
                	<li class="sub003"> <a href="/adm/hire/list.do">채용관리</a>
                	<ul class="gnb_sub"></ul>
                 </li>
-                <li class="sub004"> <a href="/adm/qna/list.do">문의관리</a>
+                <li class="sub004"> <a href="/adm/inquiry/list.do">문의관리</a>
                 	<ul class="gnb_sub">
-                		<li><a href="/adm/qna/list.do">고객문의(Q/A)</a>
+                		<li><a href="/adm/inquiry/list.do">고객문의(Q/A)</a>
                 		<li><a href="/adm/service/list.do">서비스 접수</a>
                 	</ul>
                 </li>

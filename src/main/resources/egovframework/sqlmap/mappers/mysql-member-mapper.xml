@@ -26,12 +26,21 @@
 				<when test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( mIdx ) and session.auth == "1"'>
 					AND M_IDX = #{mIdx}
 				</when>
-				<otherwise>
+				<when test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( id )'>
 					AND ID = #{id}
-				</otherwise>
+				</when>
+				<when test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( name )'>
+					AND NAME = #{name}
+					AND PHONE = #{tel}
+				</when>
+				<when test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( findId )'>
+					AND ID = #{findId}
+					AND PHONE = #{tel}
+				</when>
+
 			</choose>
 		<![CDATA[
-
+			limit 1
 		]]>
 	</select>
 
@@ -45,6 +54,15 @@
 				MOD_NAME = #{session.name},
 				MOD_DATE = now(),
 				MOD_IP = #{remoteAddr}
+
+		]]>
+			<choose>
+			<when test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( pw )'>
+						,PW = #{pw}
+					</when>
+			</choose>
+		<![CDATA[
+
 			WHERE
 				M_IDX = #{mIdx}
 		]]>

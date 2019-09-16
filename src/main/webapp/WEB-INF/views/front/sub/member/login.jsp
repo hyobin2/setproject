@@ -35,7 +35,7 @@
 								<a href="/front/sub/member/join.do">회원가입</a>
 							</div>
 							<div class="findID">
-								<a href="findID.html">아이디/비밀번호 찾기</a>
+								<a href="/front/sub/member/findID.do">아이디/비밀번호 찾기</a>
 							</div>
 						</form>
 						</div>

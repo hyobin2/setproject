@@ -67,11 +67,11 @@ function fn_write() {
 
 		$('#email').val(email);
 
-		if ($('#sample6_postcode1').val()==''|| $('#sample6_detailAddress').val() == ''){
+		if ($('#sample6_postcode1').val()==''|| $('#sample6_address').val() == ''){
 			alert('주소를 확인해주세요.')
 			return false;
 		}
-		var address=$('#sample6_postcode').val()+','+$('#sample6_detailAddress').val()
+		var address=$('#sample6_postcode1').val()+'-'+$('#sample6_postcode2').val()+','+$('#sample6_address').val()
 		$('#address').val(address);
 
 		if($('#division').val()=='1'){
@@ -86,6 +86,10 @@ function fn_write() {
 		if ($('#captcha').val()  == '') {
 			alert("보안문자를 입력하세요.");
 			$('#captcha').focus();
+			return false;
+		}
+		if(!$('input:checkbox[id="agree"]').prop('checked')){
+			alert('개인정보보호정책에 동의하여주세요.')
 			return false;
 		}
 		if( !confirm("등록 하시겠습니까?") ){
@@ -185,11 +189,11 @@ function fn_write() {
 									<tr>
 										<th scope="row"><label for=""><span class="star">*</span>비밀번호</label></th>
 										<td>
-											<div class="input"><input type="password" name="pw" id="pw" placeholder="6~16자의 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합" /></div>
+											<div class="input"><input type="password" name="pw" id="pw" placeholder="6~16자의 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합" maxlength="16"/></div>
 										</td>
 										<th scope="row"><label for=""><span class="star">*</span>비밀번호 확인</label></th>
 										<td>
-											<div class="input"><input type="password" name="pwcheck" id="pwcheck" placeholder="입력하신 비밀번호를 한번 더 입력해 주세요 " /></div>
+											<div class="input"><input type="password" name="pwcheck" id="pwcheck" placeholder="입력하신 비밀번호를 한번 더 입력해 주세요 " maxlength="16"/></div>
 										</td>
 									</tr>
 									<tr>
@@ -251,7 +255,7 @@ function fn_write() {
 													</li>
 													<li><a style="width:90px" onclick="sample6_execDaumPostcode()">주소찾기</a></li>
 													<li class="long">
-														<div class="input"><input type="text" name="sample6_detailAddress" id="sample6_detailAddress"/></div>
+														<div class="input"><input type="text" name="sample6_address" id="sample6_address"/></div>
 														<input type="hidden" name="address" id="address">
 													</li>
 												</ul>
@@ -360,14 +364,12 @@ function fn_write() {
                     }
                     // 조합된 참고항목을 해당 필드에 넣는다.
                 } else {
-                    document.getElementById("sample6_extraAddress").value = '';
                 }
-
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('sample6_postcode1').value = data.postcode1;
                 document.getElementById('sample6_postcode2').value = data.postcode2;
+                document.getElementById("sample6_address").value = addr;
                 // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
             }
         }).open();
     }

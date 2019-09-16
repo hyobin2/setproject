@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package egovframework.kjobs.controller.admin.qna;
+package egovframework.kjobs.controller.admin.inquiry;
 
 import java.util.List;
 import java.util.Map;
@@ -37,8 +37,8 @@ import egovframework.rte.fdl.property.EgovPropertyService;
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 /**
- * @Class Name : QnaController.java
- * @Description : QnaController Class
+ * @Class Name : InquiryController.java
+ * @Description : InquiryController Class
  * @Modification Information
  * @  수정일      수정자              수정내용
  * @ ---------   ---------   -------------------------------
@@ -50,12 +50,12 @@ import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
  */
 
 @Controller
-@RequestMapping(value = AdmQnaController.PREFIX)
-public class AdmQnaController {
+@RequestMapping(value = AdmInquiryController.PREFIX)
+public class AdmInquiryController {
 
-	public static final String PREFIX = "/adm/qna";
+	public static final String PREFIX = "/adm/inquiry";
 
-	/** QnaService */
+	/** InquiryService */
 	@Resource(name = "inquiryService")
 	private InquiryService inquiryService;
 
