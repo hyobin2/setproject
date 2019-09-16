@@ -245,45 +245,45 @@ function changeArea(idx){
 
 						</select>
 					</div>
-					<div class="tab_area three" id="area1">
+						<div class="tab_area three" id="area1">
 						<ul>
-							<li><a href="#" class="on" id="seoul" onclick="moveToLocation('', '');">본사</a></li>
-							<li><a href="#" id="gwanak" onclick="moveToLocation('', '');">관악지사</a></li>
-							<li><a href="#" id="guro" onclick="moveToLocation('', '');">구로지사</a></li>
+							<li><a href="#none" class="on" id="seoul" onclick="moveToLocation('37.525766', '126.963661','seoul' );">본사</a></li>
+							<li><a href="#none" id="gwanak" onclick="moveToLocation('', '','gwanak' );">관악지사</a></li>
+							<li><a href="#none" id="guro" onclick="moveToLocation('', '','guro' );">구로지사</a></li>
 						</ul>
 					</div>
 
 					<div class="tab_area five" style="display: none;" id="area2">
 						<ul>
-							<li><a href="#" class="on" id="incheon" onclick="moveToLocation('', '');">인천</a></li>
-							<li><a href="#" id="namyangju" onclick="moveToLocation('', '');">남양주</a></li>
-							<li><a href="#" id="sinak" onclick="moveToLocation('', '');">신안산대</a></li>
-							<li><a href="#" id="bucheon" onclick="moveToLocation('', '');">부천</a></li>
-							<li><a href="#" id="bucheonUniversity" onclick="moveToLocation('', '');">부천대학교</a></li>
+							<li><a href="#none" class="on" id="incheon" onclick="moveToLocation('', '', 'incheon');">인천</a></li>
+							<li><a href="#none" id="namyangju" onclick="moveToLocation('', '', 'namyangju');">남양주</a></li>
+							<li><a href="#none" id="sinak" onclick="moveToLocation('', '', 'sinak');">신안산대</a></li>
+							<li><a href="#none" id="bucheon" onclick="moveToLocation('', '', 'bucheon');">부천</a></li>
+							<li><a href="#none" id="bucheonUniversity" onclick="moveToLocation('', '', 'bucheonUniversity');">부천대학교</a></li>
 						</ul>
 					</div>
 					<div class="tab_area one" style="display: none;" id="area3">
 						<ul>
-							<li><a href="#" class="on" id="useong" onclick="moveToLocation('', '');">유성</a></li>
+							<li><a href="#none" class="on" id="useong" onclick="moveToLocation('', '', 'useong');">유성</a></li>
 						</ul>
 					</div>
 					<div class="tab_area four" style="display: none;" id="area4" >
 						<ul>
-							<li><a href="#" class="on" id="suncheon" onclick="moveToLocation('', '');">순천</a></li>
-							<li><a href="#" id="mokpo" onclick="moveToLocation('', '');">목포</a></li>
-							<li><a href="#" id="yeosu" onclick="moveToLocation('', '');">여수</a></li>
-							<li><a href="#" id="gwangyang" onclick="moveToLocation('', '');">광양</a></li>
+							<li><a href="#none" class="on" id="suncheon" onclick="moveToLocation('', '', 'suncheon');">순천</a></li>
+							<li><a href="#none" id="mokpo" onclick="moveToLocation('', '', 'mokpo');">목포</a></li>
+							<li><a href="#none" id="yeosu" onclick="moveToLocation('', '', 'yeosu');">여수</a></li>
+							<li><a href="#none" id="gwangyang" onclick="moveToLocation('', '', 'gwangyang');">광양</a></li>
 						</ul>
 					</div>
 					<div class="tab_area one" style="display: none;" id="area5">
 						<ul>
-							<li><a href="#" class="on" id="ulsan" onclick="moveToLocation('', '');">울산</a></li>
+							<li><a href="#none" class="on" id="ulsan" onclick="moveToLocation('', '', 'ulsan');">울산</a></li>
 						</ul>
 					</div>
 					<div class="tab_area two" style="display: none;" id="area6">
 						<ul>
-							<li><a href="#" class="on" id="chunCheon" onclick="moveToLocation('', '');">춘천</a></li>
-							<li><a href="#" id="gangwon" onclick="moveToLocation('', '');">강원관광대학교</a></li>
+							<li><a href="#none" class="on" id="chunCheon" onclick="moveToLocation('', '', 'chunCheon');">춘천</a></li>
+							<li><a href="#none" id="gangwon" onclick="moveToLocation('', '', 'gangwon');">강원관광대학교</a></li>
 						</ul>
 					</div>
 
@@ -335,7 +335,7 @@ function addMarker(location, map) {
   });
 }
 
-function moveToLocation(lat, lng){
+function moveToLocation(lat, lng, area){
 
 	var location = {lat: lat, lng: lng}; //좌표
 	addMarker(location, map);
@@ -344,7 +344,7 @@ function moveToLocation(lat, lng){
 	map.panTo(center);
 
 	$('a').removeClass();
-	$(this).addClass('on');
+	$('#'+area).addClass('on');
 
 }
 </script>

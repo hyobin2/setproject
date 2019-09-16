@@ -53,20 +53,20 @@
 			<!-- //contents-->
 
 			<!-- 비밀번호찾기 팝업 -->
-			<div class="pop_findPW">
+			<!-- <div class="pop_findPW">
 				<div class="inner">
 					<h2>비밀번호찾기 결과</h2>
 					<a href="#" class="close_pop_findPW"><img src="/resources/front/img/btn_close03.png" alt="close"/></a>
 					<div class="cont">
 						<p>회원님의 비밀번호는 <strong>dqwfwq!! </strong> 입니다.</p>
-						<!-- <p class="nodata">일치하는 회원정보가 없습니다.</p> -->
+						<p class="nodata">일치하는 회원정보가 없습니다.</p>
 						<div class="btn">
 							<a href="/front/sub/member/findID.do">아이디 찾기</a>
 							<a href="/front/sub/member/join.do">회원가입</a>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- //비밀번호찾기 팝업 -->
 
 <script type="text/javascript">
@@ -84,12 +84,18 @@
 
 });*/
 $('#findPw').click(function(){
+	if($('#findId').val() == ''){
+		alert('아이디를 입력해주세요.');
+		return false;
+	}
+
 	if($('#tel1').val() == '' || $('#tel2').val() == '' || $('#tel3').val()== '' ){
 		alert('전화번호를 입력해주세요.');
 		return false;
 	}
+
 	$('#tel').val($('#tel1').val()+"-"+$('#tel2').val()+"-"+$('#tel3').val());
-	console.log($('#tel1').val()+"-"+$('#tel2').val()+"-"+$('#tel3').val());
+
 	var params={'findId':$('#findId').val(),'tel':$('#tel').val()}
 		$.ajax({
 			url: "/front/sub/member/findPwProc.do",
