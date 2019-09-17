@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <script>
 function fn_search(){
-	$('#area').val($('#search_form1 option:selected').val());
-	$('#division').val($('#search_form2 option:selected').val());
-	$('#salary').val($('#search_form3 option:selected').val());
-	$('#work').val($('#search_form4 option:selected').val());
 	$('#baseForm').attr('action','/front/sub/incruit/list.do');
 	$('#baseForm').submit();
 }
@@ -67,9 +63,8 @@ function changeArea(idx){
 							<ul>
 								<li>
 									<label for="search_form1" class="hide">지역선택</label>
-									<input type="hidden" name="area" id="area" >
-									<select name="" id="search_form1" style="width:33%;">
-										<option value="지역" >지역</option>
+									<select name="area" id="area" style="width:33%;">
+										<option value="" >지역</option>
 										<option value="서울" >서울</option>
 		                        		<option value="경기" >경기</option>
 		                        		<option value="인천" >인천</option>
@@ -88,9 +83,8 @@ function changeArea(idx){
 		                        		<option value="제주" >제주</option>
 									</select>
 									<label for="search_form2" class="hide">산업별 구분 선택</label>
-									<input type="hidden" name="division" id="division" >
-									<select name="" id="search_form2" style="width:63%;">
-										<option value="구분" >구분</option>
+									<select name="division" id="division" style="width:63%;">
+										<option value="" >구분</option>
 										<option value="서비스" >서비스업</option>
 		                        		<option value="교육" >교육업</option>
 		                        		<option value="금융" >금융/은행업</option>
@@ -106,9 +100,8 @@ function changeArea(idx){
 								</li>
 								<li>
 									<label for="search_form3" class="hide">연봉 선택</label>
-									<input type="hidden" name="salary" id="salary" >
-									<select name="" id="search_form3" style="width:63%;">
-										<option value="0" >연봉 </option>
+									<select name="salary" id="salary" style="width:63%;">
+										<option value="" >연봉 </option>
 										<option value="2000" >2000이하</option>
 	      								<option value="2499" >2000~2500미만</option>
 	         							<option value="2999"  >2500~3000미만</option>
@@ -117,9 +110,8 @@ function changeArea(idx){
 	         							<option value="5000" >5000이상</option>
 									</select>
 									<label for="search_form4" class="hide">형태 선택</label>
-									<input type="hidden" name="work" id="work">
-									<select name="" id="search_form4" style="width:33%;">
-										<option value="고용형태" >고용형태</option>
+									<select name="work" id="work" style="width:33%;">
+										<option value="" >고용형태</option>
 										<option value="정규직" >정규직</option>
 		            					<option value="계약직" >계약직</option>
 		            					<option value="파견직" >파견직</option>

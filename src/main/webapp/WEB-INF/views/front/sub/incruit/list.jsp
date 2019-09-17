@@ -12,11 +12,7 @@
 		$('#baseForm').submit();
 		}
 	function fn_search(){
-
-		$('#area').val($('#incruit_search1 option:selected').val());
-		$('#division').val($('#incruit_search2 option:selected').val());
-		$('#salary').val($('#incruit_search3 option:selected').val());
-		$('#work').val($('#incruit_search4 option:selected').val());
+		
 		$('#baseForm').attr('action','/front/sub/incruit/list.do');
 		$('#baseForm').submit();
 	}
@@ -65,7 +61,6 @@
 			<!-- contents-->
 			<div id="contents">
 				<form name="baseForm" id="baseForm" method="get" action="/front/sub/incruit/list.do" >
-				<input type="hidden" name="paramMap" id="paramMap" value="${paramMap }">
 				<input type="hidden" name="hIdx" id="hIdx">
 					<div class="sub_tab_area one">
 						<ul>
@@ -84,9 +79,8 @@
 								</p>
 								<div class="incruit_search">
 									<label for="incruit_search1" class="hide">지역선택</label>
-									<input type="hidden" name="area" id="area" value="${paramMap.area }">
-									<select name="" id="incruit_search1" style="width:14%">
-										<option value="지역" ${paramMap.area == '지역'? 'selected="selected"':'' }>지역</option>
+									<select name="area" id="area" style="width:14%">
+										<option value="">지역</option>
 										<option value="서울" ${paramMap.area == '서울'? 'selected="selected"':'' }>서울</option>
 		                        		<option value="경기" ${paramMap.area == '경기'? 'selected="selected"':'' }>경기</option>
 		                        		<option value="인천" ${paramMap.area == '인천'? 'selected="selected"':'' }>인천</option>
@@ -105,9 +99,8 @@
 		                        		<option value="제주" ${paramMap.area == '제주'? 'selected="selected"':'' }>제주</option>
 									</select>
 									<label for="incruit_search2" class="hide">구분 선택</label>
-									<input type="hidden" name="division" id="division" value="${paramMap.division }">
-									<select name="" id="incruit_search2" style="width:24%">
-										<option value="구분" ${paramMap.division =='구분'? 'selected="selected"' :'' }>구분</option>
+									<select name="division" id="division" style="width:24%">
+										<option value="">구분</option>
 										<option value="서비스" ${paramMap.division == '서비스'? 'selected="selected"':'' }>서비스업</option>
 		                        		<option value="교육" ${paramMap.division == '교육'? 'selected="selected"':'' }>교육업</option>
 		                        		<option value="금융" ${paramMap.division == '금융'? 'selected="selected"':'' }>금융/은행업</option>
@@ -121,9 +114,8 @@
 		                        		<option value="제조" ${paramMap.division == '제조'? 'selected="selected"':'' }>제조/생산/화학업</option>
 									</select>
 									<label for="incruit_search3" class="hide">연봉 선택</label>
-									<input type="hidden" name="salary" id="salary" value="${paramMap.salary }">
-									<select name="" id="incruit_search3" style="width:24%">
-										<option value="0" ${paramMap.salary =='0'?'selected="selected"':'' }>연봉 </option>
+									<select name="salary" id="salary" style="width:24%">
+										<option value="">연봉 </option>
 										<option value="2000" ${paramMap.salary == '2000'? 'selected="selected"':'' }>2000이하</option>
 	      								<option value="2499" ${paramMap.salary == '2499'? 'selected="selected"':'' }>2000~2500미만</option>
 	         							<option value="2999" ${paramMap.salary == '2999'? 'selected="selected"':'' } >2500~3000미만</option>
@@ -132,9 +124,8 @@
 	         							<option value="5000" ${paramMap.salary == '5000'? 'selected="selected"':'' }>5000이상</option>
 									</select>
 									<label for="incruit_search4" class="hide">형태 선택</label>
-									<input type="hidden" name="work" id="work" value="${paramMap.work }">
-									<select name="" id="incruit_search4" style="width:14%">
-										<option value="고용형태" ${paramMap.work == '고용형태'? 'selected="selected"':'' }>고용형태</option>
+									<select name="work" id="work" style="width:14%">
+										<option value="">고용형태</option>
 										<option value="정규직" ${paramMap.work == '정규직'? 'selected="selected"':'' }>정규직</option>
 		            					<option value="계약직" ${paramMap.work == '계약직'? 'selected="selected"':'' }>계약직</option>
 		            					<option value="파견직" ${paramMap.work == '파견직'? 'selected="selected"':'' }>파견직</option>

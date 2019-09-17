@@ -7,26 +7,18 @@
 		 WHERE
 		 	USE_YN = 'Y'
 		 ]]>
-		 		<if test="area != null">
-					<if test='area != "지역"'>
-					<![CDATA[ AND AREA = #{area} ]]>
-					</if>
-				</if>
-				<if test="division != null">
-					<if test='division != "구분"'>
-						<![CDATA[ AND DIVISION = #{division} ]]>
-					</if>
-				</if>
-				<if test="salary != null">
-					<if test='salary != 0'>
-						<![CDATA[ AND SALARY = #{salary} ]]>
-					</if>
-				</if>
-				<if test="work != null">
-					<if test='work != "고용형태" '>
-						<![CDATA[ AND WORK = #{work} ]]>
-					</if>
-				</if>
+	 		<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( area )'>
+				<![CDATA[ AND AREA = #{area} ]]>
+			</if>
+			<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( division )'>
+				<![CDATA[ AND DIVISION = #{division} ]]>
+			</if>
+			<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( salary )'>
+				<![CDATA[ AND SALARY = #{salary} ]]>
+			</if>					
+			<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( work )'>
+				<![CDATA[ AND WORK = #{work} ]]>
+			</if>
 	</sql>
 
 	<select id="list" resultType="myCamelMap">
