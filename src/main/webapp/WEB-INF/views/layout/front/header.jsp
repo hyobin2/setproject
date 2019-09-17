@@ -207,10 +207,15 @@
 			<div class="mobile_fullmenu">
 				<div class="inner">
 					<a href="#" class="close_mobile_fullmenu"><img src="/resources/front/img/btn_close02.png" alt="close"/></a>
-					<div class="mobile_login">
+					<div class="mobile_login" id="mobile_logout">
 						<ul>
-							<li><a href="#">회원가입</a></li>
-							<li><a href="#">로그인</a></li>
+							<li><a href="/front/sub/member/join.do">회원가입</a></li>
+							<li><a href="/front/sub/member/login.do">로그인</a></li>
+						</ul>
+					</div>
+					<div class="mobile_login" id="mobile_login" style="display: none;">
+						<ul>
+							<li><a href="/front/sub/member/logout.do" >로그아웃</a></li>
 						</ul>
 					</div>
 					<div class="mobile_fullmenu_list">
@@ -308,9 +313,13 @@ $('#login').hide();
 if('${loginMap.id }' != ''){
 	$('#logout').hide();
 	$('#login').show();
+	$('#mobile_logout').hide()
+	$('#mobile_login').show()
 } else{
 	$('#logout').show();
 	$('#login').hide();
+	$('#mobile_logout').show()
+	$('#mobile_login').hide()
 }
 
 </script>
