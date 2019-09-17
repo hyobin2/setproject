@@ -1,12 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-		<!-- header -->
+
 		<div id="header">
 			<div class="inner">
 				<h1><a href="/front/"><img src="/resources/front/img/img_logo.png" alt="케이잡스"/></a></h1>
-				<div class="lnb">
+				<div class="lnb" id="logout">
 					<ul>
 						<li><a href="/front/sub/member/join.do">회원가입</a></li>
 						<li><a href="/front/sub/member/login.do">로그인</a></li>
+						<li><a href="#"><strong>ENG</strong></a></li>
+					</ul>
+				</div>
+				<div class="lnb" id="login" style="display: none;">
+					<ul>
+						<li><a href="/front/sub/member/logout.do">로그아웃</a></li>
 						<li><a href="#"><strong>ENG</strong></a></li>
 					</ul>
 				</div>
@@ -297,5 +303,14 @@
 				</div>
 			</div>
 		</div>
+<script>
+$('#login').hide();
+if('${loginMap.id }' != ''){
+	$('#logout').hide();
+	$('#login').show();
+} else{
+	$('#logout').show();
+	$('#login').hide();
+}
 
-		<!-- //mobile_header -->
+</script>
