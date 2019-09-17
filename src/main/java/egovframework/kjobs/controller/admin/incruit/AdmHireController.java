@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package egovframework.kjobs.controller.front.hire;
+package egovframework.kjobs.controller.admin.incruit;
 
 import java.util.List;
 import java.util.Map;
@@ -50,10 +50,10 @@ import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
  */
 
 @Controller
-@RequestMapping(value = HireController.PREFIX)
-public class HireController {
+@RequestMapping(value = AdmHireController.PREFIX)
+public class AdmHireController {
 
-	public static final String PREFIX = "/front/sub/incruit";
+	public static final String PREFIX = "/adm/hire";
 	public static final String FILE_UPLOAD_PATH = GlobalsProperties.getFileProperty("hire.Path"); // DB에 테이블을 하나로써서upload경로를 따로지정//sponson.Path=/upload/editor/images(설정을따로함)
 	/** HireService */
 	@Resource(name = "hireService") // HireServiceImpl를 생성자 //Autowired와 비슷함 (autowired는 스프링에서만 사용  Resource는 자바에서 사용)
@@ -88,13 +88,6 @@ public class HireController {
 		int count = hireService.count(paramMap.getMap());
 		paginationInfo.setTotalRecordCount(count);
 
-		if( list != null && list.size() > 0 ){
-			for( int i = 0; i < list.size(); i++ ){
-				Map<String, Object> tmpListMap = list.get(i);
-				List<Map<String, Object>> fileList = fileService.list(tmpListMap);
-				tmpListMap.put("fileList", fileList);
-			}
-		}
 
 		model.addAttribute("paramMap", paramMap.getMap());
 		model.addAttribute("list", list);
@@ -107,14 +100,24 @@ public class HireController {
 	   @RequestMapping("/view.do") public String view(MyMap paramMap, Model model)
 	   throws Exception {
 
-	   Map<String, Object> info = hireService.select(paramMap.getMap());
-	   if (info != null) {
-		   model.addAttribute("info", info);
-	   }
-	   return PREFIX + "/view";
-	   }
+	   Map<String, Object> info = hireService.select(paramMap.getMap()); if (info
+	   != null) { info.put("fileList", fileService.list(info));
+	   model.addAttribute("info", info); }
+	   return PREFIX + "/view"; }
 
+	@RequestMapping("/write.do") // 글쓰기 url
+	public String write(MyMap paramMap, Model model) throws Exception {
 
+		Map<String, Object> info = hireService.select(paramMap.getMap());
+
+		if (info != null) {
+			info.put("fileList", fileService.list(info));
+			model.addAttribute("info", info);
+		}
+		model.addAttribute("paramMap", paramMap.getMap());
+
+		return PREFIX + "/write";
+	}
 
 	@RequestMapping("/proc.do")
 	public String proc(MyMap paramMap, HttpServletRequest request, Model model, SessionStatus status) throws Exception {
