@@ -68,9 +68,9 @@
 				<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
 					<div class="sub_tab_area three">
 						<ul>
-							<li><a href="../activity/list.do">케이잡스 활동</a></li>
-							<li><a href="../notice/list.do">공지 및 안내사항</a></li>
-							<li><a href="../customercase/list.do" class="on">고객사례</a></li>
+							<li><a href="/front/sub/cummunity/activity/list.do">케이잡스 활동</a></li>
+							<li><a href="/front/sub/cummunity/notice/list.do">공지 및 안내사항</a></li>
+							<li><a href="/front/sub/cummunity/customercase/list.do" class="on">고객사례</a></li>
 						</ul>
 					</div>
 

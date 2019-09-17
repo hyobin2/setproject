@@ -54,9 +54,9 @@ function changeArea(idx){
 
 				<div class="sub_tab_area three">
 					<ul>
-						<li><a href="../inquiry/list.do">고객문의</a></li>
-						<li><a href="../service/list.do">서비스 신청 및 접수</a></li>
-						<li><a href="../location/location.do" class="on">오시는 길</a></li>
+						<li><a href="/front/sub/customer/inquiry/list.do" >고객문의</a></li>
+						<li><a href="/front/sub/customer/service/list.do" class="on" > 서비스 신청 및 접수</a></li>
+						<li><a href="/front/sub/customer/location/location.do">오시는 길</a></li>
 					</ul>
 				</div>
 
@@ -77,45 +77,44 @@ function changeArea(idx){
 							</select>
 						</div>
 
-						<div class="tab_area three" id="area1">
+
+					<div class="tab_area three" id="area1">
 						<ul>
 							<li><a href="#none" class="on" onclick="moveToLocation('37.525766', '126.963661', this);">본사</a></li>
-							<li><a href="#none"  onclick="moveToLocation('', '', this);">관악지사</a></li>
-							<li><a href="#none"  onclick="moveToLocation('', '', this);">구로지사</a></li>
+							<li><a href="#none"  onclick="moveToLocation('37.494905', '126.859828', this);">관악지사</a></li>
+							<li><a href="#none"  onclick="moveToLocation('37.504012', '126.881831', this);">구로지사</a></li>
 						</ul>
 					</div>
 
-					<div class="tab_area five" style="display: none;" id="area2">
+					<div class="tab_area four" style="display: none;" id="area2">
 						<ul>
-							<li><a href="#none" class="on" onclick="moveToLocation('', '', this);">인천</a></li>
-							<li><a href="#none" onclick="moveToLocation('', '', this);">남양주</a></li>
-							<li><a href="#none" onclick="moveToLocation('', '', this);">신안산대</a></li>
-							<li><a href="#none" onclick="moveToLocation('', '', this);">부천</a></li>
-							<li><a href="#none" onclick="moveToLocation('', '', this);">부천대학교</a></li>
+							<li><a href="#none" class="on" onclick="moveToLocation('37.450500', '126.698553', this);">인천</a></li>
+							<li><a href="#none" onclick="moveToLocation('37.634172', '127.210518', this);">남양주</a></li>
+							<li><a href="#none" onclick="moveToLocation('37.313498', '126.808315', this);">신안산대</a></li>
+							<li><a href="#none" onclick="moveToLocation('37.484395', '126.812932', this);">부천</a></li>
 						</ul>
 					</div>
 					<div class="tab_area one" style="display: none;" id="area3">
 						<ul>
-							<li><a href="#none" class="on" onclick="moveToLocation('', '', this);">유성</a></li>
+							<li><a href="#none" class="on" onclick="moveToLocation('36.358529', '127.342829', this);">유성</a></li>
 						</ul>
 					</div>
 					<div class="tab_area four" style="display: none;" id="area4" >
 						<ul>
-							<li><a href="#none" class="on" onclick="moveToLocation('', '', this);">순천</a></li>
-							<li><a href="#none" onclick="moveToLocation('', '', this);">목포</a></li>
-							<li><a href="#none" onclick="moveToLocation('', '', this);">여수</a></li>
-							<li><a href="#none"  onclick="moveToLocation('', '', this);">광양</a></li>
+							<li><a href="#none" class="on" onclick="moveToLocation('34.951515', '127.514675', this);">순천</a></li>
+							<li><a href="#none" onclick="moveToLocation('34.934661', '127.697780', this);">목포</a></li>
+							<li><a href="#none" onclick="moveToLocation('34.749867', '127.699092', this);">여수</a></li>
+							<li><a href="#none"  onclick="moveToLocation('34.934606', '127.697783', this);">광양</a></li>
 						</ul>
 					</div>
 					<div class="tab_area one" style="display: none;" id="area5">
 						<ul>
-							<li><a href="#none" class="on" onclick="moveToLocation('', '', this);">울산</a></li>
+							<li><a href="#none" class="on" onclick="moveToLocation('35.628657', '129.351327', this);">울산</a></li>
 						</ul>
 					</div>
-					<div class="tab_area two" style="display: none;" id="area6">
+					<div class="tab_area one" style="display: none;" id="area6">
 						<ul>
-							<li><a href="#none" class="on" onclick="moveToLocation('', '', this);">춘천</a></li>
-							<li><a href="#none" onclick="moveToLocation('', '', this);">강원관광대학교</a></li>
+							<li><a href="#none" class="on" onclick="moveToLocation('37.851849', '127.744280', this);">춘천</a></li>
 						</ul>
 					</div>
 

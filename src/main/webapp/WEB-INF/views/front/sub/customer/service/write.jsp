@@ -151,9 +151,9 @@ function fn_write() {
 
 					<div class="sub_tab_area three">
 						<ul>
-							<li><a href="../inquiry/list.do">고객문의</a></li>
-							<li><a href="../service/list.do" class="on">서비스 신청 및 접수</a></li>
-							<li><a href="../location/location.do">오시는 길</a></li>
+							<li><a href="/front/sub/customer/inquiry/list.do" >고객문의</a></li>
+							<li><a href="/front/sub/customer/service/list.do" class="on"> 서비스 신청 및 접수</a></li>
+							<li><a href="/front/sub/customer/location/location.do" >오시는 길</a></li>
 						</ul>
 					</div>
 

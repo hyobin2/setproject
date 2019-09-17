@@ -11,7 +11,6 @@
 		$('#baseForm').submit();
 		}
 	function fn_search(){
-		$('#searchKeyword').val($('#searchTxt').val());
 		$('#baseForm').attr('action', '/front/sub/customer/service/list.do');
 		$('#baseForm').submit();
 	}
@@ -66,13 +65,11 @@
 				<input type="hidden" name="iIdx" id="iIdx" value="${util:zeroConvert(info.iIdx) }" />
 				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
-				<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
-				<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
 					<div class="sub_tab_area three">
 						<ul>
-							<li><a href="../inquiry/list.do">고객문의</a></li>
-							<li><a href="../service/list.do" class="on">서비스 신청 및 접수</a></li>
-							<li><a href="../location/location.do">오시는 길</a></li>
+							<li><a href="/front/sub/customer/inquiry/list.do" >고객문의</a></li>
+							<li><a href="/front/sub/customer/service/list.do" class="on"> 서비스 신청 및 접수</a></li>
+							<li><a href="/front/sub/customer/location/location.do">오시는 길</a></li>
 						</ul>
 					</div>
 
@@ -92,7 +89,7 @@
 							</div>
 							<div class="search_form">
 									<label for="searchTxt" class="hide">검색어 입력</label>
-									<div><input type="text" name="" id="searchTxt" placeholder="검색어를 입력해주세요." /></div>
+									<div><input type="text" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력해주세요." /></div>
 									<button onclick="fn_search();">검색</button>
 							</div>
 						</div>

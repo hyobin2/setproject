@@ -11,7 +11,6 @@
 		$('#baseForm').submit();
 		}
 	function fn_search(){
-		$('#searchKeyword').val($('#searchTxt').val());
 		$('#baseForm').attr('action', '/front/sub/cummunity/activity/list.do');
 		$('#baseForm').submit();
 	}
@@ -65,17 +64,15 @@
 
 				<div class="sub_tab_area three">
 					<ul>
-						<li><a href="../activity/list.do" class="on">케이잡스 활동</a></li>
-						<li><a href="../notice/list.do">공지 및 안내사항</a></li>
-						<li><a href="../customercase/list.do">고객사례</a></li>
+						<li><a href="/front/sub/cummunity/activity/list.do" class="on">케이잡스 활동</a></li>
+						<li><a href="/front/sub/cummunity/notice/list.do">공지 및 안내사항</a></li>
+						<li><a href="/front/sub/cummunity/customercase/list.do">고객사례</a></li>
 					</ul>
 				</div>
 					<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/activity/view.do" enctype="multipart/form-data" >
 					<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
 					<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 					<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
-					<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
-					<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
 						<div class="board_wrap">
 
 						<div class="board_search">
@@ -85,7 +82,7 @@
 							<div class="search_form">
 
 									<label for="searchTxt" class="hide">검색어 입력</label>
-									<div><input type="text" name="searchTxt" id="searchTxt" placeholder="검색어를 입력해주세요." /></div>
+									<div><input type="text" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력해주세요." /></div>
 									<button onclick="fn_search()">검색</button>
 
 							</div>

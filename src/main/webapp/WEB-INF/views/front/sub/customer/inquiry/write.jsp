@@ -129,9 +129,9 @@ if( !confirm("등록 하시겠습니까?") ){
 					<form name="baseForm" id="baseForm" method="post" action="/front/sub/customer/inquiry/view.do"  >
 						<div class="sub_tab_area three">
 							<ul>
-								<li><a href="../inquiry/list.do" class="on">고객문의</a></li>
-								<li><a href="../service/list.do">서비스 신청 및 접수</a></li>
-								<li><a href="../location.do">오시는 길</a></li>
+								<li><a href="/front/sub/customer/inquiry/list.do" class="on" >고객문의</a></li>
+								<li><a href="/front/sub/customer/service/list.do" > 서비스 신청 및 접수</a></li>
+								<li><a href="/front/sub/customer/location/location.do">오시는 길</a></li>
 							</ul>
 						</div>
 
