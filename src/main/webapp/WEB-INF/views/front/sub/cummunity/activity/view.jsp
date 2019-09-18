@@ -14,7 +14,6 @@
 		$('#baseForm').attr('action', '/front/sub/cummunity/activity/view.do');
 		$('#baseForm').submit();
 	}
-	console.log(${info})
 </script>
 			<div class="sub_top sub_top03">
 				<div class="inner">

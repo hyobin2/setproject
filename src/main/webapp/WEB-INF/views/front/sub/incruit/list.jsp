@@ -12,7 +12,7 @@
 		$('#baseForm').submit();
 		}
 	function fn_search(){
-		
+
 		$('#baseForm').attr('action','/front/sub/incruit/list.do');
 		$('#baseForm').submit();
 	}
