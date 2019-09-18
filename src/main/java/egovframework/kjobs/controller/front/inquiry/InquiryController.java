@@ -102,5 +102,71 @@ public class InquiryController {
 			return "redirect:" + PREFIX + "/list.do?type=" + paramMap.getStr("type");
 		}
 	}
+	@RequestMapping(value="/list.do")
+    public String list(MyMap paramMap, ModelMap model)
+            throws Exception {
+    	/** pageing setting */
+    	PaginationInfo paginationInfo = new PaginationInfo();
+		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
+		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
+		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
+		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
+		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
+		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
+		paramMap.put("code", "Q");
+		List<Map<String, Object>> list = inquiryService.list(paramMap.getMap());
+		int count = inquiryService.count(paramMap.getMap());
+		paginationInfo.setTotalRecordCount(count);
+
+		if( list != null && list.size() > 0 ){
+			for( int i = 0; i < list.size(); i++ ){
+				Map<String, Object> tmpListMap = list.get(i);
+				tmpListMap.put("tel", scrtyService.decrypt(StringUtil.isNullToString(tmpListMap.get("tel"))));
+				tmpListMap.put("email", scrtyService.decrypt(StringUtil.isNullToString(tmpListMap.get("email"))));
+			}
+		}
+
+		model.addAttribute("paramMap", paramMap.getMap());
+		model.addAttribute("list", list);
+		model.addAttribute("count", count);
+		model.addAttribute("paginationInfo", paginationInfo);
+
+        return PREFIX + "/list";
+    }
+
+
+
+    @RequestMapping("/view.do")
+    public String view(MyMap paramMap, Model model)
+            throws Exception {
+
+    	Map<String, Object> info = inquiryService.select(paramMap.getMap());
+
+    	if(info != null) {
+        	info.put("tel", scrtyService.decrypt((String) info.get("tel")));
+    		info.put("email", scrtyService.decrypt((String) info.get("email")));
+            model.addAttribute("info", info);
+            model.addAttribute("paramMap", paramMap.getMap());
+    	}
+
+
+        return PREFIX + "/view";
+    }
+
+    @RequestMapping("/write.do")
+    public String write(MyMap paramMap, Model model)
+            throws Exception {
+    	paramMap.put("code", "Q");
+    	Map<String, Object> info = inquiryService.select(paramMap.getMap());
+
+    	if(info != null) {
+    		info.put("tel", scrtyService.decrypt((String) info.get("tel")));
+			info.put("email", scrtyService.decrypt((String) info.get("email")));
+    		model.addAttribute("info", info);
+    	}
+    	model.addAttribute("paramMap", paramMap.getMap());
+
+        return PREFIX + "/write";
+    }
 
 }

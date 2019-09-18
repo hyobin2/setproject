@@ -62,9 +62,8 @@
 
 			<!-- contents-->
 			<div id="contents">
-				<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/notice/view.do" enctype="multipart/form-data" >
+				<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/notice/view.do"  >
 				<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
-				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
 				<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
 					<div class="sub_tab_area three">
@@ -156,4 +155,3 @@
 			<!-- //contents-->
 
 
-<?php include "../../inc/footer.html" ?>

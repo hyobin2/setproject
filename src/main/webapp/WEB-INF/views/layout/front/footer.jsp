@@ -31,7 +31,7 @@
 				</div>
 				<div class="foot_sns">
 					<ul>
-						<li><a href="#"><img src="/resources/front/img/ico_foot_sns01.png" alt="blog"/></a></li>
+						<li><a href="https://blog.naver.com/k-jobs" target="_blank"><img src="/resources/front/img/ico_foot_sns01.png" alt="blog"/></a></li>
 						<li><a href="#"><img src="/resources/front/img/ico_foot_sns02.png" alt="instagram"/></a></li>
 					</ul>
 				</div>

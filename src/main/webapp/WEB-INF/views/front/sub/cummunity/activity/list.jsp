@@ -69,9 +69,8 @@
 						<li><a href="/front/sub/cummunity/customercase/list.do">고객사례</a></li>
 					</ul>
 				</div>
-					<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/activity/view.do" enctype="multipart/form-data" >
+					<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/activity/view.do"  >
 					<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
-					<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 					<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
 						<div class="board_wrap">
 
@@ -82,7 +81,7 @@
 							<div class="search_form">
 
 									<label for="searchTxt" class="hide">검색어 입력</label>
-									<div><input type="text" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력해주세요." /></div>
+									<div><input type="text" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력해주세요." value="${paramMap.searchKeyword }"/></div>
 									<button onclick="fn_search()">검색</button>
 
 							</div>

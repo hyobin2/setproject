@@ -56,7 +56,6 @@
 			<div id="contents">
 				<form name="baseForm" id="baseForm" method="get" action="/front/sub/incruit/list.do" >
 				<input type="hidden" name="hIdx" id="hIdx" value="${util:zeroConvert(info.hIdx) }" />
-				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
 				<input type="hidden" name="workplace" id="workplace">
 					<div class="sub_tab_area one">
@@ -223,4 +222,3 @@
 			<!-- //contents-->
 
 
-<?php include "../../inc/footer.html" ?>

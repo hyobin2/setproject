@@ -66,10 +66,10 @@
 					</div>
 
 					<div class="board_wrap">
-						<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/customercase/view.do" enctype="multipart/form-data" >
+						<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/customercase/view.do">
 						<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
-						<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 						<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
+
 							<div class="customerCase_list">
 							<ul>
 								<c:forEach var="result" items="${list}" varStatus="status">
@@ -81,7 +81,7 @@
 											</div>
 											<div class="hover">
 												<p>
-													${fn:substring(result.content,0,20) }
+													${util:cutString(util:removeTag(result.content), '...', 60) }
 												</p>
 												<span class="date">2018-00-00</span>
 												<span class="arrow"></span>
@@ -100,4 +100,3 @@
 			<!-- //contents-->
 
 
-<?php include "../../inc/footer.html" ?>

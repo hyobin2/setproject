@@ -1,4 +1,88 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="util" uri="util"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<script type="text/javascript">
+	function setCookieMobile ( id, value, expiredays ) {
+	    var todayDate = new Date();
+	    todayDate.setDate( todayDate.getDate() + expiredays );
+	    document.cookie = id + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+	    $("#"+id).fadeOut('300');
+	}
+	function getCookieMobile (id) {
+	    var cookiedata = document.cookie;
+	    if ( cookiedata.indexOf(id+"=done") < 0 ){
+	    	$("#"+id).show();
+	    }else {
+	    	$("#"+id).hide();
+	    }
+	}
+	function closePopup(pIdx){
+		$('#main_popup'+pIdx).hide();
+	}
+	function closeBanner(bIdx){
+
+		$('#topbanner'+bIdx).hide();
+	}
+</script>
+<c:if test="${paramMap.menuId == 'index' }">
+
+		<c:forEach var="result" items="${popupList}" varStatus="status">
+			<jsp:useBean id="now" class="java.util.Date"/>
+        	<fmt:formatDate value="${now}" pattern="yyyyMMddhhmm" var="nowDate" />
+			<fmt:parseDate value="${result.eDate}" pattern="yyyy-MM-dd" var="endDate" />
+			<fmt:formatDate value="${endDate}" pattern="yyyyMMdd" var="eDate"/>
+			<c:choose>
+				<c:when test="${nowDate<eDate }">
+					<div class="main_popup" id="main_popup${result.pIdx }" style="width:${result.pWidth}px;height:${result.pHeight}px; top:${result.pTop}px; left:${result.pLeft}px;">
+						<div class="pop_con">
+							${result.content }
+						</div>
+						<ul class="pop_btn">
+							<li><button type="button" onclick="setCookieMobile('main_popup${result.pIdx}', 'done', 1);" ><b>24</b>시간 동안 열람하지 않음.</button></li>
+							<li class="pop_close"><button type="button" onclick="closePopup(${result.pIdx})">닫기</button></li>
+						</ul>
+					</div>
+				</c:when>
+			</c:choose>
+		    <script type="text/javascript">
+		    	getCookieMobile('main_popup${result.pIdx}');
+		    </script>
+		</c:forEach>
+
+        <c:forEach var="result" items="${bannerList}" varStatus="status">
+        <fmt:formatDate value="${now}" pattern="yyyyMMddhhmm" var="nowDate" />
+		<fmt:parseDate value="${result.eDate}" pattern="yyyy-MM-dd" var="endDate" />
+		<fmt:formatDate value="${endDate}" pattern="yyyyMMdd" var="eDate"/>
+		<c:choose>
+			<c:when test="${nowDate<eDate }">
+		        <c:if test="${result.showYn=='Y' }">
+		        	<div class="topbanner" id="topbanner${result.bIdx }" >
+				        <div class="wrapper">
+			            		<p class="top_con">
+									<a href='${result.url}' target="_blank">
+									<img src="/file/viewImg.do?fIdx=${result.fileList[0].fIdx}" alt="${result.fileList[0].orgFilename}" width=1511px" height="100px"></a>
+	           					</p>
+	            				<div class="m_topbanner_event">
+		           					<span class="close_banner_icon"><i class="xi-close-min .closeTopBanner" onclick="closeBanner('${result.bIdx}')">X</i></span>
+		            			</div>
+			        	</div>
+			      	</div>
+		    	</c:if>
+	    	</c:when>
+		</c:choose>
+	        <script type="text/javascript">
+	    	getCookieMobile('topbanner${result.pIdx }');
+	    	</script>
+        </c:forEach>
+
+	</c:if>
+
+
+
 
 		<div id="header">
 			<div class="inner">

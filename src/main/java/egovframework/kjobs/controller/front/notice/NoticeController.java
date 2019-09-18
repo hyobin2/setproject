@@ -111,6 +111,7 @@ public class NoticeController {
 		   model.addAttribute("prev", prev);
 		   model.addAttribute("next", next);
 		   model.addAttribute("info", info);
+		   model.addAttribute("paramMap", paramMap.getMap());
 
 		   }
 	   return PREFIX + "/view";

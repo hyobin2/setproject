@@ -125,6 +125,7 @@ public class ServiceController {
   		   	model.addAttribute("prev", prev);
   		   	model.addAttribute("next", next);
             model.addAttribute("info", info);
+            model.addAttribute("paramMap", paramMap.getMap());
     	}
 
 
