@@ -100,4 +100,3 @@
 			<!-- //contents-->
 
 
-<?php include "../../inc/footer.html" ?>

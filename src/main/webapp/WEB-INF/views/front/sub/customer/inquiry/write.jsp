@@ -260,7 +260,7 @@ if( !confirm("등록 하시겠습니까?") ){
 									</table>
 								</div>
 								<div class="agree">
-									<input type="checkbox" name="" id="agree"/>
+									<input type="checkbox" name="agree" id="agree"/>
 									<label for="agree">개인정보보호정책에 동의합니다.</label>
 									<a href="#" class="open_agree_terms">자세히보기</a>
 								</div>
