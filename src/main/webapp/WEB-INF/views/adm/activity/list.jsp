@@ -32,7 +32,7 @@
 	</div>
 	<form name="baseForm" id="baseForm" method="get" action="/adm/activity/list.do">
 		<input type="hidden" name="bIdx" id="bIdx" value="" />
-		<input type="hidden" name="pageIndex" id="pageIndex" value="${paramMap.pageIndex }" />
+		<input type="hidden" name="pageIndex" id="pageIndex" 	value="${paramMap.pageIndex }" />
 
 		<div class="table_area">
 			<div class="">

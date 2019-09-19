@@ -60,7 +60,7 @@
 			</div>
 			<!-- contents-->
 			<div id="contents">
-				<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/activity/view.do">
+				<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/activity/view.do" enctype="multipart/form-data" >
 				<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
 				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
 				<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />

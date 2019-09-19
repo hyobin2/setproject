@@ -73,26 +73,34 @@
 							<ol>
 								<li>
 									<div class="item">
-										<span class="num">01</span>
-										<p>채용 대행<br />서비스</p>
+										<div class="txt">
+											<span class="num">01</span>
+											<p>채용 대행 <br />서비스</p>
+										</div>
 									</div>
 								</li>
 								<li>
 									<div class="item">
-										<span class="num">02</span>
-										<p>구인구직<br />고용정보제공 서비스</p>
+										<div class="txt">
+											<span class="num">02</span>
+											<p>구인구직 <br />고용정보제공 서비스</p>
+										</div>
 									</div>
 								</li>
 								<li>
 									<div class="item">
-										<span class="num">03</span>
-										<p>공공고용<br />서비스</p>
+										<div class="txt">
+											<span class="num">03</span>
+											<p>공공고용 <br />서비스</p>
+										</div>
 									</div>
 								</li>
 								<li>
 									<div class="item">
-										<span class="num">04</span>
-										<p>민간고용<br />서비스</p>
+										<div class="txt">
+											<span class="num">04</span>
+											<p>민간고용 <br />서비스</p>
+										</div>
 									</div>
 								</li>
 							</ol>
@@ -130,3 +138,4 @@
 			<!-- //contents-->
 
 
+<?php include "../../inc/footer.html" ?>

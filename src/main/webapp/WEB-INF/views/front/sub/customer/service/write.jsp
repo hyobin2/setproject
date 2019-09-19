@@ -205,6 +205,11 @@ function fn_write() {
 													<input type="hidden" name="tel" id="tel">
 														<select name="tel1" id="tel1" style="max-width:150px;">
 															<option value="010">010</option>
+															<option value="011">011</option>
+															<option value="012">012</option>
+															<option value="016">016</option>
+															<option value="017">017</option>
+															<option value="019">019</option>
 														</select>
 													</li>
 													<li>

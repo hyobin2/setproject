@@ -317,11 +317,11 @@
 								</div>
 							</li>
 							<li>
-								<a href="/front/sub/business/business01_01.do">사업분야</a>
+								<a href="/front/sub/business/business01_01.do" class="child">사업분야</a>
 								<div class="mobile_fullmenu_list_sub">
 									<ul>
 										<li>
-											<a href="/front/sub/business/business01_01.do">고용서비스</a>
+											<a href="/front/sub/business/business01_01.do" class="child">고용서비스</a>
 											<ul>
 												<li><a href="/front/sub/business/business01_01.do">취업성공 패키지</a></li>
 												<li><a href="/front/sub/business/business01_02.do">청년내일 채움공제</a></li>
@@ -331,7 +331,7 @@
 											</ul>
 										</li>
 										<li>
-											<a href="/front/sub/business/business02_01.do">전직지원 서비스</a>
+											<a href="/front/sub/business/business02_01.do" class="child">전직지원 서비스</a>
 											<ul>
 												<li><a href="/front/sub/business/business02_01.do">IDOL</a></li>
 												<li><a href="/front/sub/business/business02_02.do">민간 전직 서비스</a></li>
@@ -340,14 +340,14 @@
 											</ul>
 										</li>
 										<li>
-											<a href="/front/sub/business/business03_01.do">MICE</a>
+											<a href="/front/sub/business/business03_01.do" class="child">MICE</a>
 											<ul>
 												<li><a href="/front/sub/business/business03_01.do">회의/포럼 세미나</a></li>
 												<li><a href="/front/sub/business/business03_02.do">박람회/워크샵/컨벤션</a></li>
 											</ul>
 										</li>
 										<li>
-											<a href="/front/sub/business/business04_01.do">교육 컨설팅 서비스</a>
+											<a href="/front/sub/business/business04_01.do" class="child">교육 컨설팅 서비스</a>
 											<ul>
 												<li><a href="/front/sub/business/business04_01.do">학교교육 컨설팅</a></li>
 												<li><a href="/front/sub/business/business04_02.do">기업교육 컨설팅</a></li>

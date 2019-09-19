@@ -24,7 +24,7 @@
 							<li>e-mail : webmaster@kjobs.co.kr</li>
 						</ul>
 					</div>
-					<p class="copyright">Copyrightⓒ 2015 KJOBS Co. Ltd All Right Reserved.</p>
+					<p class="copyright">Copyrightⓒ 2019 KJOBS Co. Ltd All Right Reserved.</p>
 				</div>
 				<div class="btn_top">
 					<a href="#wrap"><img src="/resources/front/img/btn_top.png" alt="TOP"/></a>
