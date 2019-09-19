@@ -5,6 +5,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="util" uri="util"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
 <script type="text/javascript">
 	function fn_list(){
 		$('#baseForm').attr('action', '/front/sub/incruit/list.do');
@@ -69,18 +71,28 @@
 						<div class="section01">
 							<div class="inner">
 								<div class="job_txt">
-									<span class="job">목포 해양 대학교</span>
-									<strong>생산직 오퍼레이터 구인
-										<span class="stat01">진행중</span>
-										<!-- <span class="stat02">마감</span> -->
+									<span class="job">${info.company }</span>
+									<strong>${info.title }
+									<jsp:useBean id="now" class="java.util.Date" />
+									<fmt:formatDate value="${now}" pattern="yyyyMMddhhmm" var="nowDate" />             <%-- 오늘날짜 --%>
+									<fmt:parseDate value="${info.eDate}" pattern="yyyy-MM-dd" var="endDate" />
+									<fmt:formatDate value="${endDate}" pattern="yyyyMMdd" var="eDate"/>
+									<c:choose>
+											<c:when test="${nowDate < eDate }">
+												<span class="stat01">진행중</span>
+											</c:when>
+											<c:when test="${nowDate > eDate }">
+												<span class="stat02">마감</span>
+											</c:when>
+										</c:choose>
 									</strong>
 									<div class="pariod">
 										<strong>모집기간</strong>
-										<span>2019.01.01 ~ 2019.02.03</span>
+										<span>${info.sDate } ~ ${info.eDate }</span>
 									</div>
 								</div>
-								<div class="job_img">
-									<div class="img"><img src="/resources/front/img/img_incruit02.jpg" alt="목포해양대학교"/></div>
+								<div class="job_img" style="width: 300px">
+									<div class="img"><img src="/file/viewImg.do?fIdx=${info.fileList[0].fIdx}" alt="로고이미지" /></div>
 									<div class="txt">
 										<strong>홈페이지</strong>
 										<span>${info.url }</span>
@@ -189,7 +201,6 @@
 									</ul>
 								</div>
 								<div class="btn_incruit">
-									<jsp:useBean id="now" class="java.util.Date" />
 									<fmt:formatDate value="${now}" pattern="yyyyMMddhhmm" var="nowDate" />
 									<fmt:parseDate value="${info.eDate}" pattern="yyyy-MM-dd" var="endDate" />
 									<fmt:formatDate value="${endDate}" pattern="yyyyMMdd" var="eDate"/>
