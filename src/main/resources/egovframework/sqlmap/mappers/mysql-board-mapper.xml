@@ -56,7 +56,6 @@
 					TB_BOARD B, (SELECT @ROWNUM := 0) R
 				<include refid="where" />
 			 ) D
-			 ORDER BY D.GRP_IDX DESC, D.GRP_ORDER ASC
          ) DD
          ORDER BY NUM DESC
          limit #{firstIndex}, #{recordCountPerPage}

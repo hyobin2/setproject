@@ -83,7 +83,7 @@
 												<p>
 													${util:cutString(util:removeTag(result.content), '...', 60) }
 												</p>
-												<span class="date">2018-00-00</span>
+												<span class="date">${fn:substring(result.regDate,0,10) }</span>
 												<span class="arrow"></span>
 											</div>
 										</a>
