@@ -89,7 +89,7 @@ public class AdmBannerController {
 		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
 		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
-		paramMap.put("", "BANNER");
+		paramMap.put("pCode", "BANNER");
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());

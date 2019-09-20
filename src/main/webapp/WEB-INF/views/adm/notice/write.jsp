@@ -73,7 +73,7 @@
                     <tr>
                         <th scope="row">제목</th>
                         <td><input type="text" name="title" id="title" style="width:500px" value="${info.title }" maxlength="200" />&nbsp
-                        <input type="checkbox" name="noticeYn" id="noticeYn" value="Y">상시공지</td>
+                        <input type="checkbox" name="noticeYn" id="noticeYn" value="Y" ${info.noticeYn == 'Y' ? 'checked="checked"' : ""  }>상시공지</td>
 
                         <c:set var="date" value="${info}" />
                         <c:choose>

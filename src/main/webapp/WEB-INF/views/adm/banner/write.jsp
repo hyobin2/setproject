@@ -111,19 +111,7 @@
                         <td><input type="text" name="sDate" id="sDate" class="datepicker" style="width:250px" value="${info.sDate }" readonly="readonly" />~
                         <input type="text" name=eDate id="eDate" class="datepicker" style="width:250px" value="${info.eDate }" readonly="readonly" /></td>
                     </tr>
-                    <tr class="pop01">
-                        <th scope="row">이미지</th>
-                        <td>
-                        	<c:choose>
-                        		<c:when test="${!empty info.fileList[0]}">
-                        			<img id="foo" src="/file/viewImg.do?fIdx=${info.fileList[0].fIdx }" />
-                        		</c:when>
-                        		<c:otherwise>
-                        			<img id="foo" src="#" style="display: none;"/>
-                        		</c:otherwise>
-                        	</c:choose>
-						<td>
-                    </tr>
+
                   		<c:forEach var="i" begin="0" end="0" varStatus="status">
 					    <tr>
 	                        <th scope="row"><label for="">파일</label></th>
@@ -146,7 +134,22 @@
 	                        	</c:if>
 							</td>
 	                    </tr>
+
 					</c:forEach>
+					<tr class="pop01">
+                        <th scope="row">이미지 미리보기</th>
+                        <td>
+                        	<c:choose>
+                        		<c:when test="${!empty info.fileList[0]}">
+                        			<img id="foo" src="/file/viewImg.do?fIdx=${info.fileList[0].fIdx }" />
+                        		</c:when>
+                        		<c:otherwise>
+                        			<img id="foo" src="#" style="display: none;"/>
+                        		</c:otherwise>
+                        	</c:choose>
+                        	<br/>이미지 미리보기 영역입니다.
+						<td>
+                    </tr>
 
                  </tbody>
             </table>

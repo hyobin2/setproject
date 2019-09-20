@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="util" uri="util"%>
 <script>
 function fn_search(){
 	$('#baseForm').attr('action','/front/sub/incruit/list.do');
@@ -188,7 +193,7 @@ function changeArea(idx){
 						<div class="bx-pager-item"><a href="#" data-slide-index="3">04</a></div>
 						<div class="bx-pager-item"><a href="#" data-slide-index="4">05</a></div>
 					</div>
-					<a href="#" class="btn_go">K·Jobs 전문 컨설턴트의 <br />자세한 상담을 받아보세요</a>
+					<a href="#" class="btn_go" onclick="section2Move(); return false;">K·Jobs 전문 컨설턴트의 <br />자세한 상담을 받아보세요</a>
 				</div>
 
 			</div>
@@ -209,22 +214,16 @@ function changeArea(idx){
 					<h2>INTERVIEW</h2>
 					<div class="list">
 						<ul>
+						<c:forEach var="result" items="${list}" varStatus="status">
 							<li>
 								<a href="#">
 									<div class="txt">
-										<p>K·Jobs를 통해 <br />원하는 회사에  입사했어요</p>
-										<span class="job">넥시큐어 시스템<br />한보름 사원</span>
+										<p>${result.title}</p>
+										<span class="job">${result.content }</span>
 									</div>
 								</a>
 							</li>
-							<li>
-								<a href="#">
-									<div class="txt">
-										<p>K·Jobs를 통해 <br />원하는 회사에  입사했어요</p>
-										<span class="job">넥시큐어 시스템<br />한보름 사원</span>
-									</div>
-								</a>
-							</li>
+						</c:forEach>
 						</ul>
 					</div>
 				</div>
@@ -523,6 +522,28 @@ function changeArea(idx){
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkbkHsVbYxg4C1VtWEKs6297cvOeudTDg&callback=initMap" async defer></script>
 <script>
+
+function section2Move(){
+	var slideIdx = $("#num_pager .active").data("slide-index")+1;
+	var url = "";
+	if(slideIdx == "1"){
+		url = "/front/sub/business/business02_01.do";
+	}else if(slideIdx == "2"){
+		url = "/front/sub/business/business01_01.do";
+
+	}else if(slideIdx == "3"){
+		url = "/front/sub/business/business01_02.do";
+
+	}else if(slideIdx == "4"){
+		url = "/front/sub/business/business04_01.do";
+
+	}else if (slideIdx =="5"){
+		url = "/front/sub/business/business03_01.do";
+	}
+
+	document.location.href = url;
+
+}
 for(var i=2;i<15;i++){
 $('#areaDetail'+i).hide();
 }

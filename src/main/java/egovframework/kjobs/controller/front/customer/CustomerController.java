@@ -83,7 +83,6 @@ public class CustomerController {
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
 
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
-
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
 

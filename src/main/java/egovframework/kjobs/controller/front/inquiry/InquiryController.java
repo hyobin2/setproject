@@ -80,8 +80,6 @@ public class InquiryController {
 			PrintWriter out = response.getWriter();
 			out.println("<script>alert('보안문자가 올바르지 않습니다.'); history.go(-1);</script>");
 			out.flush();
-			model.addAttribute("paramMap", paramMap);
-			return PREFIX + "/write";
 		} else {
 			paramMap.put("code", "Q");
 
@@ -99,8 +97,8 @@ public class InquiryController {
 			model.addAttribute("paramMap", paramMap.getMap());
 
 			status.setComplete();
-			return "redirect:" + PREFIX + "/list.do?type=" + paramMap.getStr("type");
 		}
+		return "redirect:" + PREFIX + "/list.do?type=" + paramMap.getStr("type");
 	}
 	@RequestMapping(value="/list.do")
     public String list(MyMap paramMap, ModelMap model)

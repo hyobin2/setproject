@@ -153,7 +153,7 @@ if( !confirm("등록 하시겠습니까?") ){
 											<col style="width:35%" />
 										</colgroup>
 										<tr>
-											<th scope="row"><label for=""><span class="star">*</span>제목</label></th>
+											<th scope="row"><span class="star">*</span>제목</th>
 											<td colspan="3">
 												<div class="input"><input type="text" name="title" id="title"/></div>
 											</td>
@@ -184,9 +184,7 @@ if( !confirm("등록 하시겠습니까?") ){
 															<select name="tel1" id="tel1" style="max-width:150px;">
 																<option value="010">010</option>
 																<option value="011">011</option>
-																<option value="012">012</option>
 																<option value="016">016</option>
-																<option value="017">017</option>
 																<option value="019">019</option>
 															</select>
 														</li>
@@ -267,7 +265,7 @@ if( !confirm("등록 하시겠습니까?") ){
 								<div class="agree">
 									<input type="checkbox" name="" id="agree"/>
 									<label for="agree">개인정보보호정책에 동의합니다.</label>
-									<a href="#" class="open_agree_terms">자세히보기</a>
+									<a href="#" onclick="$('.open_pop_privacy').click(); return false;" class="open_agree_terms">자세히보기</a>
 								</div>
 							</div>
 
@@ -281,3 +279,16 @@ if( !confirm("등록 하시겠습니까?") ){
 					</form>
 				</div>
 			<!-- //contents-->
+<script>
+$('#emailbox').change(function(){
+	$("#emailbox option:selected").each(function () {
+		if($(this).val()== '1'){ //직접입력일 경우
+			$("#email2").val(''); //값 초기화
+			$("#email2").attr("disabled",false); //활성화
+		}else{ //직접입력이 아닐경우
+			$("#email2").val($(this).text()); //선택값 입력
+			$("#email2").attr("disabled",true); //비활성화
+		}
+	});
+});
+</script>

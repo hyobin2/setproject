@@ -108,14 +108,12 @@
 										</tr>
 								</c:forEach>
 								<c:forEach var="result" items="${list}" varStatus="status">
-									<c:if test="${result.noticeYn=='N'}">
 										<tr>
 											<td>${result.rnum}</td>
 											<td class="left"><a href="#" onclick="fn_view('${util:zeroConvert(result.bIdx)}');">${result.title }</a></td>
 											<td>${fn:substring(result.regDate, 0, 10) }</td>
 											<td>${result.hit }</td>
 										</tr>
-									</c:if>
 								</c:forEach>
 								<c:if test="${fn:length(list) <= 0 }">
 									<tr>

@@ -1,5 +1,5 @@
 ﻿$(document).ready(function(){
-	
+
 	//gnb
 	$("#header > .inner .gnb .inner > ul > li > a").mouseenter(function(){
 		var gnbsubH = $(this).next().height();
@@ -35,7 +35,7 @@
 		$("#header > .inner .gnb .inner > ul > li .gnb_sub").hide();
 		$(".bg_gnb_sub").hide();
 	});
-	
+
 	//전체메뉴
 	$(".open_fullmenu").click(function(){
 		$(".fullmenu").slideDown("fast");
@@ -45,7 +45,7 @@
 		$(".fullmenu").slideUp("fast");
 		return false;
 	});
-	
+
 	//모바일 전체메뉴
 	$(".open_mobile_fullmenu").click(function(){
 		$(".mobile_fullmenu").fadeIn("fast");
@@ -70,7 +70,7 @@
 				$("#mobile_header .mobile_fullmenu .inner .mobile_fullmenu_list > ul > li > .mobile_fullmenu_list_sub").slideUp("fast");
 				$(this).addClass("on").next().slideDown("fast");
 			}
-			
+
 			return false;
 		}
 	});
@@ -83,11 +83,11 @@
 				$("#mobile_header .mobile_fullmenu .inner .mobile_fullmenu_list > ul > li > .mobile_fullmenu_list_sub > ul > li > ul").slideUp("fast");
 				$(this).addClass("on").next().slideDown("fast");
 			}
-			
+
 			return false;
 		}
 	});
-	
+
 	//모바일 path
 	$(".mobile_path > ul > li > a").click(function(){
 		if( $(this).next().is(".path_list") ){
@@ -98,7 +98,7 @@
 				$(".mobile_path > ul > li > a").removeClass("on");
 				$(".mobile_path > ul > li > .path_list").slideUp("fast");
 				$(this).addClass("on").next(".path_list").slideDown("fast");
-				
+
 				$("#wrap").children().click(function(e){
 					if ($(".mobile_path > ul > li > .path_list").css("display") == "block"){
 						if (!$(".mobile_path > ul > li > .path_list").has(e.target).length){
@@ -112,7 +112,7 @@
 		}
 	});
 
-	
+
 	//개인정보처리방침 팝업
 	$(".open_pop_privacy").click(function(){
 		$(".pop_privacy").fadeIn("fast");
@@ -122,7 +122,7 @@
 		$(".pop_privacy").fadeOut("fast");
 		return false;
 	});
-	
+
 	//smooth scroll
 	$('a[href*=#]:not([href=#])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -132,7 +132,7 @@
 				$('html,body').animate({
 					scrollTop: target.offset().top
 				}, 500);
-				
+
 				return false;
 			}
 		}
@@ -140,17 +140,17 @@
 });
 
 $(window).load(function(){
-	
+
 	//메인 비주얼 슬라이드
 	$(".main_visual > .inner > ul").bxSlider({
 		auto : true
 	});
-	
+
 	$(".main_section02 .inner ul").bxSlider({
 		auto :true,
 		pagerCustom: "#num_pager"
 	});
-	
+
 	$(".main_section03 .inner .list ul").bxSlider({
 		minSlides : 2,
 		maxSlides : 3,
@@ -160,10 +160,10 @@ $(window).load(function(){
 		pager : false,
 		touchEnabled : false
 	});
-	
+
 	$(".main_section04 .inner .list ul").bxSlider({
 		auto : true,
 		pager : false
 	});
-	
+
 });

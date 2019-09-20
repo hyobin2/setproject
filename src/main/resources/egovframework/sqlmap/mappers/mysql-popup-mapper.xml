@@ -44,7 +44,8 @@
 					USE_YN,
 					REG_ID,
 					REG_NAME,
-					REG_DATE
+					REG_DATE,
+					FILECLASS
 				FROM
 					TB_POPUP P, (SELECT @ROWNUM := 0) R
 				<include refid="where" />
@@ -76,7 +77,8 @@
 				USE_YN,
 				REG_ID,
 				REG_NAME,
-				REG_DATE
+				REG_DATE,
+				FILECLASS
 			FROM
 				TB_POPUP P
 			WHERE
@@ -99,6 +101,7 @@
 	        	P_TOP,
 				TITLE,
 				CONTENT,
+				FILECLASS,
 				USE_YN,
 				REG_ID,
 				REG_NAME,
@@ -115,6 +118,7 @@
 				#{pTop},
 				#{title},
 				#{content},
+				#{fileclass},
 				'Y',
 		        #{session.id},
 		        #{session.name},
@@ -134,6 +138,7 @@
 				P_WIDTH = #{pWidth},
 				P_HEIGHT = #{pHeight},
 				P_LEFT = #{pLeft},
+				FILECLASS = #{fileclass},
 				P_TOP = #{pTop},
 				TITLE = #{title},
 				CONTENT = #{content},

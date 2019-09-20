@@ -90,7 +90,7 @@ public class NoticeController {
 		paginationInfo.setTotalRecordCount(count);
 
 		paramMap.put("noticeYn", "Y");
-		paramMap.put("firstIndex", 1);
+		paramMap.put("firstIndex", 0);
 		paramMap.put("recordCountPerPage", 5);
 		List<Map<String, Object>> noticeList = boardService.list(paramMap.getMap());
 
