@@ -14,7 +14,6 @@
 		$('#baseForm').attr('action', '/front/sub/cummunity/activity/view.do');
 		$('#baseForm').submit();
 	}
-	console.log(${info})
 </script>
 			<div class="sub_top sub_top03">
 				<div class="inner">
@@ -61,17 +60,15 @@
 
 			<!-- contents-->
 			<div id="contents">
-				<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/activity/view.do" enctype="multipart/form-data" >
+				<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/activity/view.do" enctype="multipart/form-data" >
 				<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
-				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
-				<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
 				<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
 					<div class="sub_tab_area three">
 						<ul>
-							<li><a href="../activity/list.do" class="on">케이잡스 활동</a></li>
-							<li><a href="../notice/list.do">공지 및 안내사항</a></li>
-							<li><a href="../customercase/list.do">고객사례</a></li>
+							<li><a href="/front/sub/cummunity/activity/list.do" class="on">케이잡스 활동</a></li>
+							<li><a href="/front/sub/cummunity/notice/list.do">공지 및 안내사항</a></li>
+							<li><a href="/front/sub/cummunity/customercase/list.do">고객사례</a></li>
 						</ul>
 					</div>
 
@@ -153,5 +150,3 @@
 			</div>
 			<!-- //contents-->
 
-
-<?php include "../../inc/footer.html" ?>

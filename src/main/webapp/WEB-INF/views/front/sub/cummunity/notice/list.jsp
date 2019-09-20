@@ -11,7 +11,6 @@
 		$('#baseForm').submit();
 	}
 	function fn_search(){
-		$('#searchKeyword').val($('#searchTxt').val());
 		$('#baseForm').attr('action', '/front/sub/cummunity/notice/list.do');
 		$('#baseForm').submit();
 	}
@@ -63,15 +62,12 @@
 			<div id="contents">
 				<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/notice/list.do"  >
 				<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
-				<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 				<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
-				<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
-				<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
 					<div class="sub_tab_area three">
 						<ul>
-							<li><a href="../activity/list.do">케이잡스 활동</a></li>
-							<li><a href="../notice/list.do" class="on">공지 및 안내사항</a></li>
-							<li><a href="../customercase/list.do">고객사례</a></li>
+							<li><a href="/front/sub/cummunity/activity/list.do">케이잡스 활동</a></li>
+							<li><a href="/front/sub/cummunity/notice/list.do" class="on">공지 및 안내사항</a></li>
+							<li><a href="/front/sub/cummunity/customercase/list.do">고객사례</a></li>
 						</ul>
 					</div>
 
@@ -83,7 +79,7 @@
 							</div>
 							<div class="search_form">
 									<label for="searchTxt" class="hide">검색어 입력</label>
-									<div><input type="text" name="" id="searchTxt" placeholder="검색어를 입력해주세요." /></div>
+									<div><input type="text" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력해주세요." value="${paramMap.searchKeyword }"/></div>
 									<button onclick="fn_search()">검색</button>
 							</div>
 						</div>
@@ -103,23 +99,23 @@
 									<th scope="col">작성일</th>
 									<th scope="col">조회수</th>
 								</tr>
-								<c:forEach var="result" items="${list}" varStatus="status">
-									<c:if test="${result.noticeYn=='Y'}">
+								<c:forEach var="result" items="${noticeList}" varStatus="status">
 										<tr class="notice_line">
 											<td><span class="notice">공지</span></td>
 											<td class="left"><a href="#" onclick="fn_view('${util:zeroConvert(result.bIdx)}');">${result.title }</a></td>
 											<td>${fn:substring(result.regDate, 0, 10) }</td>
 											<td>${result.hit }</td>
 										</tr>
-									</c:if>
 								</c:forEach>
 								<c:forEach var="result" items="${list}" varStatus="status">
-									<tr>
-										<td>${result.rnum}</td>
-										<td class="left"><a href="#" onclick="fn_view('${util:zeroConvert(result.bIdx)}');">${result.title }</a></td>
-										<td>${fn:substring(result.regDate, 0, 10) }</td>
-										<td>${result.hit }</td>
-									</tr>
+									<c:if test="${result.noticeYn=='N'}">
+										<tr>
+											<td>${result.rnum}</td>
+											<td class="left"><a href="#" onclick="fn_view('${util:zeroConvert(result.bIdx)}');">${result.title }</a></td>
+											<td>${fn:substring(result.regDate, 0, 10) }</td>
+											<td>${result.hit }</td>
+										</tr>
+									</c:if>
 								</c:forEach>
 								<c:if test="${fn:length(list) <= 0 }">
 									<tr>
@@ -137,4 +133,3 @@
 			<!-- //contents-->
 
 
-<?php include "../../inc/footer.html" ?>

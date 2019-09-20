@@ -12,7 +12,7 @@
 		$('#baseForm').submit();
 		}
 	function fn_search(){
-		
+
 		$('#baseForm').attr('action','/front/sub/incruit/list.do');
 		$('#baseForm').submit();
 	}
@@ -185,7 +185,7 @@
 											</li>
 										</c:forEach>
 									</ul>
-									<a href="#" class="more_view">더보기 +</a>
+									<!-- <a href="#" class="more_view">더보기 +</a> -->
 									<div class="paging">
 									<ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="fn_link_page" />
 									</div>

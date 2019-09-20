@@ -125,6 +125,7 @@ public class ServiceController {
   		   	model.addAttribute("prev", prev);
   		   	model.addAttribute("next", next);
             model.addAttribute("info", info);
+            model.addAttribute("paramMap", paramMap.getMap());
     	}
 
 
@@ -181,16 +182,4 @@ public class ServiceController {
 	        return "redirect:"+PREFIX+"/list.do?type="+paramMap.getStr("type");
 	        }
 		}
-
-
-    @RequestMapping("/delete.do")
-    public String delete(MyMap paramMap, Model model, SessionStatus status)
-            throws Exception {
-
-    	inquiryService.delete(paramMap.getMap());
-
-    	model.addAttribute("paramMap", paramMap.getMap());
-        return "redirect:"+PREFIX+"/list.do";
-    }
-
 }

@@ -151,9 +151,9 @@ function fn_write() {
 
 					<div class="sub_tab_area three">
 						<ul>
-							<li><a href="../inquiry/list.do">고객문의</a></li>
-							<li><a href="../service/list.do" class="on">서비스 신청 및 접수</a></li>
-							<li><a href="../location/location.do">오시는 길</a></li>
+							<li><a href="/front/sub/customer/inquiry/list.do" >고객문의</a></li>
+							<li><a href="/front/sub/customer/service/list.do" class="on"> 서비스 신청 및 접수</a></li>
+							<li><a href="/front/sub/customer/location/location.do" >오시는 길</a></li>
 						</ul>
 					</div>
 
@@ -205,6 +205,11 @@ function fn_write() {
 													<input type="hidden" name="tel" id="tel">
 														<select name="tel1" id="tel1" style="max-width:150px;">
 															<option value="010">010</option>
+															<option value="011">011</option>
+															<option value="012">012</option>
+															<option value="016">016</option>
+															<option value="017">017</option>
+															<option value="019">019</option>
 														</select>
 													</li>
 													<li>
@@ -314,7 +319,7 @@ function fn_write() {
 							<div class="agree">
 								<input type="checkbox" name="" id="agree"/>
 								<label for="agree">개인정보보호정책에 동의합니다.</label>
-								<a href="#" class="open_agree_terms">자세히보기</a>
+								<a href="#" class="open_agree_terms open_pop_privacy">자세히보기</a>
 							</div>
 						</div>
 

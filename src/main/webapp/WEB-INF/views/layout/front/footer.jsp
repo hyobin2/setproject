@@ -24,14 +24,14 @@
 							<li>e-mail : webmaster@kjobs.co.kr</li>
 						</ul>
 					</div>
-					<p class="copyright">Copyrightⓒ 2015 KJOBS Co. Ltd All Right Reserved.</p>
+					<p class="copyright">Copyrightⓒ 2019 KJOBS Co. Ltd All Right Reserved.</p>
 				</div>
 				<div class="btn_top">
 					<a href="#wrap"><img src="/resources/front/img/btn_top.png" alt="TOP"/></a>
 				</div>
 				<div class="foot_sns">
 					<ul>
-						<li><a href="#"><img src="/resources/front/img/ico_foot_sns01.png" alt="blog"/></a></li>
+						<li><a href="https://blog.naver.com/k-jobs" target="_blank"><img src="/resources/front/img/ico_foot_sns01.png" alt="blog"/></a></li>
 						<li><a href="#"><img src="/resources/front/img/ico_foot_sns02.png" alt="instagram"/></a></li>
 					</ul>
 				</div>

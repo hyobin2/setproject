@@ -82,17 +82,22 @@ public class NoticeController {
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
 
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
-
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
+		paramMap.put("noticeYn", "N");
 
 		List<Map<String, Object>> list = boardService.list(paramMap.getMap());
 		int count = boardService.count(paramMap.getMap());
 		paginationInfo.setTotalRecordCount(count);
 
+		paramMap.put("noticeYn", "Y");
+		paramMap.put("firstIndex", 1);
+		paramMap.put("recordCountPerPage", 10);
+		List<Map<String, Object>> noticeList = boardService.list(paramMap.getMap());
 
 		model.addAttribute("paramMap", paramMap.getMap());
 		model.addAttribute("list", list);
+		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("count", count);
 		model.addAttribute("paginationInfo", paginationInfo);
 		return PREFIX + "/list";
@@ -111,47 +116,9 @@ public class NoticeController {
 		   model.addAttribute("prev", prev);
 		   model.addAttribute("next", next);
 		   model.addAttribute("info", info);
+		   model.addAttribute("paramMap", paramMap.getMap());
 
 		   }
 	   return PREFIX + "/view";
 	   }
-
-
-	@RequestMapping("/proc.do")
-	public String proc(MyMap paramMap, HttpServletRequest request, Model model, SessionStatus status) throws Exception {
-
-		paramMap.put("bCode", B_CODE);
-		FileUploadUtil fileutil = new FileUploadUtil();
-
-		List<FormBasedFileVo> fileList = fileutil.uploadFiles(request, FILE_UPLOAD_PATH,propertiesService.getLong("maxUploadSize"));
-		if (fileList.size() > 0) {
-			for (int i = 0; i < fileList.size(); i++) {
-				FormBasedFileVo basedfilevo = fileList.get(i);
-				MyMap fileMap = new MyMap();
-				if (!"".equals(paramMap.getStr("fileclass"))) {
-					fileMap.put("fileclass", paramMap.getStr("fileclass"));
-				} else {
-					paramMap.put("fileclass", fileService.nextFileClass());
-					fileMap.put("fileclass", fileService.nextFileClass());
-				}
-				fileMap.put("type", basedfilevo.getContentType());
-				fileMap.put("orgFilename", basedfilevo.getFileName());
-				fileMap.put("filename", basedfilevo.getPhysicalName());
-				fileMap.put("filepath",FILE_UPLOAD_PATH + FormBasedFileUtil.SEPERATOR + basedfilevo.getServerSubPath());
-				fileMap.put("size", basedfilevo.getSize());
-				fileMap.put("fOrder", basedfilevo.getfOrder());
-				fileService.insert(fileMap.getMap());
-			}
-		}
-		System.out.println("dsdsdsdsds"+paramMap.getMap().get("fileclass"));
-		if (paramMap.getInt("bIdx") > 0) {
-			boardService.update(paramMap.getMap());
-		} else {
-			boardService.insert(paramMap.getMap());
-		}
-
-		model.addAttribute("paramMap", paramMap.getMap());
-		status.setComplete();
-		return "redirect:" + PREFIX + "/list.do";
-	}
 }

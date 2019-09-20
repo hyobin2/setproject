@@ -6,10 +6,7 @@
 		 <![CDATA[
 		 WHERE
 		 	USE_YN = 'Y'
-		 AND
-		 	 P_CODE=#{pCode}
 		 ]]>
-
 		<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( menuId )'>
 			<if test='menuId == "index"'>
 				<![CDATA[ AND S_DATE <= NOW() AND E_DATE >= NOW() ]]>
@@ -36,8 +33,6 @@
             SELECT @ROWNUM := @ROWNUM + 1 AS NUM, D.* FROM (
 		        SELECT
 		        	P_IDX,
-		        	P_CODE,
-		        	(SELECT NAME FROM TB_CODE WHERE CODE = P.P_CODE) AS P_CODE_NM,
 		        	S_DATE,
 		        	E_DATE,
 		        	P_WIDTH,
@@ -46,12 +41,10 @@
 		        	P_TOP,
 		        	TITLE,
 					CONTENT,
-					SPOT_CONTENT,
 					USE_YN,
 					REG_ID,
 					REG_NAME,
-					REG_DATE,
-					FILECLASS
+					REG_DATE
 				FROM
 					TB_POPUP P, (SELECT @ROWNUM := 0) R
 				<include refid="where" />
@@ -72,8 +65,6 @@
 		<![CDATA[
 			SELECT
 				P_IDX,
-				P_CODE,
-				(SELECT NAME FROM TB_CODE WHERE CODE = P.P_CODE) AS P_CODE_NM,
 				S_DATE,
 	        	E_DATE,
 	   	       	P_WIDTH,
@@ -82,12 +73,10 @@
 		       	P_TOP,
 	    		TITLE,
 				CONTENT,
-				SPOT_CONTENT,
 				USE_YN,
 				REG_ID,
 				REG_NAME,
-				REG_DATE,
-				FILECLASS
+				REG_DATE
 			FROM
 				TB_POPUP P
 			WHERE
@@ -102,54 +91,35 @@
 			INSERT INTO TB_POPUP
 				(
 				P_IDX,
-				P_CODE,
 				S_DATE,
 	        	E_DATE,
-	    ]]>
-	   			<if test='pCode == "POP01"'>
-	    <![CDATA[
 	        	P_WIDTH,
 	        	P_HEIGHT,
 	        	P_LEFT,
 	        	P_TOP,
-	   	]]>
-	        	</if>
-	    <![CDATA[
 				TITLE,
 				CONTENT,
-				SPOT_CONTENT,
 				USE_YN,
 				REG_ID,
 				REG_NAME,
 				REG_DATE,
-				REG_IP,
-				FILECLASS
+				REG_IP
 				)
 			VALUES
 				((SELECT COALESCE(MAX(CONVERT(P_IDX, UNSIGNED)), 0)+1 AS P_IDX FROM TB_POPUP P),
-				#{pCode},
 				#{sDate},
 				#{eDate},
-		]]>
-	   			<if test='pCode == "POP01"'>
-	    <![CDATA[
 	        	#{pWidth},
 				#{pHeight},
 				#{pLeft},
 				#{pTop},
-	   ]]>
-	        	</if>
-	    <![CDATA[
-
 				#{title},
 				#{content},
-				#{spotContent},
 				'Y',
 		        #{session.id},
 		        #{session.name},
 		        now(),
-				#{remoteAddr},
-				#{fileclass}
+				#{remoteAddr}
 				)
 		]]>
 		<selectKey keyProperty="pIdx" resultType="int">SELECT LAST_INSERT_ID()</selectKey>
@@ -159,27 +129,18 @@
 		<![CDATA[
 			UPDATE TB_POPUP
 			SET
-				P_CODE = #{pCode},
 				S_DATE = #{sDate},
 				E_DATE = #{eDate},
-		]]>
-				<if test='pCode == "POP01"'>
-		<![CDATA[
 				P_WIDTH = #{pWidth},
 				P_HEIGHT = #{pHeight},
 				P_LEFT = #{pLeft},
 				P_TOP = #{pTop},
-		]]>
-				</if>
-		<![CDATA[
 				TITLE = #{title},
 				CONTENT = #{content},
-				SPOT_CONTENT = #{spotContent},
 				MOD_ID = #{session.id},
 				MOD_NAME = #{session.name},
 				MOD_DATE = now(),
-				MOD_IP = #{remoteAddr},
-				FILECLASS=#{fileclass}
+				MOD_IP = #{remoteAddr}
 			WHERE
 				P_IDX = #{pIdx}
 		]]>

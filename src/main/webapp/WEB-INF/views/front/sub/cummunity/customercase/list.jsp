@@ -10,11 +10,7 @@
 		$('#baseForm').attr('action', '/front/sub/cummunity/customercase/view.do');
 		$('#baseForm').submit();
 		}
-	function fn_search(){
-		$('#searchKeyword').val($('#searchTxt').val());
-		$('#baseForm').attr('action', '/front/sub/cummunity/customercase/list.do');
-		$('#baseForm').submit();
-	}
+
 </script>
 			<!-- sub_top -->
 			<div class="sub_top sub_top03">
@@ -63,19 +59,17 @@
 			<div id="contents">
 					<div class="sub_tab_area three">
 						<ul>
-							<li><a href="../activity/list.do">케이잡스 활동</a></li>
-							<li><a href="../notice/list.do">공지 및 안내사항</a></li>
-							<li><a href="../customercase/list.do" class="on">고객사례</a></li>
+							<li><a href="/front/sub/cummunity/activity/list.do">케이잡스 활동</a></li>
+							<li><a href="/front/sub/cummunity/notice/list.do">공지 및 안내사항</a></li>
+							<li><a href="/front/sub/cummunity/customercase/list.do" class="on">고객사례</a></li>
 						</ul>
 					</div>
 
 					<div class="board_wrap">
-						<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/customercase/view.do" enctype="multipart/form-data" >
+						<form name="baseForm" id="baseForm" method="get" action="/front/sub/cummunity/customercase/view.do">
 						<input type="hidden" name="bIdx" id="bIdx" value="${util:zeroConvert(info.bIdx) }" />
-						<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
 						<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
-						<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
-						<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
+
 							<div class="customerCase_list">
 							<ul>
 								<c:forEach var="result" items="${list}" varStatus="status">
@@ -87,9 +81,9 @@
 											</div>
 											<div class="hover">
 												<p>
-													${fn:substring(result.content,0,20) }
+													${util:cutString(util:removeTag(result.content), '...', 60) }
 												</p>
-												<span class="date">2018-00-00</span>
+												<span class="date">${fn:substring(result.regDate,0,10) }</span>
 												<span class="arrow"></span>
 											</div>
 										</a>
@@ -106,4 +100,3 @@
 			<!-- //contents-->
 
 
-<?php include "../../inc/footer.html" ?>

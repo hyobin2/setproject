@@ -79,7 +79,7 @@ public class CustomerController {
 		/** pageing setting */
 		PaginationInfo paginationInfo = new PaginationInfo();
 		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
-		paginationInfo.setRecordCountPerPage(9);
+		paginationInfo.setRecordCountPerPage(12);
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
 
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
@@ -110,59 +110,10 @@ public class CustomerController {
 		    model.addAttribute("prev", prev);
 		    model.addAttribute("next", next);
 			model.addAttribute("info", info);
+			model.addAttribute("paramMap", paramMap.getMap());
 		}
 		return PREFIX + "/view";
 	}
-
-	@RequestMapping("/proc.do")
-	public String proc(MyMap paramMap, HttpServletRequest request, Model model, SessionStatus status) throws Exception {
-
-		paramMap.put("bCode", B_CODE);
-		FileUploadUtil fileutil = new FileUploadUtil();
-
-		List<FormBasedFileVo> fileList = fileutil.uploadFiles(request, FILE_UPLOAD_PATH,
-				propertiesService.getLong("maxUploadSize"));
-		if (fileList.size() > 0) {
-			for (int i = 0; i < fileList.size(); i++) {
-				FormBasedFileVo basedfilevo = fileList.get(i);
-				MyMap fileMap = new MyMap();
-				if (!"".equals(paramMap.getStr("fileclass"))) {
-					fileMap.put("fileclass", paramMap.getStr("fileclass"));
-				} else {
-					paramMap.put("fileclass", fileService.nextFileClass());
-					fileMap.put("fileclass", fileService.nextFileClass());
-				}
-				fileMap.put("type", basedfilevo.getContentType());
-				fileMap.put("orgFilename", basedfilevo.getFileName());
-				fileMap.put("filename", basedfilevo.getPhysicalName());
-				fileMap.put("filepath",
-						FILE_UPLOAD_PATH + FormBasedFileUtil.SEPERATOR + basedfilevo.getServerSubPath());
-				fileMap.put("size", basedfilevo.getSize());
-				fileMap.put("fOrder", basedfilevo.getfOrder());
-				fileService.insert(fileMap.getMap());
-			}
-		}
-
-		if (paramMap.getInt("bIdx") > 0) {
-			// update
-			boardService.update(paramMap.getMap());
-		} else {
-			// insert
-			boardService.insert(paramMap.getMap());
-		}
-
-		model.addAttribute("paramMap", paramMap.getMap());
-		status.setComplete();
-		return "redirect:" + PREFIX + "/list.do";
-	}
-
-	@RequestMapping("/delete.do")
-	public String delete(MyMap paramMap, Model model, SessionStatus status) throws Exception {
-
-		boardService.delete(paramMap.getMap());
-
-		model.addAttribute("paramMap", paramMap.getMap());
-		return "redirect:" + PREFIX + "/list.do";
-	}
-
 }
+
+
