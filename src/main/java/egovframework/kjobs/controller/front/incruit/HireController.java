@@ -54,24 +54,24 @@ import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 public class HireController {
 
 	public static final String PREFIX = "/front/sub/incruit";
-	public static final String FILE_UPLOAD_PATH = GlobalsProperties.getFileProperty("hire.Path"); // DB에 테이블을 하나로써서upload경로를 따로지정//sponson.Path=/upload/editor/images(설정을따로함)
+	public static final String FILE_UPLOAD_PATH = GlobalsProperties.getFileProperty("hire.Path");
 	/** HireService */
-	@Resource(name = "hireService") // HireServiceImpl를 생성자 //Autowired와 비슷함 (autowired는 스프링에서만 사용  Resource는 자바에서 사용)
+	@Resource(name = "hireService")
 	private HireService hireService;
 
 	/** FileService */
-	@Resource(name = "fileService") // 인터페이스 FileService 를 부름
+	@Resource(name = "fileService")
 	private FileService fileService;
 
 	/** EgovPropertyService */
-	@Resource(name = "propertiesService") // 인터페이스 EgovPropertyService 를 부름
+	@Resource(name = "propertiesService")
 	protected EgovPropertyService propertiesService;
 
 	/** Validator */
-	@Resource(name = "beanValidator") // 인터페이스 beanValidator 를 부름
+	@Resource(name = "beanValidator")
 	protected DefaultBeanValidator beanValidator;
 
-	@RequestMapping(value = "/list.do") // 게시판 게시물 보기url
+	@RequestMapping(value = "/list.do")
 	public String list(MyMap paramMap, ModelMap model) throws Exception {
 
 		/** pageing setting */
@@ -80,7 +80,6 @@ public class HireController {
 		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
-
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
 

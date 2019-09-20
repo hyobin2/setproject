@@ -26,6 +26,10 @@
 			</choose>
 		</if>
 
+		<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( noticeYn )'>
+			<![CDATA[ AND NOTICE_YN = #{noticeYn} ]]>
+		</if>
+
 	</sql>
 
 	<select id="list" resultType="myCamelMap">

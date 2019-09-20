@@ -32,9 +32,11 @@
 	<div class="location">
 		<span>Home &gt;<strong>채용관리</strong></span>
 	</div>
-	<form name="baseForm" id="baseForm" method="get" action="/adm/hire/list.do">
-		<input type="hidden" name="hIdx" id="hIdx" value="" />
-		<input type="hidden" name="pageIndex" id="pageIndex" value="${paramMap.pageIndex }" />
+	<form name="baseForm" id="baseForm" method="get"
+		action="/adm/hire/list.do">
+		<input type="hidden" name="hIdx" id="hIdx" value="" /> <input
+			type="hidden" name="pageIndex" id="pageIndex"
+			value="${paramMap.pageIndex }" />
 
 		<div class="table_area">
 			<div class="">

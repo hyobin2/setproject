@@ -82,17 +82,22 @@ public class NoticeController {
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
 
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
-
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
+		paramMap.put("noticeYn", "N");
 
 		List<Map<String, Object>> list = boardService.list(paramMap.getMap());
 		int count = boardService.count(paramMap.getMap());
 		paginationInfo.setTotalRecordCount(count);
 
+		paramMap.put("noticeYn", "Y");
+		paramMap.put("firstIndex", 1);
+		paramMap.put("recordCountPerPage", 10);
+		List<Map<String, Object>> noticeList = boardService.list(paramMap.getMap());
 
 		model.addAttribute("paramMap", paramMap.getMap());
 		model.addAttribute("list", list);
+		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("count", count);
 		model.addAttribute("paginationInfo", paginationInfo);
 		return PREFIX + "/list";

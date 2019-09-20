@@ -102,23 +102,23 @@
 									<th scope="col">작성일</th>
 									<th scope="col">조회수</th>
 								</tr>
-								<c:forEach var="result" items="${list}" varStatus="status">
-									<c:if test="${result.noticeYn=='Y'}">
+								<c:forEach var="result" items="${noticeList}" varStatus="status">
 										<tr class="notice_line">
 											<td><span class="notice">공지</span></td>
 											<td class="left"><a href="#" onclick="fn_view('${util:zeroConvert(result.bIdx)}');">${result.title }</a></td>
 											<td>${fn:substring(result.regDate, 0, 10) }</td>
 											<td>${result.hit }</td>
 										</tr>
-									</c:if>
 								</c:forEach>
 								<c:forEach var="result" items="${list}" varStatus="status">
-									<tr>
-										<td>${result.rnum}</td>
-										<td class="left"><a href="#" onclick="fn_view('${util:zeroConvert(result.bIdx)}');">${result.title }</a></td>
-										<td>${fn:substring(result.regDate, 0, 10) }</td>
-										<td>${result.hit }</td>
-									</tr>
+									<c:if test="${result.noticeYn=='N'}">
+										<tr>
+											<td>${result.rnum}</td>
+											<td class="left"><a href="#" onclick="fn_view('${util:zeroConvert(result.bIdx)}');">${result.title }</a></td>
+											<td>${fn:substring(result.regDate, 0, 10) }</td>
+											<td>${result.hit }</td>
+										</tr>
+									</c:if>
 								</c:forEach>
 								<c:if test="${fn:length(list) <= 0 }">
 									<tr>

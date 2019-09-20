@@ -319,7 +319,7 @@ function fn_write() {
 							<div class="agree">
 								<input type="checkbox" name="" id="agree"/>
 								<label for="agree">개인정보보호정책에 동의합니다.</label>
-								<a href="#" class="open_agree_terms">자세히보기</a>
+								<a href="#" class="open_agree_terms open_pop_privacy">자세히보기</a>
 							</div>
 						</div>
 
