@@ -79,7 +79,7 @@ public class CustomerController {
 		/** pageing setting */
 		PaginationInfo paginationInfo = new PaginationInfo();
 		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
-		paginationInfo.setRecordCountPerPage(9);
+		paginationInfo.setRecordCountPerPage(12);
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
 
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());

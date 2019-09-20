@@ -51,7 +51,7 @@ public class AuthenticInterceptor extends WebContentInterceptor {
 				if("1".equals(StringUtil.isNullToString(loginMap.get("auth")))) {
 					return true;
 				}else {
-					ModelAndView modelAndView = new ModelAndView("redirect:/adm/member/login.do");
+					ModelAndView modelAndView = new ModelAndView("redirect:/");
 					throw new ModelAndViewDefiningException(modelAndView);
 				}
 

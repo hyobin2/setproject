@@ -77,7 +77,7 @@ public class HireController {
 		/** pageing setting */
 		PaginationInfo paginationInfo = new PaginationInfo();
 		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
-		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
+		paginationInfo.setRecordCountPerPage(12);
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
