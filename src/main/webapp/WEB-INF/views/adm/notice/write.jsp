@@ -69,16 +69,12 @@
                         <col width="*">
                     </colgroup>
             	 <tbody>
-            	 	 <tr>
-	                    <th scope="row">공지여부</th>
-	                    <td colspan="3">
-	                    	<input type="radio" name="noticeYn" id="noticeYn01" ${info.noticeYn == 'Y'? 'checked="checked"':'' } value="Y" /> 공지&nbsp;&nbsp;
-	                   		<input type="radio" name="noticeYn" id="noticeYn02" ${info.noticeYn == 'N'? 'checked="checked"':'' } value="N" /> 미공지 &nbsp;&nbsp;
-	                    </td>
-              		</tr>
+
                     <tr>
                         <th scope="row">제목</th>
-                        <td><input type="text" name="title" id="title" style="width:500px" value="${info.title }" maxlength="200" />&nbsp;&nbsp;</td>
+                        <td><input type="text" name="title" id="title" style="width:500px" value="${info.title }" maxlength="200" />&nbsp
+                        <input type="checkbox" name="noticeYn" id="noticeYn" value="Y">상시공지</td>
+
                         <c:set var="date" value="${info}" />
                         <c:choose>
                         	<c:when test="${date.modDate != null }">

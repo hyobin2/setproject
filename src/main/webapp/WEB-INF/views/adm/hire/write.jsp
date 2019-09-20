@@ -181,9 +181,9 @@
 
 
     <div class="s_con_area">
-       	<h1>케이잡스 활동</h1>
+       	<h1>채용관리</h1>
        	<div class="location">
-       		<span>Home  &gt; <strong>케이잡스 활동</strong></span>
+       		<span>Home  &gt; <strong>채용관리</strong></span>
        	</div>
       	<form name="baseForm" id="baseForm" method="post" action="/adm/hire/proc.do" enctype="multipart/form-data" >
 		<input type="hidden" name="hIdx" id="hIdx" value="${util:zeroConvert(info.hIdx) }" />
@@ -204,13 +204,13 @@
                         <th scope="row">제목</th>
                         <td><input type="text" name="title" id="title" style="width:300px" value="${info.title }" maxlength="200" />&nbsp;&nbsp;</td>
                         <th scope="row">홈페이지주소</th>
-                        <td colspan="3"><input type="text" name="url" id="url" style="width:300px" value="${info.url}" maxlength="200"></td>
+                        <td colspan="3"><input type="text" name="url" id="url" style="width:300px" value="${info.url}" maxlength=500></td>
                     </tr>
                     <tr>
                         <th scope="row">회사명</th>
                         <td><input type="text" name="company" id="company" style="width:300px" value="${info.company }" maxlength="200" />&nbsp;&nbsp;</td>
                         <th scope="row">매출액</th>
-                        <td colspan="3"><input type="number" name="sales" id="sales" style="width:300px" value="${info.sales }" maxlength="200"></td>
+                        <td colspan="3"><input type="text" name="sales" id="sales" style="width:300px" value="${info.sales }" maxlength="10" ></td>
                     </tr>
                     <tr>
                         <th scope="row">구분</th>
@@ -232,7 +232,7 @@
                         <th scope="row">주요사업내용</th>
                         <td><input type="text" name="business" id="business" style="width:100px" value="${info.business }" maxlength="200"></td>
                         <th scope="row">설립일</th>
-                        <td><input type="text" name="however" id="however" class="datepicker" style="width:100px" value="${info.however }" readonly="readonly" /></td>
+                        <td><input type="text" name="however" id="however" class="datepicker" style="width:100px" value="${info.however }" readonly="readonly" maxlength="20" /></td>
                     </tr>
                     <tr>
                         <th scope="row">지역</th>
@@ -287,13 +287,13 @@
 					</tr>
 					 <tr><!-- ################################################################################################################### -->
                         <th scope="row">채용직무</th>
-                        <td><input type="text" name="duty" id="duty" style="width:300px" value="${info.duty }" maxlength="200" />&nbsp;&nbsp;</td>
+                        <td><input type="text" name="duty" id="duty" style="width:300px" value="${info.duty }" maxlength="50" />&nbsp;&nbsp;</td>
                         <th scope="row">모집인원</th>
-                        <td colspan="3"><input type="number" name="personnel" id="personnel" style="width:100px" value="${info.personnel }" maxlength="200">명</td>
+                        <td colspan="3"><input type="text" name="personnel" id="personnel" style="width:100px" value="${info.personnel }">명</td>
                     </tr>
                      <tr>
                         <th scope="row">담당업무</th>
-                        <td><input type="text" name="task" id="task" style="width:300px" value="${info.task }" maxlength="200" />&nbsp;&nbsp;</td>
+                        <td><input type="text" name="task" id="task" style="width:300px" value="${info.task }" maxlength="50" />&nbsp;&nbsp;</td>
                         <th scope="row">지원방법</th>
                         <td colspan="3"><input type="text" name="apply" id="apply" style="width:300px" value="${info.apply }" maxlength="200"></td>
                     </tr>
@@ -332,7 +332,7 @@
                         	<input type="text" id="sample6_postcode" placeholder="우편번호" style="width: 100px" readonly="readonly" value="${fn:split(info.workplace, ',')[0]}">
 							<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" ><br>
 							<input type="text" id="sample6_address" placeholder="주소" style="width: 1000px" readonly="readonly" value="${fn:split(info.workplace, ',')[1]}"><br>
-							<input type="text" id="sample6_detailAddress" placeholder="상세주소" style="width: 1000px" value="${fn:split(info.workplace, ',')[2]}">
+							<input type="text" id="sample6_detailAddress" placeholder="상세주소" style="width: 1000px" maxlength="100" value="${fn:split(info.workplace, ',')[2]}">
                         </td>
                          <tr>
                         <th scope="row">우대사항</th>
@@ -343,7 +343,7 @@
                         <td><input type="text" name="sDate" id="sDate" class="datepicker" style="width:100px" value="${info.sDate }" readonly="readonly" />~
                         	<input type="text" name="eDate" id="eDate" class="datepicker" style="width:100px" value="${info.eDate }" readonly="readonly" /></td>
                         <th scope="row">작성자</th>
-                        <td colspan="3"><input type="text" name="regName" id="regName" style="width:300px" value="${info.regName }" maxlength="200"></td>
+                        <td colspan="3"><input type="text" name="regName" id="regName" style="width:300px" value="${info.regName }" maxlength="20"></td>
                     </tr>
                      <tr>
                         <th scope="row">워크넷주소입력</th>

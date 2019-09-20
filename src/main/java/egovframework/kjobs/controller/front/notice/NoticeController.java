@@ -84,7 +84,6 @@ public class NoticeController {
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
-		paramMap.put("noticeYn", "N");
 
 		List<Map<String, Object>> list = boardService.list(paramMap.getMap());
 		int count = boardService.count(paramMap.getMap());
@@ -92,7 +91,7 @@ public class NoticeController {
 
 		paramMap.put("noticeYn", "Y");
 		paramMap.put("firstIndex", 1);
-		paramMap.put("recordCountPerPage", 10);
+		paramMap.put("recordCountPerPage", 5);
 		List<Map<String, Object>> noticeList = boardService.list(paramMap.getMap());
 
 		model.addAttribute("paramMap", paramMap.getMap());

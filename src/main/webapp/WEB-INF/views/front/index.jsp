@@ -138,7 +138,7 @@ function changeArea(idx){
 						<li>
 							<div class="txt">
 								<span class="tit">전직지원서비스</span>
-								<p>퇴직을 앞두고 있는 고객들에게 자신감 고취 및 성공적인 제 2의 인생설계를 위한 다양한 맞춤형 컨설팅과 교육, 상담 등의 서비스를 제공하여 퇴직자가 원하는 경력목표를 가장 효과적으로 달성할 수 있도록 지원하는 맞춤형 종합지원 서비스 입니다.</p>
+								<p>정년 또는 피치 못할 사유로 퇴직(예정)을 하게 된 고객들에게 자신감 고취 및 성공적인 제 2의 인생설계를 위한 다양한 맞춤형 컨설팅과 교육, 상담 등의 서비스를 제공하여 퇴직자가 원하는 경력목표를 가장 효과적으로 달성할 수 있도록 지원하는 맞춤형 종합지원 서비스 입니다.</p>
 							</div>
 							<div class="img">
 								<img src="/resources/front/img/img_main_service01.jpg" alt="전직지원서비스"/>
@@ -164,11 +164,20 @@ function changeArea(idx){
 						</li>
 						<li>
 							<div class="txt">
-								<span class="tit">전직지원서비스</span>
-								<p>퇴직을 앞두고 있는 고객들에게 자신감 고취 및 성공적인 제 2의 인생설계를 위한 다양한 맞춤형 컨설팅과 교육, 상담 등의 서비스를 제공하여 퇴직자가 원하는 경력목표를 가장 효과적으로 달성할 수 있도록 지원하는 맞춤형 종합지원 서비스 입니다.</p>
+								<span class="tit">교육컨설팅서비스</span>
+								<p>케이잡스만의 차별화된 교육컨설팅 기법을 바탕으로 기업에는 경영전략과 사업목표를 효과적으로 달성하는데 필요한 교육컨설팅 서비스를, 초〮중〮고 및 대학생을 대상으로 적합한 진로 로드맵 설정과 취업전략 수립을 통해 성공적인 취업으로 이어질 수 있도록 교육컨설팅을 지원하는 서비스 입니다.</p>
 							</div>
 							<div class="img">
-								<img src="/resources/front/img/img_main_service04.jpg" alt="전직지원서비스"/>
+								<img src="/resources/front/img/img_main_service04.jpg" alt="교육컨설팅서비스"/>
+							</div>
+						</li>
+						<li>
+							<div class="txt">
+								<span class="tit">MICE 사업</span>
+								<p>직장을 구하는 사람들에게 일할 기회를 제공하고, 일할 사람이 필요한 기업에게는 채용기회를 제공하기위해 필요한 고용서비스 관련 채용박람회, 워크숍, 공공 또는 민간분야 세미나, 포럼 등 크고 작은 행사의 기획 및 운영을 제공하는 서비스 입니다.</p>
+							</div>
+							<div class="img">
+								<img src="/resources/front/img/img_main_service05.jpg" alt="MICE 사업"/>
 							</div>
 						</li>
 					</ul>
@@ -177,6 +186,7 @@ function changeArea(idx){
 						<div class="bx-pager-item"><a href="#" data-slide-index="1">02</a></div>
 						<div class="bx-pager-item"><a href="#" data-slide-index="2">03</a></div>
 						<div class="bx-pager-item"><a href="#" data-slide-index="3">04</a></div>
+						<div class="bx-pager-item"><a href="#" data-slide-index="4">05</a></div>
 					</div>
 					<a href="#" class="btn_go">K·Jobs 전문 컨설턴트의 <br />자세한 상담을 받아보세요</a>
 				</div>
@@ -200,7 +210,7 @@ function changeArea(idx){
 					<div class="list">
 						<ul>
 							<li>
-								<a href="#" style="background-image:url(/resources/front/img/img_main_interview01.jpg)">
+								<a href="#">
 									<div class="txt">
 										<p>K·Jobs를 통해 <br />원하는 회사에  입사했어요</p>
 										<span class="job">넥시큐어 시스템<br />한보름 사원</span>
@@ -208,7 +218,7 @@ function changeArea(idx){
 								</a>
 							</li>
 							<li>
-								<a href="#" style="background-image:url(/resources/front/img/img_main_interview01.jpg)">
+								<a href="#">
 									<div class="txt">
 										<p>K·Jobs를 통해 <br />원하는 회사에  입사했어요</p>
 										<span class="job">넥시큐어 시스템<br />한보름 사원</span>
