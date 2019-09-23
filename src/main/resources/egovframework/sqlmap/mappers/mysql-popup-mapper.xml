@@ -95,6 +95,7 @@
 			INSERT INTO TB_POPUP
 				(
 				P_IDX,
+				P_CODE,
 				S_DATE,
 	        	E_DATE,
 	        	P_WIDTH,
@@ -112,6 +113,7 @@
 				)
 			VALUES
 				((SELECT COALESCE(MAX(CONVERT(P_IDX, UNSIGNED)), 0)+1 AS P_IDX FROM TB_POPUP P),
+				#{pCode},
 				#{sDate},
 				#{eDate},
 	        	#{pWidth},

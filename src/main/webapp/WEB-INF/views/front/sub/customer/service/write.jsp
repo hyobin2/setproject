@@ -188,12 +188,14 @@ function fn_write() {
 									</tr>
 									<tr>
 										<th scope="row"><label for=""><span class="star">*</span>비밀번호</label></th>
-										<td>
-											<div class="input"><input type="password" name="pw" id="pw" placeholder="6~16자의 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합" maxlength="16"/></div>
+										<td colspan="3">
+											<div class="input" style="max-width:300px;"><input type="password" name="pw" id="pw" placeholder="6~16자의 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합" maxlength="16"/></div>
 										</td>
+									</tr>
+									<tr>
 										<th scope="row"><label for=""><span class="star">*</span>비밀번호 확인</label></th>
-										<td>
-											<div class="input"><input type="password" name="pwcheck" id="pwcheck" placeholder="입력하신 비밀번호를 한번 더 입력해 주세요 " maxlength="16"/></div>
+										<td colspan="3">
+											<div class="input" style="max-width:300px;"><input type="password" name="pwcheck" id="pwcheck" placeholder="입력하신 비밀번호를 한번 더 입력해 주세요 " maxlength="16"/></div>
 										</td>
 									</tr>
 									<tr>
