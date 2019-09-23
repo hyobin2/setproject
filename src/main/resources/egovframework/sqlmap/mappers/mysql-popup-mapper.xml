@@ -6,6 +6,8 @@
 		 <![CDATA[
 		 WHERE
 		 	USE_YN = 'Y'
+		 AND 
+		 	P_CODE = #{pCode}
 		 ]]>
 		<if test='@egovframework.com.cmm.util.MybatisUtil@isNotEmpty( menuId )'>
 			<if test='menuId == "index"'>

@@ -74,7 +74,7 @@ function fn_write() {
 		var address=$('#sample6_postcode1').val()+'-'+$('#sample6_postcode2').val()+','+$('#sample6_address').val()
 		$('#address').val(address);
 
-		if($('#division').val()=='1'){
+		if($('#division').val()==''){
 			alert('서비스 구분을 선택해주세요')
 			return false;
 		}
@@ -145,7 +145,7 @@ function fn_write() {
 				</ul>
 			</div>
 
-			<form name="baseForm" id="baseForm" method="post" action="/front/sub/cummunity/inquiry/view.do">
+			<form name="baseForm" id="baseForm" method="post" action="/front/sub/customer/service/proc.do">
 			<!-- contents-->
 				<div id="contents">
 
@@ -206,9 +206,7 @@ function fn_write() {
 														<select name="tel1" id="tel1" style="max-width:150px;">
 															<option value="010">010</option>
 															<option value="011">011</option>
-															<option value="012">012</option>
 															<option value="016">016</option>
-															<option value="017">017</option>
 															<option value="019">019</option>
 														</select>
 													</li>
@@ -271,7 +269,7 @@ function fn_write() {
 										<th scope="row"><label for=""><span class="star">*</span>구분</label></th>
 										<td colspan="3">
 											<select name="division" id="division" style="max-width:300px;">
-												<option value="1">신청하실 서비스를 선택해 주세요.</option>
+												<option value="">신청하실 서비스를 선택해 주세요.</option>
 												<option value="아이돌">IDOL프로그램</option>
 		                        				<option value="채용">채용지원서비스</option>
 		                        				<option value="기업">기업교육컨설팅</option>

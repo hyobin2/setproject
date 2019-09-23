@@ -88,7 +88,8 @@ public class AdmPopupController {
 		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
 		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
-
+		paramMap.put("pCode", "POP01");
+		
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
@@ -163,7 +164,7 @@ public class AdmPopupController {
 				fileService.insert(fileMap.getMap());//file insert 실행
 			}
 		}
-
+		paramMap.put("pCode", "POP01");
     	if (paramMap.getInt("pIdx") > 0) {
     		// update
     		popupService.update(paramMap.getMap());
@@ -175,7 +176,7 @@ public class AdmPopupController {
     	model.addAttribute("paramMap", paramMap.getMap());
 
         status.setComplete();
-        return "redirect:"+PREFIX+"/list.do?pCode=POP01";
+        return "redirect:"+PREFIX+"/list.do";
     }
 
 

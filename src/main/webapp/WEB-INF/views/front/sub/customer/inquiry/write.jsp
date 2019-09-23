@@ -7,74 +7,75 @@
 
 <script>
 function fn_write(){
-if ($('#title').val()  == '') {
-	alert("제목을 입력하세요.");
-	$('#title').focus();
-	return false;
-}
-if ($('#company').val()  == '') {
-	alert("기업명을 입력하세요.");
-	$('#company').focus();
-	return false;
-}
-if ($('#pw').val() == ''){
-	alert('비밀번호를 입력해주세요.');
-	$('#pw').focus();
-	return false;
-}
-if ($('#pwcheck').val()!=$('#pw').val()){
-	alert('비밀번호가 일치하지않습니다.');
-	$('#pw').focus();
-	return false;
-}
-var regex = /^.*(?=^.{6,16}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
-if(!regex.test($('#pw').val())){
-	alert('비밀번호를 확인해주세요.');
-	$('#pw').focus();
-	return false;
-}
-if ($('#tel1').val() == ''|| $('#tel2').val() == ''||$('#tel3').val() == ''){
-	alert('휴대폰번호를 입력해주세요.');
-	$('#tel2').focus();
-	return false;
-}
-$('#tel').val($('#tel1').val()+'-'+$('#tel2').val()+'-'+$('#tel3').val())
-var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
-if(!regExp.test($('input[id="tel"]').val())){
-	alert('휴대폰번호를 확인해주세요.');
-	$('#tel2').focus();
-	return false;
-}
-if ($('#email1').val() == '' || $('#email2').val() == '') {
-	alert("이메일을 입력해주세요.");
-	$('#email1').focus();
-	return false;
-}
-
-var email = $('#email1').val()+"@"+$('#email2').val();
-$('#email').val(email);
-var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-if (!emailRule.test($('#email').val())) {
-	alert("이메일 형식을을 확인해주세요.");
-	$('#email1').focus();
-	return false;
-}
-
-if ($('#content').val() == '') {
-	alert("작성된 내용이 없습니다. 내용을 입력하십시오.");
-	$('#content').focus();
-	return false;
-}
-
-if(!$('input:checkbox[id="agree"]').prop('checked')){
-	alert('개인정보보호정책에 동의하여주세요.')
-	return false;
-}
-
-if( !confirm("등록 하시겠습니까?") ){
-	return false;
-}
-
+	
+	if ($('#title').val()  == '') {
+		alert("제목을 입력하세요.");
+		$('#title').focus();
+		return false;
+	}
+	if ($('#company').val()  == '') {
+		alert("기업명을 입력하세요.");
+		$('#company').focus();
+		return false;
+	}
+	if ($('#pw').val() == ''){
+		alert('비밀번호를 입력해주세요.');
+		$('#pw').focus();
+		return false;
+	}
+	if ($('#pwcheck').val()!=$('#pw').val()){
+		alert('비밀번호가 일치하지않습니다.');
+		$('#pw').focus();
+		return false;
+	}
+	var regex = /^.*(?=^.{6,16}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+	if(!regex.test($('#pw').val())){
+		alert('비밀번호를 확인해주세요.');
+		$('#pw').focus();
+		return false;
+	}
+	if ($('#tel1').val() == ''|| $('#tel2').val() == ''||$('#tel3').val() == ''){
+		alert('휴대폰번호를 입력해주세요.');
+		$('#tel2').focus();
+		return false;
+	}
+	$('#tel').val($('#tel1').val()+'-'+$('#tel2').val()+'-'+$('#tel3').val())
+	var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+	if(!regExp.test($('input[id="tel"]').val())){
+		alert('휴대폰번호를 확인해주세요.');
+		$('#tel2').focus();
+		return false;
+	}
+	if ($('#email1').val() == '' || $('#email2').val() == '') {
+		alert("이메일을 입력해주세요.");
+		$('#email1').focus();
+		return false;
+	}
+	
+	var email = $('#email1').val()+"@"+$('#email2').val();
+	$('#email').val(email);
+	var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	if (!emailRule.test($('#email').val())) {
+		alert("이메일 형식을을 확인해주세요.");
+		$('#email1').focus();
+		return false;
+	}
+	
+	if ($('#content').val() == '') {
+		alert("작성된 내용이 없습니다. 내용을 입력하십시오.");
+		$('#content').focus();
+		return false;
+	}
+	
+	if(!$('input:checkbox[id="agree"]').prop('checked')){
+		alert('개인정보보호정책에 동의하여주세요.')
+		return false;
+	}
+	
+	if( !confirm("등록 하시겠습니까?") ){
+		return false;
+	}
+	
 	$('#baseForm').attr('action', '/front/sub/customer/inquiry/proc.do');
 	$('#baseForm').submit();
 
@@ -126,7 +127,7 @@ if( !confirm("등록 하시겠습니까?") ){
 
 			<!-- contents-->
 				<div id="contents">
-					<form name="baseForm" id="baseForm" method="post" action="/front/sub/customer/inquiry/view.do"  >
+					<form name="baseForm" id="baseForm" method="post" action="/front/sub/customer/inquiry/proc.do"  >
 						<div class="sub_tab_area three">
 							<ul>
 								<li><a href="/front/sub/customer/inquiry/list.do" class="on" >고객문의</a></li>

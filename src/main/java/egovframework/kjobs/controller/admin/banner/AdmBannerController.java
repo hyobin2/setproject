@@ -89,7 +89,7 @@ public class AdmBannerController {
 		paginationInfo.setCurrentPageNo(paramMap.getInt("pageIndex", 1));
 		paginationInfo.setRecordCountPerPage(propertiesService.getInt("pageUnit"));
 		paginationInfo.setPageSize(propertiesService.getInt("pageSize"));
-		paramMap.put("pCode", "BANNER");
+		paramMap.put("pCode", "POP02");
 		paramMap.put("firstIndex", paginationInfo.getFirstRecordIndex());
 		paramMap.put("lastIndex", paginationInfo.getLastRecordIndex());
 		paramMap.put("recordCountPerPage", paginationInfo.getRecordCountPerPage());
@@ -133,10 +133,6 @@ public class AdmBannerController {
 
     	Map<String, Object> info = bannerService.select(paramMap.getMap());
 
-    	MyMap codeMap = new MyMap();
-    	codeMap.put("upCode", "BANNER");
-    	model.addAttribute("pCodeList", codeService.list(codeMap.getMap()));
-
     	if(info != null) {
     		info.put("fileList", fileService.list(info));
     		model.addAttribute("info", info);
@@ -171,7 +167,7 @@ public class AdmBannerController {
 				fileService.insert(fileMap.getMap());
 			}
 		}
-		System.out.println("dsdsdsdsds"+paramMap.getMap().get("fileclass"));
+		paramMap.put("pCode", "POP02");
     	if (paramMap.getInt("pIdx") > 0) {
     		// update
     		bannerService.update(paramMap.getMap());
@@ -182,7 +178,7 @@ public class AdmBannerController {
 
     	model.addAttribute("paramMap", paramMap.getMap());
         status.setComplete();
-        return "redirect:"+PREFIX+"/list.do?pCode=POP02";
+        return "redirect:"+PREFIX+"/list.do";
     }
 
 
@@ -193,7 +189,7 @@ public class AdmBannerController {
     	bannerService.delete(paramMap.getMap());
 
     	model.addAttribute("paramMap", paramMap.getMap());
-        return "redirect:"+PREFIX+"/list.do?pCode=POP02";
+        return "redirect:"+PREFIX+"/list.do";
     }
 
 }

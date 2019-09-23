@@ -50,9 +50,19 @@ function changeArea(idx){
 			<div class="main_visual">
 				<div class="inner">
 					<ul>
-						<li><a href="#" style="background-image:url(/resources/front/img/img_main_visual01.jpg);">메인 비주얼 1</a></li>
-						<li><a href="#" style="background-image:url(/resources/front/img/img_main_visual02.jpg);">메인 비주얼 2</a></li>
-						<li><a href="#" style="background-image:url(/resources/front/img/img_main_visual03.jpg);">메인 비주얼 3</a></li>
+						<c:choose>
+							<c:when test="${fn:length(bannerList) > 0}">
+								<c:forEach var="result" items="${bannerList}" varStatus="status">
+									<li><a href="#" style="background-image:url(/file/viewImg.do?fIdx=${result.fileList[0].fIdx});">메인 비주얼 3</a></li>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<li><a href="#" style="background-image:url(/resources/front/img/img_main_visual01.jpg);">메인 비주얼 1</a></li>
+								<li><a href="#" style="background-image:url(/resources/front/img/img_main_visual02.jpg);">메인 비주얼 2</a></li>
+								<li><a href="#" style="background-image:url(/resources/front/img/img_main_visual03.jpg);">메인 비주얼 3</a></li>
+							</c:otherwise>
+						</c:choose>
+						
 					</ul>
 				</div>
 			</div>

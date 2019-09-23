@@ -109,7 +109,6 @@
 		<input type="hidden" name="pageIndex" value="${paramMap.pageIndex }"/>
 		<input type="hidden" name="searchCondition" id="searchCondition" value="${paramMap.searchCondition }" />
 		<input type="hidden" name="searchKeyword" id="searchKeyword" value="${paramMap.searchKeyword }" />
-		<input type="hidden" id="pCode" name="pCode" value="POP01">
 		<input type="hidden" name="fileclass" id="fileclass" value="${info.fileclass }" />
       	<div class="table_area">
             <div class="">
