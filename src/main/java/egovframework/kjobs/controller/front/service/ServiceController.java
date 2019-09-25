@@ -16,6 +16,7 @@
 package egovframework.kjobs.controller.front.service;
 
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,6 +33,7 @@ import org.springmodules.validation.commons.DefaultBeanValidator;
 
 import egovframework.com.cmm.util.FileUploadUtil;
 import egovframework.com.cmm.util.StringUtil;
+import egovframework.com.cmm.util.UserDetailsHelper;
 import egovframework.com.cmm.util.myMap.MyMap;
 import egovframework.kjobs.service.inquiry.InquiryService;
 import egovframework.kjobs.service.scrty.ScrtyService;
@@ -112,11 +114,21 @@ public class ServiceController {
 
 
     @RequestMapping("/view.do")
-    public String view(MyMap paramMap, Model model)
+    public String view(MyMap paramMap, Model model, HttpServletResponse response)
             throws Exception {
     	paramMap.put("code", "S");
     	Map<String, Object> info = inquiryService.select(paramMap.getMap());
-
+    	
+    	Map<String, Object> loginMap = (HashMap<String, Object>) UserDetailsHelper.getAuthenticatedUser();
+    	if(!loginMap.get("id").equals(info.get("regId"))){
+    		response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('자신의글만 열람 할 수 있습니다.'); history.go(-1);</script>");
+			out.flush();
+			model.addAttribute("paramMap", paramMap);
+    	}
+    	
+    	
     	if(info != null) {
         	info.put("tel", scrtyService.decrypt((String) info.get("tel")));
     		info.put("email", scrtyService.decrypt((String) info.get("email")));

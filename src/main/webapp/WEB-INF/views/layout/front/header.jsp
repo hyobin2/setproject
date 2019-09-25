@@ -87,16 +87,17 @@
 		<div id="header">
 			<div class="inner">
 				<h1><a href="/front/"><img src="/resources/front/img/img_logo.png" alt="케이잡스"/></a></h1>
-				<div class="lnb" id="logout">
+				<div class="lnb">
 					<ul>
-						<li><a href="/front/sub/member/join.do">회원가입</a></li>
-						<li><a href="/front/sub/member/login.do">로그인</a></li>
-						<li><a href="#"><strong>ENG</strong></a></li>
-					</ul>
-				</div>
-				<div class="lnb" id="login" style="display: none;">
-					<ul>
-						<li><a href="/front/sub/member/logout.do">로그아웃</a></li>
+						<c:choose>
+							<c:when test="${empty loginMap}">
+								<li><a href="/front/sub/member/join.do">회원가입</a></li>
+								<li><a href="/front/sub/member/login.do">로그인</a></li>		
+							</c:when>
+							<c:otherwise>
+								<li><a href="/front/sub/member/logout.do">로그아웃</a></li>
+							</c:otherwise>
+						</c:choose> 
 						<li><a href="#"><strong>ENG</strong></a></li>
 					</ul>
 				</div>
@@ -392,18 +393,3 @@
 				</div>
 			</div>
 		</div>
-<script>
-$('#login').hide();
-if('${loginMap.id }' != ''){
-	$('#logout').hide();
-	$('#login').show();
-	$('#mobile_logout').hide()
-	$('#mobile_login').show()
-} else{
-	$('#logout').show();
-	$('#login').hide();
-	$('#mobile_logout').show()
-	$('#mobile_login').hide()
-}
-
-</script>

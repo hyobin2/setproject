@@ -116,7 +116,21 @@
 									<tr>
 										<td>${result.rnum}</td>
 										<td>${result.division }</td>
-										<td class="left"><a href="#" onclick="fn_view('${util:zeroConvert(result.iIdx)}');">${result.title }</a></td>
+										<td class="left">
+										<c:choose>
+											<c:when test="${loginMap.id == result.regId}">
+												<a href="#" onclick="fn_view('${util:zeroConvert(result.iIdx)}');">
+													${result.title }
+												</a>		
+											</c:when>
+											<c:otherwise>
+												<a href="#" onclick="alert('자신의글만 열람 할 수 있습니다.'); return false;">
+													${result.title }
+													<img src="/resources/front/img/ico_lock.png" alt="비밀글">
+												</a>
+											</c:otherwise>
+										</c:choose> 
+										</td>
 										<td>${fn:substring(result.regDate, 0, 10) }</td>
 										<td>${fn:substring(result.regName,0,1) }**</td>
 										<c:if test="${result.replyYn=='Y' }">
