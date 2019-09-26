@@ -177,8 +177,8 @@
 #container .main_section04 .inner h2{font-size:20px;color:#fff;line-height:150%;font-weight:900;position:absolute;left:50%;top:100px;margin-left:-600px;z-index:100;}
 #container .main_section04 .inner .list ul li a{display:block;height:560px;overflow:hidden;position:relative;}
 #container .main_section04 .inner .list ul li a .txt{position:absolute;left:50%;top:170px;margin-left:-600px;max-width:500px;overflow:hidden;}
-#container .main_section04 .inner .list ul li a .txt p{font-size:40px;color:#fff;line-height:150%;letter-spacing:-1px;margin-bottom:30px;overflow:hidden;height:120px;}
-#container .main_section04 .inner .list ul li a .txt .job{display:block;font-size:20px;color:#fff;line-height:150%;letter-spacing:-1px;font-weight:500;height:60px;overflow:hidden;}
+#container .main_section04 .inner .list ul li a .txt p{font-size:40px;color:#fff;line-height:150%;letter-spacing:-1px;margin-bottom:30px;overflow:hidden;height:120px;word-break: break-all;}
+#container .main_section04 .inner .list ul li a .txt .job{display:block;font-size:20px;color:#fff;line-height:150%;letter-spacing:-1px;font-weight:500;height:60px;overflow:hidden;word-break: break-all;}
 #container .main_section04 .inner .list .bx-wrapper .bx-controls-direction{position:absolute;left:50%;bottom:100px;height:17px;margin-left:-600px;}
 #container .main_section04 .inner .list .bx-wrapper .bx-controls-direction:after{content:'';display:block;clear:both;width:1px;position:absolute;left:50%;top:0;bottom:0;background:#ccc;}
 #container .main_section04 .inner .list .bx-wrapper .bx-prev{text-indent:-9999px;overflow:hidden;display:inline-block;width:30px;height:17px;background:url(../img/btn_prev03.png) no-repeat center center;margin-right:8px;}
@@ -221,7 +221,7 @@
 .pop_privacy .inner{position:absolute;left:50%;top:50%;margin:-300px 0 0 -600px;width:1100px;height:580px;padding:50px;background:#fff;}
 .pop_privacy .inner h2{color:#222;line-height:110%;font-size:35px;font-weight:300;padding-bottom:20px;}
 .pop_privacy .inner .close_pop_privacy{position:absolute;right:50px;top:50px;}
-.pop_privacy .inner .terms{padding:20px;border:1px solid #eee;height:480px;font-size:16px;line-height:150%;}
+.pop_privacy .inner .terms{padding:20px;border:1px solid #eee;height:480px;font-size:16px;line-height:150%;overflow: auto;}
 
 .sub_top{background-repeat:no-repeat;background-position:center top;height:460px;}
 .sub_top.sub_top01{background-image:url(../img/bg_sub_tab_area01.jpg);}
