@@ -30,9 +30,7 @@ function changeArea(idx){
 							<ul>
 								<li><a href="/en/sub/kjobs/greetings.do">K·Jobs</a></li>
 								<li><a href="/en/sub/business/business01_01.do">사업분야</a></li>
-								<li><a href="/en/sub/cummunity/activity/list.do">커뮤니티</a></li>
-								<li><a href="/en/sub/incruit/list.do">채용정보</a></li>
-								<li><a href="/en/sub/customer/inquiry/list.do">고객지원</a></li>
+								<li><a href="/en/sub/customer/location/location.do">오시는길</a></li>
 							</ul>
 						</div>
 					</li>
@@ -40,8 +38,6 @@ function changeArea(idx){
 						<a href="#">오시는길</a>
 						<div class="path_list">
 							<ul>
-								<li><a href="/en/sub/customer/inquiry/list.do">고객문의</a></li>
-								<li><a href="/en/sub/customer/service/list.do">서비스 신청 및 접수</a></li>
 								<li><a href="/en/sub/customer/location/location.do">오시는길</a></li>
 							</ul>
 						</div>
@@ -52,10 +48,8 @@ function changeArea(idx){
 			<!-- contents-->
 			<div id="contents">
 
-				<div class="sub_tab_area three">
+				<div class="sub_tab_area one">
 					<ul>
-						<li><a href="/en/sub/customer/inquiry/list.do" >고객문의</a></li>
-						<li><a href="/en/sub/customer/service/list.do" > 서비스 신청 및 접수</a></li>
 						<li><a href="/en/sub/customer/location/location.do" class="on">오시는 길</a></li>
 					</ul>
 				</div>

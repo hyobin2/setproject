@@ -62,7 +62,7 @@ function changeArea(idx){
 								<li><a href="#" style="background-image:url(/resources/front/img/img_main_visual03.jpg);">메인 비주얼 3</a></li>
 							</c:otherwise>
 						</c:choose>
-						
+
 					</ul>
 				</div>
 			</div>
@@ -203,7 +203,7 @@ function changeArea(idx){
 						<div class="bx-pager-item"><a href="#" data-slide-index="3">04</a></div>
 						<div class="bx-pager-item"><a href="#" data-slide-index="4">05</a></div>
 					</div>
-					<a href="#" class="btn_go" onclick="section2Move(); return false;">K·Jobs 전문 컨설턴트의 <br />자세한 상담을 받아보세요</a>
+					<a href="/front/sub/customer/service/write.do" class="btn_go">K·Jobs 전문 컨설턴트의 <br />자세한 상담을 받아보세요</a>
 				</div>
 
 			</div>
@@ -533,7 +533,7 @@ function changeArea(idx){
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkbkHsVbYxg4C1VtWEKs6297cvOeudTDg&callback=initMap" async defer></script>
 <script>
 
-function section2Move(){
+/* function section2Move(){
 	var slideIdx = $("#num_pager .active").data("slide-index")+1;
 	var url = "";
 	if(slideIdx == "1"){
@@ -553,7 +553,7 @@ function section2Move(){
 
 	document.location.href = url;
 
-}
+} */
 for(var i=2;i<15;i++){
 $('#areaDetail'+i).hide();
 }

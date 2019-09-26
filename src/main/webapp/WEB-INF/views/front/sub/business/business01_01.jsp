@@ -74,22 +74,6 @@
 									<div class="item">
 										<div class="txt">
 											<span class="num">01</span>
-											<p>채용 대행 <br />서비스</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="item">
-										<div class="txt">
-											<span class="num">02</span>
-											<p>구인구직 <br />고용정보제공 서비스</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="item">
-										<div class="txt">
-											<span class="num">03</span>
 											<p>공공고용 <br />서비스</p>
 										</div>
 									</div>
@@ -97,8 +81,24 @@
 								<li>
 									<div class="item">
 										<div class="txt">
-											<span class="num">04</span>
+											<span class="num">02</span>
 											<p>민간고용 <br />서비스</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<div class="txt">
+											<span class="num">03</span>
+											<p>채용 대행 <br />서비스</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<div class="txt">
+											<span class="num">04</span>
+											<p>구인구직 <br />고용정보제공 서비스</p>
 										</div>
 									</div>
 								</li>
@@ -123,7 +123,7 @@
 							<div class="txt">
 								<p>
 									취업성공패키지는 <span>실업상태에 있는 청년, 중·장년층에게 직업상담사가 참여자와 함께 개인별 취업지원 계획을 수립</span>하고 <br />
-									맞춤형 취업상담과 취업 알선을 진행하여 참여자의 맞춤형 리즈에 맞는 성공취업을 지원하는 One-Stop 취업지원 서비스입니다.
+									맞춤형 취업상담과 취업 알선을 진행하여 참여자의 맞춤형 니즈에 맞는 성공취업을 지원하는 One-Stop 취업지원 서비스입니다.
 								</p>
 							</div>
 						</div>

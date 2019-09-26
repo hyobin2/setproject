@@ -39,8 +39,6 @@
 								<ul>
 									<li><a href="/en/sub/kjobs/greetings.do">K·Jobs</a></li>
 									<li><a href="/en/sub/business/business01_01.do">사업분야</a></li>
-									<li><a href="/en/sub/cummunity/activity/list.do">커뮤니티</a></li>
-									<li><a href="/en/sub/incruit/list.do">채용정보</a></li>
 									<li><a href="/en/sub/customer/inquiry/list.do">고객지원</a></li>
 								</ul>
 							</div>

@@ -145,8 +145,8 @@
 												<a href="#" onclick="fn_view('${util:zeroConvert(result.hIdx)}');">
 												<div class="img"><img src="/file/viewImg.do?fIdx=${result.fileList[0].fIdx}" alt="${result.fileList[0].orgFilename }"/></div>
 												<div class="txt">
-													<span class="job">${result.company }</span>
-													<strong>${result.title }</strong>
+													<span class="job">${util:cutString(result.company,'...',20) }</span>
+													<strong>${util:cutString(result.title,'...',20) }</strong>
 													<p class="job_info">
 														${result.salary == '2000' ? "2000이하":'' }
 														${result.salary == '2499' ? "2000~2500미만":'' }
