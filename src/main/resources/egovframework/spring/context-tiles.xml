@@ -12,11 +12,11 @@
 		<put-attribute name="SITEMAP" value="/WEB-INF/views/layout/front/sitemap.jsp" />
 	</definition>
 
-	<!-- <definition name="en" template="/WEB-INF/views/layout/en/layout.jsp">
+	<definition name="en" template="/WEB-INF/views/layout/en/layout.jsp">
 		<put-attribute name="HEADER" value="/WEB-INF/views/layout/en/header.jsp" />
 		<put-attribute name="FOOTER" value="/WEB-INF/views/layout/en/footer.jsp" />
 		<put-attribute name="SITEMAP" value="/WEB-INF/views/layout/en/sitemap.jsp" />
-	</definition> -->
+	</definition>
 
 	<definition name="empty" template="/WEB-INF/views/layout/empty/layout.jsp">
     	<put-attribute name="CONTENT" value=""/>
@@ -32,8 +32,8 @@
 	<definition name="/front/**" extends="front">
 		<put-attribute name="CONTENT" value="/WEB-INF/views/front/{1}.jsp" />
 	</definition>
-	<!-- <definition name="/en/**" extends="en">
+	<definition name="/en/**" extends="en">
 		<put-attribute name="CONTENT" value="/WEB-INF/views/en/{1}.jsp" />
-	</definition> -->
+	</definition>
 
 </tiles-definitions>
