@@ -226,7 +226,7 @@ function changeArea(idx){
 						<ul>
 						<c:forEach var="result" items="${list}" varStatus="status">
 							<li>
-								<a href="#">
+								<a href="/front/sub/cummunity/customercase/view.do?bIdx=${result.bIdx }">
 									<div class="txt">
 										<p>${result.title}</p>
 										<span class="job">${result.content }</span>

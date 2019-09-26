@@ -69,28 +69,12 @@
 							<strong>채용대행 서비스, 구인구직 고용정보제공 서비스</strong>가 존재하고 국가기관을 통해 이루어지는 <br />
 							<strong>공공 고용서비스</strong>와 민간 전문기업을 통해 이루어지는 <strong>민간고용 서비스</strong>가 있습니다.
 						</p>
-						<div class="process">
+							<div class="process">
 							<ol>
 								<li>
 									<div class="item">
 										<div class="txt">
 											<span class="num">01</span>
-											<p>채용 대행 <br />서비스</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="item">
-										<div class="txt">
-											<span class="num">02</span>
-											<p>구인구직 <br />고용정보제공 서비스</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="item">
-										<div class="txt">
-											<span class="num">03</span>
 											<p>공공고용 <br />서비스</p>
 										</div>
 									</div>
@@ -98,8 +82,24 @@
 								<li>
 									<div class="item">
 										<div class="txt">
-											<span class="num">04</span>
+											<span class="num">02</span>
 											<p>민간고용 <br />서비스</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<div class="txt">
+											<span class="num">03</span>
+											<p>채용 대행 <br />서비스</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<div class="txt">
+											<span class="num">04</span>
+											<p>구인구직 <br />고용정보제공 서비스</p>
 										</div>
 									</div>
 								</li>
@@ -123,11 +123,9 @@
 							</div>
 							<div class="txt">
 								<p>
-									케이잡스는 대한민국 고용서비스 전문기업으로서 청년, 중·장년 및 경력단절 여성 등 다양한 프 <br />
-									로그램 참여자들의 가치관, 역량 및 경력 등의 검증을 통한 적합한 인재 데이터베이스를 구축하<br />
-									여 필요한 구인기업에 추천하는 서비스를 제공하고 있습니다.<br/>
-									또한, 기업에서 채용이 예상되거나 특별히 요구하는 포지션에 <span>맞춤 인재 풀을 미리 구축, 활용<br/>
-									할 수 있어, 유연하고 효율적인 인적자원 운행이 가능</span>하도록 지원합니다.
+									케이잡스는 대한민국 고용서비스 전문기업으로서 청년, 중·장년 및 경력단절 여성 등 다양한 프로그램참여자들의 <br/>
+									가치관, 역량 및 경력 등의 검증을 통한 적합한 인재 데이터베이스를 구축하여 필요한 구인기업에 추천하는 서비스를 제공하고 있습니다.<br/>
+									또한, 기업에서 채용이 예상되거나 특별히 요구하는 포지션에 <span>맞춤 인재 풀을 미리 구축, 활용 할 수 있어, 유연하고 효율적인 인적자원 운행이 가능</span>하도록 지원합니다.
 
 								</p>
 							</div>
