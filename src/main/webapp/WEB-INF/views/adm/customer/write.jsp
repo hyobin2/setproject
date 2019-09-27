@@ -83,9 +83,9 @@
                     </tr>
                     <tr>
                         <th scope="row">해당관서</th>
-                        <td><input type="text" name="etc1" id="etc1" style="width:200px" value="${info.etc1 }" maxlength="200" />&nbsp;&nbsp;</td>
+                        <td><input type="text" name="etc1" id="etc1" style="width:200px" value="${info.etc1 }" maxlength="100" />&nbsp;&nbsp;</td>
                         <th scope="row">해당공무원명</th>
-                        <td><input type="text" name="etc2" id="etc2" style="width:200px" value="${info.etc2 }" maxlength="200" />&nbsp;&nbsp;</td>
+                        <td><input type="text" name="etc2" id="etc2" style="width:200px" value="${info.etc2 }" maxlength="100" />&nbsp;&nbsp;</td>
                     </tr>
                     <tr>
                         <th scope="row">내용</th>

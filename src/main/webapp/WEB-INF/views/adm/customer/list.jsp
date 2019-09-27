@@ -74,8 +74,8 @@
 									<td>${result.rnum}</td>
 									<td class="t_left"><a href="#"
 										onclick="fn_write('${util:zeroConvert(result.bIdx)}'); return false;">${result.title }</a></td>
-										<td>${result.etc1}</td>
 										<td>${result.etc2}</td>
+										<td>${result.etc1}</td>
 									<td>${fn:substring(result.regDate, 0, 10) }</td>
 								</tr>
 							</c:forEach>
