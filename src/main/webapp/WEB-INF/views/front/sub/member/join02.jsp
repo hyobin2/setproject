@@ -8,7 +8,7 @@ function check_join(){
 				}
 		var idReg = /^[a-z]+[a-z0-9]{5,19}$/g;
 		if(!idReg.test($('#id').val())) {
-		    alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
+		    alert("아이디는 영문자로 시작하는 6~30자 영문자 또는 숫자이어야 합니다.");
 		    return;
 		}
 		if ($('#pw').val() == ''){
@@ -134,7 +134,7 @@ function check_join(){
 						</ul>
 					</div>
 					<div class="join_form">
-					<form id="baseForm" name="baseForm" method="post" action="/front/sub/member/join.do" >
+					<form id="baseForm" name="baseForm" method="post" action="/front/sub/member/proc.do" >
 						<h2>회원가입</h2>
 						<div class="process">
 							<ul>
@@ -148,21 +148,21 @@ function check_join(){
 								<ul>
 									<li>
 										<label for="">아이디</label>
-										<div class="input2"><input type="text" name="id" id="id" maxlength="20"/></div>
+										<div class="input2"><input type="text" name="id" id="id" maxlength="30"/></div>
 										<a href="#" class="btn" onclick="checkId()">중복확인</a>
 										<input type="hidden" id="idcheck" name="idcheck">
 									</li>
 									<li>
 										<label for="">비밀번호</label>
-										<div class="input"><input type="password" name="pw" id="pw" placeholder="8-15자리의 영문/숫자/특수문자를 함께 입력해주세요"/></div>
+										<div class="input"><input type="password" name="pw" id="pw" placeholder="8-15자리의 영문/숫자/특수문자를 함께 입력해주세요" maxlength="30"/></div>
 									</li>
 									<li>
 										<label for="">비밀번호 확인</label>
-										<div class="input"><input type="password" name="pwcheck" id="pwcheck" placeholder="입력하신 비밀번호를 다시한번 입력 해주세요."/></div>
+										<div class="input"><input type="password" name="pwcheck" id="pwcheck" placeholder="입력하신 비밀번호를 다시한번 입력 해주세요." maxlength="30"/></div>
 									</li>
 									<li>
 										<label for="">이름</label>
-										<div class="input"><input type="text" name="name" id="name" placeholder=""/></div>
+										<div class="input"><input type="text" name="name" id="name" placeholder="" maxlength="30"/></div>
 									</li>
 									<li>
 										<label for="">이메일</label>
