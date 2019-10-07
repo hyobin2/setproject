@@ -2,12 +2,12 @@
 			<!-- sub_top -->
 			<div class="sub_top sub_top02">
 				<div class="inner">
-					<h2>Business Area <strong>[ MICE ]</strong></h2>
-					<p>The success of tiny wheels will create our precious time.</p>
+					<h2>사업분야 <strong>[ MICE ]</strong></h2>
+					<p>작은 톱니바퀴의 성공들이 우리의 소중한 시간을 만들어 갑니다.</p>
 					<div class="path">
 						<ul>
 							<li>Home</li>
-							<li>Business Area</li>
+							<li>사업분야</li>
 							<li>MICE</li>
 						</ul>
 					</div>
@@ -20,10 +20,10 @@
 
 				<div class="sub_tab_area four">
 					<ul>
-						<li><a href="business01_01.do">Employee Service</a></li>
-						<li><a href="business02_01.do">Outplacement Support service</a></li>
+						<li><a href="business01_01.do">고용서비스</a></li>
+						<li><a href="business02_01.do">전직지원서비스</a></li>
 						<li><a href="business03_01.do" class="on">MICE</a></li>
-						<li><a href="business04_01.do">Education Consulting Service</a></li>
+						<li><a href="business04_01.do">교육 컨설팅 서비스</a></li>
 					</ul>
 				</div>
 
@@ -31,12 +31,12 @@
 					<ul>
 						<li><a href="/">HOME</a></li>
 						<li>
-							<a href="#">Business Area</a>
+							<a href="#">사업분야</a>
 							<div class="path_list">
 								<ul>
 									<li><a href="/en/sub/kjobs/greetings.do">K·Jobs</a></li>
-									<li><a href="/en/sub/business/business01_01.do">Business Area</a></li>
-									<li><a href="/en/sub/customer/location/location.do">Customer Support</a></li>
+									<li><a href="/en/sub/business/business01_01.do">사업분야</a></li>
+									<li><a href="/en/sub/customer/location/location.do">고객지원</a></li>
 								</ul>
 							</div>
 						</li>
@@ -44,10 +44,10 @@
 							<a href="#">MICE</a>
 							<div class="path_list">
 								<ul>
-									<li><a href="/en/sub/business/business01_01.do">Employee Service</a></li>
-									<li><a href="/en/sub/business/business02_01.do">Outplacement Support service</a></li>
+									<li><a href="/en/sub/business/business01_01.do">고용서비스</a></li>
+									<li><a href="/en/sub/business/business02_01.do">전직지원서비스</a></li>
 									<li><a href="/en/sub/business/business03_01.do">MICE</a></li>
-									<li><a href="/en/sub/business/business04_01.do">Education Consulting Service</a></li>
+									<li><a href="/en/sub/business/business04_01.do">교육 컨설팅 서비스</a></li>
 								</ul>
 							</div>
 						</li>
@@ -58,33 +58,32 @@
 
 					<div class="business_top">
 						<h3>
-							K-Jobs provides various services with professionalism on the <br />
-							<span>MICE(<em>M</em>eeting, <em>I</em>ncentive, <em>C</em>onvention, <em>E</em>xhibition)</span> <br />
-							operating agency service.
+							케이잡스는 <span>MICE(<em>M</em>eeting, <em>I</em>ncentive, <em>C</em>onvention, <em>E</em>xhibition)</span> <br />
+							운영대행에 전문성을 가지고 서비스를 제공하고 있습니다.
 						</h3>
 						<div class="img"><img src="/resources/en/img/img_business03_top.jpg" alt="MICE"/></div>
 						<p>
-							We handle large and small events such as a public or private sector seminar, <br />
-							forum, workshop, fair, etc. for clients and plan and operate them. <br />
-							We provide them with the best MICE experience through customized <br />
-							solutions from personalized planning for their needs to post management.
+							공공 또는 민간분야의 세미나와 포럼, 워크숍, 박람회 등 <strong>크고 작은 행사를 대행하여 기획하고 운영</strong>합니다. <br />
+							고객사의 니즈를 파악한 맞춤형 기획부터 사후관리까지 고객 맞춤형 솔루션을 통해 고객에게 최상의 MICE 경험을 제공합니다.
 						</p>
 					</div>
 
 					<div class="business_cont" id="business_cont">
 						<div class="tab two">
 							<ul>
-								<li><a href="business03_01.do#business_cont">Conference/Forum/Seminar</a></li>
-								<li><a href="business03_02.do#business_cont" class="on">Fair/Workshop/Convention</a></li>
+								<li><a href="business03_01.do#business_cont">회의, 포럼, 세미나</a></li>
+								<li><a href="business03_02.do#business_cont" class="on">박람회, 워크숍, 컨벤션</a></li>
 							</ul>
 						</div>
 						<div class="cont">
 							<div class="img">
-								<img src="/resources/en/img/img_business03_02.png" alt="Fair/Workshop/Convention"/>
+								<img src="/resources/en/img/img_business03_02.png" alt="박람회, 워크숍, 컨벤션"/>
 							</div>
 							<div class="txt">
 								<p>
-									As an employment service specialized enterprise, K-Jobs can set up plans to operate job or career fairs and public and private sector workshops and events as well as large-size conventions and exhibitions and actually operate them and do post management for them because we continue to operate and attend job or career fairs and plan and hold workshops of the Small & Medium Business Corporation.
+									케이잡스는 고용서비스 전문기업으로서 채용·취업 박람회의 끊임없는 운영과 참석경험, <br />
+									중소기업 진흥공단 워크숍기획·운영을 진행하였기에 취업박람회, 채용박람회에서부터 공공, 민간분야 워크숍과 행사까지 <br />
+									<span>대형 Convention, Exhibition의 운영계획 수립부터 운영·사후관리까지 케이잡스가 진행</span>하고 있습니다.
 								</p>
 							</div>
 						</div>

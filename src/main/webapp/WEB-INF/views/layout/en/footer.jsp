@@ -6,14 +6,19 @@
 			<div class="inner">
 				<div class="foot_logo"><img src="/resources/en/img/img_foot_logo.png" alt="케이잡스"/></div>
 				<div class="foot_info">
+					<div class="foot_menu">
+						<ul>
+							<li><a href="#" class="open_pop_privacy">개인정보처리방침</a></li>
+						</ul>
+					</div>
 					<div class="address">
 						<ul>
-							<li>3F, 9-5, 15-gil Han River Road, Yongsan-gu, Seoul</li>
-							<li>CEO : Woojin Kim</li>
-							<li>Business License : 113-86-93304</li>
+							<li>서울특별시 용산구 한강대로 15길 9-5, 3층</li>
+							<li>대표이사 : 김우진</li>
+							<li>사업자등록번호 : 113-86-93304</li>
+							<li>직업정보제공사업 : 서울 서부 제 2018-15호</li>
 						</ul>
 						<ul>
-							<li>Vocational Information Service : 서울 서부 제 2018-15호</li>
 							<li>Tel : 02-6959-8983</li>
 							<li>Fax : 02-6958-9297</li>
 							<li>e-mail : webmaster@kjobs.co.kr</li>

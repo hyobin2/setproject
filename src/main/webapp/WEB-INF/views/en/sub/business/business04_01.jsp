@@ -2,13 +2,13 @@
 			<!-- sub_top -->
 			<div class="sub_top sub_top02">
 				<div class="inner">
-					<h2>Business Area <strong>[ Education Consulting Service ]</strong></h2>
-					<p>The success of tiny wheels will create our precious time.</p>
+					<h2>사업분야 <strong>[ 교육 컨설팅 서비스 ]</strong></h2>
+					<p>작은 톱니바퀴의 성공들이 우리의 소중한 시간을 만들어 갑니다.</p>
 					<div class="path">
 						<ul>
 							<li>Home</li>
-							<li>Business Area</li>
-							<li>Education Consulting Service</li>
+							<li>사업분야</li>
+							<li>교육 컨설팅 서비스</li>
 						</ul>
 					</div>
 				</div>
@@ -20,10 +20,10 @@
 
 				<div class="sub_tab_area four">
 					<ul>
-						<li><a href="business01_01.do">Employee Service</a></li>
-						<li><a href="business02_01.do">Outplacement Support service</a></li>
+						<li><a href="business01_01.do">고용서비스</a></li>
+						<li><a href="business02_01.do">전직지원서비스</a></li>
 						<li><a href="business03_01.do">MICE</a></li>
-						<li><a href="business04_01.do" class="on">Education Consulting Service</a></li>
+						<li><a href="business04_01.do" class="on">교육 컨설팅 서비스</a></li>
 					</ul>
 				</div>
 
@@ -31,23 +31,23 @@
 					<ul>
 						<li><a href="/">HOME</a></li>
 						<li>
-							<a href="#">Business Area</a>
+							<a href="#">사업분야</a>
 							<div class="path_list">
 								<ul>
 									<li><a href="/en/sub/kjobs/greetings.do">K·Jobs</a></li>
-									<li><a href="/en/sub/business/business01_01.do">Business Area</a></li>
-									<li><a href="/en/sub/customer/location/location.do">Customer Support</a></li>
+									<li><a href="/en/sub/business/business01_01.do">사업분야</a></li>
+									<li><a href="/en/sub/customer/location/location.do">고객지원</a></li>
 								</ul>
 							</div>
 						</li>
 						<li>
-							<a href="#">Education Consulting Service</a>
+							<a href="#">교육 컨설팅 서비스</a>
 							<div class="path_list">
 								<ul>
-									<li><a href="/en/sub/business/business01_01.do">Employee Service</a></li>
-									<li><a href="/en/sub/business/business02_01.do">Outplacement Support service</a></li>
+									<li><a href="/en/sub/business/business01_01.do">고용서비스</a></li>
+									<li><a href="/en/sub/business/business02_01.do">전직지원서비스</a></li>
 									<li><a href="/en/sub/business/business03_01.do">MICE</a></li>
-									<li><a href="/en/sub/business/business04_01.do">Education Consulting Service</a></li>
+									<li><a href="/en/sub/business/business04_01.do">교육 컨설팅 서비스</a></li>
 								</ul>
 							</div>
 						</li>
@@ -57,29 +57,29 @@
 				<div class="business_wrap">
 
 					<div class="business_top">
-						<div class="img"><img src="/resources/en/img/img_business04_top.jpg" alt="Education Consulting Service"/></div>
+						<div class="img"><img src="/resources/en/img/img_business04_top.jpg" alt="교육 컨설팅 서비스"/></div>
 						<p>
-							K-Jobs is an education consulting specialized firm with a purpose to establish the right awareness <br />
-							in a vision and mission of schools and enterprises. We will provide solutions to develop personalized <br />
-							education for various needs of clients and to encourage individuals and organizations to figure out their own potentials <br />
-							and strengthen capabilities and train customized talents and reinforce corporation’s competitive power.
+							케이잡스는 학교 및 기업 조직에 대한 비전과 미션에 대한 올바른 인식을 확립시키겠다는 목적을 가지고 있는 교육 컨설팅 전문기업으로 <br />
+							고객의 다양한 니즈 파악에 맞는 맞춤형 교육을 개발하여 개인과 조직이 자신의 가능성을 파악하고 역량을 강화하여 <br />
+							<strong>맞춤형 인재 양성과 기업의 경쟁력이 강화되는 솔루션을 제공</strong>하겠습니다.
 						</p>
 					</div>
 
 					<div class="business_cont" id="business_cont">
 						<div class="tab two">
 							<ul>
-								<li><a href="business04_01.do#business_cont" class="on">School Education Consulting</a></li>
-								<li><a href="business04_02.do#business_cont">Corporate Education Consulting</a></li>
+								<li><a href="business04_01.do#business_cont" class="on">학교교육 컨설팅</a></li>
+								<li><a href="business04_02.do#business_cont">기업교육 컨설팅</a></li>
 							</ul>
 						</div>
 						<div class="cont">
 							<div class="img">
-								<img src="/resources/en/img/img_business04_01.png" alt="School Education Consulting"/>
+								<img src="/resources/en/img/img_business04_01.png" alt="학교교육 컨설팅"/>
 							</div>
 							<div class="txt">
 								<p>
-									School Education Consulting is helpful to guide elementary, middle, high school and university students and their parents through the right direction about career and set up a career road map for education targets to be able to achieve their own career/future hope/vision and plan. We provide an integrated customized program by supporting the establishment of plans to study and various areas
+									초·중·고등학생 및 대학생, 학부모들에게 진로에 대한 적합한 방향 안내와 교육 대상자가 자신의 직업·장래희망·비전 및 계획 등을 달성할 수 있도록 진로 로드맵 설정을 돕습니다. <br />
+									<span>학습계획 수립지원 및 다양한 지원을 통한 통합 맞춤형 프로그램을 제공</span>하고 있습니다.
 								</p>
 							</div>
 						</div>

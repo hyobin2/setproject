@@ -86,10 +86,19 @@
 
 		<div id="header">
 			<div class="inner">
-				<h1><a href="/en/"><img src="/resources/en/img/img_logo.png" alt="K·Jobs"/></a></h1>
+				<h1><a href="/en/"><img src="/resources/en/img/img_logo.png" alt="케이잡스"/></a></h1>
 				<div class="lnb">
 					<ul>
-						<li><a href="/front/"><strong>KOR</strong></a></li>
+						<c:choose>
+							<c:when test="${empty loginMap}">
+								<li><a href="/en/sub/member/join.do">회원가입</a></li>
+								<li><a href="/en/sub/member/login.do">로그인</a></li>		
+							</c:when>
+							<c:otherwise>
+								<li><a href="/en/sub/member/logout.do">로그아웃</a></li>
+							</c:otherwise>
+						</c:choose> 
+						<li><a href="#"><strong>ENG</strong></a></li>
 					</ul>
 				</div>
 				<div class="gnb">
@@ -99,63 +108,66 @@
 								<a href="/en/sub/kjobs/greetings.do">K·Jobs</a>
 								<div class="gnb_sub">
 									<ul>
-										<li><a href="/en/sub/kjobs/greetings.do">Greeting</a></li>
-										<li><a href="/en/sub/kjobs/ideology.do">Corporate Philosophy</a></li>
+										<li><a href="/en/sub/kjobs/greetings.do">인사말</a></li>
+										<li><a href="/en/sub/kjobs/ideology.do">경영이념</a></li>
+										<li><a href="/en/sub/kjobs/history.do">회사연혁</a></li>
+										<li><a href="/en/sub/kjobs/organization.do">회사조직</a></li>
+										<li><a href="/en/sub/kjobs/cooperate.do">협력기관</a></li>
 									</ul>
 								</div>
 							</li>
 							<li>
-								<a href="/en/sub/business/business01_01.do">Business Area</a>
+								<a href="/en/sub/business/business01_01.do">사업분야</a>
 								<div class="gnb_sub">
 									<ul>
 										<li>
-											<a href="/en/sub/business/business01_01.do">Employee Service</a>
+											<a href="/en/sub/business/business01_01.do">고용서비스</a>
 											<ul>
-												<li><a href="/en/sub/business/business01_01.do">Employment Success Package</a></li>
-												<li><a href="/en/sub/business/business01_02.do">Youth to Tomorrow Savings</a></li>
-												<li><a href="/en/sub/business/business01_03.do">Group Counseling</a></li>
-												<li><a href="/en/sub/business/business01_04.do">New Deal Employment</a></li>
-												<li><a href="/en/sub/business/business01_05.do">Recruiting Agent Service</a></li>
+												<li><a href="/en/sub/business/business01_01.do">취업성공 패키지</a></li>
+												<li><a href="/en/sub/business/business01_02.do">청년내일 채움공제</a></li>
+												<li><a href="/en/sub/business/business01_03.do">집단 상담 프로그램</a></li>
+												<li><a href="/en/sub/business/business01_04.do">뉴딜 일자리</a></li>
+												<li><a href="/en/sub/business/business01_05.do">채용지원서비스</a></li>
 											</ul>
 										</li>
 										<li>
-											<a href="/en/sub/business/business02_01.do">Outplacement Support service</a>
+											<a href="/en/sub/business/business02_01.do">전직지원 서비스</a>
 											<ul>
 												<li><a href="/en/sub/business/business02_01.do">IDOL</a></li>
-												<li><a href="/en/sub/business/business02_02.do">Private Outplacement</a></li>
-												<li><a href="/en/sub/business/business02_03.do">Public Putplacement</a></li>
-												<li><a href="/en/sub/business/business02_04.do">Second Life Plan</a></li>
+												<li><a href="/en/sub/business/business02_02.do">민간 전직 서비스</a></li>
+												<li><a href="/en/sub/business/business02_03.do">공공 전직 서비스</a></li>
+												<li><a href="/en/sub/business/business02_04.do">인생 이모작</a></li>
 											</ul>
 										</li>
 										<li>
 											<a href="/en/sub/business/business03_01.do">MICE</a>
 											<ul>
-												<li><a href="/en/sub/business/business03_01.do">Conference/Forum/Seminar</a></li>
-												<li><a href="/en/sub/business/business03_02.do">Fair / Workshop / Convention</a></li>
+												<li><a href="/en/sub/business/business03_01.do">회의/포럼 세미나</a></li>
+												<li><a href="/en/sub/business/business03_02.do">박람회/워크샵/컨벤션</a></li>
 											</ul>
 										</li>
 										<li>
-											<a href="/en/sub/business/business04_01.do">Education Consulting Service</a>
+											<a href="/en/sub/business/business04_01.do">교육 컨설팅 서비스</a>
 											<ul>
-												<li><a href="/en/sub/business/business04_01.do">School Education Consulting</a></li>
-												<li><a href="/en/sub/business/business04_02.do">Corporate Education Consulting</a></li>
+												<li><a href="/en/sub/business/business04_01.do">학교교육 컨설팅</a></li>
+												<li><a href="/en/sub/business/business04_02.do">기업교육 컨설팅</a></li>
 											</ul>
 										</li>
 									</ul>
 								</div>
 							</li>
 							<li>
-								<a href="/en/sub/customer/location/location.do">Customer Support</a>
+								<a href="/en/sub/customer/location/location.do">고객지원</a>
 								<div class="gnb_sub">
 									<ul>
-										<li><a href="/en/sub/customer/location/location.do">Directions</a></li>
+										<li><a href="/en/sub/customer/location/location.do">오시는 길</a></li>
 									</ul>
 								</div>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<a href="#" class="open_fullmenu"><img src="/resources/en/img/btn_fullmenu.png" alt="full menu"/></a>
+				<a href="#" class="open_fullmenu"><img src="/resources/en/img/btn_fullmenu.png" alt="전체메뉴"/></a>
 			</div>
 			<div class="bg_gnb_sub"></div>
 		</div>
@@ -171,56 +183,59 @@
 							<a href="/en/sub/kjobs/greetings.do">K·Jobs</a>
 							<div class="fullmenu_list_sub">
 								<ul>
-									<li><a href="/en/sub/kjobs/greetings.do">Greeting</a></li>
-									<li><a href="/en/sub/kjobs/ideology.do">Corporate Philosophy</a></li>
+									<li><a href="/en/sub/kjobs/greetings.do">인사말</a></li>
+									<li><a href="/en/sub/kjobs/ideology.do">경영이념</a></li>
+									<li><a href="/en/sub/kjobs/history.do">회사연혁</a></li>
+									<li><a href="/en/sub/kjobs/organization.do">회사조직</a></li>
+									<li><a href="/en/sub/kjobs/cooperate.do">협력기관</a></li>
 								</ul>
 							</div>
 						</li>
 						<li>
-							<a href="/en/sub/business/business01_01.do">Business Area</a>
+							<a href="/en/sub/business/business01_01.do">사업분야</a>
 							<div class="fullmenu_list_sub">
 								<ul>
 									<li>
-										<a href="/en/sub/business/business01_01.do">Employee Service</a>
+										<a href="/en/sub/business/business01_01.do">고용서비스</a>
 										<ul>
-											<li><a href="/en/sub/business/business01_01.do">Employment Success Package</a></li>
-											<li><a href="/en/sub/business/business01_02.do">Youth to Tomorrow Savings</a></li>
-											<li><a href="/en/sub/business/business01_03.do">Group Counseling</a></li>
-											<li><a href="/en/sub/business/business01_04.do">New Deal Employment</a></li>
-											<li><a href="/en/sub/business/business01_05.do">Recruiting Agent Service</a></li>
+											<li><a href="/en/sub/business/business01_01.do">취업성공 패키지</a></li>
+											<li><a href="/en/sub/business/business01_02.do">청년내일 채움공제</a></li>
+											<li><a href="/en/sub/business/business01_03.do">집단 상담 프로그램</a></li>
+											<li><a href="/en/sub/business/business01_04.do">뉴딜 일자리</a></li>
+											<li><a href="/en/sub/business/business01_05.do">채용지원서비스</a></li>
 										</ul>
 									</li>
 									<li>
-										<a href="/en/sub/business/business02_01.do">Outplacement Support service</a>
+										<a href="/en/sub/business/business02_01.do">전직지원 서비스</a>
 										<ul>
 											<li><a href="/en/sub/business/business02_01.do">IDOL</a></li>
-											<li><a href="/en/sub/business/business02_02.do">Private Outplacement</a></li>
-											<li><a href="/en/sub/business/business02_03.do">Public Putplacement</a></li>
-											<li><a href="/en/sub/business/business02_04.do">Second Life Plan</a></li>
+											<li><a href="/en/sub/business/business02_02.do">민간 전직 서비스</a></li>
+											<li><a href="/en/sub/business/business02_03.do">공공 전직 서비스</a></li>
+											<li><a href="/en/sub/business/business02_04.do">인생 이모작</a></li>
 										</ul>
 									</li>
 									<li>
 										<a href="/en/sub/business/business03_01.do">MICE</a>
 										<ul>
-											<li><a href="/en/sub/business/business03_01.do">Conference/Forum/Seminar</a></li>
-											<li><a href="/en/sub/business/business03_02.do">Fair / Workshop / Convention</a></li>
+											<li><a href="/en/sub/business/business03_01.do">회의/포럼 세미나</a></li>
+											<li><a href="/en/sub/business/business03_02.do">박람회/워크샵/컨벤션</a></li>
 										</ul>
 									</li>
 									<li>
-										<a href="/en/sub/business/business04_01.do">Education Consulting Service</a>
+										<a href="/en/sub/business/business04_01.do">교육 컨설팅 서비스</a>
 										<ul>
-											<li><a href="/en/sub/business/business04_01.do">School Education Consulting</a></li>
-											<li><a href="/en/sub/business/business04_02.do">Corporate Education Consulting</a></li>
+											<li><a href="/en/sub/business/business04_01.do">학교교육 컨설팅</a></li>
+											<li><a href="/en/sub/business/business04_02.do">기업교육 컨설팅</a></li>
 										</ul>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li>
-							<a href="/en/sub/customer/location/location.do">Customer Support</a>
+							<a href="/en/sub/customer/location/location.do">고객지원</a>
 							<div class="fullmenu_list_sub">
 								<ul>
-									<li><a href="/en/sub/customer/location/location.do">Directions</a></li>
+									<li><a href="/en/sub/customer/location/location.do">오시는 길</a></li>
 								</ul>
 							</div>
 						</li>
@@ -232,16 +247,21 @@
 
 		<!-- mobile_header -->
 		<div id="mobile_header">
-			<h1><a href="/en/"><img src="/resources/en/img/img_logo.png" alt="K·Jobs"/></a></h1>
-			<a href="#" class="open_mobile_fullmenu"><img src="/resources/en/img/btn_mobile_fullmenu.png" alt="mobile fullmenu"/></a>
+			<h1><a href="/en/"><img src="/resources/en/img/img_logo.png" alt="케이잡스"/></a></h1>
+			<a href="#" class="open_mobile_fullmenu"><img src="/resources/en/img/btn_mobile_fullmenu.png" alt="모바일 전체메뉴"/></a>
 			<div class="mobile_fullmenu">
 				<div class="inner">
 					<a href="#" class="close_mobile_fullmenu"><img src="/resources/en/img/btn_close02.png" alt="close"/></a>
 					<div class="mobile_login" id="mobile_logout">
-						
+						<ul>
+							<li><a href="/en/sub/member/join.do">회원가입</a></li>
+							<li><a href="/en/sub/member/login.do">로그인</a></li>
+						</ul>
 					</div>
 					<div class="mobile_login" id="mobile_login" style="display: none;">
-						
+						<ul>
+							<li><a href="/en/sub/member/logout.do" >로그아웃</a></li>
+						</ul>
 					</div>
 					<div class="mobile_fullmenu_list">
 						<ul>
@@ -249,63 +269,66 @@
 								<a href="/en/sub/kjobs/greetings.do">K·Jobs</a>
 								<div class="mobile_fullmenu_list_sub">
 									<ul>
-										<li><a href="/en/sub/kjobs/greetings.do">Greeting</a></li>
-										<li><a href="/en/sub/kjobs/ideology.do">Corporate Philosophy</a></li>
+										<li><a href="/en/sub/kjobs/greetings.do">인사말</a></li>
+										<li><a href="/en/sub/kjobs/ideology.do">경영이념</a></li>
+										<li><a href="/en/sub/kjobs/history.do">회사연혁</a></li>
+										<li><a href="/en/sub/kjobs/organization.do">회사조직</a></li>
+										<li><a href="/en/sub/kjobs/cooperate.do">협력기관</a></li>
 									</ul>
 								</div>
 							</li>
 							<li>
-								<a href="/en/sub/business/business01_01.do" class="child">Business Area</a>
+								<a href="/en/sub/business/business01_01.do" class="child">사업분야</a>
 								<div class="mobile_fullmenu_list_sub">
 									<ul>
 										<li>
-											<a href="/en/sub/business/business01_01.do" class="child">Employee Service</a>
+											<a href="/en/sub/business/business01_01.do" class="child">고용서비스</a>
 											<ul>
-												<li><a href="/en/sub/business/business01_01.do">Employment Success Package</a></li>
-												<li><a href="/en/sub/business/business01_02.do">Youth to Tomorrow Savings</a></li>
-												<li><a href="/en/sub/business/business01_03.do">Group Counseling</a></li>
-												<li><a href="/en/sub/business/business01_04.do">New Deal Employment</a></li>
-												<li><a href="/en/sub/business/business01_05.do">Recruiting Agent Service</a></li>
+												<li><a href="/en/sub/business/business01_01.do">취업성공 패키지</a></li>
+												<li><a href="/en/sub/business/business01_02.do">청년내일 채움공제</a></li>
+												<li><a href="/en/sub/business/business01_03.do">집단 상담 프로그램</a></li>
+												<li><a href="/en/sub/business/business01_04.do">뉴딜 일자리</a></li>
+												<li><a href="/en/sub/business/business01_05.do">채용지원서비스</a></li>
 											</ul>
 										</li>
 										<li>
-											<a href="/en/sub/business/business02_01.do" class="child">Outplacement Support service</a>
+											<a href="/en/sub/business/business02_01.do" class="child">전직지원 서비스</a>
 											<ul>
 												<li><a href="/en/sub/business/business02_01.do">IDOL</a></li>
-												<li><a href="/en/sub/business/business02_02.do">Private Outplacement</a></li>
-												<li><a href="/en/sub/business/business02_03.do">Public Putplacement</a></li>
-												<li><a href="/en/sub/business/business02_04.do">Second Life Plan</a></li>
+												<li><a href="/en/sub/business/business02_02.do">민간 전직 서비스</a></li>
+												<li><a href="/en/sub/business/business02_03.do">공공 전직 서비스</a></li>
+												<li><a href="/en/sub/business/business02_04.do">인생 이모작</a></li>
 											</ul>
 										</li>
 										<li>
 											<a href="/en/sub/business/business03_01.do" class="child">MICE</a>
 											<ul>
-												<li><a href="/en/sub/business/business03_01.do">Conference/Forum/Seminar</a></li>
-												<li><a href="/en/sub/business/business03_02.do">Fair / Workshop / Convention</a></li>
+												<li><a href="/en/sub/business/business03_01.do">회의/포럼 세미나</a></li>
+												<li><a href="/en/sub/business/business03_02.do">박람회/워크샵/컨벤션</a></li>
 											</ul>
 										</li>
 										<li>
-											<a href="/en/sub/business/business04_01.do" class="child">Education Consulting Service</a>
+											<a href="/en/sub/business/business04_01.do" class="child">교육 컨설팅 서비스</a>
 											<ul>
-												<li><a href="/en/sub/business/business04_01.do">School Education Consulting</a></li>
-												<li><a href="/en/sub/business/business04_02.do">Corporate Education Consulting</a></li>
+												<li><a href="/en/sub/business/business04_01.do">학교교육 컨설팅</a></li>
+												<li><a href="/en/sub/business/business04_02.do">기업교육 컨설팅</a></li>
 											</ul>
 										</li>
 									</ul>
 								</div>
 							</li>
 							<li>
-								<a href="/en/sub/customer/location/location.do">Customer Support</a>
+								<a href="/en/sub/customer/location/location.do">고객지원</a>
 								<div class="mobile_fullmenu_list_sub">
 									<ul>
-										<li><a href="/en/sub/customer/location/location.do">Directions</a></li>
+										<li><a href="/en/sub/customer/location/location.do">오시는 길</a></li>
 									</ul>
 								</div>
 							</li>
 						</ul>
 					</div>
 					<div class="lang">
-						<a href="/front/">KOR</a>
+						<a href="#">ENG</a>
 					</div>
 				</div>
 			</div>

@@ -98,7 +98,7 @@
 								<li><a href="/front/sub/member/logout.do">로그아웃</a></li>
 							</c:otherwise>
 						</c:choose> 
-						<li><a href="/en/"><strong>ENG</strong></a></li>
+						<li><a href="#"><strong>ENG</strong></a></li>
 					</ul>
 				</div>
 				<div class="gnb">

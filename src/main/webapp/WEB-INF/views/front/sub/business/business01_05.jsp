@@ -69,28 +69,12 @@
 							<strong>채용대행 서비스, 구인구직 고용정보제공 서비스</strong>가 존재하고 국가기관을 통해 이루어지는 <br />
 							<strong>공공 고용서비스</strong>와 민간 전문기업을 통해 이루어지는 <strong>민간고용 서비스</strong>가 있습니다.
 						</p>
-						<div class="process">
+							<div class="process">
 							<ol>
 								<li>
 									<div class="item">
 										<div class="txt">
 											<span class="num">01</span>
-											<p>채용 대행 <br />서비스</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="item">
-										<div class="txt">
-											<span class="num">02</span>
-											<p>구인구직 <br />고용정보제공 서비스</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="item">
-										<div class="txt">
-											<span class="num">03</span>
 											<p>공공고용 <br />서비스</p>
 										</div>
 									</div>
@@ -98,8 +82,24 @@
 								<li>
 									<div class="item">
 										<div class="txt">
-											<span class="num">04</span>
+											<span class="num">02</span>
 											<p>민간고용 <br />서비스</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<div class="txt">
+											<span class="num">03</span>
+											<p>채용 대행 <br />서비스</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<div class="txt">
+											<span class="num">04</span>
+											<p>구인구직 <br />고용정보제공 서비스</p>
 										</div>
 									</div>
 								</li>
