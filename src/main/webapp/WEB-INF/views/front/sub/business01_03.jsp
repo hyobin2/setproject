@@ -69,28 +69,12 @@
 							<strong>채용대행 서비스, 구인구직 고용정보제공 서비스</strong>가 존재하고 국가기관을 통해 이루어지는 <br />
 							<strong>공공고용서비스</strong>와 민간 전문기업을 통해 이루어지는 <strong>민간고용 서비스</strong>가 있습니다.
 						</p>
-						<div class="process">
+							<div class="process">
 							<ol>
 								<li>
 									<div class="item">
 										<div class="txt">
 											<span class="num">01</span>
-											<p>채용 대행 <br />서비스</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="item">
-										<div class="txt">
-											<span class="num">02</span>
-											<p>구인구직 <br />고용정보제공 서비스</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="item">
-										<div class="txt">
-											<span class="num">03</span>
 											<p>공공고용 <br />서비스</p>
 										</div>
 									</div>
@@ -98,8 +82,24 @@
 								<li>
 									<div class="item">
 										<div class="txt">
-											<span class="num">04</span>
+											<span class="num">02</span>
 											<p>민간고용 <br />서비스</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<div class="txt">
+											<span class="num">03</span>
+											<p>채용 대행 <br />서비스</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<div class="txt">
+											<span class="num">04</span>
+											<p>구인구직 <br />고용정보제공 서비스</p>
 										</div>
 									</div>
 								</li>
@@ -112,20 +112,19 @@
 							<ul>
 								<li><a href="business01_01.do#business_cont">취업성공 패키지</a></li>
 								<li><a href="business01_02.do#business_cont">청년 내일 채움공제</a></li>
-								<li><a href="business01_03.do#business_cont">집단 상담 프로그램</a></li>
-								<li><a href="business01_04.do#business_cont" class="on">뉴딜 일자리</a></li>
+								<li><a href="business01_03.do#business_cont" class="on">집단 상담 프로그램</a></li>
+								<li><a href="business01_04.do#business_cont">뉴딜 일자리</a></li>
 								<li><a href="business01_05.do#business_cont">채용지원 서비스</a></li>
 							</ul>
 						</div>
 						<div class="cont">
 							<div class="img">
-								<img src="/resources/front/img/img_business01_04.png" alt="뉴딜 일자리"/>
+								<img src="/resources/front/img/img_business01_03.png" alt="집단 상담 프로그램"/>
 							</div>
 							<div class="txt">
 								<p>
-									뉴딜일자리는 시민 생활에 필요한 공공서비스를 발굴해 <span>참여자에게 근무 경험과 다음 일자리로의 디딤돌 역할을 제공하는 공공 일자리 사업</span>입니다. <br />
-									취업에 어려움을 겪는 취업준비생, 경력단절여성, 중장년층 등에게 공공서비스와 관련된 일자리를 제공하고 <br />
-									직무교육, 취업연계를 통해 다음 민간 일자리에 취업할 수 있도록 도와주는 서비스를 제공합니다.
+									집단상담프로그램은 연령별, 성별, 계층별로 나누어 대상별 맞춤형 프로그램 운영을 통한 자신감 향상 및 근로 의욕 증진과 <br />
+									합리적 직업 선택을 지원하고, 자기 탐색과 기업탐색 및 모의 면접 등 구직 기술을 향상시켜 <span>취업 효능을 제고하는 취업 취약 계층의 취업역량을 강화하는 프로그램</span>입니다.
 								</p>
 							</div>
 						</div>

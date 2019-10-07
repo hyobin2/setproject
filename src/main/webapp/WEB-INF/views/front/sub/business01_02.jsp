@@ -60,7 +60,7 @@
 
 					<div class="business_top">
 						<h3>
-							고용서비스 전문기업 케이잡스는 사람과 일자리, 사람과 기업을 이어주는 <br />
+							고용서비스 전문기업 케이잡스는 사람과 일자리, 사람과 기업을 이어주는  <br />
 							<span>JOB-Networking Social Service 전문 기업입니다.</span>
 						</h3>
 						<div class="img"><img src="/resources/front/img/img_business01_top.jpg" alt="매칭서비스"/></div>
@@ -69,28 +69,12 @@
 							<strong>채용대행 서비스, 구인구직 고용정보제공 서비스</strong>가 존재하고 국가기관을 통해 이루어지는 <br />
 							<strong>공공고용서비스</strong>와 민간 전문기업을 통해 이루어지는 <strong>민간고용 서비스</strong>가 있습니다.
 						</p>
-						<div class="process">
+							<div class="process">
 							<ol>
 								<li>
 									<div class="item">
 										<div class="txt">
 											<span class="num">01</span>
-											<p>채용 대행 <br />서비스</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="item">
-										<div class="txt">
-											<span class="num">02</span>
-											<p>구인구직 <br />고용정보제공 서비스</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="item">
-										<div class="txt">
-											<span class="num">03</span>
 											<p>공공고용 <br />서비스</p>
 										</div>
 									</div>
@@ -98,8 +82,24 @@
 								<li>
 									<div class="item">
 										<div class="txt">
-											<span class="num">04</span>
+											<span class="num">02</span>
 											<p>민간고용 <br />서비스</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<div class="txt">
+											<span class="num">03</span>
+											<p>채용 대행 <br />서비스</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<div class="txt">
+											<span class="num">04</span>
+											<p>구인구직 <br />고용정보제공 서비스</p>
 										</div>
 									</div>
 								</li>
@@ -111,21 +111,20 @@
 						<div class="tab">
 							<ul>
 								<li><a href="business01_01.do#business_cont">취업성공 패키지</a></li>
-								<li><a href="business01_02.do#business_cont">청년 내일 채움공제</a></li>
+								<li><a href="business01_02.do#business_cont" class="on">청년 내일 채움공제</a></li>
 								<li><a href="business01_03.do#business_cont">집단 상담 프로그램</a></li>
-								<li><a href="business01_04.do#business_cont" class="on">뉴딜 일자리</a></li>
+								<li><a href="business01_04.do#business_cont">뉴딜 일자리</a></li>
 								<li><a href="business01_05.do#business_cont">채용지원 서비스</a></li>
 							</ul>
 						</div>
 						<div class="cont">
 							<div class="img">
-								<img src="/resources/front/img/img_business01_04.png" alt="뉴딜 일자리"/>
+								<img src="/resources/front/img/img_business01_02.png" alt="청년 내일 채움공제"/>
 							</div>
 							<div class="txt">
 								<p>
-									뉴딜일자리는 시민 생활에 필요한 공공서비스를 발굴해 <span>참여자에게 근무 경험과 다음 일자리로의 디딤돌 역할을 제공하는 공공 일자리 사업</span>입니다. <br />
-									취업에 어려움을 겪는 취업준비생, 경력단절여성, 중장년층 등에게 공공서비스와 관련된 일자리를 제공하고 <br />
-									직무교육, 취업연계를 통해 다음 민간 일자리에 취업할 수 있도록 도와주는 서비스를 제공합니다.
+									청년내일채움공제는 중소·중견 기업에 취업한 청년 근로자의 장기 근속을 위하여 고용 노동부와 중소기업청이 공동으로 운영하는 <br />
+									공제 청년 근로자와 사업주 및 정부가 공동으로 적립한 공제금에 복리 이자를 더하여 <span>2년 이상 재직한 근로자에게 성과 보상금 형태로 제공되는 취업지원 서비스 </span>입니다.
 								</p>
 							</div>
 						</div>
@@ -137,4 +136,3 @@
 			<!-- //contents-->
 
 
-<?php include "../../inc/footer.html" ?>

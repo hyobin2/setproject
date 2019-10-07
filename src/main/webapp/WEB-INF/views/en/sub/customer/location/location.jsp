@@ -8,13 +8,13 @@ function changeArea(idx){
 			<!-- sub_top -->
 			<div class="sub_top sub_top05">
 				<div class="inner">
-					<h2>고객지원</h2>
-					<p>케이잡스는 고객 만족을 위해 최선을 다합니다.</p>
+					<h2>Customer Support</h2>
+					<p>K-Jobs will do our best for customer satisfaction.</p>
 					<div class="path">
 						<ul>
 							<li>Home</li>
-							<li>고객지원</li>
-							<li>오시는 길</li>
+							<li>Customer Support</li>
+							<li>Directions</li>
 						</ul>
 					</div>
 				</div>
@@ -25,20 +25,20 @@ function changeArea(idx){
 				<ul>
 					<li><a href="/">HOME</a></li>
 					<li>
-						<a href="#">고객지원</a>
+						<a href="#">Customer Support</a>
 						<div class="path_list">
 							<ul>
 								<li><a href="/en/sub/kjobs/greetings.do">K·Jobs</a></li>
-								<li><a href="/en/sub/business/business01_01.do">사업분야</a></li>
-								<li><a href="/en/sub/customer/location/location.do">오시는길</a></li>
+								<li><a href="/en/sub/business/business01_01.do">Business Area</a></li>
+								<li><a href="/en/sub/customer/location/location.do">Customer Support</a></li>
 							</ul>
 						</div>
 					</li>
 					<li>
-						<a href="#">오시는길</a>
+						<a href="#">Directions</a>
 						<div class="path_list">
 							<ul>
-								<li><a href="/en/sub/customer/location/location.do">오시는길</a></li>
+								<li><a href="/en/sub/customer/location/location.do">Directions</a></li>
 							</ul>
 						</div>
 					</li>
@@ -50,294 +50,182 @@ function changeArea(idx){
 
 				<div class="sub_tab_area one">
 					<ul>
-						<li><a href="/en/sub/customer/location/location.do" class="on">오시는 길</a></li>
+						<li><a href="/en/sub/customer/location/location.do" class="on">Directions</a></li>
 					</ul>
 				</div>
 
 				<div class="location_wrap">
 					<div class="inner">
 						<p class="txt">
-							Kjobs는 전국에 친절함을 겸비한 <br />
-							전문 컨설턴트가 여러분들을 기다리고 있습니다.
+							K-Jobs have a lot of friendly consultants with <br />
+							professionalism waiting for you all over the country.
 						</p>
 						<div class="select_area">
 							<select name="select_area" id="select_area" onchange="changeArea(this.value);">
-								<option value="1">서울</option>
-								<option value="2">경인</option>
-								<option value="3">충청</option>
-								<option value="4">전남</option>
-								<option value="5">경남</option>
-								<option value="6">강원</option>
+								<option value="1">Seoul</option>
+								<option value="2">Seoul-Incheon</option>
+								<option value="3">Chungcheong</option>
+								<option value="4">Jeollanam</option>
+								<option value="5">Gyeongsangnam</option>
+								<option value="6">Gangwon</option>
 							</select>
 						</div>
 
 
 						<div class="tab_area three" id="area1">
 							<ul>
-								<li><a href="#none" class="on" onclick="moveToLocation('37.525766', '126.963661', this, 1);">본사</a></li>
-								<li><a href="#none"  onclick="moveToLocation('37.494905', '126.859828', this, 2);">관악지사</a></li>
-								<li><a href="#none"  onclick="moveToLocation('37.504012', '126.881831', this, 3);">구로지사</a></li>
+								<li><a href="#none" class="on" onclick="moveToLocation('37.525766', '126.963661', this, 1);">Head office</a></li>
+								<li><a href="#none"  onclick="moveToLocation('37.494905', '126.859828', this, 2);">Gwanak</a></li>
+								<li><a href="#none"  onclick="moveToLocation('37.504012', '126.881831', this, 3);">Guro</a></li>
 							</ul>
 						</div>
 
 						<div class="tab_area four" style="display: none;" id="area2">
 							<ul>
-								<li><a href="#none" class="on" onclick="moveToLocation('37.450500', '126.698553', this, 4);">인천</a></li>
-								<li><a href="#none" onclick="moveToLocation('37.634172', '127.210518', this, 5);">남양주</a></li>
-								<li><a href="#none" onclick="moveToLocation('37.313498', '126.808315', this, 6);">신안산대</a></li>
-								<li><a href="#none" onclick="moveToLocation('37.484395', '126.812932', this, 7);">부천</a></li>
+								<li><a href="#none" class="on" onclick="moveToLocation('37.450500', '126.698553', this, 4);">Incheon</a></li>
+								<li><a href="#none" onclick="moveToLocation('37.634172', '127.210518', this, 5);">Namyangju</a></li>
+								<li><a href="#none" onclick="moveToLocation('37.313498', '126.808315', this, 6);">Shin Ansan University</a></li>
+								<li><a href="#none" onclick="moveToLocation('37.484395', '126.812932', this, 7);">Bucheon</a></li>
 							</ul>
 						</div>
 						<div class="tab_area one" style="display: none;" id="area3">
 							<ul>
-								<li><a href="#none" class="on" onclick="moveToLocation('36.358529', '127.342829', this, 8);">유성</a></li>
+								<li><a href="#none" class="on" onclick="moveToLocation('36.358529', '127.342829', this, 8);">Yuseong</a></li>
 							</ul>
 						</div>
 						<div class="tab_area four" style="display: none;" id="area4" >
 							<ul>
-								<li><a href="#none" class="on" onclick="moveToLocation('34.951515', '127.514675', this, 9);">순천</a></li>
-								<li><a href="#none" onclick="moveToLocation('34.934661', '127.697780', this, 10);">목포</a></li>
-								<li><a href="#none" onclick="moveToLocation('34.749867', '127.699092', this, 11);">여수</a></li>
-								<li><a href="#none"  onclick="moveToLocation('34.934606', '127.697783', this, 12);">광양</a></li>
+								<li><a href="#none" class="on" onclick="moveToLocation('34.951515', '127.514675', this, 9);">Suncheon</a></li>
+								<li><a href="#none" onclick="moveToLocation('34.934661', '127.697780', this, 10);">Mokpo</a></li>
+								<li><a href="#none" onclick="moveToLocation('34.749867', '127.699092', this, 11);">Yeosu</a></li>
+								<li><a href="#none"  onclick="moveToLocation('34.934606', '127.697783', this, 12);">Gwangyang</a></li>
 							</ul>
 						</div>
 						<div class="tab_area one" style="display: none;" id="area5">
 							<ul>
-								<li><a href="#none" class="on" onclick="moveToLocation('35.628657', '129.351327', this, 13);">울산</a></li>
+								<li><a href="#none" class="on" onclick="moveToLocation('35.628657', '129.351327', this, 13);">Ulsan</a></li>
 							</ul>
 						</div>
 						<div class="tab_area one" style="display: none;" id="area6">
 							<ul>
-								<li><a href="#none" class="on" onclick="moveToLocation('37.851849', '127.744280', this, 14);">춘천</a></li>
+								<li><a href="#none" class="on" onclick="moveToLocation('37.851849', '127.744280', this, 14);">Chuncheon</a></li>
 							</ul>
 						</div>
 
 						<div class="map_area">
 							<div class="map" id="map">
-								지도영역
+								
 							</div>
 							<div class="map_info">
 								<div id="areaDetail1">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>서울특별시 용산구 한강대로 15길 9-5 3층</span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span>02-6959-8983</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>02-6958-9297</span>
+											<strong>Address</strong>
+											<span>3F, 9-5, 15-gil Han River Road, Yongsan-gu, Seoul</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail2">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>서울특별시 구로구 개봉로23가길 70, 2층 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span> 02-2615-9197</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>02-2615-9297</span>
+											<strong>Address</strong>
+											<span>2nd F, 70, Gaebong-ro 23th street, Guro-gu, Seoul, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail3">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>서울특별시 구로구 경인로 584, 102동 216호 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span> 02-6959-1003</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>02-6959-0114</span>
+											<strong>Address</strong>
+											<span>#216, 102-dong, 584, Gyeongin-ro, Guro-gu, Seoul, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail4">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>인천광역시 남동구 인주대로 555, 402호, 502호 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span> 032-719-7804</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>032-719-7815</span>
+											<strong>Address</strong>
+											<span>#402 and #502, 555, Inju-daero, Namdong-gu, Incheon, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail5">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>경기도 남양주시 경춘로 979, 401호 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span>031-595-7610</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>031-595-7611</span>
+											<strong>Address</strong>
+											<span>#401, 979, Gyeongchun-ro, Namyangju-si, Gyeonggi-do, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail6">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>경기도 안산시 단원구 신안산대학로 135, 신안산대학교 목양관 208호 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span>031-495-6514</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>031-495-6512</span>
+											<strong>Address</strong>
+											<span>#208, Mokyang Hall of Shin Ansan University, 135, Sinansandaehak-ro, Danwon-gu, Ansan-si, Gyeonggi-do, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail7">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>경기도 부천시 경인로 520, 503호 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span>  032-351-8851</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>032-351-8854</span>
+											<strong>Address</strong>
+											<span>#503, 520, Gyeongin-ro, Bucheon-si, Gyeonggi-do, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail8">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>대전광역시 유성구 대학로 53, 202호 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span> 042-719-7018</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>042-719-7013</span>
+											<strong>Address</strong>
+											<span>#202, 53, Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail9">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>전라남도 순천시 이수로 276, 가동 202호 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span>  061-755-9314</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>061-755-9297</span>
+											<strong>Address</strong>
+											<span>#202, Ga-dong, 276, Isu-ro, Suncheon-si, Jeollanam-do, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail10">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>전라남도 목포시 평화로 3, 201호 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span> 061-282-9197</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>061-282-9213</span>
+											<strong>Address</strong>
+											<span>#201, 3, Pyeonghwa-ro, Mokpo-si, Jeollanam-do, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail11">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>전라남도 여수시 문수로 15, 2층 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span> 061-654-9212</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>061-654-9213</span>
+											<strong>Address</strong>
+											<span>2nd F, 15, Munsu-ro, Yeosu-si, Jeollanam-do, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
 								<div id="areaDetail12">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>전라남도 광양시 중마중앙로 49, 3층 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span> 061-792-9098</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>061-792-9197</span>
+											<strong>Address</strong>
+											<span>3rd F, 49, Jungmajungang-ro, Gwangyang-si, Jeollanam-do, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
-								<div id="areaDetail13">
+										<div id="areaDetail13">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>울산광역시 북구 호계로 286, 202호 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span> 052-273-8601</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>052-273-8608</span>
+											<strong>Address</strong>
+											<span>#202, 286, Hogye-ro, Buk-gu, Ulsan, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
-								<div id="areaDetail14">
+									<div id="areaDetail14">
 									<ul>
 										<li>
-											<strong>주소</strong>
-											<span>강원도 춘천시 퇴계농공로 16, 804호 </span>
-										</li>
-										<li>
-											<strong>문의</strong>
-											<span> 033-912-6668</span>
-										</li>
-										<li>
-											<strong>FAX</strong>
-											<span>033-912-6669</span>
+											<strong>Address</strong>
+											<span>#804, 16, Toegyenonggong-ro, Chuncheon-si, Gangwon-do, Republic of Korea</span>
 										</li>
 									</ul>
 								</div>
