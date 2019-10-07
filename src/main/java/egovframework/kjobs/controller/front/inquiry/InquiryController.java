@@ -150,7 +150,7 @@ public class InquiryController {
 			out.flush();
 			model.addAttribute("paramMap", paramMap);
     	}
-
+    	
     	if(info != null) {
         	info.put("tel", scrtyService.decrypt((String) info.get("tel")));
     		info.put("email", scrtyService.decrypt((String) info.get("email")));

@@ -7,7 +7,7 @@
 
 <script>
 function fn_write(){
-
+	
 	if ($('#title').val()  == '') {
 		alert("제목을 입력하세요.");
 		$('#title').focus();
@@ -51,7 +51,7 @@ function fn_write(){
 		$('#email1').focus();
 		return false;
 	}
-
+	
 	var email = $('#email1').val()+"@"+$('#email2').val();
 	$('#email').val(email);
 	var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -60,22 +60,22 @@ function fn_write(){
 		$('#email1').focus();
 		return false;
 	}
-
+	
 	if ($('#content').val() == '') {
 		alert("작성된 내용이 없습니다. 내용을 입력하십시오.");
 		$('#content').focus();
 		return false;
 	}
-
+	
 	if(!$('input:checkbox[id="agree"]').prop('checked')){
 		alert('개인정보보호정책에 동의하여주세요.')
 		return false;
 	}
-
+	
 	if( !confirm("등록 하시겠습니까?") ){
 		return false;
 	}
-
+	
 	$('#baseForm').attr('action', '/front/sub/customer/inquiry/proc.do');
 	$('#baseForm').submit();
 
@@ -162,7 +162,7 @@ function fn_write(){
 										<tr>
 											<th scope="row"><label for=""><span class="star">*</span>이름/기업명</label></th>
 											<td colspan="3">
-												<div class="input" style="max-width:300px;"><input type="text" name="company" id="company" maxlength="50"/></div>
+												<div class="input" style="max-width:300px;"><input type="text" name="company" id="company"/></div>
 											</td>
 										</tr>
 										<tr>

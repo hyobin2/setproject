@@ -183,7 +183,7 @@ function fn_write() {
 									<tr>
 										<th scope="row"><label for=""><span class="star">*</span>이름/기업명</label></th>
 										<td colspan="3">
-											<div class="input" style="max-width:300px;"><input type="text" name="company" id="company" maxlength="50"/></div>
+											<div class="input" style="max-width:300px;"><input type="text" name="company" id="company"/></div>
 										</td>
 									</tr>
 									<tr>
