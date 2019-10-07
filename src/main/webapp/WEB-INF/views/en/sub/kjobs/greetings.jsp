@@ -3,12 +3,12 @@
 			<div class="sub_top sub_top01">
 				<div class="inner">
 					<h2>K·Jobs</h2>
-					<p>케이잡스는 고객님의 취업성공의 시작입니다.</p>
+					<p>K-Jobs will always be with your future.</p>
 					<div class="path">
 						<ul>
 							<li>Home</li>
 							<li>K·Jobs</li>
-							<li>인사말</li>
+							<li>Greeting</li>
 						</ul>
 					</div>
 				</div>
@@ -18,14 +18,11 @@
 			<!-- contents-->
 			<div id="contents">
 
-				<div class="sub_tab_area five">
+				<div class="sub_tab_area two">
 					<div class="inner">
 						<ul>
-							<li><a href="greetings.do" class="on">인사말</a></li>
-							<li><a href="ideology.do">경영이념</a></li>
-							<li><a href="history.do">회사연혁</a></li>
-							<li><a href="organization.do">회사조직</a></li>
-							<li><a href="cooperate.do">협력기관</a></li>
+							<li><a href="greetings.do" class="on">Greeting</a></li>
+							<li><a href="ideology.do">Corporate Philosophy</a></li>
 						</ul>
 					</div>
 				</div>
@@ -38,20 +35,17 @@
 							<div class="path_list">
 								<ul>
 									<li><a href="/en/sub/kjobs/greetings.do">K·Jobs</a></li>
-									<li><a href="/en/sub/business/business01_01.do">사업분야</a></li>
-									<li><a href="/en/sub/customer/inquiry/list.do">고객지원</a></li>
+									<li><a href="/en/sub/business/business01_01.do">Business Area</a></li>
+									<li><a href="/en/sub/customer/inquiry/list.do">Customer Support</a></li>
 								</ul>
 							</div>
 						</li>
 						<li>
-							<a href="#">인사말</a>
+							<a href="#">Greeting</a>
 							<div class="path_list">
 								<ul>
-									<li><a href="/en/sub/kjobs/greetings.do">인사말</a></li>
-									<li><a href="/en/sub/kjobs/ideology.do">경영이념</a></li>
-									<li><a href="/en/sub/kjobs/history.do">회사연혁</a></li>
-									<li><a href="/en/sub/kjobs/organization.do">회사조직</a></li>
-									<li><a href="/en/sub/kjobs/cooperate.do">협력기관</a></li>
+									<li><a href="/en/sub/kjobs/greetings.do">Greeting</a></li>
+									<li><a href="/en/sub/kjobs/ideology.do">Corporate Philosophy</a></li>
 								</ul>
 							</div>
 						</li>
@@ -61,34 +55,34 @@
 				<div class="greetings_wrap">
 					<div class="inner">
 						<h3>
-							케이잡스는 고용서비스 전문기업으로 사람과 일자리, 사람과 기업을 이어주는 <br />
-							<span>job-Networking Social Service 전문가 집단입니다.</span>
+							K-Jobs is a group of job-networking social service <br />
+							consultants who connect people with jobs and <br />
+							enterprises as an employment service specialized firm. 
 						</h3>
 						<div class="txt">
 							<p>
-								케이잡스 임직원은 일자리와 일거리, 사람을 필요로 하는 대한민국의 모든 국민들이 <br />
-								자신의 강점을 살려 프로페셔널 일꾼으로 사회의 다양한 분야에서 자리매김할 수 있도록 <br />
-								모든 열정과 정성을 더하고 있습니다.
-							</p>
-							<p>
-								2014년 설립한 케이잡스는 중·장년 생애설계 전직지원 컨설팅과 교육,  <br />
-								초·중·고·대학생, 청년들의 진로코칭과 취업 컨설팅, <br />
-								기업 HRD 교육체계 수립 컨설팅 및 임직원 교육, <br />
-								채용박람회와 취업캠프, MICE 공공 지자체 일자리 창출, <br />
-								고용노동부 취업지원 사업에 적극 앞장서고 있습니다.
-							</p>
-							<p>
-								최고의 결과를 향하여 최선의 성공을 이루는 케이잡스가 되기 위해 <br />
-								오늘도 열심히 달려가겠습니다.
-							</p>
-							<p>
-								앞으로도 변함없는 관심과 애정어린 성원을 부탁드립니다.<br />
-								감사합니다
+								Executives and staff members of K-Jobs make every effort to encourage <br />
+								every people in Korea who needs a job, work, and worker to strengthen <br />
+								their strength and take their own place in various areas of society as a <br />
+								professional worker. Established in 2014, K-Jobs positively takes the <br />
+								lead in life planning job-change support consulting and education for <br />
+								middle- and prime-aged people, enterprise HRD educational system <br />
+								establishment consulting and education for executives and staff <br />
+								members, career coaching and employment consulting for <br />
+								elementary school, middle school, high school, and university <br />
+								students and the young, job fairs and employment camps, <br />
+								MICE public local government job creation, and employment <br />
+								success package business by the Ministry of Employment and <br />
+								Labor(MOEL). We will do our best today as well in order to achieve <br />
+								the greatest success for the best results. Please give us your consistent <br />
+								interest and affectionate support for many years to come. <br /><br />
+
+								Thank You. 
 							</p>
 						</div>
 						<div class="sign">
-							케이잡스 대표
-							<img src="/resources/en/img/img_sign.jpg" alt="김우진"/>
+							CEO of K-Jobs,
+							<span>Woojin Kim</span>
 						</div>
 					</div>
 				</div>

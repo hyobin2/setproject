@@ -3,12 +3,12 @@
 			<div class="sub_top sub_top01">
 				<div class="inner">
 					<h2>K·Jobs</h2>
-					<p>케이잡스는 고객님의 취업성공의 시작입니다.</p>
+					<p>K-Jobs will always be with your future.</p>
 					<div class="path">
 						<ul>
 							<li>Home</li>
 							<li>K·Jobs</li>
-							<li>경영이념</li>
+							<li>Corporate Philosophy</li>
 						</ul>
 					</div>
 				</div>
@@ -18,13 +18,10 @@
 			<!-- contents-->
 			<div id="contents">
 
-				<div class="sub_tab_area five">
+				<div class="sub_tab_area two">
 					<ul>
-						<li><a href="greetings.do">인사말</a></li>
-						<li><a href="ideology.do" class="on">경영이념</a></li>
-						<li><a href="history.do">회사연혁</a></li>
-						<li><a href="organization.do">회사조직</a></li>
-						<li><a href="cooperate.do">협력기관</a></li>
+						<li><a href="greetings.do">Greeting</a></li>
+						<li><a href="ideology.do" class="on">Corporate Philosophy</a></li>
 					</ul>
 				</div>
 
@@ -36,20 +33,17 @@
 							<div class="path_list">
 								<ul>
 									<li><a href="/en/sub/kjobs/greetings.do">K·Jobs</a></li>
-									<li><a href="/en/sub/business/business01_01.do">사업분야</a></li>
-									<li><a href="/en/sub/customer/inquiry/list.do">고객지원</a></li>
+									<li><a href="/en/sub/business/business01_01.do">Business Area</a></li>
+									<li><a href="/en/sub/customer/inquiry/list.do">Customer Support</a></li>
 								</ul>
 							</div>
 						</li>
 						<li>
-							<a href="#">경영이념</a>
+							<a href="#">Greeting</a>
 							<div class="path_list">
 								<ul>
-									<li><a href="/en/sub/kjobs/greetings.do">인사말</a></li>
-									<li><a href="/en/sub/kjobs/ideology.do">경영이념</a></li>
-									<li><a href="/en/sub/kjobs/history.do">회사연혁</a></li>
-									<li><a href="/en/sub/kjobs/organization.do">회사조직</a></li>
-									<li><a href="/en/sub/kjobs/cooperate.do">협력기관</a></li>
+									<li><a href="/en/sub/kjobs/greetings.do">Greeting</a></li>
+									<li><a href="/en/sub/kjobs/ideology.do">Corporate Philosophy</a></li>
 								</ul>
 							</div>
 						</li>
@@ -60,57 +54,60 @@
 					<div class="list">
 						<ul>
 							<li class="list01">
-								<div class="img"><img src="/resources/en/img/img_ideology01.jpg" alt="사람 중심의 기업"/></div>
+								<div class="img"><img src="/resources/en/img/img_ideology01.jpg" alt="Person-centered Enterprise"/></div>
 								<div class="txt">
 									<div class="inner">
 										<span class="num">01</span>
-										<strong>사람 중심의 기업</strong>
+										<strong>Person-centered Enterprise</strong>
 										<p>
-											미래를 향한 성장의 지름길은 오직 사람을 통해서만 가능합니다.<br />
-											케이잡스는 회사 구성원을 최고의 가치로 여기고 존중하며, <br />
-											인재양성을 경영 활동의 가장 중요한 요소로 두고 있습니다.
+											Only people can create a shortcut of growth for the future. <br />
+											K-Jobs considers every member as the best value, respects <br /> 
+											them, and sets up human resource training as the most  <br />
+											important factor of our business activity.
 										</p>
 									</div>
 								</div>
 							</li>
 							<li class="list02">
-								<div class="img"><img src="/resources/en/img/img_ideology02.jpg" alt="정직과 신뢰의 기업"/></div>
+								<div class="img"><img src="/resources/en/img/img_ideology02.jpg" alt="Enterprise of Honesty and Trust"/></div>
 								<div class="txt">
 									<div class="inner">
 										<span class="num">02</span>
-										<strong>정직과 신뢰의 기업</strong>
+										<strong>Enterprise of Honesty and Trust</strong>
 										<p>
-											진실됨을 기초로 정도 경영을 통한 정직한 기업입니다. <br />
-											기본을 지키며 진심으로 올바른 일을 합니다. <br />
-											고객과의 약속, 직원과의 약속을 지키며 정직함과 성실함으로 신뢰감을 드리겠습니다.
+											We are an honest enterprise with precision management based on trust. <br />
+											We follow basics and do the really right things. We keep promises of  <br />
+											customers and employees and give you confidence with our honesty and sincerity. 
 										</p>
 									</div>
 								</div>
 							</li>
 							<li class="list03">
-								<div class="img"><img src="/resources/en/img/img_ideology03.jpg" alt="꿈을 만드는(이루는)기업"/></div>
+								<div class="img"><img src="/resources/en/img/img_ideology03.jpg" alt="Dream Making (Achieving) Enterprise"/></div>
 								<div class="txt">
 									<div class="inner">
 										<span class="num">03</span>
-										<strong>꿈을 만드는(이루는)기업</strong>
+										<strong>Dream Making (Achieving) Enterprise</strong>
 										<p>
-											두려움 없이 도전하여 새로운 세상과 길을 열어갑니다.  <br />
-											최고가 되기 위한 최상의 서비스와 끊임없는 도전정신으로  <br />
-											케이잡스가 꿈을 만들어 드리겠습니다.
+											We challenge everything without any fear and open the <br />
+											new world and path. <br />
+											K-Jobs will make a dream with the best service to become  <br />
+											the best and consistent challenge spirit.
 										</p>
 									</div>
 								</div>
 							</li>
 							<li class="list04">
-								<div class="img"><img src="/resources/en/img/img_ideology04.jpg" alt="성공회대학교"/></div>
+								<div class="img"><img src="/resources/en/img/img_ideology04.jpg" alt="Social Responsibility Performing Enterprise"/></div>
 								<div class="txt">
 									<div class="inner">
 										<span class="num">04</span>
-										<strong>사회적 책임을 실천하는 기업</strong>
+										<strong>Social Responsibility Performing Enterprise</strong>
 										<p>
-											회사 구성원들과의 이익을 공유하며, 고용노동부 고용서비스 <br />
-											민간위탁기관이라는 자부심을 갖고 사회발전에 기여하는 <br />
-											기업이 되겠습니다.
+											We will contribute to social growth by sharing profits with  <br />
+											employees and being confident of ourselves as an employment  <br />
+											service-based private trust organization of the Ministry of  <br />
+											Employment and Labor(MOEL).
 										</p>
 									</div>
 								</div>
