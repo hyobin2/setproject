@@ -28,7 +28,7 @@ function changeArea(idx){
 						<a href="#">고객지원</a>
 						<div class="path_list">
 							<ul>
-								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/hyobin/greetings.do">K·Jobs</a></li>
 								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
 								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
 								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>
@@ -63,7 +63,7 @@ function changeArea(idx){
 				<div class="location_wrap">
 					<div class="inner">
 						<p class="txt">
-							Kjobs는 전국에 친절함을 겸비한 <br />
+							hyobin는 전국에 친절함을 겸비한 <br />
 							전문 컨설턴트가 여러분들을 기다리고 있습니다.
 						</p>
 						<div class="select_area">

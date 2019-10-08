@@ -105,14 +105,14 @@
 					<div class="inner">
 						<ul>
 							<li>
-								<a href="/front/sub/kjobs/greetings.do">K·Jobs</a>
+								<a href="/front/sub/hyobin/greetings.do">K·Jobs</a>
 								<div class="gnb_sub">
 									<ul>
-										<li><a href="/front/sub/kjobs/greetings.do">인사말</a></li>
-										<li><a href="/front/sub/kjobs/ideology.do">경영이념</a></li>
-										<li><a href="/front/sub/kjobs/history.do">회사연혁</a></li>
-										<li><a href="/front/sub/kjobs/organization.do">회사조직</a></li>
-										<li><a href="/front/sub/kjobs/cooperate.do">협력기관</a></li>
+										<li><a href="/front/sub/hyobin/greetings.do">인사말</a></li>
+										<li><a href="/front/sub/hyobin/ideology.do">경영이념</a></li>
+										<li><a href="/front/sub/hyobin/history.do">회사연혁</a></li>
+										<li><a href="/front/sub/hyobin/organization.do">회사조직</a></li>
+										<li><a href="/front/sub/hyobin/cooperate.do">협력기관</a></li>
 									</ul>
 								</div>
 							</li>
@@ -200,14 +200,14 @@
 				<div class="fullmenu_list">
 					<ul>
 						<li>
-							<a href="/front/sub/kjobs/greetings.do">K·Jobs</a>
+							<a href="/front/sub/hyobin/greetings.do">K·Jobs</a>
 							<div class="fullmenu_list_sub">
 								<ul>
-									<li><a href="/front/sub/kjobs/greetings.do">인사말</a></li>
-									<li><a href="/front/sub/kjobs/ideology.do">경영이념</a></li>
-									<li><a href="/front/sub/kjobs/history.do">회사연혁</a></li>
-									<li><a href="/front/sub/kjobs/organization.do">회사조직</a></li>
-									<li><a href="/front/sub/kjobs/cooperate.do">협력기관</a></li>
+									<li><a href="/front/sub/hyobin/greetings.do">인사말</a></li>
+									<li><a href="/front/sub/hyobin/ideology.do">경영이념</a></li>
+									<li><a href="/front/sub/hyobin/history.do">회사연혁</a></li>
+									<li><a href="/front/sub/hyobin/organization.do">회사조직</a></li>
+									<li><a href="/front/sub/hyobin/cooperate.do">협력기관</a></li>
 								</ul>
 							</div>
 						</li>
@@ -306,14 +306,14 @@
 					<div class="mobile_fullmenu_list">
 						<ul>
 							<li>
-								<a href="/front/sub/kjobs/greetings.do">K·Jobs</a>
+								<a href="/front/sub/hyobin/greetings.do">K·Jobs</a>
 								<div class="mobile_fullmenu_list_sub">
 									<ul>
-										<li><a href="/front/sub/kjobs/greetings.do">인사말</a></li>
-										<li><a href="/front/sub/kjobs/ideology.do">경영이념</a></li>
-										<li><a href="/front/sub/kjobs/history.do">회사연혁</a></li>
-										<li><a href="/front/sub/kjobs/organization.do">회사조직</a></li>
-										<li><a href="/front/sub/kjobs/cooperate.do">협력기관</a></li>
+										<li><a href="/front/sub/hyobin/greetings.do">인사말</a></li>
+										<li><a href="/front/sub/hyobin/ideology.do">경영이념</a></li>
+										<li><a href="/front/sub/hyobin/history.do">회사연혁</a></li>
+										<li><a href="/front/sub/hyobin/organization.do">회사조직</a></li>
+										<li><a href="/front/sub/hyobin/cooperate.do">협력기관</a></li>
 									</ul>
 								</div>
 							</li>

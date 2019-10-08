@@ -16,10 +16,10 @@
 							<li>Vocational Information Service : 서울 서부 제 2018-15호</li>
 							<li>Tel : 02-6959-8983</li>
 							<li>Fax : 02-6958-9297</li>
-							<li>e-mail : webmaster@kjobs.co.kr</li>
+							<li>e-mail : webmaster@hyobin.co.kr</li>
 						</ul>
 					</div>
-					<p class="copyright">Copyrightⓒ 2019 KJOBS Co. Ltd All Right Reserved.</p>
+					<p class="copyright">Copyrightⓒ 2019 hyobin Co. Ltd All Right Reserved.</p>
 				</div>
 				<div class="btn_top">
 					<a href="#wrap"><img src="/resources/en/img/btn_top.png" alt="TOP"/></a>

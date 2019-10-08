@@ -25,10 +25,10 @@ function goLogin(){
     	<div id="main_con">
 
         	<div class="m_header">
-            	<h1><img src="/resources/admin/img/img_logo.png" alt="kjobs"></h1><div class="line_bg"></div>
+            	<h1><img src="/resources/admin/img/img_logo.png" alt="hyobin"></h1><div class="line_bg"></div>
             </div>
             <div class="m_con">
-            	<div class="copy"><strong>kjobs 관리자 로그인</strong></div>
+            	<div class="copy"><strong>hyobin 관리자 로그인</strong></div>
             </div>
             <div class="b_content">
             	<div class="b_con">
@@ -42,7 +42,7 @@ function goLogin(){
                     </div>
                 </div>
                  <div class="m_footer">
-                 	<div class="copy_area">COPYRIGHTⓒ kjobs Corp. ALL RIGHTS RESERVED.
+                 	<div class="copy_area">COPYRIGHTⓒ hyobin Corp. ALL RIGHTS RESERVED.
                     </div>
                  </div>
             </div>

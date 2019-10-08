@@ -20,10 +20,10 @@
 						<ul>
 							<li>Tel : 02-6959-8983</li>
 							<li>Fax : 02-6958-9297</li>
-							<li>e-mail : webmaster@kjobs.co.kr</li>
+							<li>e-mail : webmaster@hyobin.co.kr</li>
 						</ul>
 					</div>
-					<p class="copyright">Copyrightⓒ 2019 KJOBS Co. Ltd All Right Reserved.</p>
+					<p class="copyright">Copyrightⓒ 2019 hyobin Co. Ltd All Right Reserved.</p>
 				</div>
 				<div class="btn_top">
 					<a href="#wrap"><img src="/resources/front/img/btn_top.png" alt="TOP"/></a>
@@ -62,13 +62,13 @@
 					소속 :경영전략기획부<br/>
 					직책 :팀장<br/>
 					전화 :02-6959-7658<br/>
-					메일 : chois2928@kjobs.co.kr <br/>
+					메일 : chois2928@hyobin.co.kr <br/>
 					- 개인정보보호 담당자<br/>
 					성명 : 문권홍<br/>
 					소속 : 경영전략기획부<br/>
 					직책 :주임<br/>
 					전화 : 02-6959-8983<br/>
-					메일 : mun010306@kjobs.co.kr <br/><br/>
+					메일 : mun010306@hyobin.co.kr <br/><br/>
 					제8조(개인정보 처리방침 변경) 이 개인정보 처리방침은 2016. 6. 16부터 적용됩니다.  <br/><br/>
 					제9조(개인정보의 안전성 확보조치) 케이잡스는 개인정보의 안전성 확보를 위해 내부관리계획 수립 ․ 시행, 직원 교육 등을 정기적으로 실시하고 있습니다. <br/><br/>
 				</div>

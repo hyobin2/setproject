@@ -35,7 +35,7 @@
 							<a href="#">K·Jobs</a>
 							<div class="path_list">
 								<ul>
-									<li><a href="/en/sub/kjobs/greetings.do">K·Jobs</a></li>
+									<li><a href="/en/sub/hyobin/greetings.do">K·Jobs</a></li>
 									<li><a href="/en/sub/business/business01_01.do">사업분야</a></li>
 									<li><a href="/en/sub/customer/inquiry/list.do">고객지원</a></li>
 								</ul>
@@ -45,11 +45,11 @@
 							<a href="#">회사조직</a>
 							<div class="path_list">
 								<ul>
-									<li><a href="/en/sub/kjobs/greetings.do">인사말</a></li>
-									<li><a href="/en/sub/kjobs/ideology.do">경영이념</a></li>
-									<li><a href="/en/sub/kjobs/history.do">회사연혁</a></li>
-									<li><a href="/en/sub/kjobs/organization.do">회사조직</a></li>
-									<li><a href="/en/sub/kjobs/cooperate.do">협력기관</a></li>
+									<li><a href="/en/sub/hyobin/greetings.do">인사말</a></li>
+									<li><a href="/en/sub/hyobin/ideology.do">경영이념</a></li>
+									<li><a href="/en/sub/hyobin/history.do">회사연혁</a></li>
+									<li><a href="/en/sub/hyobin/organization.do">회사조직</a></li>
+									<li><a href="/en/sub/hyobin/cooperate.do">협력기관</a></li>
 								</ul>
 							</div>
 						</li>

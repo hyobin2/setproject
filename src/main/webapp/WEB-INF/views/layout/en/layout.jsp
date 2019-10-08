@@ -15,7 +15,7 @@
 	<script src="/resources/en/js/script.js"></script>
 	<script src="/resources/en/js/respond.src.js"></script>
 	<script type="text/javascript" src="/resources/en/js/mCmmFunction.js"></script>
-	<title>kjobs</title>
+	<title>hyobin</title>
 </head>
 <body>
 	<div id="wrap">

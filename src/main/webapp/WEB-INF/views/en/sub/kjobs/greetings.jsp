@@ -34,7 +34,7 @@
 							<a href="#">K·Jobs</a>
 							<div class="path_list">
 								<ul>
-									<li><a href="/en/sub/kjobs/greetings.do">K·Jobs</a></li>
+									<li><a href="/en/sub/hyobin/greetings.do">K·Jobs</a></li>
 									<li><a href="/en/sub/business/business01_01.do">Business Area</a></li>
 									<li><a href="/en/sub/customer/inquiry/list.do">Customer Support</a></li>
 								</ul>
@@ -44,8 +44,8 @@
 							<a href="#">Greeting</a>
 							<div class="path_list">
 								<ul>
-									<li><a href="/en/sub/kjobs/greetings.do">Greeting</a></li>
-									<li><a href="/en/sub/kjobs/ideology.do">Corporate Philosophy</a></li>
+									<li><a href="/en/sub/hyobin/greetings.do">Greeting</a></li>
+									<li><a href="/en/sub/hyobin/ideology.do">Corporate Philosophy</a></li>
 								</ul>
 							</div>
 						</li>

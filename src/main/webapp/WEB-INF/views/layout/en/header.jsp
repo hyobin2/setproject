@@ -96,11 +96,11 @@
 					<div class="inner">
 						<ul>
 							<li>
-								<a href="/en/sub/kjobs/greetings.do">K·Jobs</a>
+								<a href="/en/sub/hyobin/greetings.do">K·Jobs</a>
 								<div class="gnb_sub">
 									<ul>
-										<li><a href="/en/sub/kjobs/greetings.do">Greeting</a></li>
-										<li><a href="/en/sub/kjobs/ideology.do">Corporate Philosophy</a></li>
+										<li><a href="/en/sub/hyobin/greetings.do">Greeting</a></li>
+										<li><a href="/en/sub/hyobin/ideology.do">Corporate Philosophy</a></li>
 									</ul>
 								</div>
 							</li>
@@ -168,11 +168,11 @@
 				<div class="fullmenu_list">
 					<ul>
 						<li>
-							<a href="/en/sub/kjobs/greetings.do">K·Jobs</a>
+							<a href="/en/sub/hyobin/greetings.do">K·Jobs</a>
 							<div class="fullmenu_list_sub">
 								<ul>
-									<li><a href="/en/sub/kjobs/greetings.do">Greeting</a></li>
-									<li><a href="/en/sub/kjobs/ideology.do">Corporate Philosophy</a></li>
+									<li><a href="/en/sub/hyobin/greetings.do">Greeting</a></li>
+									<li><a href="/en/sub/hyobin/ideology.do">Corporate Philosophy</a></li>
 								</ul>
 							</div>
 						</li>
@@ -246,11 +246,11 @@
 					<div class="mobile_fullmenu_list">
 						<ul>
 							<li>
-								<a href="/en/sub/kjobs/greetings.do">K·Jobs</a>
+								<a href="/en/sub/hyobin/greetings.do">K·Jobs</a>
 								<div class="mobile_fullmenu_list_sub">
 									<ul>
-										<li><a href="/en/sub/kjobs/greetings.do">Greeting</a></li>
-										<li><a href="/en/sub/kjobs/ideology.do">Corporate Philosophy</a></li>
+										<li><a href="/en/sub/hyobin/greetings.do">Greeting</a></li>
+										<li><a href="/en/sub/hyobin/ideology.do">Corporate Philosophy</a></li>
 									</ul>
 								</div>
 							</li>

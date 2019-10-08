@@ -38,7 +38,7 @@
 						<a href="#">고객지원</a>
 						<div class="path_list">
 							<ul>
-								<li><a href="/front/sub/kjobs/greetings.do">K·Jobs</a></li>
+								<li><a href="/front/sub/hyobin/greetings.do">K·Jobs</a></li>
 								<li><a href="/front/sub/business/business01_01.do">사업분야</a></li>
 								<li><a href="/front/sub/cummunity/activity/list.do">커뮤니티</a></li>
 								<li><a href="/front/sub/incruit/list.do">채용정보</a></li>

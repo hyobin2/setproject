@@ -15,7 +15,7 @@
 	<script src="/resources/front/js/script.js"></script>
 	<script src="/resources/front/js/respond.src.js"></script>
 	<script type="text/javascript" src="/resources/front/js/mCmmFunction.js"></script>
-	<title>kjobs</title>
+	<title>hyobin</title>
 </head>
 <body>
 	<div id="wrap">
